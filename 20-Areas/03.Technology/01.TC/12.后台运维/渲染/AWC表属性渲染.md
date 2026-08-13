@@ -1,21 +1,21 @@
 ---
-title: 表属性渲染
-updated: 2026-08-13T13:20:15+08:00
+title: AWC表属性渲染
+updated: 2026-08-13T16:05:20+08:00
 created: 2024-09-10T18:06:57
 ---
 
-表属性渲染，点击编辑后，会自动出现添加/移除/复制按钮
+表属性渲染，点击==编辑==后，会自动出现添加/移除/复制按钮
 ```html
-<sectiontitleKey="tc_xrt_FirstTrial"collapsed="true">
-<tablePropertyname="y6_CRFirstReview"width="100%">
-<propertyname="y6_IDX"width="65"/>
-<propertyname="y6_ReviewDepartment"/>
-<propertyname="y6_ReviewPeople"/>
-<propertyname="y6_ReviewResult"/>
-<propertyname="y6_ReviewerComment"/>
-<propertyname="y6_ReviewerDate"/>
-</tableProperty>
-<break/>
+<section titleKey="tc_xrt_FirstTrial" initialstate="collapsed">
+   <tableProperty name="y6_CRFirstReview">
+		<property name="y6_IDX" width="65"/>
+		<property name="y6_ReviewDepartment"/>
+		<property name="y6_ReviewPeople"/>
+		<property name="y6_ReviewResult"/>
+		<property name="y6_ReviewerComment"/>
+		<property name="y6_ReviewerDate"/>
+	</tableProperty>
+	<break/>                
 </section>
 ```
 
@@ -36,3 +36,5 @@ created: 2024-09-10T18:06:57
 ```
 
 ![[Pasted image 20260812110957.png]]
+![[Pasted image 20260813152020.png]]
+![[企业微信截图_17866054782301.png]]
