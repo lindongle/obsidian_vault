@@ -4,4 +4,6 @@
 
 #obsidian设置目录
 .obsidian/cache/
+.obsidian/workspace.json
+.obsidian/plugins/recent-files-obsidian/data.json
 .obsidian/plugins/*/.cache
