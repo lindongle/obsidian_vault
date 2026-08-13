@@ -1,0 +1,7 @@
+#目录
+.smart-env/
+.trash/
+
+#obsidian设置目录
+.obsidian/cache/
+.obsidian/plugins/*/.cache
