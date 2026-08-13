@@ -21,13 +21,14 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var main_exports = {};
 __export(main_exports, {
   default: () => VaultInspectorPlugin,
+  formatFixResultNotice: () => formatFixResultNotice,
   migrateExcalidrawFrontmatterKey: () => migrateExcalidrawFrontmatterKey
 });
 module.exports = __toCommonJS(main_exports);
 var import_obsidian7 = require("obsidian");
 
 // src/report/InspectorView.ts
-var import_obsidian2 = require("obsidian");
+var import_obsidian3 = require("obsidian");
 
 // src/scanner/Issue.ts
 var SCANNER_IDS = [
@@ -51,6 +52,45 @@ var SCANNER_LABELS = {
   "large-files": "Large Files"
 };
 
+// src/report/report-model.ts
+var SEVERITIES = ["error", "warning", "info"];
+function buildIssueFilterView(issues, filters) {
+  var _a, _b;
+  const visibleIssues = issues.filter(
+    (issue) => (!filters.scanner || issue.scannerId === filters.scanner) && (!filters.severity || issue.severity === filters.severity)
+  );
+  const scannerCounts = /* @__PURE__ */ new Map();
+  for (const issue of issues) scannerCounts.set(issue.scannerId, 0);
+  for (const issue of issues) {
+    if (filters.severity && issue.severity !== filters.severity) continue;
+    scannerCounts.set(issue.scannerId, ((_a = scannerCounts.get(issue.scannerId)) != null ? _a : 0) + 1);
+  }
+  const severityCounts = new Map(
+    SEVERITIES.map((severity) => [severity, 0])
+  );
+  for (const issue of issues) {
+    if (filters.scanner && issue.scannerId !== filters.scanner) continue;
+    severityCounts.set(issue.severity, ((_b = severityCounts.get(issue.severity)) != null ? _b : 0) + 1);
+  }
+  const severityFacets = SEVERITIES.map((severity) => {
+    var _a2;
+    return { severity, count: (_a2 = severityCounts.get(severity)) != null ? _a2 : 0 };
+  }).filter(({ severity, count }) => count > 0 || filters.severity === severity);
+  return {
+    visibleIssues,
+    scannerCounts,
+    severityFacets
+  };
+}
+function summarizeIssues(issues) {
+  return {
+    total: issues.length,
+    errors: issues.filter((issue) => issue.severity === "error").length,
+    warnings: issues.filter((issue) => issue.severity === "warning").length,
+    infos: issues.filter((issue) => issue.severity === "info").length
+  };
+}
+
 // src/utils/format.ts
 function formatSize(bytes) {
   if (bytes < 1024) return `${bytes} B`;
@@ -70,33 +110,34 @@ function formatDuration(ms) {
 }
 
 // src/report/render-summary.ts
-function renderSummary(container, result, actions) {
-  const errors = result.issues.filter((i) => i.severity === "error").length;
-  const warnings = result.issues.filter((i) => i.severity === "warning").length;
-  const infos = result.issues.filter((i) => i.severity === "info").length;
+function renderSummary(container, result, options) {
+  const { total, errors, warnings, infos } = summarizeIssues(options.issues);
   const duration = formatDuration(result.finishedAt - result.startedAt);
   const summary = container.createDiv({ cls: "vi-summary" });
   summary.createEl("h2", { text: "Scan results" });
   const stats = summary.createDiv({ cls: "vi-stats" });
   const items = [
-    { label: "Total", value: result.issues.length, cls: "vi-stat-total", severity: null },
+    { label: "Total", value: total, cls: "vi-stat-total", severity: null },
     { label: "Errors", value: errors, cls: "vi-stat-error", severity: "error" },
     { label: "Warnings", value: warnings, cls: "vi-stat-warning", severity: "warning" },
     { label: "Info", value: infos, cls: "vi-stat-info", severity: "info" }
   ];
   for (const item of items) {
     const stat = stats.createDiv({ cls: `vi-stat ${item.cls}` });
-    stat.createEl("span", { cls: "vi-stat-value", text: String(item.value) });
-    stat.createEl("span", { cls: "vi-stat-label", text: item.label });
-    if (actions) {
+    stat.createSpan({ cls: "vi-stat-value", text: String(item.value) });
+    stat.createSpan({ cls: "vi-stat-label", text: item.label });
+    if (options.onFilterSeverity) {
       stat.addClass("vi-stat-clickable");
-      stat.addEventListener("click", () => actions.onFilterSeverity(item.severity));
+      stat.addEventListener("click", () => {
+        var _a;
+        return (_a = options.onFilterSeverity) == null ? void 0 : _a.call(options, item.severity);
+      });
     }
   }
   const meta = summary.createDiv({ cls: "vi-meta" });
-  meta.createEl("span", { text: `${result.filesScanned} files scanned` });
-  meta.createEl("span", { text: duration });
-  meta.createEl("span", { text: `${result.scannersRun.length} scanners` });
+  meta.createSpan({ text: `${result.filesScanned} files scanned` });
+  meta.createSpan({ text: duration });
+  meta.createSpan({ text: `${result.scannersRun.length} scanners` });
 }
 
 // src/report/render-issues.ts
@@ -131,14 +172,14 @@ function renderIssueList(container, config) {
         });
         li.addEventListener("click", () => config.onToggleSelect(issue));
       }
-      li.createEl("span", {
+      li.createSpan({
         cls: `vi-severity-badge vi-severity-${issue.severity}`,
         text: issue.severity.toUpperCase()
       });
-      li.createEl("span", { cls: "vi-issue-title", text: issue.title });
+      li.createSpan({ cls: "vi-issue-title", text: issue.title });
       const issuePath = getIssuePath(issue);
       if (issuePath) {
-        const pathEl = li.createEl("span", {
+        const pathEl = li.createSpan({
           cls: "vi-issue-path",
           text: issuePath
         });
@@ -161,16 +202,16 @@ function renderIssueDetails(container, issue, config) {
   var _a;
   const details = container.createDiv({ cls: "vi-issue-details" });
   const summary = getIssueSummary(issue);
-  if (summary) details.createEl("div", { cls: "vi-issue-message", text: summary });
+  if (summary) details.createDiv({ cls: "vi-issue-message", text: summary });
   for (const row of getIssueDetailRows(issue)) {
     const rowEl = details.createDiv({ cls: "vi-issue-target" });
-    rowEl.createEl("span", { cls: "vi-issue-target-label", text: row.label });
-    const valueEl = rowEl.createEl("span", { cls: "vi-issue-target-value" });
+    rowEl.createSpan({ cls: "vi-issue-target-label", text: row.label });
+    const valueEl = rowEl.createSpan({ cls: "vi-issue-target-value" });
     if ("value" in row) {
       valueEl.setText(row.value);
     } else {
       for (const item of row.items) {
-        const itemEl = valueEl.createEl("span", {
+        const itemEl = valueEl.createSpan({
           cls: `vi-issue-value-token ${(_a = item.className) != null ? _a : ""}`.trim(),
           text: item.text
         });
@@ -194,7 +235,7 @@ function getIssueSummary(issue) {
       const size = getNumber(issue.evidence.size);
       const threshold = getNumber(issue.evidence.threshold);
       if (size !== null && threshold !== null) {
-        return `File is ${formatBytes(size)}, over ${formatBytes(threshold)} threshold`;
+        return `File is ${formatSize(size)}, over ${formatSize(threshold)} threshold`;
       }
       return issue.message;
     }
@@ -204,7 +245,7 @@ function getIssueSummary(issue) {
     }
     case "empty-notes": {
       const size = getNumber(issue.evidence.size);
-      return size !== null ? `No content besides frontmatter/title \xB7 ${formatBytes(size)}` : issue.message;
+      return size !== null ? `No content besides frontmatter/title \xB7 ${formatSize(size)}` : issue.message;
     }
     default:
       return issue.message;
@@ -366,13 +407,6 @@ function getEvidencePaths(issue) {
 function getNumber(value) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
-function formatBytes(bytes) {
-  if (bytes < 1024) return `${bytes} B`;
-  const kib = bytes / 1024;
-  if (kib < 1024) return `${kib.toFixed(kib < 10 ? 1 : 0)} KB`;
-  const mib = kib / 1024;
-  return `${mib.toFixed(mib < 10 ? 1 : 0)} MB`;
-}
 function formatDate(timestamp) {
   return new Date(timestamp).toLocaleDateString();
 }
@@ -393,7 +427,209 @@ function groupByScanner(issues) {
 }
 
 // src/report/InspectorView.ts
-var import_obsidian3 = require("obsidian");
+var import_obsidian4 = require("obsidian");
+
+// src/fix/confirm-modal.ts
+var import_obsidian2 = require("obsidian");
+
+// src/fix/fix-decisions.ts
+function buildFixDecisionState(issues, mode, selectedKeeps) {
+  const decisions = [];
+  let complete = true;
+  for (const issue of issues) {
+    const action = issue.fixAction;
+    if (!action) continue;
+    const selection = action.selection;
+    if (!selection) {
+      decisions.push({ fingerprint: issue.fingerprint });
+      continue;
+    }
+    const keepPath = mode === "automatic" ? selection.automaticKeepPath : selectedKeeps.get(issue.fingerprint);
+    if (!keepPath || !selection.candidatePaths.includes(keepPath)) {
+      complete = false;
+      continue;
+    }
+    decisions.push({ fingerprint: issue.fingerprint, keepPath });
+  }
+  return { complete, decisions };
+}
+function resolveDecisionAction(issue, decision) {
+  const action = issue.fixAction;
+  if (!action || decision.fingerprint !== issue.fingerprint) return null;
+  const selection = action.selection;
+  if (!selection) return decision.keepPath === void 0 ? action : null;
+  if (!decision.keepPath || !selection.candidatePaths.includes(decision.keepPath)) {
+    return null;
+  }
+  const targetPaths = selection.candidatePaths.filter(
+    (path) => path !== decision.keepPath
+  );
+  return {
+    ...action,
+    description: `Keep "${decision.keepPath}" and move ${targetPaths.length} duplicate(s) to trash`,
+    targetPaths
+  };
+}
+function getFreshFixAction(requestedIssue, freshIssue, decision) {
+  const requested = requestedIssue.fixAction;
+  const fresh = freshIssue == null ? void 0 : freshIssue.fixAction;
+  if (decision.fingerprint !== requestedIssue.fingerprint || (freshIssue == null ? void 0 : freshIssue.fingerprint) !== requestedIssue.fingerprint || !requested || !fresh) {
+    return null;
+  }
+  if (requested.selection || fresh.selection) {
+    if (!requested.selection || !fresh.selection || requested.kind !== fresh.kind || requested.label !== fresh.label || !samePaths(
+      requested.selection.candidatePaths,
+      fresh.selection.candidatePaths
+    )) {
+      return null;
+    }
+    return resolveDecisionAction(freshIssue, decision);
+  }
+  return fixActionsMatch(requested, fresh) ? fresh : null;
+}
+function samePaths(left, right) {
+  const sortedLeft = left.slice().sort();
+  const sortedRight = right.slice().sort();
+  return sortedLeft.length === sortedRight.length && sortedRight.every((path, index) => path === sortedLeft[index]);
+}
+function fixActionsMatch(left, right) {
+  return left.kind === right.kind && left.label === right.label && left.description === right.description && left.linkText === right.linkText && left.targetPaths.length === right.targetPaths.length && left.targetPaths.every(
+    (path, index) => path === right.targetPaths[index]
+  );
+}
+
+// src/fix/confirm-modal.ts
+function describeFixActions(actions) {
+  const modifiedNotes = new Set(
+    actions.filter((action) => action.kind === "remove-link-text").flatMap((action) => action.targetPaths)
+  );
+  const trashedFiles = new Set(
+    actions.filter((action) => action.kind === "trash-file").flatMap((action) => action.targetPaths)
+  );
+  const parts = [];
+  if (modifiedNotes.size > 0) {
+    parts.push(`modify ${modifiedNotes.size} ${pluralize("note", modifiedNotes.size)}`);
+  }
+  if (trashedFiles.size > 0) {
+    parts.push(`move ${trashedFiles.size} ${pluralize("file", trashedFiles.size)} to trash`);
+  }
+  const description = parts.join(" and ");
+  return description.length > 0 ? description.charAt(0).toUpperCase() + description.slice(1) : "Apply selected fixes";
+}
+function summarizeFixActions(actions) {
+  var _a, _b;
+  const isBatch = actions.length > 1;
+  const impact = describeFixActions(actions);
+  return {
+    title: isBatch ? `Confirm batch fix (${actions.length} actions)` : "Confirm fix",
+    description: isBatch ? `This will ${impact.charAt(0).toLowerCase()}${impact.slice(1)}.` : (_b = (_a = actions[0]) == null ? void 0 : _a.description) != null ? _b : "No fix action selected.",
+    paths: [...new Set(actions.flatMap((action) => action.targetPaths))]
+  };
+}
+function pluralize(noun, count) {
+  return count === 1 ? noun : `${noun}s`;
+}
+function createSingleUseResolver(resolve) {
+  let settled = false;
+  return (value) => {
+    if (settled) return false;
+    settled = true;
+    resolve(value);
+    return true;
+  };
+}
+function showConfirmModal(app, issues, mode) {
+  return new Promise((resolve) => {
+    new ConfirmFixModal(app, issues, mode, resolve).open();
+  });
+}
+var ConfirmFixModal = class extends import_obsidian2.Modal {
+  constructor(app, issues, mode, resolve) {
+    super(app);
+    this.selectedKeeps = /* @__PURE__ */ new Map();
+    this.issues = issues;
+    this.mode = mode;
+    this.settle = createSingleUseResolver(resolve);
+  }
+  onOpen() {
+    this.contentEl.addClass("vi-confirm-modal");
+    this.renderContent();
+  }
+  onClose() {
+    this.contentEl.empty();
+    this.settle(null);
+  }
+  finish(result) {
+    if (this.settle(result)) this.close();
+  }
+  renderContent() {
+    var _a;
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.addClass("vi-confirm-modal");
+    const state = buildFixDecisionState(
+      this.issues,
+      this.mode,
+      this.selectedKeeps
+    );
+    const decisionsByFingerprint = new Map(
+      state.decisions.map((decision) => [decision.fingerprint, decision])
+    );
+    const actions = this.issues.flatMap((issue) => {
+      const decision = decisionsByFingerprint.get(issue.fingerprint);
+      if (!decision) return [];
+      const action = resolveDecisionAction(issue, decision);
+      return action ? [action] : [];
+    });
+    const summary = summarizeFixActions(actions);
+    contentEl.createEl("h3", {
+      text: this.issues.length > 1 ? `Confirm batch fix (${this.issues.length} actions)` : "Confirm fix"
+    });
+    contentEl.createEl("p", {
+      text: state.complete ? summary.description : "Choose one file to keep in every duplicate group."
+    });
+    if (this.mode === "always-ask") {
+      for (const issue of this.issues) {
+        const selection = (_a = issue.fixAction) == null ? void 0 : _a.selection;
+        if (!selection) continue;
+        const group = contentEl.createDiv({ cls: "vi-keep-group" });
+        group.createDiv({
+          cls: "vi-keep-group-title",
+          text: "Choose one file to keep"
+        });
+        for (const path of selection.candidatePaths) {
+          const option = group.createEl("label", { cls: "vi-keep-option" });
+          const radio = option.createEl("input", { type: "radio" });
+          radio.name = `keep-${issue.fingerprint}`;
+          radio.checked = this.selectedKeeps.get(issue.fingerprint) === path;
+          radio.addEventListener("change", () => {
+            this.selectedKeeps.set(issue.fingerprint, path);
+            this.renderContent();
+          });
+          option.createSpan({ cls: "vi-keep-option-path", text: path });
+        }
+      }
+    }
+    if (this.issues.length > 1 || actions.length > 1) {
+      const list = contentEl.createDiv({ cls: "vi-file-list" });
+      for (const path of summary.paths) {
+        list.createDiv({ cls: "vi-file-list-item", text: path });
+      }
+    }
+    const btnRow = contentEl.createDiv({ cls: "vi-confirm-buttons" });
+    btnRow.createEl("button", { text: "Cancel" }).addEventListener("click", () => this.finish(null));
+    const confirmBtn = btnRow.createEl("button", {
+      cls: "vi-confirm-destructive",
+      text: "Confirm"
+    });
+    confirmBtn.disabled = !state.complete;
+    confirmBtn.addEventListener("click", () => {
+      if (state.complete) this.finish(state.decisions);
+    });
+  }
+};
+
+// src/report/InspectorView.ts
 var VIEW_TYPE_INSPECTOR = "vault-inspector";
 function getLocationTargets(issue) {
   const url = issue.evidence.url;
@@ -425,7 +661,7 @@ function findTextPosition(content, target) {
     ch: lines[lines.length - 1].length
   };
 }
-var InspectorView = class extends import_obsidian2.ItemView {
+var InspectorView = class extends import_obsidian3.ItemView {
   constructor(leaf) {
     super(leaf);
     this.model = {
@@ -550,8 +786,10 @@ var InspectorView = class extends import_obsidian2.ItemView {
       });
       return;
     }
-    this.renderToolbar(container);
+    const filterView = this.getIssueFilterView();
+    this.renderToolbar(container, filterView);
     renderSummary(container, this.model.result, {
+      issues: filterView.visibleIssues,
       onFilterSeverity: (severity) => {
         this.model.filterSeverity = this.model.filterSeverity === severity ? null : severity;
         this.render();
@@ -561,9 +799,8 @@ var InspectorView = class extends import_obsidian2.ItemView {
       this.renderMainActionBar(container);
     }
     const issuesContainer = container.createDiv({ cls: "vi-issues" });
-    const visibleIssues = this.getVisibleIssues();
     renderIssueList(issuesContainer, {
-      issues: visibleIssues,
+      issues: filterView.visibleIssues,
       scannersRun: this.model.result.scannersRun,
       selectionMode: this.model.selectionMode,
       selectedFingerprints: this.model.selectedFingerprints,
@@ -587,20 +824,20 @@ var InspectorView = class extends import_obsidian2.ItemView {
     panel.createEl("h2", { text: "Scanning vault" });
     const bar = panel.createDiv({ cls: "vi-progress-bar", attr: { "aria-label": "Scan progress" } });
     bar.createDiv({ cls: "vi-progress-bar-fill", attr: { style: `width: ${percent}%` } });
-    panel.createEl("div", {
+    panel.createDiv({
       cls: "vi-progress-meta",
       text: scannerTotal > 0 ? `${scannerIndex} / ${scannerTotal} scanners` : "Preparing scan..."
     });
     const current = panel.createDiv({ cls: "vi-progress-current" });
     const scannerLabel = progress ? SCANNER_LABELS[progress.scannerId] : "Preparing scan";
-    current.createEl("div", { cls: "vi-progress-label", text: "Current" });
-    current.createEl("div", { cls: "vi-progress-value", text: scannerLabel });
+    current.createDiv({ cls: "vi-progress-label", text: "Current" });
+    current.createDiv({ cls: "vi-progress-value", text: scannerLabel });
     const detailText = this.formatProgressDetail(progress);
     if (detailText) {
       const detail = panel.createDiv({ cls: "vi-progress-detail" });
-      detail.createEl("span", { text: detailText });
+      detail.createSpan({ text: detailText });
     }
-    panel.createEl("div", {
+    panel.createDiv({
       cls: "vi-progress-elapsed",
       text: `Elapsed: ${formatDuration(elapsedMs)}`
     });
@@ -636,17 +873,16 @@ var InspectorView = class extends import_obsidian2.ItemView {
     this.scanTimer = null;
   }
   // ─── Toolbar ─────────────────────────────────────────────
-  renderToolbar(container) {
+  renderToolbar(container, filterView) {
     const toolbar = container.createDiv({ cls: "vi-toolbar" });
-    this.renderScannerFilter(toolbar);
-    this.renderSeverityFilter(toolbar);
-    const visibleIssues = this.getVisibleIssues();
-    if (visibleIssues.length > 0) {
+    this.renderScannerFilter(toolbar, filterView);
+    this.renderSeverityFilter(toolbar, filterView);
+    if (filterView.visibleIssues.length > 0) {
       const selectBtn = toolbar.createEl("button", {
         cls: `vi-filter-btn vi-select-btn ${this.model.selectionMode ? "vi-active" : ""}`,
         text: this.model.selectionMode ? "Done" : "Select"
       });
-      (0, import_obsidian2.setTooltip)(selectBtn, this.model.selectionMode ? "Exit selection mode" : "Enter selection mode");
+      (0, import_obsidian3.setTooltip)(selectBtn, this.model.selectionMode ? "Exit selection mode" : "Enter selection mode");
       selectBtn.addEventListener("click", () => {
         this.model.selectionMode = !this.model.selectionMode;
         if (!this.model.selectionMode) this.model.selectedFingerprints = /* @__PURE__ */ new Set();
@@ -654,7 +890,8 @@ var InspectorView = class extends import_obsidian2.ItemView {
       });
     }
   }
-  renderScannerFilter(toolbar) {
+  renderScannerFilter(toolbar, filterView) {
+    var _a;
     if (!this.model.result) return;
     const group = toolbar.createDiv({ cls: "vi-filter-group" });
     group.createEl("button", {
@@ -665,7 +902,7 @@ var InspectorView = class extends import_obsidian2.ItemView {
       this.render();
     });
     for (const scannerId of this.model.result.scannersRun) {
-      const count = this.model.result.issues.filter((i) => i.scannerId === scannerId).length;
+      const count = (_a = filterView.scannerCounts.get(scannerId)) != null ? _a : 0;
       group.createEl("button", {
         cls: `vi-filter-btn ${this.model.filterScanner === scannerId ? "vi-active" : ""}`,
         text: `${SCANNER_LABELS[scannerId]} (${count})`
@@ -675,17 +912,15 @@ var InspectorView = class extends import_obsidian2.ItemView {
       });
     }
   }
-  renderSeverityFilter(toolbar) {
+  renderSeverityFilter(toolbar, filterView) {
     if (!this.model.result) return;
     const group = toolbar.createDiv({ cls: "vi-filter-group" });
-    for (const sev of ["error", "warning", "info"]) {
-      const count = this.model.result.issues.filter((i) => i.severity === sev).length;
-      if (count === 0) continue;
+    for (const { severity, count } of filterView.severityFacets) {
       group.createEl("button", {
-        cls: `vi-filter-btn vi-severity-${sev} ${this.model.filterSeverity === sev ? "vi-active" : ""}`,
-        text: `${sev} (${count})`
+        cls: `vi-filter-btn vi-severity-${severity} ${this.model.filterSeverity === severity ? "vi-active" : ""}`,
+        text: `${severity} (${count})`
       }).addEventListener("click", () => {
-        this.model.filterSeverity = this.model.filterSeverity === sev ? null : sev;
+        this.model.filterSeverity = this.model.filterSeverity === severity ? null : severity;
         this.render();
       });
     }
@@ -702,7 +937,7 @@ var InspectorView = class extends import_obsidian2.ItemView {
     const allSelected = visibleIssues.length > 0 && visibleIssues.every((i) => this.model.selectedFingerprints.has(i.fingerprint));
     const toggleAll = left.createEl("input", { cls: "vi-issue-checkbox", type: "checkbox" });
     toggleAll.checked = allSelected;
-    (0, import_obsidian2.setTooltip)(toggleAll, allSelected ? "Deselect all" : "Select all");
+    (0, import_obsidian3.setTooltip)(toggleAll, allSelected ? "Deselect all" : "Select all");
     toggleAll.addEventListener("click", () => {
       if (allSelected) {
         this.model.selectedFingerprints = /* @__PURE__ */ new Set();
@@ -712,26 +947,33 @@ var InspectorView = class extends import_obsidian2.ItemView {
       this.render();
     });
     if (this.model.enableFixActions && selectedFixable.length > 0) {
-      const deleteBtn = right.createEl("button", { cls: "vi-action-btn vi-action-delete" });
-      (0, import_obsidian3.setIcon)(deleteBtn, "trash-2");
-      deleteBtn.createEl("span", { text: `(${selectedFixable.length})` });
-      (0, import_obsidian2.setTooltip)(deleteBtn, "Move selected files to trash");
-      deleteBtn.addEventListener("click", () => {
+      const fixBtn = right.createEl("button", { cls: "vi-action-btn vi-action-delete" });
+      const actionKinds = new Set(selectedFixable.map((issue) => issue.fixAction.kind));
+      (0, import_obsidian4.setIcon)(
+        fixBtn,
+        actionKinds.size > 1 ? "wrench" : actionKinds.has("remove-link-text") ? "pencil" : "trash-2"
+      );
+      fixBtn.createSpan({ text: `(${selectedFixable.length})` });
+      (0, import_obsidian3.setTooltip)(
+        fixBtn,
+        describeFixActions(selectedFixable.map((issue) => issue.fixAction))
+      );
+      fixBtn.addEventListener("click", () => {
         if (this.onFixAllIssues) void this.onFixAllIssues(selectedFixable);
       });
     }
     if (selectedIssues.length > 0) {
       const ignoreBtn = right.createEl("button", { cls: "vi-action-btn vi-action-ignore" });
-      (0, import_obsidian3.setIcon)(ignoreBtn, "eye-off");
-      ignoreBtn.createEl("span", { text: `(${selectedIssues.length})` });
-      (0, import_obsidian2.setTooltip)(ignoreBtn, "Hide selected issues from future scans");
+      (0, import_obsidian4.setIcon)(ignoreBtn, "eye-off");
+      ignoreBtn.createSpan({ text: `(${selectedIssues.length})` });
+      (0, import_obsidian3.setTooltip)(ignoreBtn, "Hide selected issues from future scans");
       ignoreBtn.addEventListener("click", () => {
         if (this.onIgnoreAllIssues) void this.onIgnoreAllIssues(selectedIssues);
       });
     }
     const cancelBtn = right.createEl("button", { cls: "vi-action-btn" });
-    (0, import_obsidian3.setIcon)(cancelBtn, "x");
-    (0, import_obsidian2.setTooltip)(cancelBtn, "Exit selection mode");
+    (0, import_obsidian4.setIcon)(cancelBtn, "x");
+    (0, import_obsidian3.setTooltip)(cancelBtn, "Exit selection mode");
     cancelBtn.addEventListener("click", () => {
       this.model.selectionMode = false;
       this.model.selectedFingerprints = /* @__PURE__ */ new Set();
@@ -746,9 +988,9 @@ var InspectorView = class extends import_obsidian2.ItemView {
     const section = container.createDiv({ cls: "vi-ignored-section" });
     const header = section.createDiv({ cls: "vi-ignored-header" });
     const headerLeft = header.createDiv({ cls: "vi-ignored-header-left" });
-    const chevron = headerLeft.createEl("span", { cls: "vi-ignored-chevron" });
-    (0, import_obsidian3.setIcon)(chevron, this.model.ignoredExpanded ? "chevron-down" : "chevron-right");
-    headerLeft.createEl("span", { text: `Ignored items (${ignoredIssues.length})` });
+    const chevron = headerLeft.createSpan({ cls: "vi-ignored-chevron" });
+    (0, import_obsidian4.setIcon)(chevron, this.model.ignoredExpanded ? "chevron-down" : "chevron-right");
+    headerLeft.createSpan({ text: `Ignored items (${ignoredIssues.length})` });
     headerLeft.addEventListener("click", () => {
       this.model.ignoredExpanded = !this.model.ignoredExpanded;
       if (!this.model.ignoredExpanded) {
@@ -762,7 +1004,7 @@ var InspectorView = class extends import_obsidian2.ItemView {
         cls: `vi-filter-btn vi-select-btn ${this.model.ignoredSelectionMode ? "vi-active" : ""}`,
         text: this.model.ignoredSelectionMode ? "Done" : "Select"
       });
-      (0, import_obsidian2.setTooltip)(selectBtn, this.model.ignoredSelectionMode ? "Exit selection mode" : "Select to restore");
+      (0, import_obsidian3.setTooltip)(selectBtn, this.model.ignoredSelectionMode ? "Exit selection mode" : "Select to restore");
       selectBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         this.model.ignoredSelectionMode = !this.model.ignoredSelectionMode;
@@ -795,7 +1037,7 @@ var InspectorView = class extends import_obsidian2.ItemView {
     const allSelected = ignoredIssues.length > 0 && ignoredIssues.every((i) => this.model.ignoredSelectedFingerprints.has(i.fingerprint));
     const toggleAll = left.createEl("input", { cls: "vi-issue-checkbox", type: "checkbox" });
     toggleAll.checked = allSelected;
-    (0, import_obsidian2.setTooltip)(toggleAll, allSelected ? "Deselect all" : "Select all");
+    (0, import_obsidian3.setTooltip)(toggleAll, allSelected ? "Deselect all" : "Select all");
     toggleAll.addEventListener("click", () => {
       if (allSelected) {
         this.model.ignoredSelectedFingerprints = /* @__PURE__ */ new Set();
@@ -806,16 +1048,16 @@ var InspectorView = class extends import_obsidian2.ItemView {
     });
     if (selectedIssues.length > 0) {
       const restoreBtn = right.createEl("button", { cls: "vi-action-btn" });
-      (0, import_obsidian3.setIcon)(restoreBtn, "eye");
-      restoreBtn.createEl("span", { text: `(${selectedIssues.length})` });
-      (0, import_obsidian2.setTooltip)(restoreBtn, "Stop ignoring selected issues");
+      (0, import_obsidian4.setIcon)(restoreBtn, "eye");
+      restoreBtn.createSpan({ text: `(${selectedIssues.length})` });
+      (0, import_obsidian3.setTooltip)(restoreBtn, "Stop ignoring selected issues");
       restoreBtn.addEventListener("click", () => {
         if (this.onRestoreIssues) void this.onRestoreIssues(selectedIssues);
       });
     }
     const cancelBtn = right.createEl("button", { cls: "vi-action-btn" });
-    (0, import_obsidian3.setIcon)(cancelBtn, "x");
-    (0, import_obsidian2.setTooltip)(cancelBtn, "Exit selection mode");
+    (0, import_obsidian4.setIcon)(cancelBtn, "x");
+    (0, import_obsidian3.setTooltip)(cancelBtn, "Exit selection mode");
     cancelBtn.addEventListener("click", () => {
       this.model.ignoredSelectionMode = false;
       this.model.ignoredSelectedFingerprints = /* @__PURE__ */ new Set();
@@ -826,8 +1068,8 @@ var InspectorView = class extends import_obsidian2.ItemView {
   addBackToTop(container) {
     const anchor = container.createDiv({ cls: "vi-back-to-top-anchor" });
     const btn = anchor.createEl("button", { cls: "vi-back-to-top" });
-    (0, import_obsidian3.setIcon)(btn, "arrow-up");
-    (0, import_obsidian2.setTooltip)(btn, "Back to top");
+    (0, import_obsidian4.setIcon)(btn, "arrow-up");
+    (0, import_obsidian3.setTooltip)(btn, "Back to top");
     btn.addEventListener("click", () => {
       container.scrollTo({ top: 0, behavior: "smooth" });
     });
@@ -839,11 +1081,14 @@ var InspectorView = class extends import_obsidian2.ItemView {
     updateVisibility();
   }
   getVisibleIssues() {
-    if (!this.model.result) return [];
-    let issues = this.model.result.issues;
-    if (this.model.filterSeverity) issues = issues.filter((i) => i.severity === this.model.filterSeverity);
-    if (this.model.filterScanner) issues = issues.filter((i) => i.scannerId === this.model.filterScanner);
-    return issues;
+    return this.getIssueFilterView().visibleIssues;
+  }
+  getIssueFilterView() {
+    var _a, _b;
+    return buildIssueFilterView((_b = (_a = this.model.result) == null ? void 0 : _a.issues) != null ? _b : [], {
+      scanner: this.model.filterScanner,
+      severity: this.model.filterSeverity
+    });
   }
   async handleOpenIssue(issue) {
     if (this.onRevealIssue) {
@@ -857,7 +1102,7 @@ var InspectorView = class extends import_obsidian2.ItemView {
     const path = (_a = issue.primaryPath) != null ? _a : issue.relatedPaths[0];
     if (!path) return;
     const file = this.app.vault.getAbstractFileByPath(path);
-    if (!(file instanceof import_obsidian2.TFile)) return;
+    if (!(file instanceof import_obsidian3.TFile)) return;
     const leaf = this.app.workspace.getLeaf(false);
     await leaf.openFile(file, { active: true });
     const targets = getLocationTargets(issue);
@@ -865,7 +1110,7 @@ var InspectorView = class extends import_obsidian2.ItemView {
     const content = await this.app.vault.cachedRead(file);
     const position = findFirstTextPosition(content, targets);
     if (!position) return;
-    const view = this.app.workspace.getActiveViewOfType(import_obsidian2.MarkdownView);
+    const view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
     const editor = view == null ? void 0 : view.editor;
     if (!editor) return;
     editor.setCursor(position);
@@ -891,6 +1136,9 @@ var InspectorView = class extends import_obsidian2.ItemView {
 };
 
 // src/scanner/ScanRunner.ts
+function getEffectiveIgnoredFolders(globalFolders, scannerFolders) {
+  return [.../* @__PURE__ */ new Set([...globalFolders, ...scannerFolders])];
+}
 var ScanRunner = class {
   constructor(requestUrl2, timers) {
     this.requestUrl = requestUrl2;
@@ -901,7 +1149,7 @@ var ScanRunner = class {
     this.scanners.push(scanner);
   }
   async run(app, settings, options = {}) {
-    var _a, _b;
+    var _a, _b, _c;
     const startedAt = Date.now();
     const markdownFiles = app.vault.getMarkdownFiles();
     const allFiles = app.vault.getFiles();
@@ -955,7 +1203,14 @@ var ScanRunner = class {
       }
       scannersRun.push(scanner.id);
       emitProgress("scanner-start");
-      const result = await scanner.scan(ctx, (progress) => {
+      const scannerContext = {
+        ...ctx,
+        ignoredFolders: getEffectiveIgnoredFolders(
+          settings.ignoredFolders,
+          (_c = settings.ignoredFoldersByScanner[scanner.id]) != null ? _c : []
+        )
+      };
+      const result = await scanner.scan(scannerContext, (progress) => {
         var _a2;
         (_a2 = options.onProgress) == null ? void 0 : _a2.call(options, {
           ...progress,
@@ -1040,21 +1295,42 @@ var indexCache = /* @__PURE__ */ new WeakMap();
 function getLinkTarget(linkText) {
   return normalizePath(linkText.split("|")[0].split("#")[0].trim());
 }
-function resolveVaultLinkTargets(ctx, linkText) {
+function resolveVaultLinkTargets(ctx, linkText, sourcePath) {
   var _a, _b;
   const target = getLinkTarget(linkText);
-  if (!target) return [];
+  if (!target || hasUriScheme(target)) return [];
   const extension = getExtension(target);
-  const exactCandidates = extension ? [target] : [target, `${target}.md`];
+  const relativeTarget = sourcePath && /^\.{1,2}\//.test(target) ? resolveRelativePath(sourcePath, target) : null;
+  const sourceFolderTarget = sourcePath && !target.includes("/") ? resolveRelativePath(sourcePath, `./${target}`) : null;
+  const candidateTargets = relativeTarget ? [relativeTarget] : sourceFolderTarget ? [sourceFolderTarget, target] : [target];
+  const exactCandidates = candidateTargets.flatMap(
+    (candidate) => extension ? [candidate] : [candidate, `${candidate}.md`]
+  );
   for (const candidate of exactCandidates) {
     if (ctx.filePathIndex.has(candidate)) return [candidate];
   }
   if (target.includes("/")) return [];
   const indexes = getLinkIndexes(ctx);
   if (extension) {
-    return (_a = indexes.fileNameToPaths.get(target)) != null ? _a : [];
+    return ((_a = indexes.fileNameToPaths.get(target)) != null ? _a : []).slice(0, 1);
   }
-  return (_b = indexes.markdownBaseToPaths.get(target)) != null ? _b : [];
+  return ((_b = indexes.markdownBaseToPaths.get(target)) != null ? _b : []).slice(0, 1);
+}
+function hasUriScheme(text) {
+  return /^[a-z][a-z\d+.-]*:/i.test(text);
+}
+function resolveRelativePath(sourcePath, target) {
+  const segments = normalizePath(sourcePath).split("/");
+  segments.pop();
+  for (const segment of normalizePath(target).split("/")) {
+    if (!segment || segment === ".") continue;
+    if (segment === "..") {
+      segments.pop();
+    } else {
+      segments.push(segment);
+    }
+  }
+  return segments.join("/");
 }
 function getLinkIndexes(ctx) {
   var _a, _b;
@@ -1087,7 +1363,7 @@ function getLinkIndexes(ctx) {
 var brokenLinksScanner = {
   id: "broken-links",
   scan(ctx) {
-    var _a;
+    var _a, _b, _c;
     const issues = [];
     const { markdownFiles, metadataCache } = ctx;
     for (const file of markdownFiles) {
@@ -1096,32 +1372,78 @@ var brokenLinksScanner = {
       if (!cache) continue;
       const meta = metadataCache;
       const linksForFile = (_a = meta.unresolvedLinks) == null ? void 0 : _a[file.path];
-      if (!linksForFile) continue;
-      for (const linkText of Object.keys(linksForFile)) {
-        issues.push(...resolveLinkIssues(ctx, file.path, linkText));
+      const references = [...(_b = cache.links) != null ? _b : [], ...(_c = cache.embeds) != null ? _c : []];
+      const linkCandidates = /* @__PURE__ */ new Map();
+      const addCandidate = (candidate) => {
+        var _a2;
+        const existing = linkCandidates.get(candidate.linkText);
+        linkCandidates.set(candidate.linkText, {
+          linkText: candidate.linkText,
+          fixLinkText: (_a2 = existing == null ? void 0 : existing.fixLinkText) != null ? _a2 : candidate.fixLinkText
+        });
+      };
+      for (const unresolvedLink of Object.keys(linksForFile != null ? linksForFile : {})) {
+        const matchingReferences = references.filter(
+          (reference) => reference.link === unresolvedLink
+        );
+        if (matchingReferences.length === 0) {
+          addCandidate({ linkText: unresolvedLink });
+          continue;
+        }
+        for (const reference of matchingReferences) {
+          addCandidate(getLinkCandidate(reference));
+        }
+      }
+      for (const reference of references) {
+        if (reference.link.includes("#")) {
+          addCandidate(getLinkCandidate(reference));
+        }
+      }
+      for (const candidate of linkCandidates.values()) {
+        issues.push(...resolveLinkIssues(
+          ctx,
+          file.path,
+          candidate.linkText,
+          candidate.fixLinkText
+        ));
       }
     }
     return issues;
   }
 };
-function resolveLinkIssues(ctx, sourcePath, linkText) {
+function resolveLinkIssues(ctx, sourcePath, linkText, fixLinkText) {
   var _a;
   const issues = [];
   const rawTarget = getLinkTarget(linkText);
-  if (!rawTarget) return issues;
+  if (!rawTarget || hasUriScheme(rawTarget)) return issues;
   if (isAttachmentLink(rawTarget)) {
-    if (resolveVaultLinkTargets(ctx, linkText).length === 0) {
+    if (!findResolvedPath(ctx, rawTarget, sourcePath)) {
       issues.push(
-        makeIssue(ctx, sourcePath, linkText, rawTarget, "error", `Attachment not found: ${rawTarget}`)
+        makeIssue(
+          sourcePath,
+          linkText,
+          fixLinkText,
+          rawTarget,
+          "error",
+          `Attachment not found: ${rawTarget}`
+        )
       );
     }
     return issues;
   }
-  const headingPart = linkText.includes("#") ? linkText.split("#").slice(1).join("#") : null;
-  const resolvedPath = findMarkdownPath(ctx, linkText);
+  const linkDestination = linkText.split("|")[0];
+  const headingPart = linkDestination.includes("#") ? linkDestination.split("#").slice(1).join("#") : null;
+  const resolvedPath = findMarkdownPath(ctx, rawTarget, sourcePath);
   if (!resolvedPath) {
     issues.push(
-      makeIssue(ctx, sourcePath, linkText, rawTarget, "error", `Linked file not found: ${rawTarget}`)
+      makeIssue(
+        sourcePath,
+        linkText,
+        fixLinkText,
+        rawTarget,
+        "error",
+        `Linked file not found: ${rawTarget}`
+      )
     );
     return issues;
   }
@@ -1137,9 +1459,9 @@ function resolveLinkIssues(ctx, sourcePath, linkText) {
     if (!found) {
       issues.push(
         makeIssue(
-          ctx,
           sourcePath,
           linkText,
+          fixLinkText,
           resolvedPath,
           "warning",
           `Heading "#${headingPart}" not found in ${resolvedPath}`
@@ -1149,6 +1471,17 @@ function resolveLinkIssues(ctx, sourcePath, linkText) {
   }
   return issues;
 }
+function getLinkCandidate(reference) {
+  var _a;
+  const originalWikiLink = (_a = reference.original) == null ? void 0 : _a.match(/^!?\[\[([\s\S]+)\]\]$/);
+  if (originalWikiLink) {
+    return {
+      linkText: originalWikiLink[1],
+      fixLinkText: originalWikiLink[1]
+    };
+  }
+  return { linkText: reference.link };
+}
 function isAttachmentLink(target) {
   var _a;
   const lastSegment = (_a = target.split("/").pop()) != null ? _a : "";
@@ -1157,16 +1490,29 @@ function isAttachmentLink(target) {
   const ext = lastSegment.slice(dotIndex + 1).toLowerCase();
   return ext !== "md";
 }
-function findMarkdownPath(ctx, linkText) {
-  var _a;
-  const resolvedTargets = resolveVaultLinkTargets(ctx, linkText).filter((path) => path.endsWith(".md"));
-  return (_a = resolvedTargets[0]) != null ? _a : null;
+function findMarkdownPath(ctx, linkDestination, sourcePath) {
+  const resolvedPath = findResolvedPath(ctx, linkDestination, sourcePath);
+  return (resolvedPath == null ? void 0 : resolvedPath.endsWith(".md")) ? resolvedPath : null;
+}
+function findResolvedPath(ctx, linkDestination, sourcePath) {
+  var _a, _b, _c;
+  if (typeof ctx.metadataCache.getFirstLinkpathDest === "function") {
+    return (_b = (_a = ctx.metadataCache.getFirstLinkpathDest(
+      linkDestination,
+      sourcePath
+    )) == null ? void 0 : _a.path) != null ? _b : null;
+  }
+  return (_c = resolveVaultLinkTargets(
+    ctx,
+    linkDestination,
+    sourcePath
+  )[0]) != null ? _c : null;
 }
 function slugifyHeading(heading) {
   return heading.toLowerCase().trim().replace(/[^\p{L}\p{N}_\s-]/gu, "").replace(/\s+/g, "-");
 }
-function makeIssue(_ctx, sourcePath, linkText, targetPath, severity, message) {
-  return {
+function makeIssue(sourcePath, linkText, fixLinkText, targetPath, severity, message) {
+  const issue = {
     scannerId: "broken-links",
     severity,
     title: "Broken link",
@@ -1177,15 +1523,18 @@ function makeIssue(_ctx, sourcePath, linkText, targetPath, severity, message) {
     fingerprint: generateFingerprint("broken-links", sourcePath, {
       link: linkText,
       target: targetPath
-    }),
-    fixAction: {
+    })
+  };
+  if (fixLinkText) {
+    issue.fixAction = {
       kind: "remove-link-text",
       label: "Remove link",
-      description: `Remove "[[${linkText}]]" from "${sourcePath}"`,
+      description: `Remove "[[${fixLinkText}]]" from "${sourcePath}"`,
       targetPaths: [sourcePath],
-      linkText
-    }
-  };
+      linkText: fixLinkText
+    };
+  }
+  return issue;
 }
 
 // src/utils/hash.ts
@@ -1262,7 +1611,12 @@ var duplicateFilesScanner = {
           kind: "trash-file",
           label: "Delete duplicates",
           description: `Keep "${kept}" and move ${duplicates.length} duplicate(s) to trash`,
-          targetPaths: duplicates
+          targetPaths: duplicates,
+          selection: {
+            kind: "keep-one",
+            candidatePaths: sorted,
+            automaticKeepPath: kept
+          }
         }
       });
     }
@@ -1320,15 +1674,16 @@ var emptyNotesScanner = {
       if (isIgnoredPath(file.path, ctx.ignoredFolders)) continue;
       const content = await ctx.vault.cachedRead(file);
       const body = stripFrontmatterAndTitle(content);
-      if (body.trim().length === 0) {
+      const wordCount = countWords(body);
+      if (wordCount <= ctx.emptyNoteWordThreshold) {
         issues.push({
           scannerId: "empty-notes",
           severity: "warning",
           title: "Empty note",
-          message: "This note has no content besides a title",
+          message: wordCount === 0 ? "This note has no content besides a title" : `This note only has ${wordCount} word${wordCount > 1 ? "s" : ""} (likely a stub)`,
           primaryPath: file.path,
           relatedPaths: [],
-          evidence: { size: file.stat.size },
+          evidence: { size: file.stat.size, wordCount },
           fingerprint: generateFingerprint("empty-notes", file.path, {}),
           fixAction: {
             kind: "trash-file",
@@ -1352,6 +1707,19 @@ function stripFrontmatterAndTitle(content) {
   }
   text = text.replace(/^#+\s+.*$/m, "");
   return text;
+}
+function countWords(text) {
+  let count = 0;
+  const cjkPattern = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/gu;
+  for (const match of text.matchAll(cjkPattern)) {
+    void match;
+    count++;
+  }
+  const withoutCjk = text.replace(cjkPattern, " ");
+  for (const segment of withoutCjk.split(/\s+/)) {
+    if (segment.length > 0) count++;
+  }
+  return count;
 }
 
 // src/scanner/scanners/external-links.ts
@@ -1433,7 +1801,7 @@ function isExternalUrl(text) {
 function extractBareUrls(content) {
   const urls = [];
   const seen = /* @__PURE__ */ new Set();
-  const body = stripFencedCodeBlocks(stripFrontmatter(content));
+  const body = stripIgnoredMarkdownRegions(stripFrontmatter(content));
   const urlPattern = /https?:\/\/[^\s<>"']+/gi;
   for (const match of body.matchAll(urlPattern)) {
     const url = trimUrlBoundary(match[0]);
@@ -1444,13 +1812,11 @@ function extractBareUrls(content) {
   return urls;
 }
 function stripFrontmatter(content) {
-  if (!content.startsWith("---\n")) return content;
-  const end = content.indexOf("\n---", 4);
-  if (end === -1) return content;
-  return content.slice(end + 4);
+  const match = /^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/.exec(content);
+  return match ? content.slice(match[0].length) : content;
 }
-function stripFencedCodeBlocks(content) {
-  return content.replace(/```[\s\S]*?```/g, "");
+function stripIgnoredMarkdownRegions(content) {
+  return content.replace(/<!--[\s\S]*?-->/g, "").replace(/^[ \t]*(`{3,}|~{3,})[^\r\n]*\r?\n[\s\S]*?^[ \t]*\1[^\r\n]*$/gm, "").replace(/(`+)[^\r\n]*?\1/g, "");
 }
 function trimUrlBoundary(url) {
   let trimmed = url;
@@ -1498,22 +1864,24 @@ function reportExternalProgress(onProgress, total, current, stats, skipped = 0) 
   });
 }
 async function checkUrlWithTimeout(entry, ctx, timeoutMs) {
+  const controller = new AbortController();
   const result = await withTimeout(
-    checkUrl(entry.url, ctx),
+    checkUrl(entry.url, ctx, controller.signal),
     timeoutMs,
     {
       ...entry,
       kind: "timeout",
       timeoutMs
     },
-    ctx
+    ctx,
+    () => controller.abort()
   );
   return withSourcePath(result, entry.sourcePath);
 }
-async function checkUrl(url, ctx) {
+async function checkUrl(url, ctx, signal) {
   try {
     if (ctx == null ? void 0 : ctx.requestUrl) {
-      const status = await ctx.requestUrl(url);
+      const status = await ctx.requestUrl(url, signal);
       return { url, sourcePath: "", kind: "http", status };
     }
     return {
@@ -1531,14 +1899,17 @@ async function checkUrl(url, ctx) {
     };
   }
 }
-async function withTimeout(promise, timeoutMs, timeoutValue, ctx) {
+async function withTimeout(promise, timeoutMs, timeoutValue, ctx, onTimeout) {
   const timer = getTimer(ctx);
   let timeoutId;
   try {
     return await Promise.race([
       promise,
       new Promise((resolve) => {
-        timeoutId = timer.setTimeout(() => resolve(timeoutValue), timeoutMs);
+        timeoutId = timer.setTimeout(() => {
+          resolve(timeoutValue);
+          onTimeout == null ? void 0 : onTimeout();
+        }, timeoutMs);
       })
     ]);
   } finally {
@@ -1760,7 +2131,7 @@ var largeFilesScanner = {
             type: isMd ? "markdown" : "attachment"
           },
           fingerprint: generateFingerprint("large-files", file.path, {
-            size: file.stat.size
+            type: isMd ? "markdown" : "attachment"
           })
         });
       }
@@ -1824,20 +2195,16 @@ var orphanAttachmentsScanner = {
 function collectReferencedPaths(ctx) {
   var _a, _b, _c, _d;
   const paths = /* @__PURE__ */ new Set();
+  const canResolveLinks = typeof ctx.metadataCache.getFirstLinkpathDest === "function";
   for (const file of ctx.markdownFiles) {
     const cache = ctx.metadataCache.getFileCache(file);
     if (!cache) continue;
     const links = (_a = cache.links) != null ? _a : [];
     const embeds = (_b = cache.embeds) != null ? _b : [];
-    for (const link of [...links, ...embeds]) {
-      const resolvedMeta = ctx.metadataCache;
-      const resolved = (_d = (_c = resolvedMeta.resolvedLinks) == null ? void 0 : _c[file.path]) == null ? void 0 : _d[link.link];
-      if (typeof resolved === "string") {
-        paths.add(resolved);
-      } else {
-        const resolvedTargets = resolveVaultLinkTargets(ctx, link.link);
-        for (const resolvedTarget of resolvedTargets) paths.add(resolvedTarget);
-      }
+    const frontmatterLinks = (_c = cache.frontmatterLinks) != null ? _c : [];
+    for (const link of [...links, ...embeds, ...frontmatterLinks]) {
+      const resolvedTarget = canResolveLinks ? (_d = ctx.metadataCache.getFirstLinkpathDest(link.link, file.path)) == null ? void 0 : _d.path : resolveVaultLinkTargets(ctx, link.link, file.path)[0];
+      if (resolvedTarget) paths.add(resolvedTarget);
     }
   }
   return paths;
@@ -1940,11 +2307,19 @@ function registerDefaultScanners(scanRunner) {
 }
 
 // src/settings/settings.ts
+function createEmptyIgnoredFoldersByScanner() {
+  const result = {};
+  for (const id of SCANNER_IDS) {
+    result[id] = [];
+  }
+  return result;
+}
 var DEFAULT_SETTINGS = {
   enabledScanners: Object.fromEntries(
     SCANNER_IDS.map((id) => [id, id !== "external-links"])
   ),
   enableFixActions: true,
+  duplicateKeepMode: "always-ask",
   largeMarkdownBytes: 100 * 1024,
   largeAttachmentBytes: 5 * 1024 * 1024,
   ignoredLargeMarkdownFrontmatterKeys: ["excalidraw-plugin"],
@@ -1955,135 +2330,263 @@ var DEFAULT_SETTINGS = {
   watchedTags: [],
   ignoredIssueFingerprints: [],
   ignoredFolders: [],
+  ignoredFoldersByScanner: createEmptyIgnoredFoldersByScanner(),
   ignoredProperties: [],
   reportFolderPath: "Vault Inspector Reports"
 };
 
 // src/settings/settings-tab.ts
-var import_obsidian4 = require("obsidian");
-var InspectorSettingTab = class extends import_obsidian4.PluginSettingTab {
+var import_obsidian5 = require("obsidian");
+function parseFolderList(value) {
+  return [...new Set(
+    value.split(",").map((folder) => folder.trim()).filter(Boolean)
+  )];
+}
+var InspectorSettingTab = class extends import_obsidian5.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
   }
+  getSettingDefinitions() {
+    return this.getSections().map(({ heading, items }) => ({
+      type: "group",
+      heading,
+      items: items.map(({ name, desc, render }) => ({
+        name,
+        ...desc === void 0 ? {} : { desc },
+        render
+      }))
+    }));
+  }
   display() {
     const { containerEl } = this;
     containerEl.empty();
-    new import_obsidian4.Setting(containerEl).setName("Scanning").setHeading();
-    this.addScannersSection();
-    this.addFixActionsSection();
-    this.addThresholdsSection();
-    this.addTagsSection();
-    this.addIgnoredSection();
-    this.addExportSection();
-  }
-  addScannersSection() {
-    const { containerEl } = this;
-    new import_obsidian4.Setting(containerEl).setName("Enabled scanners").setHeading();
-    for (const id of SCANNER_IDS) {
-      const setting = new import_obsidian4.Setting(containerEl).setName(SCANNER_LABELS[id]);
-      if (id === "external-links") {
-        setting.setDesc("Opt-in network check for HTTP/HTTPS urls. Can be slower and depends on external sites.");
+    new import_obsidian5.Setting(containerEl).setName("Scanning").setHeading();
+    for (const section of this.getSections()) {
+      new import_obsidian5.Setting(containerEl).setName(section.heading).setHeading();
+      for (const item of section.items) {
+        const setting = new import_obsidian5.Setting(containerEl).setName(item.name);
+        if (item.desc !== void 0) {
+          setting.setDesc(item.desc);
+        }
+        item.render(setting);
       }
-      setting.addToggle(
-        (toggle) => toggle.setValue(this.plugin.settings.enabledScanners[id]).onChange(async (value) => {
-          this.plugin.settings.enabledScanners[id] = value;
-          await this.plugin.saveSettings();
-        })
-      );
     }
   }
-  addFixActionsSection() {
-    const { containerEl } = this;
-    new import_obsidian4.Setting(containerEl).setName("Fix actions").setHeading();
-    new import_obsidian4.Setting(containerEl).setName("Enable fix actions").setDesc("Show fix buttons on issues that can be automatically resolved (files moved to trash).").addToggle(
-      (toggle) => toggle.setValue(this.plugin.settings.enableFixActions).onChange(async (value) => {
-        this.plugin.settings.enableFixActions = value;
-        await this.plugin.saveSettings();
-      })
-    );
-  }
-  addThresholdsSection() {
-    const { containerEl } = this;
-    new import_obsidian4.Setting(containerEl).setName("Thresholds").setHeading();
-    new import_obsidian4.Setting(containerEl).setName("Large Markdown threshold (kb)").addSlider(
-      (slider) => slider.setLimits(50, 1e3, 50).setValue(this.plugin.settings.largeMarkdownBytes / 1024).setDynamicTooltip().onChange(async (value) => {
-        this.plugin.settings.largeMarkdownBytes = value * 1024;
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Large attachment threshold (mb)").addSlider(
-      (slider) => slider.setLimits(1, 50, 1).setValue(this.plugin.settings.largeAttachmentBytes / (1024 * 1024)).setDynamicTooltip().onChange(async (value) => {
-        this.plugin.settings.largeAttachmentBytes = value * 1024 * 1024;
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Ignored large Markdown frontmatter keys").setDesc("Markdown files with any of these frontmatter keys are excluded from large file checks.").addText(
-      (text) => text.setValue(this.plugin.settings.ignoredLargeMarkdownFrontmatterKeys.join(", ")).setPlaceholder("Frontmatter keys to ignore").onChange(async (value) => {
-        this.plugin.settings.ignoredLargeMarkdownFrontmatterKeys = value.split(",").map((key) => key.trim()).filter(Boolean);
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Ignored large Markdown path patterns").setDesc("Vault-relative glob patterns excluded from large Markdown checks.").addText(
-      (text) => text.setValue(this.plugin.settings.ignoredLargeMarkdownPathPatterns.join(", ")).setPlaceholder("E.g. index/**/*.md, **/*.canvas.md").onChange(async (value) => {
-        this.plugin.settings.ignoredLargeMarkdownPathPatterns = value.split(",").map((pattern) => pattern.trim()).filter(Boolean);
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Duplicate hash cap (mb)").setDesc("Files above this size are reported as candidates without content hashing.").addSlider(
-      (slider) => slider.setLimits(1, 10, 1).setValue(this.plugin.settings.duplicateHashMaxBytes / (1024 * 1024)).setDynamicTooltip().onChange(async (value) => {
-        this.plugin.settings.duplicateHashMaxBytes = value * 1024 * 1024;
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Empty note word threshold").setDesc("Notes with this many words or fewer are flagged as empty/stub.").addSlider(
-      (slider) => slider.setLimits(0, 20, 1).setValue(this.plugin.settings.emptyNoteWordThreshold).setDynamicTooltip().onChange(async (value) => {
-        this.plugin.settings.emptyNoteWordThreshold = value;
-        await this.plugin.saveSettings();
-      })
-    );
-  }
-  addTagsSection() {
-    const { containerEl } = this;
-    new import_obsidian4.Setting(containerEl).setName("Tags").setHeading();
-    new import_obsidian4.Setting(containerEl).setName("Watched tags (comma-separated)").addText(
-      (text) => text.setValue(this.plugin.settings.watchedTags.join(", ")).setPlaceholder("E.g. Todo, review, project").onChange(async (value) => {
-        this.plugin.settings.watchedTags = value.split(",").map((t) => t.trim()).filter(Boolean);
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Low usage tag threshold").addSlider(
-      (slider) => slider.setLimits(1, 10, 1).setValue(this.plugin.settings.lowUsageTagThreshold).setDynamicTooltip().onChange(async (value) => {
-        this.plugin.settings.lowUsageTagThreshold = value;
-        await this.plugin.saveSettings();
-      })
-    );
-  }
-  addIgnoredSection() {
-    const { containerEl } = this;
-    new import_obsidian4.Setting(containerEl).setName("Ignored items").setHeading();
-    new import_obsidian4.Setting(containerEl).setName("Ignored folders (comma-separated)").setDesc("Files in these folders are excluded from scans.").addText(
-      (text) => text.setValue(this.plugin.settings.ignoredFolders.join(", ")).setPlaceholder("E.g. Templates, archive").onChange(async (value) => {
-        this.plugin.settings.ignoredFolders = value.split(",").map((f) => f.trim()).filter(Boolean);
-        await this.plugin.saveSettings();
-      })
-    );
-    new import_obsidian4.Setting(containerEl).setName("Ignored frontmatter properties (comma-separated)").setDesc("These properties are excluded from type consistency checks.").addText(
-      (text) => text.setValue(this.plugin.settings.ignoredProperties.join(", ")).setPlaceholder("E.g. Cssclasses, aliases").onChange(async (value) => {
-        this.plugin.settings.ignoredProperties = value.split(",").map((p) => p.trim()).filter(Boolean);
-        await this.plugin.saveSettings();
-      })
-    );
-  }
-  addExportSection() {
-    const { containerEl } = this;
-    new import_obsidian4.Setting(containerEl).setName("Export").setHeading();
-    new import_obsidian4.Setting(containerEl).setName("Report folder").setDesc("Folder for exported Markdown reports.").addText(
-      (text) => text.setValue(this.plugin.settings.reportFolderPath).setPlaceholder("Inspector reports").onChange(async (value) => {
-        this.plugin.settings.reportFolderPath = value.trim() || "Inspector reports";
-        await this.plugin.saveSettings();
-      })
-    );
+  getSections() {
+    return [
+      {
+        heading: "Enabled scanners",
+        items: SCANNER_IDS.map((id) => ({
+          name: SCANNER_LABELS[id],
+          ...id === "external-links" ? {
+            desc: "Opt-in network check for HTTP/HTTPS urls. Can be slower and depends on external sites."
+          } : {},
+          render: (setting) => {
+            setting.addToggle(
+              (toggle) => toggle.setValue(this.plugin.settings.enabledScanners[id]).onChange(async (value) => {
+                this.plugin.settings.enabledScanners[id] = value;
+                await this.plugin.saveSettings();
+              })
+            );
+          }
+        }))
+      },
+      {
+        heading: "Fix actions",
+        items: [
+          {
+            name: "Enable fix actions",
+            desc: "Show fix buttons for safe automatic actions, including editing notes and moving files to trash.",
+            render: (setting) => {
+              setting.addToggle(
+                (toggle) => toggle.setValue(this.plugin.settings.enableFixActions).onChange(async (value) => {
+                  this.plugin.settings.enableFixActions = value;
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Duplicate file keep mode",
+            desc: "Always ask which hash-identical file to keep, or automatically keep the first vault-relative path in alphabetical order.",
+            render: (setting) => {
+              setting.addDropdown(
+                (dropdown) => dropdown.addOption("always-ask", "Always ask").addOption("automatic", "Automatically choose").setValue(this.plugin.settings.duplicateKeepMode).onChange(async (value) => {
+                  this.plugin.settings.duplicateKeepMode = value === "automatic" ? "automatic" : "always-ask";
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          }
+        ]
+      },
+      {
+        heading: "Thresholds",
+        items: [
+          {
+            name: "Large Markdown threshold (kb)",
+            render: (setting) => {
+              setting.addSlider(
+                (slider) => slider.setLimits(50, 1e3, 50).setValue(this.plugin.settings.largeMarkdownBytes / 1024).onChange(async (value) => {
+                  this.plugin.settings.largeMarkdownBytes = value * 1024;
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Large attachment threshold (mb)",
+            render: (setting) => {
+              setting.addSlider(
+                (slider) => slider.setLimits(1, 50, 1).setValue(this.plugin.settings.largeAttachmentBytes / (1024 * 1024)).onChange(async (value) => {
+                  this.plugin.settings.largeAttachmentBytes = value * 1024 * 1024;
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Ignored large Markdown frontmatter keys",
+            desc: "Markdown files with any of these frontmatter keys are excluded from large file checks.",
+            render: (setting) => {
+              setting.addText(
+                (text) => text.setValue(this.plugin.settings.ignoredLargeMarkdownFrontmatterKeys.join(", ")).setPlaceholder("Frontmatter keys to ignore").onChange(async (value) => {
+                  this.plugin.settings.ignoredLargeMarkdownFrontmatterKeys = value.split(",").map((key) => key.trim()).filter(Boolean);
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Ignored large Markdown path patterns",
+            desc: "Vault-relative glob patterns excluded from large Markdown checks.",
+            render: (setting) => {
+              setting.addText(
+                (text) => text.setValue(this.plugin.settings.ignoredLargeMarkdownPathPatterns.join(", ")).setPlaceholder("E.g. index/**/*.md, **/*.canvas.md").onChange(async (value) => {
+                  this.plugin.settings.ignoredLargeMarkdownPathPatterns = value.split(",").map((pattern) => pattern.trim()).filter(Boolean);
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Duplicate hash cap (mb)",
+            desc: "Files above this size are reported as candidates without content hashing.",
+            render: (setting) => {
+              setting.addSlider(
+                (slider) => slider.setLimits(1, 10, 1).setValue(this.plugin.settings.duplicateHashMaxBytes / (1024 * 1024)).onChange(async (value) => {
+                  this.plugin.settings.duplicateHashMaxBytes = value * 1024 * 1024;
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Empty note word threshold",
+            desc: "Notes with this many words or fewer are flagged as empty/stub.",
+            render: (setting) => {
+              setting.addSlider(
+                (slider) => slider.setLimits(0, 20, 1).setValue(this.plugin.settings.emptyNoteWordThreshold).onChange(async (value) => {
+                  this.plugin.settings.emptyNoteWordThreshold = value;
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          }
+        ]
+      },
+      {
+        heading: "Tags",
+        items: [
+          {
+            name: "Watched tags (comma-separated)",
+            render: (setting) => {
+              setting.addText(
+                (text) => text.setValue(this.plugin.settings.watchedTags.join(", ")).setPlaceholder("E.g. Todo, review, project").onChange(async (value) => {
+                  this.plugin.settings.watchedTags = value.split(",").map((tag) => tag.trim()).filter(Boolean);
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Low usage tag threshold",
+            render: (setting) => {
+              setting.addSlider(
+                (slider) => slider.setLimits(1, 10, 1).setValue(this.plugin.settings.lowUsageTagThreshold).onChange(async (value) => {
+                  this.plugin.settings.lowUsageTagThreshold = value;
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          }
+        ]
+      },
+      {
+        heading: "Ignored items",
+        items: [
+          {
+            name: "Ignored folders (comma-separated)",
+            desc: "Files in these folders are excluded from every scanner.",
+            render: (setting) => {
+              setting.addText(
+                (text) => text.setValue(this.plugin.settings.ignoredFolders.join(", ")).setPlaceholder("E.g. Templates, archive").onChange(async (value) => {
+                  this.plugin.settings.ignoredFolders = parseFolderList(value);
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          },
+          {
+            name: "Ignored frontmatter properties (comma-separated)",
+            desc: "These properties are excluded from type consistency checks.",
+            render: (setting) => {
+              setting.addText(
+                (text) => text.setValue(this.plugin.settings.ignoredProperties.join(", ")).setPlaceholder("E.g. Cssclasses, aliases").onChange(async (value) => {
+                  this.plugin.settings.ignoredProperties = value.split(",").map((property) => property.trim()).filter(Boolean);
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          }
+        ]
+      },
+      {
+        heading: "Scanner-specific ignored folders",
+        items: SCANNER_IDS.map((id) => ({
+          name: SCANNER_LABELS[id],
+          desc: `Additional folders excluded only from ${SCANNER_LABELS[id]}.`,
+          render: (setting) => {
+            setting.addText(
+              (text) => text.setValue(
+                this.plugin.settings.ignoredFoldersByScanner[id].join(", ")
+              ).setPlaceholder("E.g. Templates, archive").onChange(async (value) => {
+                this.plugin.settings.ignoredFoldersByScanner[id] = parseFolderList(value);
+                await this.plugin.saveSettings();
+              })
+            );
+          }
+        }))
+      },
+      {
+        heading: "Export",
+        items: [
+          {
+            name: "Report folder",
+            desc: "Folder for exported Markdown reports.",
+            render: (setting) => {
+              setting.addText(
+                (text) => text.setValue(this.plugin.settings.reportFolderPath).setPlaceholder("Inspector reports").onChange(async (value) => {
+                  this.plugin.settings.reportFolderPath = value.trim() || "Inspector reports";
+                  await this.plugin.saveSettings();
+                })
+              );
+            }
+          }
+        ]
+      }
+    ];
   }
 };
 
@@ -2163,7 +2666,7 @@ function getMarkdownDetails(issue) {
     const count = getNumber2(issue.evidence.count);
     if (count !== null) details.push({ label: "Count", value: String(count) });
     const size = getNumber2(issue.evidence.size);
-    if (size !== null) details.push({ label: "Size", value: formatBytes2(size) });
+    if (size !== null) details.push({ label: "Size", value: formatSize(size) });
     const paths = getEvidencePaths2(issue);
     if (paths.length > 0) {
       details.push({
@@ -2205,8 +2708,8 @@ function getMarkdownDetails(issue) {
     const size = getNumber2(issue.evidence.size);
     const threshold = getNumber2(issue.evidence.threshold);
     const type = issue.evidence.type;
-    if (size !== null) details.push({ label: "Size", value: formatBytes2(size) });
-    if (threshold !== null) details.push({ label: "Threshold", value: formatBytes2(threshold) });
+    if (size !== null) details.push({ label: "Size", value: formatSize(size) });
+    if (threshold !== null) details.push({ label: "Threshold", value: formatSize(threshold) });
     if (typeof type === "string") details.push({ label: "Type", value: escapeMd(type) });
   }
   if (issue.scannerId === "orphan-attachments") {
@@ -2217,7 +2720,7 @@ function getMarkdownDetails(issue) {
   }
   if (issue.scannerId === "empty-notes") {
     const size = getNumber2(issue.evidence.size);
-    if (size !== null) details.push({ label: "Size", value: formatBytes2(size) });
+    if (size !== null) details.push({ label: "Size", value: formatSize(size) });
   }
   return details;
 }
@@ -2241,13 +2744,6 @@ function getEvidencePaths2(issue) {
 function getNumber2(value) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
-function formatBytes2(bytes) {
-  if (bytes < 1024) return `${bytes} B`;
-  const kib = bytes / 1024;
-  if (kib < 1024) return `${kib.toFixed(kib < 10 ? 1 : 0)} KB`;
-  const mib = kib / 1024;
-  return `${mib.toFixed(mib < 10 ? 1 : 0)} MB`;
-}
 function formatTag2(tag) {
   return tag.startsWith("#") ? tag : `#${tag}`;
 }
@@ -2270,7 +2766,7 @@ function escapeInlineCode(text) {
 }
 
 // src/fix/fix-executor.ts
-var import_obsidian5 = require("obsidian");
+var import_obsidian6 = require("obsidian");
 async function executeFixAction(app, action) {
   switch (action.kind) {
     case "trash-file":
@@ -2294,72 +2790,122 @@ async function trashFiles(app, paths) {
 }
 async function removeLinkText(app, sourcePath, linkText) {
   const file = app.vault.getAbstractFileByPath(sourcePath);
-  if (!(file instanceof import_obsidian5.TFile)) return 0;
+  if (!(file instanceof import_obsidian6.TFile)) return 0;
   const content = await app.vault.read(file);
-  const target = linkText.split("|")[0].split("#")[0];
-  const escaped = escapeRegex(target);
-  const pattern = new RegExp(
-    `!?\\[\\[${escaped}(?:#[^\\]|]*)?(?:\\|[^\\]]*)?\\]\\]`,
-    "g"
-  );
-  const updated = content.replace(pattern, "");
+  const pattern = new RegExp(`!?\\[\\[${escapeRegex(linkText)}\\]\\]`, "g");
+  const protectedRanges = findProtectedMarkdownRanges(content);
+  let cursor = 0;
+  let updated = "";
+  let removed = false;
+  for (const match of content.matchAll(pattern)) {
+    const start = match.index;
+    const end = start + match[0].length;
+    if (protectedRanges.some((range) => start < range.end && end > range.start)) {
+      continue;
+    }
+    updated += content.slice(cursor, start);
+    cursor = end;
+    removed = true;
+  }
+  if (removed) updated += content.slice(cursor);
+  else updated = content;
   if (updated === content) return 0;
   await app.vault.modify(file, updated);
   return 1;
 }
+function findProtectedMarkdownRanges(content) {
+  const ranges = [
+    ...findFencedCodeRanges(content),
+    ...findHtmlCommentRanges(content)
+  ];
+  ranges.push(...findInlineCodeRanges(content, ranges));
+  return mergeRanges(ranges);
+}
+function findFencedCodeRanges(content) {
+  const ranges = [];
+  let lineStart = 0;
+  let fence = null;
+  while (lineStart < content.length) {
+    const newline = content.indexOf("\n", lineStart);
+    const lineEnd = newline === -1 ? content.length : newline + 1;
+    const line = content.slice(lineStart, newline === -1 ? content.length : newline);
+    if (fence) {
+      const closingFence = new RegExp(
+        `^ {0,3}${escapeRegex(fence.char)}{${fence.length},}[\\t ]*$`
+      );
+      if (closingFence.test(line)) {
+        ranges.push({ start: fence.start, end: lineEnd });
+        fence = null;
+      }
+    } else {
+      const openingFence = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+      if (openingFence && (openingFence[1][0] === "~" || !openingFence[2].includes("`"))) {
+        fence = {
+          char: openingFence[1][0],
+          length: openingFence[1].length,
+          start: lineStart
+        };
+      }
+    }
+    lineStart = lineEnd;
+  }
+  if (fence) ranges.push({ start: fence.start, end: content.length });
+  return ranges;
+}
+function findHtmlCommentRanges(content) {
+  const ranges = [];
+  let searchFrom = 0;
+  while (searchFrom < content.length) {
+    const start = content.indexOf("<!--", searchFrom);
+    if (start === -1) break;
+    const closing = content.indexOf("-->", start + 4);
+    const end = closing === -1 ? content.length : closing + 3;
+    ranges.push({ start, end });
+    searchFrom = end;
+  }
+  return ranges;
+}
+function findInlineCodeRanges(content, excludedRanges) {
+  const ranges = [];
+  let index = 0;
+  while (index < content.length) {
+    if (content[index] !== "`" || containsIndex(excludedRanges, index)) {
+      index++;
+      continue;
+    }
+    const start = index;
+    while (content[index] === "`") index++;
+    const marker = content.slice(start, index);
+    let closing = content.indexOf(marker, index);
+    while (closing !== -1 && (content[closing - 1] === "`" || content[closing + marker.length] === "`" || containsIndex(excludedRanges, closing))) {
+      closing = content.indexOf(marker, closing + marker.length);
+    }
+    if (closing === -1) continue;
+    const end = closing + marker.length;
+    ranges.push({ start, end });
+    index = end;
+  }
+  return ranges;
+}
+function containsIndex(ranges, index) {
+  return ranges.some((range) => index >= range.start && index < range.end);
+}
+function mergeRanges(ranges) {
+  const sorted = [...ranges].sort((left, right) => left.start - right.start);
+  const merged = [];
+  for (const range of sorted) {
+    const previous = merged[merged.length - 1];
+    if (previous && range.start <= previous.end) {
+      previous.end = Math.max(previous.end, range.end);
+    } else {
+      merged.push({ ...range });
+    }
+  }
+  return merged;
+}
 function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
-
-// src/fix/confirm-modal.ts
-var import_obsidian6 = require("obsidian");
-function showConfirmModal(app, actions) {
-  return new Promise((resolve) => {
-    const modal = new ConfirmFixModal(app, actions, resolve);
-    modal.open();
-  });
-}
-var ConfirmFixModal = class extends import_obsidian6.Modal {
-  constructor(app, actions, resolve) {
-    super(app);
-    this.actions = actions;
-    this.resolve = resolve;
-  }
-  onOpen() {
-    const { contentEl } = this;
-    contentEl.addClass("vi-confirm-modal");
-    const isBatch = this.actions.length > 1;
-    const allPaths = this.actions.flatMap((a) => a.targetPaths);
-    contentEl.createEl("h3", {
-      text: isBatch ? `Confirm batch cleanup (${allPaths.length} files)` : "Confirm fix"
-    });
-    if (isBatch) {
-      contentEl.createEl("p", {
-        text: `This will move ${allPaths.length} file(s) to trash.`
-      });
-      const list = contentEl.createDiv({ cls: "vi-file-list" });
-      for (const path of allPaths) {
-        list.createEl("div", { cls: "vi-file-list-item", text: path });
-      }
-    } else {
-      contentEl.createEl("p", { text: this.actions[0].description });
-    }
-    const btnRow = contentEl.createDiv({ cls: "vi-confirm-buttons" });
-    btnRow.createEl("button", { text: "Cancel" }).addEventListener("click", () => {
-      this.resolve(false);
-      this.close();
-    });
-    const confirmBtn = btnRow.createEl("button", { cls: "vi-confirm-destructive", text: "Confirm" });
-    confirmBtn.addEventListener("click", () => {
-      this.resolve(true);
-      this.close();
-    });
-  }
-  onClose() {
-    this.contentEl.empty();
-    this.resolve(false);
-  }
-};
 
 // src/main.ts
 var VaultInspectorPlugin = class extends import_obsidian7.Plugin {
@@ -2400,7 +2946,18 @@ var VaultInspectorPlugin = class extends import_obsidian7.Plugin {
   async loadSettings() {
     var _a;
     const loaded = (_a = await this.loadData()) != null ? _a : {};
-    this.settings = { ...DEFAULT_SETTINGS, ...loaded };
+    this.settings = {
+      ...DEFAULT_SETTINGS,
+      ...loaded,
+      enabledScanners: {
+        ...DEFAULT_SETTINGS.enabledScanners,
+        ...loaded.enabledScanners
+      },
+      ignoredFoldersByScanner: {
+        ...createEmptyIgnoredFoldersByScanner(),
+        ...loaded.ignoredFoldersByScanner
+      }
+    };
     if (migrateExcalidrawFrontmatterKey(this.settings, loaded)) {
       await this.saveSettings();
     }
@@ -2441,19 +2998,40 @@ var VaultInspectorPlugin = class extends import_obsidian7.Plugin {
         await this.scanAndRender(view);
       },
       onFixAllIssues: async (issues) => {
-        const actions = issues.map((i) => i.fixAction).filter(Boolean);
-        if (actions.length === 0) return;
-        const confirmed = await showConfirmModal(this.app, actions);
-        if (!confirmed) return;
+        if (!issues.some((issue) => issue.fixAction)) return;
+        const decisions = await showConfirmModal(
+          this.app,
+          issues,
+          this.settings.duplicateKeepMode
+        );
+        if (!decisions) return;
+        const decisionsByFingerprint = new Map(
+          decisions.map((decision) => [decision.fingerprint, decision])
+        );
         let fixed = 0;
-        for (const action of actions) {
+        let skipped = 0;
+        for (const issue of issues) {
+          const decision = decisionsByFingerprint.get(issue.fingerprint);
+          if (!decision) {
+            skipped++;
+            continue;
+          }
+          const freshResult = await this.scan(view);
+          if (!freshResult) return;
+          const freshIssue = freshResult.issues.find(
+            (candidate) => candidate.fingerprint === issue.fingerprint
+          );
+          const freshAction = getFreshFixAction(issue, freshIssue, decision);
+          if (!freshAction) {
+            skipped++;
+            continue;
+          }
           try {
-            await executeFixAction(this.app, action);
-            fixed++;
+            fixed += await executeFixAction(this.app, freshAction);
           } catch (e) {
           }
         }
-        new import_obsidian7.Notice(`Fixed ${fixed} issue(s)`);
+        new import_obsidian7.Notice(formatFixResultNotice(fixed, skipped));
         await this.scanAndRender(view);
       },
       onRevealIssue: async (issue) => {
@@ -2474,16 +3052,20 @@ var VaultInspectorPlugin = class extends import_obsidian7.Plugin {
     view.setEnableFixActions(this.settings.enableFixActions);
   }
   async scanAndRender(view) {
+    const result = await this.scan(view);
+    if (result) view.setResult(result);
+  }
+  async scan(view) {
     view.setScanning(true);
     try {
-      const result = await this.scanRunner.run(this.app, this.settings, {
+      return await this.scanRunner.run(this.app, this.settings, {
         onProgress: (progress) => view.setScanProgress(progress)
       });
-      view.setResult(result);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       new import_obsidian7.Notice(`Vault Inspector scan failed: ${message}`);
       view.setScanning(false);
+      return null;
     }
   }
   async exportReport() {
@@ -2506,6 +3088,11 @@ var VaultInspectorPlugin = class extends import_obsidian7.Plugin {
     new import_obsidian7.Notice(`Report exported to ${filepath}`);
   }
 };
+function formatFixResultNotice(fixed, skipped) {
+  const fixedText = fixed > 0 ? `Fixed ${fixed} item${fixed === 1 ? "" : "s"}` : "No items were fixed";
+  if (skipped === 0) return fixedText;
+  return `${fixedText}; skipped ${skipped} changed ${skipped === 1 ? "issue" : "issues"}`;
+}
 var LEGACY_EXCALIDRAW_KEY = "excalidraw";
 var EXCALIDRAW_FRONTMATTER_KEY = "excalidraw-plugin";
 function migrateExcalidrawFrontmatterKey(settings, loaded) {

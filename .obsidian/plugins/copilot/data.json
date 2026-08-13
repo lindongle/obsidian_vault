@@ -1,6 +1,9 @@
 {
   "userId": "64fb103e-825c-45b0-967a-989fc991c5f5",
+  "isPaidUser": false,
   "isPlusUser": false,
+  "entitlementToken": "",
+  "entitlementExpiresAt": 0,
   "plusLicenseKey": "",
   "openAIApiKey": "",
   "openAIOrgId": "",
@@ -33,10 +36,14 @@
   "openAIProxyBaseUrl": "",
   "openAIEmbeddingProxyBaseUrl": "",
   "stream": true,
+  "copilotFolder": "copilot",
+  "copilotRootHistory": [
+    "copilot"
+  ],
+  "upgradedToV8FromLegacy": false,
   "defaultSaveFolder": "copilot/copilot-conversations",
   "defaultConversationTag": "copilot-conversation",
   "autosaveChat": true,
-  "generateAIChatTitleOnSave": true,
   "autoAddActiveContentToContext": true,
   "defaultOpenArea": "view",
   "defaultSendShortcut": "enter",
@@ -462,7 +469,6 @@
   "embeddingBatchSize": 16,
   "disableIndexOnMobile": true,
   "showSuggestedPrompts": true,
-  "showRelevantNotes": true,
   "numPartitions": 1,
   "lexicalSearchRamLimit": 100,
   "promptUsageTimestamps": {},
@@ -473,23 +479,22 @@
   "defaultConversationNoteName": "{$topic}@{$date}_{$time}",
   "inlineEditCommands": [],
   "projectList": [],
-  "lastDismissedVersion": null,
+  "lastDismissedVersion": "4.0.0",
   "passMarkdownImages": true,
   "enableAutonomousAgent": true,
   "enableCustomPromptTemplating": true,
   "enableSemanticSearchV3": false,
   "enableSelfHostMode": false,
   "enableMiyo": false,
+  "enableMiyoSearchSkill": false,
   "miyoSearchAll": false,
-  "selfHostModeValidatedAt": null,
-  "selfHostValidationCount": 0,
-  "selfHostUrl": "",
-  "selfHostApiKey": "",
   "miyoServerUrl": "",
+  "miyoSyncedExclusions": "",
   "selfHostSearchProvider": "firecrawl",
   "firecrawlApiKey": "",
   "perplexityApiKey": "",
   "supadataApiKey": "",
+  "docProcessorBackend": "plus",
   "enableLexicalBoosts": true,
   "suggestedDefaultCommands": true,
   "autonomousAgentMaxIterations": 4,
@@ -518,6 +523,83 @@
   "defaultSystemPromptTitle": "",
   "autoCompactThreshold": 128000,
   "convertedDocOutputFolder": "",
-  "_keychainOnly": true,
-  "_keychainVaultId": "385e7659"
+  "agentMode": {
+    "byok": {},
+    "activeBackend": "opencode",
+    "backends": {},
+    "debugFullFrames": true,
+    "welcomeDismissed": false,
+    "skills": {
+      "folder": "copilot/skills"
+    }
+  },
+  "providers": {
+    "b80e2847-ed6d-4b87-aa8c-efee3559b820": {
+      "providerType": "openai-compatible",
+      "displayName": "DeepSeek",
+      "baseUrl": "https://api.deepseek.com",
+      "requiresApiKey": true,
+      "origin": {
+        "kind": "byok",
+        "catalogProviderId": "deepseek"
+      },
+      "providerId": "b80e2847-ed6d-4b87-aa8c-efee3559b820",
+      "addedAt": 1786603412131,
+      "apiKeyKeychainId": "copilot-v385e7659-provider-b80e2847-ed6d-4b87-aa8c-efee3559b820"
+    },
+    "54bbd455-611d-4111-a0e3-6d55d17b35dc": {
+      "providerType": "openai-compatible",
+      "displayName": "OpenAI Format",
+      "baseUrl": "https://ws-g2tjr0p12tmmws88.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "requiresApiKey": false,
+      "origin": {
+        "kind": "byok"
+      },
+      "providerId": "54bbd455-611d-4111-a0e3-6d55d17b35dc",
+      "addedAt": 1786603412134,
+      "apiKeyKeychainId": "copilot-v385e7659-provider-54bbd455-611d-4111-a0e3-6d55d17b35dc"
+    }
+  },
+  "configuredModels": [
+    {
+      "configuredModelId": "34467a47-e7f2-45fb-83c4-3294b2e38b41",
+      "providerId": "b80e2847-ed6d-4b87-aa8c-efee3559b820",
+      "info": {
+        "id": "deepseek-chat",
+        "displayName": "deepseek-chat"
+      },
+      "configuredAt": 1786603412134
+    },
+    {
+      "configuredModelId": "1c2a35e5-4223-43fd-acbb-67b7240050e0",
+      "providerId": "54bbd455-611d-4111-a0e3-6d55d17b35dc",
+      "info": {
+        "id": "qwen3.7-plus",
+        "displayName": "qwen3.7-plus"
+      },
+      "configuredAt": 1786603412135
+    }
+  ],
+  "backends": {
+    "chat": {
+      "enabledModels": [
+        "34467a47-e7f2-45fb-83c4-3294b2e38b41",
+        "1c2a35e5-4223-43fd-acbb-67b7240050e0"
+      ]
+    },
+    "opencode": {
+      "enabledModels": [
+        "34467a47-e7f2-45fb-83c4-3294b2e38b41",
+        "1c2a35e5-4223-43fd-acbb-67b7240050e0"
+      ]
+    }
+  },
+  "generateAIChatTitleOnSave": true,
+  "showRelevantNotes": true,
+  "selfHostModeValidatedAt": null,
+  "selfHostValidationCount": 0,
+  "selfHostUrl": "",
+  "selfHostApiKey": "",
+  "_keychainVaultId": "385e7659",
+  "settingsVersion": 8
 }
