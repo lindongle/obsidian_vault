@@ -11,24 +11,14 @@
             "id": "b487060a2ec5893b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "aFile": ".obsidian/plugins/recent-files-obsidian/data.json",
+                "bFile": ".obsidian/plugins/recent-files-obsidian/data.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "明天交PPT？8款免费AI出高质量版， 附5个黄金提示词"
+              "icon": "diff",
+              "title": "Diff: data.json  (Working Tree)"
             }
           },
           {
@@ -79,8 +69,7 @@
               "title": "表属性渲染xu'a"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -127,7 +116,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "春风动力新PLM实施项目】蓝图设计方案",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -280,10 +269,12 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "12fa9904e640593b",
+  "active": "b487060a2ec5893b",
   "lastOpenFiles": [
-    "copilot/copilot-conversations/工艺BOM构建思路@20260812_091719.md",
+    "New 文本文档.txt",
+    "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md",
     "20-Areas/03.Technology/01.TC/12.后台运维/渲染/表属性渲染.md",
+    "copilot/copilot-conversations/工艺BOM构建思路@20260812_091719.md",
     "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/五、系统配置 T4S默认账号t4adm/报错/其他配置部署见18.2版本.md",
     "40-Archives/01.售后项目/22.道尼尔海翼/整体验证进度总结（持续更新）.md",
     "40-Archives/01.售后项目/22.道尼尔海翼/T4S逻辑梳理/内容调整.md",
@@ -297,7 +288,6 @@
     "40-Archives/01.售后项目/24.凌云光/资料梳理/生命周期及编码讨论/主数据管理方案思路.md",
     "20-Areas/03.Technology/01.TC/02.TC基础/设置AWC界面属性不可编辑.md",
     "30-Resouces/01-Software/00.TC/AWC显示数据集的物理文件名2026-01-24T110622.442Z.md",
-    "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md",
     "30-Resouces/01-Software/05.Obsidian/私密、免费、无广告，这个知识库还能接入AI.md",
     "20-Areas/03.Technology/01.TC/02.TC基础/配置新建零组件时ID默认为空，不自动指派.md",
     "10-Projects/01.售后项目/33.中车升级项目/升级汇报.md",
@@ -308,7 +298,6 @@
     "40-Archives/01.售后项目/14.丘钛微/待验证.md",
     "40-Archives/01.售后项目/14.丘钛微/工程变更审批.md",
     "40-Archives/01.售后项目/14.丘钛微/工程变更.md",
-    "40-Archives/01.售后项目/14.丘钛微/密码.md",
     "99-Assets/368c5f1809c23313067c79216d89840f_MD5.gif",
     "99-Assets/981e024b26ffa41b15e5046b4d6cbd7c_MD5.png",
     "99-Assets/2dee1c20dba91682264c88cf0ff71d1d_MD5.png",
