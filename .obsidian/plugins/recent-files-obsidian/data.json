@@ -1,8 +1,72 @@
 {
   "recentFiles": [
     {
+      "basename": "表属性渲染",
+      "path": "20-Areas/03.Technology/01.TC/12.后台运维/渲染/表属性渲染.md"
+    },
+    {
+      "basename": "其他配置部署见18.2版本",
+      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/五、系统配置 T4S默认账号t4adm/报错/其他配置部署见18.2版本.md"
+    },
+    {
+      "basename": "整体验证进度总结（持续更新）",
+      "path": "40-Archives/01.售后项目/22.道尼尔海翼/整体验证进度总结（持续更新）.md"
+    },
+    {
+      "basename": "内容调整",
+      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S逻辑梳理/内容调整.md"
+    },
+    {
+      "basename": "初始化BGS",
+      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/初始化BGS.md"
+    },
+    {
+      "basename": "新版本eclipse汉化教程（图文详解）-百度经验",
+      "path": "30-Resouces/01-Software/11.DevIDE/新版本eclipse汉化教程（图文详解）-百度经验.md"
+    },
+    {
+      "basename": "AD新版本安装",
+      "path": "20-Areas/03.Technology/01.TC/08.CAD集成/EDA集成/AD新版本安装.md"
+    },
+    {
+      "basename": "自动获取零组件下级设计状态最新版本且所有者为自己",
+      "path": "20-Areas/03.Technology/01.TC/04.流程管理/自动获取零组件下级设计状态最新版本且所有者为自己.md"
+    },
+    {
+      "basename": "item下只显示最新版本",
+      "path": "20-Areas/03.Technology/01.TC/02.TC基础/item下只显示最新版本.md"
+    },
+    {
+      "basename": "单独安装T4S",
+      "path": "40-Archives/01.售后项目/28.联成开拓/单独安装T4S.md"
+    },
+    {
+      "basename": "部署中心安装tc2406安装--将tct4seda客户端单独分开不同环境",
+      "path": "40-Archives/01.售后项目/28.联成开拓/部署中心安装tc2406安装--将tct4seda客户端单独分开不同环境.md"
+    },
+    {
+      "basename": "主数据管理方案思路",
+      "path": "40-Archives/01.售后项目/24.凌云光/资料梳理/生命周期及编码讨论/主数据管理方案思路.md"
+    },
+    {
+      "basename": "设置AWC界面属性不可编辑",
+      "path": "20-Areas/03.Technology/01.TC/02.TC基础/设置AWC界面属性不可编辑.md"
+    },
+    {
+      "basename": "AWC显示数据集的物理文件名2026-01-24T110622.442Z",
+      "path": "30-Resouces/01-Software/00.TC/AWC显示数据集的物理文件名2026-01-24T110622.442Z.md"
+    },
+    {
+      "basename": "明天交PPT？8款免费AI出高质量版， 附5个黄金提示词",
+      "path": "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md"
+    },
+    {
       "basename": "私密、免费、无广告，这个知识库还能接入AI",
-      "path": "00-Inbox/私密、免费、无广告，这个知识库还能接入AI.md"
+      "path": "30-Resouces/01-Software/05.Obsidian/私密、免费、无广告，这个知识库还能接入AI.md"
+    },
+    {
+      "basename": "配置新建零组件时ID默认为空，不自动指派",
+      "path": "20-Areas/03.Technology/01.TC/02.TC基础/配置新建零组件时ID默认为空，不自动指派.md"
     },
     {
       "basename": "升级汇报",
@@ -131,74 +195,6 @@
     {
       "basename": "注册GS及tc连接配置",
       "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/注册GS及tc连接配置.md"
-    },
-    {
-      "basename": "报错",
-      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/报错.md"
-    },
-    {
-      "basename": "安装部署",
-      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/安装部署.md"
-    },
-    {
-      "basename": "初始化BGS",
-      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/初始化BGS.md"
-    },
-    {
-      "basename": "内容调整",
-      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S逻辑梳理/内容调整.md"
-    },
-    {
-      "basename": "AIG 21.1安装",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/AIG 21.1安装.md"
-    },
-    {
-      "basename": "18.2.1安装",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/18.2.1安装.md"
-    },
-    {
-      "basename": "awc&t4s",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/awc&t4s.md"
-    },
-    {
-      "basename": "BAPI函数",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/BAPI函数.md"
-    },
-    {
-      "basename": "二、管理界面",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/一、安装支持/二、管理界面.md"
-    },
-    {
-      "basename": "通过BOM下发物料，并过滤子件",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/五、系统配置 T4S默认账号t4adm/报错/通过BOM下发物料，并过滤子件.md"
-    },
-    {
-      "basename": "BOM集成",
-      "path": "40-Archives/01.售后项目/22.道尼尔海翼/T4S逻辑梳理/BOM集成.md"
-    },
-    {
-      "basename": "单独安装T4S",
-      "path": "40-Archives/01.售后项目/28.联成开拓/单独安装T4S.md"
-    },
-    {
-      "basename": "物理文件（原件）传输",
-      "path": "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/五、系统配置 T4S默认账号t4adm/文档对象属性映射/物理文件（原件）传输.md"
-    },
-    {
-      "basename": "EBOM讨论",
-      "path": "10-Projects/01.售后项目/32.春风动力二期/EBOM讨论.md"
-    },
-    {
-      "basename": "6月1日开始，取消转V；",
-      "path": "10-Projects/01.售后项目/32.春风动力二期/6月1日开始，取消转V；.md"
-    },
-    {
-      "basename": "关于PLM系统二期工作启动的通知",
-      "path": "10-Projects/01.售后项目/32.春风动力二期/关于PLM系统二期工作启动的通知.md"
-    },
-    {
-      "basename": "关于最终用户开展TCNX培训考核的通知",
-      "path": "10-Projects/01.售后项目/32.春风动力二期/关于最终用户开展TCNX培训考核的通知.md"
     }
   ],
   "omittedPaths": [],

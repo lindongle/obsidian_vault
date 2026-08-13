@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Inbox/私密、免费、无广告，这个知识库还能接入AI.md",
+                "file": "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,19 +28,31 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "私密、免费、无广告，这个知识库还能接入AI"
+              "title": "明天交PPT？8款免费AI出高质量版， 附5个黄金提示词"
             }
           },
           {
             "id": "6e0b6c58f9940ea2",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.7"
+                "file": "20-Areas/03.Technology/01.TC/12.后台运维/渲染/表属性渲染.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.13.7"
+              "icon": "lucide-file",
+              "title": "表属性渲染"
             }
           },
           {
@@ -67,7 +79,8 @@
               "title": "表属性渲染xu'a"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -114,11 +127,11 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "自动指派",
+                "query": "春风动力新PLM实施项目】蓝图设计方案",
                 "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
+                "explainSearch": true,
+                "collapseAll": true,
+                "extraContext": true,
                 "sortOrder": "byCreatedTime"
               },
               "icon": "lucide-search",
@@ -216,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00-Inbox/私密、免费、无广告，这个知识库还能接入AI.md",
+                "file": "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/初始化BGS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -234,9 +247,19 @@
               "icon": "message-square",
               "title": "Copilot"
             }
+          },
+          {
+            "id": "12fa9904e640593b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -257,35 +280,35 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "804819951442bf93",
+  "active": "12fa9904e640593b",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/工艺BOM构建思路@20260812_091719.md",
+    "20-Areas/03.Technology/01.TC/12.后台运维/渲染/表属性渲染.md",
+    "20-Areas/03.Technology/01.TC/13.TCAI/T4S-SAP集成/五、系统配置 T4S默认账号t4adm/报错/其他配置部署见18.2版本.md",
+    "40-Archives/01.售后项目/22.道尼尔海翼/整体验证进度总结（持续更新）.md",
+    "40-Archives/01.售后项目/22.道尼尔海翼/T4S逻辑梳理/内容调整.md",
+    "40-Archives/01.售后项目/22.道尼尔海翼/T4S新版本安装/初始化BGS.md",
+    "30-Resouces/01-Software/11.DevIDE/新版本eclipse汉化教程（图文详解）-百度经验.md",
+    "20-Areas/03.Technology/01.TC/08.CAD集成/EDA集成/AD新版本安装.md",
+    "20-Areas/03.Technology/01.TC/04.流程管理/自动获取零组件下级设计状态最新版本且所有者为自己.md",
+    "20-Areas/03.Technology/01.TC/02.TC基础/item下只显示最新版本.md",
+    "40-Archives/01.售后项目/28.联成开拓/单独安装T4S.md",
+    "40-Archives/01.售后项目/28.联成开拓/部署中心安装tc2406安装--将tct4seda客户端单独分开不同环境.md",
+    "40-Archives/01.售后项目/24.凌云光/资料梳理/生命周期及编码讨论/主数据管理方案思路.md",
+    "20-Areas/03.Technology/01.TC/02.TC基础/设置AWC界面属性不可编辑.md",
+    "30-Resouces/01-Software/00.TC/AWC显示数据集的物理文件名2026-01-24T110622.442Z.md",
+    "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md",
+    "30-Resouces/01-Software/05.Obsidian/私密、免费、无广告，这个知识库还能接入AI.md",
+    "20-Areas/03.Technology/01.TC/02.TC基础/配置新建零组件时ID默认为空，不自动指派.md",
     "10-Projects/01.售后项目/33.中车升级项目/升级汇报.md",
     "10-Projects/01.售后项目/33.中车升级项目",
     "40-Archives/01.售后项目/14.丘钛微/方案点.md",
-    "00-Inbox/明天交PPT？8款免费AI出高质量版， 附5个黄金提示词.md",
     "40-Archives/01.售后项目/14.丘钛微/摄像头模组结构.md",
     "40-Archives/01.售后项目/14.丘钛微/接洽会.md",
     "40-Archives/01.售后项目/14.丘钛微/待验证.md",
     "40-Archives/01.售后项目/14.丘钛微/工程变更审批.md",
     "40-Archives/01.售后项目/14.丘钛微/工程变更.md",
     "40-Archives/01.售后项目/14.丘钛微/密码.md",
-    "40-Archives/01.售后项目/14.丘钛微/公共知识库.md",
-    "40-Archives/01.售后项目/14.丘钛微/信息.md",
-    "40-Archives/01.售后项目/14.丘钛微/Creo转JT需安装server2012.md",
-    "40-Archives/01.售后项目/14.丘钛微/调研/一个工序一般可以由一个或者多个工站完成.md",
-    "40-Archives/01.售后项目/14.丘钛微/调研/信息化.md",
-    "40-Archives/01.售后项目/14.丘钛微/模型.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/业务模型.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/项目管理讨论纪要.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/项目管理.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/工艺资源管理.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/编码申请.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/方案阶段汇报.md",
-    "40-Archives/01.售后项目/15.精工底盘/方案汇报.md",
-    "40-Archives/01.售后项目/15.精工底盘/技术验证.md",
-    "40-Archives/01.售后项目/15.精工底盘/开放平台集成.md",
-    "40-Archives/01.售后项目/15.精工底盘/关键业务讨论点/BOM讨论.md",
-    "40-Archives/01.售后项目/27.国鸿氢能/蓝图方案/制氢.md",
     "99-Assets/368c5f1809c23313067c79216d89840f_MD5.gif",
     "99-Assets/981e024b26ffa41b15e5046b4d6cbd7c_MD5.png",
     "99-Assets/2dee1c20dba91682264c88cf0ff71d1d_MD5.png",
