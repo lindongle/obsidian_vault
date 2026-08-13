@@ -1,0 +1,8 @@
+---
+title: VISMOCKUP FUCTION
+updated: 2026-06-06T10:08
+created: 2018-12-20T23:34:00
+---
+
+[VISMOCKUP FUCTION.xlsx](35b42002d3d6486e89fd15227b2ab31f.xlsx)
+

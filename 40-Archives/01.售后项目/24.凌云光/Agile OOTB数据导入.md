@@ -1,0 +1,18 @@
+---
+title: Agile OOTB数据导入
+updated: 2026-06-06T10:08
+created: 2023-11-02T17:05:54
+---
+
+![image1](7685002571c641a98537080a486467e3.png)
+
+![image2](240b692c5a464f169adec4c0dfd453d9.png)
+
+![image3](1a1a270c171f4141bb1c371194e32265.png)
+
+![image4](7d994116c6744810ab0de1ec8c79453d.png)
+
+![image5](ff3a3c031f3848b6a85c906742464816.png)
+
+![image6](03e3e9e1eb43498db7699b714c4f7431.png)
+

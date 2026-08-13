@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.folder == "ldl/Note/02.Project/01售后项目/30.春风动力"
+    order:
+      - file.name
+      - file.ctime
+      - created
+      - updated
+    sort: []

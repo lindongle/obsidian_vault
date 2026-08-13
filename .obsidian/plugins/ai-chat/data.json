@@ -1,0 +1,49 @@
+{
+  "providers": [
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "baseUrl": "https://api.deepseek.com",
+      "apiKey": "sk-22cbbd718f1d42b583b59717fad41822",
+      "defaultModel": "deepseek-chat"
+    },
+    {
+      "id": "qwen",
+      "name": "通义千问",
+      "baseUrl": "https://ws-g2tjr0p12tmmws88.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "apiKey": "sk-ws-H.REHLPDM.bsuQ.MEUCIHlOaqxOyE-bcEpdqMNTAyUvSEA34MR1pZuoXMGsFKcmAiEAjwsnzjLnH1mL6J2kRJlD31vWGVq1BSTnJ5NsF13oc6s",
+      "defaultModel": "qwen-plus"
+    },
+    {
+      "id": "doubao",
+      "name": "豆包",
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+      "apiKey": "",
+      "defaultModel": "doubao-pro-32k"
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi",
+      "baseUrl": "https://api.moonshot.cn/v1",
+      "apiKey": "",
+      "defaultModel": "moonshot-v1-32k"
+    },
+    {
+      "id": "zhipu",
+      "name": "智谱",
+      "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+      "apiKey": "f218de3034064575afeaea9781e62b86.1VPiCfFehGWie31Z",
+      "defaultModel": "GLM-4.7-Flash"
+    }
+  ],
+  "defaultTextModel": "qwen:qwen-plus",
+  "defaultVisionModel": "",
+  "scenesFolder": "skills-scenes",
+  "defaultArchiveFolder": "_ai_output",
+  "autoArchive": true,
+  "confirmBeforeArchive": false,
+  "sendShortcut": "enter",
+  "streamOutput": true,
+  "temperature": 0.7,
+  "maxContextMessages": 20
+}

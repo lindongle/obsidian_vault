@@ -1,0 +1,54 @@
+---
+title: 【问题集锦】消除Teamcenter数据中“”的识别冲突，实现数据与查询的精准匹配！2025-11.
+updated: 2026-06-18T11:28:01+08:00
+created: 2025-11-14T13:06:23
+tags:
+  - TC
+---
+
+【问题集锦】消除Teamcenter数据中“\*”的识别冲突，实现数据与查询的精准匹配！2025-11-14T13:06:03.802Z
+
+源网页：https://mp.weixin.qq.com/s?\_\_biz=MzA4MTQ0MTc4MA==&mid=2649978093&idx=1&sn=bedb04444add97782257c810736e945c&chksm=86dbf6bbfc8508726b23c0f7793726e48e278a10e2923af8879aaf03e234e89a2ad091e4e1a1&mpshare=1&scene=1&srcid=1114rKkZyQTdEJIHt7LtV2cJ&sharer_shareinfo=141ddb9b37d4f0fc4981dacdc4c3272e&sharer_shareinfo_first=141ddb9b37d4f0fc4981dacdc4c3272e#rd
+**网页内容：**
+公众号名称：坤德科技
+作者名称：
+发布时间：2025-10-29 18:19
+<span style='color:black'>Teamcenter 作为一款在行业具有高度影响力的产品生命周期管理软件，备受众多企业信赖，但产品功能越发强大完善，在操作层面会对用户造成一定的考验。 坤德科技深耕西门子工业软件领域近二十年，拥有丰富的成功经验，为助大家物尽其用，后续会定期更新系列问题集锦帮助大家扫除“知识盲区”，将产品价值最大化。 今天，我们归纳了部分用户在Teamcenter实际操作过程中所遇的问题，并提供了切实可行的操作方法，为您在后续的使用过程中提供帮助和指引。 </span>
+<span style='font-weight:bold;background:#F1FAFF'>保障精准查询</span>
+<span style='font-weight:bold;background:#F1FAFF'>消除Teamcenter数据中“\*”的识别冲突</span>
+<span style='font-weight:bold;font-size:10.5pt;color:black'>问题描述：</span><span style='font-size:10.5pt;color:#0F1115'>在Teamcenter系统标准配置中，星号“</span><span style='font-size:11.0pt;color:black'> </span><span style='font-size:10.5pt; color:#0F1115'>\*”通常被定义为通用模糊查询的通配符。然而，当用户在实际业务中处理的主机编号、物料代码等数据本身包含星号字符（如“AX-2024\*B”）时，便会产生语义冲突。系统会误将数据中的“\*”识别为查询指令而非数据内容，导致返回结果异常或遗漏，无法准确匹配用户真正需要查找的条目。</span>
+<span style='font-weight:bold; color:#0F1115;background:#BFBFBF'>版本限制：</span><span style='font-weight:bold; color:black;background:#BFBFBF'>Teamcenter2412</span>
+<span style='color:black'>**解决方案：**</span>
+<span style='color:black'>步骤一：打开编辑选项，搜索常规页面，默认是“Windows样式”。</span>
+![image1](92012e77d0f54356aebe56fbd0af1e14.png)
+<span style='color:black'>步骤二：选择“SQL样式”。</span>
+![image2](e851991c978c4d3e9ad573972aa6dac0.png)
+<span style='color:black'>步骤三：此情况下，用“\*”搜索不到零件，但使用“%”则可以搜索到相关零件。</span>
+![image3](d7d2c6f4c381480dae9621088afed867.png)
+![image4](0d889ced8c3a453fb0370766ebf7fc6d.png)
+<span style='color:black'>**\*注意：**</span>
+- <span style='color:black'>SQL样式：“%”替换多字符；“\_”替换单字符。</span>
+
+- <span style='color:black'>Unix样式：“\*”替换多字符；“.”替换单字符。</span>
+
+- <span style='color:black'>Windows样式：“\*”替换多字符；“？”替换单字符。</span>
+<span style='font-weight: bold;background:#DEF5FF'>END</span>
+<span style='font-weight: bold;background:white'>关于坤德</span>
+<span style='background:white'>上海坤德科技成立于2007年，专注为制造企业提供智能制造解决方案。我们以西门子工业软件为基础，结合数字化和AI技术，打造了独特的数字化融合平台，助力企业降本增效。</span>
+<span style='background:white'>在研发领域，NX MBD应用能力突出，已助力数十家头部客户有效提升研发效率；Teamcenter则展现了在全行业、全球化项目和深度应用的综合交付实力。在仿真和试验领域，基于Simcenter平台构建虚拟验证和管理体系，大幅提升产品性能并缩短试验周期。在制造领域，融合精益生产理念，提供数字孪生、制造运营管理等解决方案，有效提升订单交付效率，优化准时交付率、库存、产品成本、质量等关键经营指标。</span>
+<span style='background:white'>凭借近二十年的行业沉淀，坤德科技荣获西门子工业软件（上海）有限公司在中国大陆的授权 白金\|专家评级，并成功携手300+先进制造企业，业务领域横跨汽车及零部件、高科技、新/能源和机械装备等行业。我们矢志不渝地构建西门子工业软件生态中的专业团队，确保为客户的数字化转型之路提供坚实支持。</span>
+![image5](fc0ae40584e0405cb7fec7ca3f972a14.png)
+<span style='font-weight:bold; background:white'>联系我们即可免费咨询</span>
+<span style='background: white'>电话：400-018-0066</span>
+<span style='background: white'>邮箱：marketing@ekunde.com</span>
+
+![image6](ef5f3effed1041abae06234acb587a36.jpg)
+<span style='color:black'>坤德科技 </span>
+<span style='color:black'>继续滑动看下一个 </span>
+![image7](c32c2eab59cb46989271b4a24db31b1b.png)
+<span style='color:black'>坤德科技 </span>
+<span style='color:black'>向上滑动看下一个 </span>
+**网页截图：**
+[Webpage.html](88428dc52c8646eda75bb9f34af11840.html)
+2025年11月14日
+13:06

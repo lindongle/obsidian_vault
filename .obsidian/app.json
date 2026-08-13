@@ -1,0 +1,18 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "99-Assets",
+  "showLineNumber": false,
+  "defaultViewMode": "preview",
+  "propertiesInDocument": "visible",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showUnsupportedFiles": true,
+  "openBehavior": ""
+}

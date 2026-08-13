@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="GB2312"?>
+<preferences version="10.0">
+  <category name="CUST_T4S">
+    <category_description>No description available for this category.</category_description>
+    <preference name="T4S_BOM4RelationTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4S_BOM4RelationTypeList</preference_description>
+      <context name="Teamcenter">
+        <value>Y5_SAP_AssemblyRevision</value>
+        <value>Y5_SAP_MaterialRevision</value>
+        <value>Y5_SAP_PartRevision</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialHeaderMapping4Y5_SAP_AssemblyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>半成品映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialHeaderMapping4Y5_SAP_MaterialRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="true">
+      <preference_description>原材料映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialHeaderMapping4Y5_SAP_ProductRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>成品映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialHeaderTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>Y5_SAP_AssemblyRevision</value>
+        <value>Y5_SAP_MaterialRevision</value>
+        <value>Y5_SAP_PartRevision</value>
+        <value>Y5_SAP_ProductRevision</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialLineMapping4Y5_SAP_AssemblyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>半成品映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialLineMapping4Y5_SAP_MaterialRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="true">
+      <preference_description>原材料映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialLineMapping4Y5_SAP_PartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>未估价的商品</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialLineMapping4Y5_SAP_ProductRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>成品映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialOccurrenceNotes4view" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>bl_has_children</value>
+        <value>bl_rev_view</value>
+        <value>bl_variant_condition</value>
+        <value>bl_ref_designator</value>
+        <value>SAP2T4S_OccNote</value>
+        <value>bl_occ_y5_ComponentQuantity</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>view</value>
+      </context>
+    </preference>
+    <preference name="T4S_ChangeMasterMapping4Y5_SAP_AssemblyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4S_ChangeMasterMapping4Y5_SAP_AssemblyRevision</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_ChangeMasterMapping4Y5_SAP_MaterialRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4S_ChangeMasterMapping4Y5_SAP_MaterialRevision</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_ChangeMasterMapping4Y5_SAP_PartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4S_ChangeMasterMapping4Y5_SAP_PartRevision</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_ChangeMasterMapping4Y5_SAP_ProductRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4S_ChangeMasterMapping4Y5_SAP_ProductRevision</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_ChangeMasterTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>ProblemReportRevision</value>
+        <value>ChangeRequestRevision</value>
+        <value>ChangeNoticeRevision</value>
+        <value>Y5_SAP_MaterialRevision</value>
+        <value>Y5_SAP_PartRevision</value>
+        <value>Y5_SAP_ProductRevision</value>
+        <value>Y5_SAP_AssemblyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping4Y5_SAP_AssemblyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>半成品映射</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping4Y5_SAP_MaterialRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>原材料映射</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping4Y5_SAP_PartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>未估价的商品</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping4Y5_SAP_ProductRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>成品映射</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:BOMView Revision:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>Y5_SAP_AssemblyRevision</value>
+        <value>Y5_SAP_MaterialRevision</value>
+        <value>Y5_SAP_PartRevision</value>
+        <value>Y5_SAP_ProductRevision</value>
+      </context>
+    </preference>
+    <preference name="T4X_Property2ProcessList4Y5_SAP_AssemblyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4X_Property2ProcessList4Y5_SAP_ProductRevision</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>y5_name_en</value>
+        <value>y5_material_group</value>
+        <value>y5_department</value>
+        <value>y5_CustomerNo</value>
+        <value>y5_net_weight</value>
+        <value>y5_weight_unit</value>
+        <value>y5_yp_designnum</value>
+        <value>y5_material_type</value>
+        <value>y5_basic_unit</value>
+        <value>y5_Plant</value>
+      </context>
+    </preference>
+    <preference name="T4X_Property2ProcessList4Y5_SAP_MaterialRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4X_Property2ProcessList4Y5_SAP_ProductRevision</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>y5_name_en</value>
+        <value>y5_material_group</value>
+        <value>y5_department</value>
+        <value>y5_CustomerNo</value>
+        <value>y5_net_weight</value>
+        <value>y5_weight_unit</value>
+        <value>y5_yp_designnum</value>
+        <value>y5_material_type</value>
+        <value>y5_basic_unit</value>
+        <value>y5_Plant</value>
+      </context>
+    </preference>
+    <preference name="T4X_Property2ProcessList4Y5_SAP_PartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4X_Property2ProcessList4Y5_SAP_ProductRevision</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>y5_name_en</value>
+        <value>y5_material_group</value>
+        <value>y5_department</value>
+        <value>y5_CustomerNo</value>
+        <value>y5_net_weight</value>
+        <value>y5_weight_unit</value>
+        <value>y5_yp_designnum</value>
+        <value>y5_material_type</value>
+        <value>y5_basic_unit</value>
+        <value>y5_Plant</value>
+      </context>
+    </preference>
+    <preference name="T4X_Property2ProcessList4Y5_SAP_ProductRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>T4X_Property2ProcessList4Y5_SAP_ProductRevision</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>y5_name_en</value>
+        <value>y5_material_group</value>
+        <value>y5_department</value>
+        <value>y5_CustomerNo</value>
+        <value>y5_net_weight</value>
+        <value>y5_weight_unit</value>
+        <value>y5_yp_designnum</value>
+        <value>y5_material_type</value>
+        <value>y5_basic_unit</value>
+        <value>y5_Plant</value>
+      </context>
+    </preference>
+    <preference name="T4X_Property2ProcessList4view" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Generic allowlist for view</preference_description>
+      <context name="Teamcenter">
+        <value>bom_view</value>
+        <value>struct_last_mod_date</value>
+        <value>creation_date</value>
+        <value>date_released</value>
+        <value>last_mod_date</value>
+        <value>object_name</value>
+        <value>object_string</value>
+        <value>object_type</value>
+        <value>y5_Plant</value>
+        <value>y5_BaseQuantity</value>
+        <value>y5_BomUsage</value>
+        <value>y5_BomValidFrom</value>
+		<value>y5_BomAlternative</value>
+      </context>
+    </preference>
+    <preference name="T4X_PropertyListMode4Y5_SAP_AssemblyRevision" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>设置属性从白名单首选项中读取</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4X_PropertyListMode4Y5_SAP_MaterialRevision" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>设置属性从白名单首选项中读取</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4X_PropertyListMode4Y5_SAP_ProductRevision" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>设置属性从白名单首选项中读取</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4X_PropertyListMode4view" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+0 - process all properties
+1 - use blocklist preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4view)
+2 - use allowlist preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4view)</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+  </category>
+</preferences>

@@ -1,0 +1,8 @@
+{
+  "enabledCssSnippets": [
+    "center-images"
+  ],
+  "showRibbon": true,
+  "cssTheme": "Minimal",
+  "theme": "system"
+}

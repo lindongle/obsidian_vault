@@ -1,0 +1,37 @@
+---
+title: AI api key
+created: 2026-07-04T21:09:14+08:00
+updated: 2026-08-12T15:04:00+08:00
+---
+- DeepSeek 
+	- BaseUrl:
+		- OpenAI:https://api.deepseek.com
+		- Anthropic:https://api.deepseek.com/anthropic
+	- API:sk-22cbbd718f1d42b583b59717fad41822
+	- 
+- 智谱GLM：免费
+	- BaseUrl:
+		- OpenAI:https://open.bigmodel.cn/api/paas/v4
+		- Anthropic:
+	- API:f218de3034064575afeaea9781e62b86.1VPiCfFehGWie31Z
+	- 模型名：GLM-4.7-Flash
+- 通义千问：免费
+	- BaseUrl:
+		- API Host：ws-g2tjr0p12tmmws88.cn-beijing.maas.aliyuncs.com
+		- OpenAI 兼容地址:https://ws-g2tjr0p12tmmws88.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
+		- DashScope:https://ws-g2tjr0p12tmmws88.cn-beijing.maas.aliyuncs.com/api/v1
+	- API:sk-ws-H.REHLPDM.bsuQ.MEUCIHlOaqxOyE-bcEpdqMNTAyUvSEA34MR1pZuoXMGsFKcmAiEAjwsnzjLnH1mL6J2kRJlD31vWGVq1BSTnJ5NsF13oc6s
+	- 模型名称：qwen-plus
+- Kimi：
+	- BaseUrl:
+		- OpenAI:https://api.moonshot.cn/v1
+		- Anthropic:
+	- API:sk-M39jXCAh3dy8CwtbDQG5Ij8a78kKoiWnPG0XfGTvCC6u4O2n
+	- 模型名：
+- 豆包：
+	-  baseUrl：
+		- 数据面 API：https://ark.cn-beijing.volces.com/api/v3
+		- 管控面 API：https://ark.cn-beijing.volcengineapi.com/
+	- apikey:ark-332dad12-315e-4514-aeb7-3557e9d822d9-617fb
+	- 火山引擎APIhub-apikey:ark-0dcb0c23-e524-4417-befe-408354547430-8778f
+	- 模型id:doubao-seed-2-1-turbo-260628/doubao-seed-2-1-pro-260628

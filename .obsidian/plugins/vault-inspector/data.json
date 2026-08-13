@@ -1,0 +1,25 @@
+{
+  "enabledScanners": {
+    "broken-links": true,
+    "orphan-attachments": true,
+    "empty-notes": true,
+    "external-links": false,
+    "duplicate-files": true,
+    "frontmatter-types": true,
+    "tag-usage": true,
+    "large-files": false
+  },
+  "enableFixActions": true,
+  "largeMarkdownBytes": 102400,
+  "largeAttachmentBytes": 5242880,
+  "duplicateHashMaxBytes": 10485760,
+  "lowUsageTagThreshold": 2,
+  "emptyNoteWordThreshold": 5,
+  "watchedTags": [],
+  "ignoredIssueFingerprints": [
+    "1ip8ibo10ouqdu"
+  ],
+  "ignoredFolders": [],
+  "ignoredProperties": [],
+  "reportFolderPath": "Vault Inspector Reports"
+}

@@ -1,0 +1,368 @@
+.mobile-pdf-exporter-render-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  display: block;
+  width: var(--mobile-pdf-exporter-width, 794px);
+  min-height: 1px;
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  pointer-events: none;
+  visibility: visible;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.mobile-pdf-exporter-page {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--mobile-pdf-exporter-padding, 40px);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: calc(var(--font-text-size) * var(--mobile-pdf-exporter-font-scale, 1));
+  line-height: 1.48;
+  text-rendering: optimizeLegibility;
+}
+
+.mobile-pdf-exporter-page .markdown-preview-view {
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.mobile-pdf-exporter-page .mobile-pdf-exporter-note-doodle-host {
+  position: relative;
+}
+
+.mobile-pdf-exporter-page .mobile-pdf-exporter-note-doodle-canvas {
+  max-width: none;
+  object-fit: fill;
+}
+
+.mobile-pdf-exporter-page *,
+.mobile-pdf-exporter-page *::before,
+.mobile-pdf-exporter-page *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.mobile-pdf-exporter-title {
+  margin: 0 0 0.58em;
+  font-size: 1.68em;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.mobile-pdf-exporter-page :where(h1, h2, h3, h4, h5, h6) {
+  letter-spacing: 0;
+}
+
+.mobile-pdf-exporter-page :where(.markdown-preview-view h1) {
+  margin: 0.82em 0 0.34em;
+  line-height: 1.18;
+}
+
+.mobile-pdf-exporter-page :where(.markdown-preview-view h2) {
+  margin: 0.74em 0 0.3em;
+  line-height: 1.2;
+}
+
+.mobile-pdf-exporter-page :where(.markdown-preview-view h3) {
+  margin: 0.66em 0 0.26em;
+  line-height: 1.22;
+}
+
+.mobile-pdf-exporter-page :where(.markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6) {
+  margin: 0.58em 0 0.22em;
+  line-height: 1.24;
+}
+
+.mobile-pdf-exporter-page :where(p, ul, ol, dl) {
+  margin-block: 0.42em;
+}
+
+.mobile-pdf-exporter-page :where(li) {
+  margin-block: 0.16em;
+}
+
+.mobile-pdf-exporter-page :where(ul, ol) {
+  padding-inline-start: 1.45em;
+}
+
+.mobile-pdf-exporter-page :where(blockquote, pre, table, .callout, .markdown-embed, .internal-embed) {
+  margin-block: 0.62em;
+}
+
+.mobile-pdf-exporter-page img,
+.mobile-pdf-exporter-page picture,
+.mobile-pdf-exporter-page svg,
+.mobile-pdf-exporter-page canvas,
+.mobile-pdf-exporter-page video {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.mobile-pdf-exporter-page img {
+  max-height: calc(var(--mobile-pdf-exporter-page-height, 850px) - (var(--mobile-pdf-exporter-padding, 26px) * 2) - 24px);
+}
+
+.mobile-pdf-exporter-page figure,
+.mobile-pdf-exporter-page picture,
+.mobile-pdf-exporter-page .image-embed,
+.mobile-pdf-exporter-page .internal-embed.image-embed {
+  display: block;
+}
+
+.mobile-pdf-exporter-page table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.mobile-pdf-exporter-page pre {
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.42;
+}
+
+.mobile-pdf-exporter-page code,
+.mobile-pdf-exporter-page a,
+.mobile-pdf-exporter-page td,
+.mobile-pdf-exporter-page th {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.mobile-pdf-exporter-page a {
+  display: inline;
+  text-underline-offset: 0.14em;
+}
+
+.mobile-pdf-exporter-page .markdown-embed,
+.mobile-pdf-exporter-page .internal-embed,
+.mobile-pdf-exporter-page .markdown-preview-sizer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.mobile-pdf-exporter-page .markdown-source-view,
+.mobile-pdf-exporter-page .cm-editor {
+  display: none;
+}
+
+.mobile-pdf-exporter-page .mobile-pdf-exporter-skip.mobile-pdf-exporter-skip {
+  display: none;
+}
+
+.mobile-pdf-exporter-page .mobile-pdf-exporter-excalidraw-preview {
+  display: block;
+  width: 100%;
+  margin-block: 0.42em;
+  overflow: hidden;
+}
+
+.mobile-pdf-exporter-page .mobile-pdf-exporter-excalidraw-svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: calc(var(--mobile-pdf-exporter-page-height, 850px) - (var(--mobile-pdf-exporter-padding, 26px) * 2) - 24px);
+  height: auto;
+  object-fit: contain;
+}
+
+.mobile-pdf-exporter-page .mobile-pdf-exporter-excalidraw-fallback {
+  color: var(--text-muted);
+}
+
+.mobile-pdf-exporter-options-modal {
+  max-width: 560px;
+  padding-top: 0;
+  overflow: visible;
+}
+
+.mobile-pdf-exporter-options-subtitle {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  overflow-wrap: anywhere;
+}
+
+.mobile-pdf-exporter-options-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: calc(var(--size-4-4, 16px) * -1) calc(var(--size-4-4, 16px) * -1) 12px;
+  padding: calc(var(--size-4-4, 16px) + 10px) var(--size-4-4, 16px) 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--modal-background, var(--background-primary));
+  box-shadow: 0 8px 14px var(--modal-background, var(--background-primary));
+}
+
+.mobile-pdf-exporter-options-toolbar::before {
+  content: "";
+  position: absolute;
+  inset: -24px 0 auto;
+  height: 24px;
+  background: var(--modal-background, var(--background-primary));
+}
+
+.mobile-pdf-exporter-options-toolbar-inner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.mobile-pdf-exporter-options-name {
+  display: grid;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 4px;
+}
+
+.mobile-pdf-exporter-options-name-label {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  line-height: 1.2;
+}
+
+.mobile-pdf-exporter-options-name-input {
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+}
+
+.mobile-pdf-exporter-options-button {
+  flex: 0 0 auto;
+  min-width: 86px;
+}
+
+@media (max-width: 420px) {
+  .mobile-pdf-exporter-options-toolbar-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .mobile-pdf-exporter-options-name {
+    flex-basis: 100%;
+  }
+}
+
+.mobile-pdf-exporter-busy {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 38px);
+  left: 50%;
+  z-index: 2147483647;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  width: min(560px, calc(100vw - 20px));
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  pointer-events: none;
+  background: var(--modal-background, var(--background-primary));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+  color: var(--text-normal);
+  transform: translateX(-50%);
+}
+
+.mobile-pdf-exporter-busy-title {
+  white-space: nowrap;
+  font-size: var(--font-ui-small);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.mobile-pdf-exporter-busy-file {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  overflow-wrap: anywhere;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-pdf-exporter-busy-elapsed {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.mobile-pdf-exporter-busy.is-complete .mobile-pdf-exporter-busy-title {
+  color: var(--text-success, #2f9e44);
+}
+
+.mobile-pdf-exporter-busy.is-error .mobile-pdf-exporter-busy-title {
+  color: var(--text-error, #d9480f);
+}
+
+.mobile-pdf-exporter-settings-codes {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.mobile-pdf-exporter-settings-codes-title {
+  margin-bottom: 4px;
+  color: var(--text-normal);
+  font-size: var(--font-ui-medium);
+  font-weight: 600;
+}
+
+.mobile-pdf-exporter-settings-codes-subtitle {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  line-height: 1.35;
+}
+
+.mobile-pdf-exporter-settings-codes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.mobile-pdf-exporter-settings-code {
+  width: 132px;
+}
+
+.mobile-pdf-exporter-settings-code-link {
+  display: block;
+  width: 132px;
+  height: 132px;
+}
+
+.mobile-pdf-exporter-settings-code-image {
+  display: block;
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.mobile-pdf-exporter-settings-code-label {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  text-align: center;
+}

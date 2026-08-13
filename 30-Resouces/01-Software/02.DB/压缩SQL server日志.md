@@ -1,0 +1,40 @@
+---
+title: 压缩SQL server日志
+updated: 2026-06-06T00:31
+created: 2023-08-28T14:05:24
+---
+
+或sh用分离，再附加的方式
+
+一、命令操作
+USE \[master\]
+GO
+ALTER DATABASE \[数据库名\] SET RECOVERY SIMPLE WITH NO_WAIT
+GO
+ALTER DATABASE \[数据库名\] SET RECOVERY SIMPLE
+GO
+USE \[数据库名\]
+GO
+DBCC SHRINKFILE (N'\[**数据库日志文件名称**\]' , 10,TRUNCATEONLY) ；--不要写成数据库名称
+GO
+USE \[master\]
+GO
+ALTER DATABASE \[数据库名\] SET RECOVERY FULL WITH NO_WAIT
+GO
+ALTER DATABASE \[数据库名\] SET RECOVERY FULL
+GO
+--上面的“数据库日志文件名称”用下面SQL的查询结果
+--查询指定数据库的日志文件名称
+USE \[数据库名\]
+GO
+SELECT name,size FROM SYS.database_files WHERE type_desc='LOG'
+
+USE tc10prod
+SELECT \* from PPOM_USER;
+
+ALTER DATABASE tc10prod SET RECOVERY SIMPLE WITH NO_WAIT;
+ALTER DATABASE tc10prod SET RECOVERY SIMPLE;
+DBCC SHRINKFILE (N'tc10prod_Log' , 10,TRUNCATEONLY) ;
+ALTER DATABASE tc10prod SET RECOVERY FULL WITH NO_WAIT;
+ALTER DATABASE tc10prod SET RECOVERY FULL;
+

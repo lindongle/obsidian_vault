@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+     <tem engine="2008.0.0" />
+     <settings>
+          <sourceDir value="D:\\Tc11.2.0a_win64" />
+          <application value="tceng" />
+          <installLanguage value="ENGLISH" />
+          <silentMaintenance value="false" />
+          <aboutFullVersion value="11.2" />
+          <installingUser value="Administrator" />
+          <installDir value="D:\\Siemens\\Teamcenter11" />
+          <addRemoveEntry value="HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Teamcenter11-180608114127" />
+          <version value="11000.2.0.20150715" />
+     </settings>
+     <config name="Corporate" id="Corporate">
+          <comments />
+          <data>
+               <flexClient guid="7221ECFBC9555CDF997FC3F575022761">
+                    <nX5Port value="28000" />
+                    <port value="27000" />
+                    <nX5Host value="JJDomain" />
+                    <nX4String value="" />
+                    <host value="JJDomain" />
+                    <envServerString value="28000@172.16.254.200" />
+                    <nX5CheckBox value="true" />
+                    <nX5String value="28000@172.16.254.200" />
+               </flexClient>
+               <NxRc guid="3AC7295FE31CCFE6D8F8E37B0695D76A">
+                    <installLocation value="" />
+               </NxRc>
+               <fts guid="5500621E2BE24BF0DD6ABF31EBA01099">
+                    <dishAciPort value="20000" />
+                    <idolServicePort value="9002" />
+                    <fsfServicePort value="10223" />
+                    <fsfAciPort value="7000" />
+                    <dishServicePort value="20002" />
+                    <idolAciPort value="9000" />
+                    <idolIndexPort value="9001" />
+               </fts>
+               <CharacterEncoding guid="5DC9A91F385448965CD1EDE3200A15E9">
+                    <charEncoding value="GBK" />
+               </CharacterEncoding>
+               <security guid="ZUG63OE2YRNFD1VY13KCEZM52XFJP45D">
+                    <adminDirectory value="D:\\Siemens\\Teamcenter11\\security" />
+               </security>
+               <ServerManagerLDAP guid="30E3AC7AF5CA4F82EAE21C8073NNNNNN">
+                    <components value="||||ou=Users|inetOrgPerson|uid||;" />
+                    <externalLDAP value="false" />
+                    <embComponents value="ldap|15389|;" />
+               </ServerManagerLDAP>
+               <adminUser guid="2E53CFC3AC75665E50FF0F207D1D013B">
+                    <user value="infodba" />
+               </adminUser>
+               <volume guid="1F16971107DE44C0C7827F800EE4AEF8">
+                    <hostName value="172.16.254.204" />
+                    <fscId value="FSC_TC_infodba" />
+                    <port value="4544" />
+                    <fscModel value="简单模型" />
+                    <name value="plmvolume" />
+                    <location value="\\\\172.16.254.204\\G$\\plmvolume" />
+               </volume>
+               <transientVolume guid="983980098FF188A8C4BF08E8168A32A8">
+                    <windowsVolume value="C:\\Temp\\transientVolume_infodba" />
+                    <unixVolume value="/tmp/transientVolume_infodba" />
+               </transientVolume>
+               <HTTPServers guid="2FA7DE8FF431C8AAD16AC5E58A8F98AF">
+                    <servers value="http://172.16.254.200:7001/tc,TcWeb1," />
+                    <useGzip value="true" />
+               </HTTPServers>
+               <RACSettings guid="5556237F3F54D1DD059F0A385B88CA46">
+                    <tempFolder value="" />
+                    <browserLoc value="" />
+               </RACSettings>
+               <RACFCCSettings guid="8BC34CE71B738026DF2B3D94A83A836C">
+                    <buildTccs value="true" />
+                    <doMerge value="false" />
+                    <newHome value="D:\\Siemens\\Teamcenter11\\tccs" />
+                    <existingHome value="D:\\Siemens\\Teamcenter11\\tccs" />
+                    <needToSetFmsHome value="true" />
+               </RACFCCSettings>
+               <TcOracleEngine guid="F4F7C0852B27D6E56B8C64BE77FFA14C">
+                    <populate value="true" />
+                    <flush value="false" />
+                    <port value="1521" />
+                    <service value="tc" />
+                    <host value="172.16.254.203" />
+                    <create value="false" />
+                    <createUser value="false" />
+                    <user value="infodba" />
+                    <uTF8Enabled value="false" />
+               </TcOracleEngine>
+               <sslconfig guid="YB6AY4CKBY2HUQI75405XIQF5FZ9SWR5">
+                    <enableSSL value="false" />
+               </sslconfig>
+               <FSCParents guid="30E3AC7AF5CA4F82EAE21C80737EE55B">
+                    <assignmentMode value="clientmap" />
+                    <parents value="http,172.16.254.204,4544,,0,lan,;" />
+               </FSCParents>
+               <SsoRc guid="E55610E8ECDB81520D8DAFD99D6BF542">
+                    <tssBrowser value="" />
+                    <loginURL value="" />
+                    <appId value="Teamcenter" />
+               </SsoRc>
+               <tstcdata guid="17E50A84B1F7E748813C1EB31822AE47">
+                    <unSuccInt value="120" />
+                    <tsRMIBased value="true" />
+                    <updateData value="true" />
+                    <webServer value="false" />
+                    <tsInstallDir value="D:/apps/dispatcher" />
+                    <tsLogLevel value="INFO" />
+                    <transServPort value="2001" />
+                    <succThresld value="480" />
+                    <pollingInt value="60" />
+                    <storeJTFile value="true" />
+                    <passwordConfirm value="8BNqMUNjXrY/nhY00r6yjQ" encrypt="true" />
+                    <host value="localhost" />
+                    <succInt value="60" />
+                    <tsLogDir value="D:/apps/dispatcher/Logs" />
+                    <unSuccThresld value="2880" />
+                    <filePort value="8080" />
+                    <user value="dcproxy" />
+                    <tsStagLoc value="D:/apps/dispatcher/Stage" />
+               </tstcdata>
+               <FSCService guid="F2FCBCEC03DFF7F9D1E3A11EC9B64BD2">
+                    <log value="" />
+                    <addToBootstrap value="true" />
+                    <fscReadCacheDir value="$HOME\\FSCCache" />
+                    <fscWriteCacheDir value="$HOME\\FSCCache" />
+                    <fscReadCacheSize value="10" />
+                    <fscWriteCacheSize value="10" />
+                    <serverID value="FSC_TC_infodba" />
+               </FSCService>
+               <OSUser guid="CA769D31FD7E122E5E509A0BBBD7E809">
+                    <user value="DIAS\\Administrator" />
+               </OSUser>
+               <FSCServiceFCCDefaults guid="7311DC5E94724BED0DD7419FCDE055CF">
+                    <cacheDirWin value="$HOME\\FCCCache" />
+                    <partialReadCacheSize value="3000" />
+                    <readCacheSize value="1000" />
+                    <cacheDirUnix value="/tmp/$USER/FCCCache" />
+                    <writeCacheSize value="1000" />
+               </FSCServiceFCCDefaults>
+               <tcLocation guid="5E43305CB92871A786D61692B085F6CB">
+                    <tcData value="D:\\Siemens\\tcdata" />
+                    <tcRoot value="D:\\Siemens\\Teamcenter11" />
+               </tcLocation>
+               <foundationSettings guid="LHBY67ZYMYHSKED26FHDNDHFJTZD84I7">
+                    <productionEnvironment value="true" />
+                    <genServCache value="" />
+                    <requestMetaCacheRebuild value="true" />
+                    <genClientCache value="generate all" />
+                    <enableGenServCache value="true" />
+                    <templatesToBeInstalled value="" />
+                    <quickClone value="false" />
+               </foundationSettings>
+               <RichClient2-tierSettings guid="FD83D83E316B865D4AFA06E24C106EC3">
+                    <webServer value="" />
+               </RichClient2-tierSettings>
+               <transdata guid="20E5BB0DBACCAC06FFFE406C68EA51AD">
+                    <ugiiLic value="" />
+                    <nxToPvDirectSel value="false" />
+                    <publishBatchSel value="false" />
+                    <updateMassProductViewsSel value="false" />
+                    <watchedFolderResultDir value="" />
+                    <proeToDxfSel value="false" />
+                    <spatialSrchIndxrSel value="false" />
+                    <sCFTransSel value="false" />
+                    <plmSyncSelected value="false" />
+                    <pcbToFatFSel value="true" />
+                    <updateMassProductViewsHome value="" />
+                    <nxTransDirectSel value="false" />
+                    <populateFscSel value="false" />
+                    <subsCmplMSDRerequestSel value="false" />
+                    <tcVisHome value="" />
+                    <spatialSrchTransSel value="false" />
+                    <subsCmplSel value="false" />
+                    <fileTranslationMaxWait value="600" />
+                    <rdvContextDbDownloadSel value="false" />
+                    <pdfGeneratorSel value="false" />
+                    <cmsBasePublishTool value="false" />
+                    <generate3DPDFReportsHome value="" />
+                    <prevServSel value="false" />
+                    <ecadTransHome value="D:\\Siemens\\Teamcenter11\\emps\\translation" />
+                    <nmsdPath value="" />
+                    <ugsLicServ value="28000@172.16.254.200" />
+                    <nxHome value="" />
+                    <replicateObjsSelected value="false" />
+                    <tcFtsIndxrFourTierUrl value="http://&lt;HOSTNAME&gt;:7001/tc" />
+                    <sETransHome value="" />
+                    <queryscosSel value="false" />
+                    <createAssSelected value="false" />
+                    <publishBatchTransHome value="" />
+                    <sETransSel value="false" />
+                    <storeAndForwardSel value="false" />
+                    <tcServerURL value="" />
+                    <proETransHome value="" />
+                    <subsCmplMSDImportSel value="false" />
+                    <mesDataGenHome value="" />
+                    <mesDataGenSel value="false" />
+                    <watchedFolderInputDir value="" />
+                    <tcVisLic value="" />
+                    <nxToCgmDirectSel value="false" />
+                    <fmsTransferSel value="false" />
+                    <tcFtsIndexerTransSelected value="false" />
+                    <generate3DPDFReportSel value="false" />
+                    <batchPrintSel value="false" />
+                    <fmsTransferBootFscUris value="" />
+                    <schMgrTransSel value="false" />
+                    <rdvContextNonDbDownloadSel value="false" />
+                    <sCFTransHome value="" />
+                    <mmvIndexGenSel value="false" />
+                    <enableCopyUG value="false" />
+                    <emailPollingSel value="false" />
+                    <tcFtsIndxrTcRetryCount value="5" />
+                    <renderMgtTranslatorSel value="false" />
+                    <subsCmplSDValidationSel value="false" />
+                    <importObjsSelected value="false" />
+                    <nxRefileSel value="false" />
+                    <user value="" />
+                    <asyncServiceSel value="false" />
+                    <proeToJtSel value="false" />
+                    <nxCloneSel value="false" />
+                    <projTransSel value="false" />
+                    <reqMgmtWordToHtmlSel value="false" />
+               </transdata>
+               <FSCServiceConnections guid="E4BDA0B521CB10A49F0CE123C9F326F1">
+                    <connections value="http,4544,;" />
+               </FSCServiceConnections>
+               <IIOPServers guid="98BB5D37B60CA1D6818A87E53D6200C0">
+                    <servers value="D:\\Siemens\\tcdata,TcData," />
+                    <activationMode value="NORMAL" />
+                    <connectPort value="1572" />
+                    <configFolder value="D:\\Siemens\\Teamcenter11\\iiopservers" />
+               </IIOPServers>
+               <FscSiteImport guid="630BECF927EC742A748A97486D5868DA">
+                    <remoteSites value="" />
+               </FscSiteImport>
+               <EmbeddedVisualization guid="0A0783942A238D1E4101CFBAD3F0F99A">
+                    <installLocation value="D:\\Siemens\\Teamcenter11.4\\Visualization" />
+                    <licenseLevel value="Professional" />
+                    <installImageLocation value="Z:\\F\\01.Installer\\04.TC11.4\\Tc11.4_PV_all\\TcVis_114_20171129_win64\\TcVis_114_20171129_win64\\Teamcenter_Visualization_11_4_win64.msi" />
+                    <hasInstalled value="false" />
+                    <toBeUninstalled value="false" />
+               </EmbeddedVisualization>
+               <tcdata guid="4500621E2BE24BF0DD6ABF31EBA01088">
+                    <path value="D:\\Siemens\\tcdata" />
+                    <serverHostLocation value="JJDomain" />
+                    <create value="true" />
+                    <siteId value="-1881236135" />
+                    <shareName value="" />
+                    <dsmKeyPath value="" />
+               </tcdata>
+               <tmtcdata guid="86CE23768423C7D69A6EE432CF0703C4">
+                    <tmRootDirLoc value="D:/apps/dispatcher" />
+                    <schedPort value="2001" />
+                    <moduleStageDir value="D:/apps/dispatcher/Stage" />
+                    <installDocs value="true" />
+                    <tmOnConsole value="true" />
+                    <starttm value="false" />
+                    <tmWinService value="false" />
+                    <installModule value="true" />
+                    <schedHostName value="localhost" />
+                    <docsInstallDir value="D:/apps/dispatcher/Docs" />
+                    <logLevel value="INFO" />
+                    <installAdminClnt value="true" />
+                    <modPort value="1999" />
+                    <installSched value="true" />
+                    <logDir value="D:/apps/dispatcher/Logs" />
+               </tmtcdata>
+               <serverMgrJ2ee guid="716871295BD80BADA2F139A5F9D95B6A">
+                    <smgrPeersNumber value="1" />
+                    <smgrMinServers value="1" />
+                    <smgrServerTarget value="0700 3, 1700 2" />
+                    <smgrServerHost value="172.16.254.200" />
+                    <smgrPoolPort value="8085" />
+                    <smgrClusterPort value="45566" />
+                    <smgrPoolId value="PoolA" />
+                    <smgrJmxRMIPort value="8088" />
+                    <smgrMulticastMode value="false" />
+                    <smgrClusterName value="Cluster" />
+                    <smgrPeers value="172.16.254.200, 17810" />
+                    <smgrLocalPort value="17800" />
+                    <smgrAssignmentServicePort value="8086" />
+                    <smgrLoginsPerMinute value="0" />
+                    <sockConnTimeout value="2000" />
+                    <smgrMaxServers value="30" />
+                    <smgrServiceMode value="false" />
+                    <smgrTcpTimeout value="15000" />
+               </serverMgrJ2ee>
+               <FSCServiceNonMasterSettings guid="A060C7D87B235C9ED141185D337FC634">
+                    <masterList value="http://172.16.254.204:4544(0)" />
+               </FSCServiceNonMasterSettings>
+               <jdk guid="AC98DE452A2837C08CD17D82CB7312E8">
+                    <path value="" />
+               </jdk>
+               <multiplexingproxy guid="RV8GS2JMCOP2OQDRQROUAGFR6S0JBDIM">
+                    <port value="8087" />
+                    <adminPort value="8084" />
+               </multiplexingproxy>
+               <ClientTransportMode guid="18DVF0VKAUEEFBQ5JOI6U7M17PHXK5XA">
+                    <filterText value="" />
+                    <useConfig value="false" />
+               </ClientTransportMode>
+          </data>
+          <features>
+               <installed feature="A0CF69C3A0BC61770EB81BD22667EA52" name="Microsoft Visual C++ Runtimes" />
+               <installed feature="A9CECD82127A11DB9804B622A1EF5492" name="Business Modeler IDE" />
+               <installed feature="A909338A1CB411DB8AF6B622A1EF5492" name="Business Modeler Templates" />
+               <installed feature="90C2A1C96F6A61FAB397AF88ABE4AAC1" name="FMS Server Cache" />
+               <installed feature="8C061DD51E13E0CB9DC4687B1A3348BE" name="Teamcenter Foundation" />
+               <installed feature="B176F6B6E9E91D9804EFB0D2010FD613" name="NX Part Family Classification Integration" />
+               <installed feature="BF0E78AFE4280DCB08594EA2F3671BE8" name="Java EE Based Server Manager" />
+               <installed feature="9BD9BA7EA062ECD5F19B8E8C744851FE" name="Full Text Search Engine" />
+               <installed feature="90C7E167F193EE77FB5FDF1BDDDE193B" name="EDA for Business Modeler IDE" />
+               <installed feature="WV56WDWGQRW3NDGOS4YEXNF55EKZHUEN" name="Client Communication System" />
+               <installed feature="E6BE32EBDFCC32D5F00E52BFEEAFC590" name="2-tier server configurations" />
+               <installed feature="42791A48DCBDD23FF08668F5847C96CC" name="JtUtilities Support" />
+               <installed feature="E2564104E1B964BB23D78078DBA34EEA" name="Teamcenter Rich Client 2-tier" />
+               <installed feature="C10846D4E83C11DBB817239D55D89593" name="Business Modeler IDE 2-tier" />
+               <installed feature="70E3D236E117DB49920EDAD9566777AC" name="Teamcenter Visualization (Embedded) for Rich Client" />
+               <installed feature="4FF970313813975F79306DF81D3C4A6B" name="Dispatcher Client for Rich Client" />
+               <installed feature="3BFF9272581BBF8614108FFC21173265" name="Classification L10N/Data Model" />
+               <installed feature="34D1115BC6A3EAC2036505988479E38B" name="EDA Server Support/Runtime Server" />
+               <installed feature="A94F476A35E6E0EB152263D37FBA18ED" name="EDA Server Support/Data Model" />
+               <installed feature="110686D6C4787CAB33827472564C49BE" name="EMPS - Foundation/Data Model" />
+               <installed feature="301F12B06B3EAAB18DC0C2B9444F3B20" name="Translation Service Database Module/Data Model" />
+               <installed feature="C1F107F376D71271DE7B88D14CDC01AB" name="Dispatcher Server" />
+               <installed feature="301F12B06B3EAAB18DC0C2B9444F3B18" name="Dispatcher Client" />
+               <spf feature="E289526B3F58306609C4EB06BC9BEBB2" name="EDA Server Support" />
+               <spf feature="DE8AA192BCAED8F0A8D0061B972D79C9" name="Classification L10N" />
+               <spf feature="731E85D5ABFE5A443CEC57806AF56A6D" name="EMPS - Foundation" />
+               <spf feature="326CA27DCABEFBB96D2735397986C1B9" name="Translation Service Database Module" />
+          </features>
+     </config>
+     <updateManager />
+</root>
+

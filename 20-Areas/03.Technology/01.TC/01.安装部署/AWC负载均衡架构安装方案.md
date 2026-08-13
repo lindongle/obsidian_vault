@@ -1,0 +1,21 @@
+---
+title: AWC负载均衡架构安装方案
+updated: 2026-06-05T23:50
+created: 2021-07-16T14:42:38
+tags:
+  - TC安装部署
+---
+
+**WEB层（54）：**
+AWC 网关、AWC客户端（Builder及其他客户端模块）--验证AWC客户端的依赖。--反着装，从11.6tem安装，输入11.2的路径和awc的补丁介质，只勾选AWC客户端相关；
+**VOLUME（52）：**
+将微服务的文件存储服务的文件夹（file_repository）放到volume服务器上并共享给两个Pool和web层；文件存储服务在Pool上安装，指向这个文件夹的共享；
+**PoolA（55）：**
+微服务框架、微服务主节点、微服务其他三个服务；
+AWC服务端扩展模块；
+<span style='color:#FA0000'>--打快照验证</span>
+**PoolB（55）：**
+先只装AWC服务端扩展模块；
+<span style='color:#FA0000'>--打快照验证</span>
+不管有无问题，打快照后安装微服务框架、微服务工作节点、、微服务其他三个服务；
+<span style='color:#FA0000'>--打快照验证</span>

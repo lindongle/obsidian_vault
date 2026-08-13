@@ -1,0 +1,92 @@
+#
+#===================================================
+# copyright     2014-2018
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+##
+# \file          t4s_mapping_config.sd
+#
+# \brief         Central configuration file for all needed defaults of the T4S gateway used with Teamcenter Out Of The Box
+#
+# \details       The file contains some default settings and determines which other mapping files are active.
+#                \n The Name of the file t4s_mapping_config.sd is fixed and the file must be present in var/mmap directory. \n 
+#
+# \author        M.L., 20130402
+#
+# ------------------------------------------------------------------------------------------------------
+
+set ::errorInfo ""
+tpwrite -mtype INTERN "t4s_mapping_config.sd :: START INIT"
+
+#***************************************************************************************************
+#   Here you can define all customer specific default values for the T4S gateway
+#***************************************************************************************************
+
+# Define SAP connection
+#set State [::T4S::CONNECTION2SAP::setConnectionInfoPlain2 <destination> <client> <user> <password> <language>]
+#set State [::T4X::CONNECTION2EA::selectActiveConnection2EA T4S "*" <destination> <client>]
+
+# Define Teamcenter connection
+#set State [::ITK::setConnectionParameters "<user>" "<password>" "<group>"]
+
+# T4S default settings for MM:
+set ::T4S_Defaults(Industry)           "M"
+set ::T4S_Defaults(SAPMaterialType)    "SECD"
+set ::T4S_Defaults(BaseUnit)           "EA"
+
+# T4S default settings for BOM:
+set ::T4S_Defaults(BomApplication)     "PP01"
+set ::T4S_Defaults(BomAlternative)     "1"
+set ::T4S_Defaults(BomAction)          "5"
+set ::T4S_Defaults(BomUsage)           "2"
+set ::T4S_Defaults(BomPositionType)    "L"
+
+# T4S default settings for DIR:
+set ::T4S_Defaults(DIRType)            "DOC"  ;# Techn. Documentation
+set ::T4S_Defaults(DIRPart)            "000"
+set ::T4S_Defaults(DIRVersion)         "AA"
+
+# T4S default settings for Equipment:
+set ::T4S_Defaults(Equi_Category)      "M"    ;# Equipment category
+
+# T4S default settings for Functional Location:
+set ::T4S_Defaults(FuncLoc_Category)   "M"    ;# LOV: I, M, S
+set ::T4S_Defaults(FuncLoc_Struct_Ind) "A"    ;# Functional Location category
+
+# T4S default settings for Vendor:
+set ::T4S_Defaults(VendorCompanyCode)  "0001"
+set ::T4S_Defaults(VendorAccountGroup) "MNFR"
+set ::T4S_Defaults(VendorCountry)      "DE"
+
+
+#***************************************************************************************************
+#   Source the customer specific mapping functions and all other customer specific
+#   function modules of the configuration (all *.sd files in the var/mmap directory):
+#***************************************************************************************************
+
+source -relax t4s_bom_mapping.sd;     # Mapping file for T4S bill of material transfer
+source -relax t4s_dir_mapping.sd;     # Mapping file for T4S document info record transfer
+source -relax t4s_ecm_mapping.sd;     # Mapping file for T4S engineering change master transfer
+source -relax t4s_equi_mapping.sd;    # Mapping file for T4S equipment transfer
+source -relax t4s_funcloc_mapping.sd; # Mapping file for T4S functional location transfer
+source -relax t4s_mm_item_import.sd;  # Mapping file for T4S material master import
+source -relax t4s_mm_mapping.sd;      # Mapping file for T4S material master transfer
+source -relax t4s_vendor_mapping.sd;  # Mapping file for T4S vendor transfer
+source -relax t4s_prop_mapping.sd;    # Mapping file for SAP data view
+source -relax t4s_query_mapping.sd;   # Mapping file for SAP match code search
+
+#
+# Let's activate the language we want
+#
+set strLanguageCode "en_US" ; # default language (check /var/lang/T4S/ for more language codes)
+#
+if { [info exists ::env(TP_LANGUAGE_CODE)] } {
+  set strLanguageCode $::env(TP_LANGUAGE_CODE)
+}
+#
+::msgcat::mclocale $strLanguageCode
+
+
+tpwrite -mtype INTERN "t4s_mapping_config.sd :: STOP INIT"
+if {$::errorInfo ne ""} {tpwrite -mtype ERROR "t4s_mapping_config.sd :: ERROR -> $::errorInfo"}

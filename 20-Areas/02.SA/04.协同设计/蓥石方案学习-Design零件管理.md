@@ -1,0 +1,46 @@
+---
+title: 蓥石方案学习-Design零件管理
+updated: 2026-06-06T10:09
+created: 2018-06-21T15:21:08
+---
+
+1、一棵树、两棵树：EBOM及DBOM，两套BOM。DBOM主要将基于数模的装配BOM。EBOM为VAS中IA下所有一级USG零件集合。
+![image1](7d9ca73560794214b919d2c10fb5e099.png)
+
+![image2](7f9fac53a0f647bc8d4c350af58afcb0.png)
+
+![image3](66f3d5840f80499086c3dc664f0a8436.png)
+2、USG/ACT零件：USG指IA直接的下一级零件总成及零件。ACT指一级总成下的下级零部件。
+3、GD&T，Geometric Dimensioning and Tolerancing，二维图上的尺寸及公差标准方法。
+4、CarryOver件：C/O，借用件。
+<span style='color:black'>**5、Post件：position件，数模位置件，只在DBOM中出现，虚拟节点，主要对于借用件使用，单独Item类型，有独立的product数据集标识下级零组件在某新的IA中的位置。**</span>
+<span style='color:black'>**如对于初始IA设计，IA01下有一级总成USG01，VC变量条件维护在USG01上，当USG01这个件被新车型的新IA借用时，由于零部件是一个，但在整车数模中该USG零件位置发生变化，所以两种方式。1）在新的IA上加载这个USG01零件，进行重新装配，搭建约束关系等。2）在新IA下面装配一个Post类型的item，Post类型版本下面装配借用的USG零件版本的方式。且此Post件item版本下放product文件，来存储USG01这个零件的位置信息。**</span>
+第2）种方式可以避免每个借用件均去重新装配，且一旦变更后，多有借用的上级IA均要重新装配。尤其对于处理一系列的USG零件位置在各个车型上位置均固定的情况，只需要使用一个post件就可以。如某IA02下有20个标准件编码均为USG02的件，只是在整车坐标中位置不同，且其中10个标准件在其他各个车型的位置相对固定。当其他车型新IA上借用这10个标准件时，则可以在IA02下装配一个post类型的item，该item版本下装配这10个位置固定的标准件，并通过在此post版本下创建product对象类将这10个标准件位置固化。如果有VC变量条件，则需要将变量条件定义到此post类型版本上。
+主要为了解决在EBOM上可以直接查看DBOM对应的数模（记录数模的位置信息）。结构为part-post-design，否则就得把IA总成挂到part下面。
+![image4](01bf508830d8485bba1c0cc56f23d5d3.png)
+6、变形件。
+ALTREP件，同一零部件，数模形态不同的件，如弹簧、皮带等。
+管理方式：新增一个变形件item类型，在此类型版本下进行变形件的设计。而把变形之前的item及数模使用关系属性手动挂到变性后的item版本下。
+![image5](295ee2131d684a0983160e223a06edc6.png)
+7、参考件
+REF件：参考引用件，即设计数模时，因坐标或配合约束关系需要加载另一个数模作为背景或参考。设计完成后，去掉此参考，只在DBOM中出现，在EBOM中会去掉。
+管理方式：直接在IA下装配一个类型为参考件的对象，其下级挂对应的下级组件及product数模。进行整车虚拟评审或EBOM生成时，把此参考件去掉。==--是否可以设置不存于DBOM中？--只能手动去除==
+8、二维图与三维图独立管理：
+建立Drawing类型的item，与DBOM中数模Item。分开管理，且把对应的三维Item装配到对应二维Item下级，使用精确装配。便于各自独立修订升版，当三维变更时，二维也同样会自动更新。
+![image6](0dde91e0c69f4861822d6ea888eef214.png)
+9、精确装配与非精确装配
+![image7](2a36c1c5c80349babf65882a2256568b.png)
+正式版本：采用非精确管理
+<span style='background:yellow;mso-highlight:yellow'>小版本：采用精确结构管理</span>，什么情况下会用到精确装配。
+10、版本规则：
+![image8](6fef3fb24f794e618fed2e7692188c58.png)
+11、总布置：
+![image9](15f094bf14b04ccb929d4a457c3d4a5a.png)
+==总布置设计的item都是单零件吗？--总成件断面库是否建立？分类还是文件夹？--先不做断面库==
+==12、对象状态含义：先后顺序？==
+VDR:Verified Data Release，验证数据发布，A面发布,4
+IDR：Initial Data Release，初始数据发布，CAS面发布。3
+DSO:Design Sign Off，设计会签，主题造型确认。2
+VPI：Vehicle Program Initiative，整车项目启动。1
+13、虚拟评审分支下的各级虚拟评审设计item每个IA都要进行关联创建对应的虚拟评审设计item吗？--借用原IA基线
+在虚拟评审分支下，使用精确版本规则建立工程-系统-子系统分支（编号与工程分支不同，结构相同），然后对工程下的某个IA总成打基线，把基线版本放到虚拟评审结构中的子系统分支中，进行虚拟评审。
