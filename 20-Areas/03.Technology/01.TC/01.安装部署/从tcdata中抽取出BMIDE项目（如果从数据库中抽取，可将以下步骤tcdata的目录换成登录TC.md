@@ -1,7 +1,7 @@
 ---
 title: 从tcdata中抽取出BMIDE项目（如果从数据库中抽取，可将以下步骤tcdata的目录换成登录TC...
-updated: 2026-06-06T10:05
-created: 2018-11-15T16:44:04
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

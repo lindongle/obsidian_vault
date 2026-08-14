@@ -1,7 +1,7 @@
 ---
 title: MBOM及订单BOM管理
-updated: 2026-06-05T22:06
-created: 2019-07-29T17:23:07
+updated: 2026-06-05T22:06:06
+created: 2026-07-05T17:04:58
 ---
 
 # <span style='color:#1E4E79'>MBOM管理</span>

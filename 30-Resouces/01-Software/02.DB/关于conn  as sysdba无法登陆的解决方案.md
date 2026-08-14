@@ -1,7 +1,7 @@
 ---
 title: 关于conn / as sysdba无法登陆的解决方案
-updated: 2026-06-06T00:30
-created: 2019-09-18T22:27:44
+updated: 2026-06-06T00:30:44
+created: 2026-07-05T17:04:54
 ---
 
 1\. 操作系統用户是否dba组

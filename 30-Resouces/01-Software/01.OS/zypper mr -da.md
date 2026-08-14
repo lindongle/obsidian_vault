@@ -1,7 +1,7 @@
 ---
 title: zypper mr -da
-updated: 2026-06-06T00:29
-created: 2025-05-14T16:17:24
+updated: 2026-06-06T00:29:19
+created: 2026-07-05T17:04:53
 ---
 
 zypper mr -da

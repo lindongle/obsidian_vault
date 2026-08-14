@@ -1,7 +1,7 @@
 ---
 title: 配置二维转PDF，三维转stp
-updated: 2026-06-06T00:16
-created: 2023-06-27T17:50:30
+updated: 2026-06-06T00:16:06
+created: 2026-07-05T17:04:43
 ---
 
 \<auxiliary_file cad_type="DRW" direction="cadtopdm"\>

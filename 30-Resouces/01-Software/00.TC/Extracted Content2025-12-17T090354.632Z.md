@@ -1,11 +1,12 @@
 ---
-title: "<span style='color:#2E75B5'>环境异常</span>"
-updated: 2026-06-18T10:59:38+08:00
-created: 2025-12-17T09:04:11
+title: <span style='color:#2E75B5'>环境异常</span>
+updated: 2026-06-18T10:59:38
+created: 2026-07-05T17:04:52
 tags:
   - TC
-aliases: ["<span style='color:#2E75B5'>环境异常</span>"]
-linter-yaml-title-alias: "<span style='color:#2E75B5'>环境异常</span>"
+aliases:
+  - <span style='color:#2E75B5'>环境异常</span>
+linter-yaml-title-alias: <span style='color:#2E75B5'>环境异常</span>
 ---
 
 Extracted Content2025-12-17T09:03:54.632Z

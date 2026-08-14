@@ -1,7 +1,7 @@
 ---
 title: 关于windows service不能访问网络共享盘(NetWork Drive)的解决方案 - f...
-updated: 2026-06-06T00:23
-created: 2018-09-30T07:16:50
+updated: 2026-06-06T00:23:57
+created: 2026-07-05T17:04:53
 ---
 
 下午

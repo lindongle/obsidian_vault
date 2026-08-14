@@ -1,7 +1,7 @@
 ---
 title: 判断对象关系下对象类型对应关系下对象的状态EPM-check-target-attachments
-updated: 2026-06-06T10:05
-created: 2018-12-21T13:01:58
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:42
 ---
 
 ![image1](ff8c02cd9357467d846cc9c79d687f5e.png)

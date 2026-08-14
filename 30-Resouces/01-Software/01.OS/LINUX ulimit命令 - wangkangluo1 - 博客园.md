@@ -1,7 +1,7 @@
 ---
 title: LINUX ulimit命令 - wangkangluo1 - 博客园
-updated: 2026-06-06T10:05
-created: 2018-10-14T07:41:07
+updated: 2026-06-13T15:25:55
+created: 2026-07-05T17:04:53
 ---
 
 下午

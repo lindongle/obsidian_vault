@@ -1,7 +1,7 @@
 ---
 title: vis静默安装
-updated: 2026-06-05T23:16
-created: 2019-07-17T19:07:44
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

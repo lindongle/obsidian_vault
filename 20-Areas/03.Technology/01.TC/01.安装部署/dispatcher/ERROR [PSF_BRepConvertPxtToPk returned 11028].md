@@ -1,7 +1,7 @@
 ---
 title: "ERROR: [PSF_BRep::ConvertPxtToPk returned: 11028]"
-updated: 2026-06-06T10:08
-created: 2019-03-02T11:28:22
+updated: 2026-07-05T17:09:10
+created: 2026-07-05T17:09:10
 tags:
   - TC安装部署
 ---

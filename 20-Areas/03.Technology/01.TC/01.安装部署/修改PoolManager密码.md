@@ -1,7 +1,7 @@
 ---
 title: 修改PoolManager密码
-updated: 2026-06-06T10:09
-created: 2025-11-25T20:11:27
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

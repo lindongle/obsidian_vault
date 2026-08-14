@@ -1,7 +1,7 @@
 ---
 title: AWC界面
-updated: 2026-06-06T10:09
-created: 2021-05-21T16:01:24
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:40
 ---
 
 ![image1](e9f4cc2038d14fa89f32f747e0e0eb8d.png)

@@ -1,7 +1,7 @@
 ---
 title: 如何使用ActiveWorkspace的客户端渲染功能
-updated: 2026-06-06T10:08
-created: 2020-03-02T15:34:22
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

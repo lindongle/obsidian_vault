@@ -1,7 +1,7 @@
 ---
 title: 海外工厂及KD领域BOM管理
-updated: 2026-06-06T10:08
-created: 2025-05-12T18:59:20
+updated: 2026-06-13T22:09:26
+created: 2026-07-05T17:04:37
 tags:
   - BOM
 ---

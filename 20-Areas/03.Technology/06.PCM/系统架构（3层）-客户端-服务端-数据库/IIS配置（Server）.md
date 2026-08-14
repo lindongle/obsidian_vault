@@ -1,7 +1,7 @@
 ---
 title: IIS配置（Server）
-updated: 2026-06-06T10:09
-created: 2022-04-26T12:25:10
+updated: 2026-06-06T10:09:04
+created: 2026-07-05T17:04:51
 ---
 
 ![image1](16293c8fc17f485e8d79f241b52ad1fe.png)

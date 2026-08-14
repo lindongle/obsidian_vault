@@ -1,7 +1,7 @@
 ---
 title: Design-Part
-updated: 2026-06-05T23:21
-created: 2021-09-15T15:28:53
+updated: 2026-06-05T23:21:53
+created: 2026-07-05T17:04:40
 ---
 
 修订Part，可以自定带过Design，配置深度复制规则，可以把最新版的Design带到Part下，同时也会将最新修订版本的Part放到Design下

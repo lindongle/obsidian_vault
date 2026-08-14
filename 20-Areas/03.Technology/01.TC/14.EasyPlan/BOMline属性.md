@@ -1,7 +1,7 @@
 ---
 title: BOMline属性
-updated: 2026-06-05T23:41
-created: 2020-05-15T14:55:46
+updated: 2026-06-05T23:41:27
+created: 2026-07-05T17:04:49
 ---
 
 自定义工艺行属性、工序行属性，都可以通过对业务对象PSoccurrence对象上增加。

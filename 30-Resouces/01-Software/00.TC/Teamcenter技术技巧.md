@@ -1,7 +1,7 @@
 ---
 title: Teamcenter技术技巧
-updated: 2026-06-06T10:08
-created: 2019-08-06T23:37:29
+updated: 2026-06-13T22:08:29
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

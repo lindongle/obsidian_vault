@@ -1,7 +1,7 @@
 ---
 title: 重启oracle服务及配置
-updated: 2026-06-06T00:28
-created: 2019-09-19T16:37:36
+updated: 2026-06-06T00:28:56
+created: 2026-07-05T17:04:54
 ---
 
 用root以ssh登录到linux，打开终端输入以下命令：

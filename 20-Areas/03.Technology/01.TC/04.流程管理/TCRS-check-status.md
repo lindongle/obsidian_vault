@@ -1,7 +1,7 @@
 ---
 title: TCRS-check-status
-updated: 2026-06-18T19:59:18+08:00
-created: 2018-03-11T12:10:53
+updated: 2026-06-18T19:59:18
+created: 2026-07-05T17:04:42
 ---
 
 验证流程目标的发布状态

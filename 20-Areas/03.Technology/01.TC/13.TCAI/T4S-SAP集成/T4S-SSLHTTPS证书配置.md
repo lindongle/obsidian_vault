@@ -1,7 +1,7 @@
 ---
 title: T4S-SSLHTTPS证书配置
-updated: 2026-08-06T10:53:47+08:00
-created: 2022-06-15T12:20:10
+updated: 2026-08-06T10:53:47
+created: 2026-07-05T17:04:48
 ---
 
 1.  备份以下两个文件：\<BGS_ROOT\>/var/conf/tpds.overlay和\<GS_ROOT\>/var/conf/tpds.overlay

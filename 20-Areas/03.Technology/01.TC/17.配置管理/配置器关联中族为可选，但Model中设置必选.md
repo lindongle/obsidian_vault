@@ -1,7 +1,7 @@
 ---
 title: 配置器关联中族为可选，但Model中设置必选
-updated: 2026-06-06T10:09
-created: 2025-06-12T16:41:52
+updated: 2026-06-06T10:09:03
+created: 2026-07-05T17:04:50
 ---
 
 ![image1](8decf747552c4f4eab185e0c14a65d69.png)

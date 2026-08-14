@@ -1,7 +1,7 @@
 ---
 title: dispatcherclient无法启动
-updated: 2026-06-05T23:27
-created: 2022-12-14T15:05:44
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

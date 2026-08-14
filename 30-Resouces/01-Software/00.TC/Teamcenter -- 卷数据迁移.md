@@ -1,7 +1,7 @@
 ---
 title: Teamcenter -- 卷数据迁移
-updated: 2026-06-06T10:08
-created: 2019-12-06T22:08:17
+updated: 2026-06-13T22:08:29
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

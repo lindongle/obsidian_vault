@@ -1,7 +1,7 @@
 ---
 title: AWC新建自定义的变更类型，提示创建失败
-updated: 2026-06-06T10:09
-created: 2025-07-18T14:56:04
+updated: 2026-06-06T10:09:02
+created: 2026-07-05T17:04:43
 ---
 
 ![image1](8ebe8fbb4d6a4fa6ab367ebc279bd81b.png)

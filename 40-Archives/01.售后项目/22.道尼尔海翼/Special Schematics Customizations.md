@@ -1,7 +1,7 @@
 ---
 title: Special Schematics Customizations
-updated: 2026-06-05T22:25
-created: 2023-04-23T14:06:03
+updated: 2026-06-05T22:25:42
+created: 2026-07-05T17:05:02
 ---
 
 **Material List & Wire List(EML/EWL)**

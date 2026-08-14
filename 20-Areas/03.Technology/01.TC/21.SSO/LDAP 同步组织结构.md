@@ -1,7 +1,7 @@
 ---
 title: LDAP 同步组织结构
-updated: 2026-06-05T23:48
-created: 2018-04-17T11:40:23
+updated: 2026-06-13T15:25:42
+created: 2026-07-05T17:04:50
 ---
 
 <span style='color:#006487'>LDAP syncrhonization concepts</span>

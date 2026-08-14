@@ -1,7 +1,7 @@
 ---
 title: DIPA
-updated: 2026-06-06T10:09
-created: 2025-12-02T14:35:11
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 1、MERelationTypePartsConsumed；定义 Teamcenter 识别为操作和流程中部件消耗的关系（发生）类型。

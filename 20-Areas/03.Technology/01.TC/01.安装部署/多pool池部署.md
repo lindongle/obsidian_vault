@@ -1,7 +1,7 @@
 ---
 title: 多pool池部署
-updated: 2026-06-06T10:08
-created: 2019-08-27T14:05:46
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

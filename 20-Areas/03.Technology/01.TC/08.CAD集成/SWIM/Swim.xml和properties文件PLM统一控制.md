@@ -1,7 +1,7 @@
 ---
 title: Swim.xml和properties文件PLM统一控制
-updated: 2026-06-06T10:08
-created: 2022-11-22T23:26:19
+updated: 2026-06-06T10:08:52
+created: 2026-07-05T17:04:44
 ---
 
 The swim.properties and swim.xml files can be centrally managed in Teamcenter, instead of locally on each integration client. To manage settings in Teamcenter, attach SOLIDWORKS Integration Settings datasets to items named SW2_Properties and SW2_XML, then upload the configuration files as named references of the datasets. During login, the integration client will look for the items and datasets by name, and if found, will download and use them.

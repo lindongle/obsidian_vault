@@ -1,7 +1,7 @@
 ---
 title: 安装或卸载出现"Windows error 2 occured while loading the ...
-updated: 2026-06-06T10:05
-created: 2018-08-17T05:33:35
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:54
 ---
 
 安装或卸载出现"Windows error 2 occured while loading the Java VM"时解决办法 - 超级无敌菜鸟 - 博客园

@@ -1,7 +1,7 @@
 ---
 title: Jack
-updated: 2026-06-06T10:08
-created: 2019-01-09T09:49:01
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:49
 ---
 
 Jack

@@ -1,7 +1,7 @@
 ---
 title: linux下设置fsc与vault服务开机启动
-updated: 2026-06-06T10:09
-created: 2025-07-21T16:44:25
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

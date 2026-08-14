@@ -1,7 +1,7 @@
 ---
 title: Rulestream基本内容
-updated: 2026-06-24T10:14:40+08:00
-created: 2020-06-06T19:59:32
+updated: 2026-06-24T10:14:40
+created: 2026-07-05T17:04:51
 ---
 
 Rulestream中的Teamcenter功能由零件族上定义的specs（aka specs）控制。 Teamcenter规范共有三种类型-搜索，Item和Object。 搜索规范允许Rulestream定义要使用的已保存查询，要搜索的内容以及要返回的内容。 Item规范使Rulestream可以定义要使用的Item类型，如何与之交互–创建，修改，修改–并设置该Item的属性值。 最后，Object规范允许规则创建者创建Teamcenter业务对象并将其与Teamcenter的Item相关联

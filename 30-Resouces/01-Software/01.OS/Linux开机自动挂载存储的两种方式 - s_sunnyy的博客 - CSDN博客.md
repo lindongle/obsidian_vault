@@ -1,7 +1,7 @@
 ---
 title: Linux开机自动挂载存储的两种方式 - s_sunnyy的博客 - CSDN博客
-updated: 2026-06-06T00:28
-created: 2018-10-22T18:22:16
+updated: 2026-06-06T00:28:19
+created: 2026-07-05T17:04:53
 ---
 
 上午

@@ -1,7 +1,7 @@
 ---
 title: sql server 2012 开启1433 - caonw - 博客园
-updated: 2026-06-06T10:05
-created: 2023-04-26T20:55:24
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:54
 ---
 
 下午

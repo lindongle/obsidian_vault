@@ -1,7 +1,7 @@
 ---
 title: 如何配置选中Item Revision时在查看器不显示JT
-updated: 2026-06-06T10:08
-created: 2020-11-02T22:50:28
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

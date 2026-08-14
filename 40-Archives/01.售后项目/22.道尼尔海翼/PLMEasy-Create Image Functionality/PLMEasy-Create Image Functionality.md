@@ -1,7 +1,7 @@
 ---
 title: PLMEasy-Create Image Functionality
-updated: 2026-06-10T15:30
-created: 2023-04-23T15:57:29
+updated: 2026-06-10T15:30:23
+created: 2026-07-05T17:05:02
 ---
 
 执行账号

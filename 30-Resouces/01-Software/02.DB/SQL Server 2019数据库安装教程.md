@@ -1,7 +1,7 @@
 ---
 title: SQL Server 2019数据库安装教程
-updated: 2026-06-06T10:08
-created: 2022-04-25T17:24:39
+updated: 2026-06-13T15:50:00
+created: 2026-07-05T17:04:54
 ---
 
 # <span style='color:#1E4E79'>SQL Server 2019数据库安装教程 </span>

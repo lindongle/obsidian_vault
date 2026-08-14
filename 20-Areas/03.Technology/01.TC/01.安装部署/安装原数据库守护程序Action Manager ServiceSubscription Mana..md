@@ -1,7 +1,7 @@
 ---
 title: 安装原数据库守护程序Action Manager Service/Subscription Mana...
-updated: 2026-06-06T10:09
-created: 2025-12-03T09:51:48
+updated: 2026-07-05T17:09:04
+created: 2026-07-05T17:09:04
 tags:
   - TC安装部署
 ---

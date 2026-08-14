@@ -1,7 +1,7 @@
 ---
 title: oracle12c
-updated: 2026-06-06T10:05
-created: 2018-03-11T12:02:05
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:51
 ---
 
 ![image1](376e27452aad450e8ed2bd3568a244ed.gif)

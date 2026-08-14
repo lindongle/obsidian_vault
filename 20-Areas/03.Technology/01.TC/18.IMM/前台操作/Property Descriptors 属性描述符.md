@@ -1,7 +1,7 @@
 ---
 title: Property Descriptors 属性描述符
-updated: 2026-06-06T10:09
-created: 2020-02-13T11:13:43
+updated: 2026-06-06T10:09:04
+created: 2026-07-05T17:04:50
 ---
 
 **Property Descriptor（属性描述符）**

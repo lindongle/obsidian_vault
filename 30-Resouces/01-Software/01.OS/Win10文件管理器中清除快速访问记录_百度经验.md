@@ -1,7 +1,7 @@
 ---
 title: Win10文件管理器中清除快速访问记录_百度经验
-updated: 2026-06-06T10:05
-created: 2018-12-06T20:09:45
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:53
 ---
 
 已剪辑自: <https://jingyan.baidu.com/article/cd4c297916c700756e6e603c.html>

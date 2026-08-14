@@ -1,7 +1,7 @@
 ---
 title: 设置weblogic为windows服务
-updated: 2026-06-06T10:05
-created: 2018-10-17T13:18:24
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

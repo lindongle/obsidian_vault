@@ -1,7 +1,7 @@
 ---
 title: 节点管理器启动weblogic服务
-updated: 2026-06-06T10:08
-created: 2019-03-25T23:42:12
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

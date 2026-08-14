@@ -1,7 +1,7 @@
 ---
 title: SAP替代物料与后继物料
-updated: 2026-06-06T10:05
-created: 2020-10-20T13:53:45
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:55
 ---
 
 [PP SAP最完整的替代及取代资料.pdf](8fab6805f37b4f7fa2182c4fa63a6306.pdf)

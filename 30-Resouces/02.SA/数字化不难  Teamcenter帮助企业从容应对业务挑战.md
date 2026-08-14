@@ -1,7 +1,7 @@
 ---
 title: 数字化不难 | Teamcenter帮助企业从容应对业务挑战
-updated: 2026-06-06T10:08
-created: 2020-05-15T20:05:58
+updated: 2026-06-06T10:08:46
+created: 2026-07-05T17:04:56
 ---
 
 ## <span style='color:#2E75B5'>数字化不难 \| Teamcenter帮助企业从容应对业务挑战 </span>

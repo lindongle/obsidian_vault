@@ -1,7 +1,7 @@
 ---
 title: vis使用生命周期查看器打开后，与配置的license级别不匹配
-updated: 2026-06-06T00:08
-created: 2018-10-16T21:54:39
+updated: 2026-06-06T00:08:52
+created: 2026-07-05T17:04:49
 ---
 
 1、添加环境变量，SPLM_LICENSE_SERVER，连接license服务器

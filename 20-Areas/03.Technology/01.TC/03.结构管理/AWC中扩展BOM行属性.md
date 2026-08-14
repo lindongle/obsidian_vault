@@ -1,7 +1,7 @@
 ---
 title: AWC中扩展BOM行属性
-updated: 2026-06-06T10:35
-created: 2018-09-18T19:12:04.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:41
 tags:
   - awc
   - bom

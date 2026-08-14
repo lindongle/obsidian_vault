@@ -1,7 +1,7 @@
 ---
 title: 修改dispatcher的用户名及密码
-updated: 2026-06-06T10:05
-created: 2018-06-15T05:29:04
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

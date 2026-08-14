@@ -1,7 +1,7 @@
 ---
 title: 切换root用户
-updated: 2026-06-06T00:29
-created: 2025-07-21T15:00:08
+updated: 2026-06-06T00:29:31
+created: 2026-07-05T17:04:53
 ---
 
 sudo su -

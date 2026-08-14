@@ -1,7 +1,7 @@
 ---
 title: AWC(Teamcenter 2512)根据属性值控制对象图标的显示
-updated: 2026-06-06T10:08
-created: 2026-04-17T21:11:22
+updated: 2026-06-13T22:08:29
+created: 2026-07-05T17:04:51
 tags:
   - TC
 ---

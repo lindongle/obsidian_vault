@@ -1,7 +1,7 @@
 ---
 title: 修改TC日期及时间显示格式
-updated: 2026-06-05T23:22
-created: 2022-03-22T15:29:38
+updated: 2026-06-05T23:22:04
+created: 2026-07-05T17:04:47
 ---
 
 <span style='color:#2D373C'>如果是修改lang下面的timelocal_locale.xml文件</span>

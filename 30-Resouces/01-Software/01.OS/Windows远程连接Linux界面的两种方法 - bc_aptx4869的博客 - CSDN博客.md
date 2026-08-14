@@ -1,7 +1,7 @@
 ---
 title: Windows远程连接Linux界面的两种方法 - bc_aptx4869的博客 - CSDN博客
-updated: 2026-06-06T00:22
-created: 2018-10-22T18:21:44
+updated: 2026-06-06T00:22:26
+created: 2026-07-05T17:04:53
 ---
 
 已剪辑自: <https://blog.csdn.net/bc_aptx4869/article/details/78218084>

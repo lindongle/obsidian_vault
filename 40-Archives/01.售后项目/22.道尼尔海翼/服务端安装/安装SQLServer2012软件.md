@@ -1,7 +1,7 @@
 ---
 title: 安装SQLServer2012软件
-updated: 2026-06-06T10:09
-created: 2023-04-12T09:46:39
+updated: 2026-06-06T10:09:06
+created: 2026-07-05T17:05:03
 ---
 
 安装SQLServer2012软件

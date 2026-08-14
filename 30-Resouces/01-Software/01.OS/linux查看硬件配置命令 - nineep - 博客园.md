@@ -1,7 +1,7 @@
 ---
 title: linux查看硬件配置命令 - nineep - 博客园
-updated: 2026-06-06T10:05
-created: 2019-09-21T01:27:33
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 linux查看硬件配置命令 - nineep - 博客园

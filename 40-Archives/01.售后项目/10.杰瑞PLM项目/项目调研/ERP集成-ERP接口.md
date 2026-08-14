@@ -1,7 +1,7 @@
 ---
 title: ERP集成-ERP接口
-updated: 2026-06-05T22:10
-created: 2020-07-21T08:18:28
+updated: 2026-06-05T22:10:44
+created: 2026-07-05T17:04:59
 ---
 
 ERP集成-ERP接口

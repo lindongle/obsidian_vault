@@ -1,7 +1,7 @@
 ---
 title: AWC自定义BOMline属性
-updated: 2026-06-06T10:09
-created: 2018-09-20T20:02:12.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:41
 tags:
   - awc
   - bom

@@ -1,7 +1,7 @@
 ---
 title: EM
-updated: 2026-06-06T00:13
-created: 2018-03-11T12:43:24
+updated: 2026-06-06T00:13:53
+created: 2026-07-05T17:04:47
 ---
 
 1、em是随11G安装的一个网页版客户端工具，跟sqlplus，plsql，sqldevelop以及其他第三方工具一样，只是功能界面不一样。

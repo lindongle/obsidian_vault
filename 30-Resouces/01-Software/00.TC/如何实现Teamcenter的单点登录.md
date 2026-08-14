@@ -1,7 +1,7 @@
 ---
-title: "<span style='color:#2E75B5'>如何实现Teamcenter的单点登录 </span>"
-updated: 2026-07-31T10:03:23+08:00
-created: 2019-10-26T00:11:40
+title: <span style='color:#2E75B5'>如何实现Teamcenter的单点登录 </span>
+updated: 2026-07-31T10:03:23
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

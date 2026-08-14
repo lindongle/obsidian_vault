@@ -1,7 +1,7 @@
 ---
 title: 中望CAD2024封装集成 提示dwl文件问题
-updated: 2026-06-06T10:08
-created: 2024-07-11T16:37:26
+updated: 2026-06-06T10:08:51
+created: 2026-07-05T17:04:41
 ---
 
 ![image1](bfedb050418548a0b24c364161b5b175.png)

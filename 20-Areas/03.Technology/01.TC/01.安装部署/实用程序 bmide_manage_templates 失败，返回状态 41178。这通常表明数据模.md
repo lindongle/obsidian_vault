@@ -1,7 +1,7 @@
 ---
 title: 实用程序 bmide_manage_templates 失败，返回状态 41178。这通常表明数据模...
-updated: 2026-06-06T00:07
-created: 2018-06-04T21:14:42
+updated: 2026-07-05T17:09:04
+created: 2026-07-05T17:09:04
 tags:
   - TC安装部署
 ---

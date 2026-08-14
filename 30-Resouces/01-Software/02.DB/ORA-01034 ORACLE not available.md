@@ -1,7 +1,7 @@
 ---
 title: "ORA-01034: ORACLE not available"
-updated: 2026-06-06T00:31
-created: 2021-05-11T10:25:46
+updated: 2026-06-06T00:31:17
+created: 2026-07-05T17:04:54
 ---
 
 ORA-01034: ORACLE not available

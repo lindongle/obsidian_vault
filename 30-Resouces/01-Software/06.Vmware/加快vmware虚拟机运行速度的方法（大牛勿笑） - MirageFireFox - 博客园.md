@@ -1,7 +1,7 @@
 ---
 title: 加快vmware虚拟机运行速度的方法（大牛勿笑） - MirageFireFox - 博客园
-updated: 2026-06-06T10:05
-created: 2022-04-20T18:40:29
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:55
 ---
 
 上午

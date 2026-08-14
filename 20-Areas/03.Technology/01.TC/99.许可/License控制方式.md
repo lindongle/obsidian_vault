@@ -1,7 +1,7 @@
 ---
 title: License控制方式
-updated: 2026-06-18T13:38:21+08:00
-created: 2020-05-25T10:07:43
+updated: 2026-06-18T13:38:21
+created: 2026-07-05T17:04:50
 ---
 
 <table style="width:91%;">

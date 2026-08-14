@@ -1,7 +1,7 @@
 ---
 title: 使用 2412 和 DC 更新 Teamcenter 安装参数和 TcVault 中的数据库密码
-updated: 2026-06-18T10:59:25+08:00
-created: 2025-11-14T18:33:28
+updated: 2026-07-05T17:08:54
+created: 2026-07-05T17:08:54
 tags:
   - TC
 ---

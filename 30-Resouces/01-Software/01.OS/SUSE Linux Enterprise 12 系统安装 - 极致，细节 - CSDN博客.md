@@ -1,7 +1,7 @@
 ---
 title: SUSE Linux Enterprise 12 系统安装 - 极致，细节 - CSDN博客
-updated: 2026-06-06T10:05
-created: 2019-06-20T02:02:32
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 SUSE Linux Enterprise 12 系统安装 - 极致，细节 - CSDN博客

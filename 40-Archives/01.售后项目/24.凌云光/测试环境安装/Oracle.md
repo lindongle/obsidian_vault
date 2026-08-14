@@ -1,7 +1,7 @@
 ---
 title: Oracle
-updated: 2026-06-06T10:09
-created: 2023-05-10T14:58:30
+updated: 2026-06-06T10:09:05
+created: 2026-07-05T17:05:04
 ---
 
 ![image1](97771c25e99d4c6c8bd9527ec04ef913.png)

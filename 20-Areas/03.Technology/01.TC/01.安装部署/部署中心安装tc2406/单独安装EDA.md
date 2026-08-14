@@ -1,7 +1,7 @@
 ---
 title: 单独安装EDA
-updated: 2026-06-06T10:09
-created: 2024-09-20T11:57:41
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

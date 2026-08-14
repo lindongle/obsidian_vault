@@ -1,7 +1,7 @@
 ---
 title: awc负载均衡配置及https转发http--利用nginx
-updated: 2026-06-25T16:38:13+08:00
-created: 2025-11-21T10:13:11
+updated: 2026-06-25T16:38:13
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

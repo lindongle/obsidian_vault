@@ -1,7 +1,7 @@
 ---
 title: tc集成插件加载报错
-updated: 2026-06-06T10:08
-created: 2023-11-21T17:00:38
+updated: 2026-06-06T10:08:51
+created: 2026-07-05T17:04:40
 ---
 
 Warning: Failed to open Teamcenter file, For details, please look at theexcebtois ldfo rmat oAMAA bpe ibrary, (Exception from HRESUT:

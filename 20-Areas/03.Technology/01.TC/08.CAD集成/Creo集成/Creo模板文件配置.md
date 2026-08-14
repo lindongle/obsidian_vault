@@ -1,7 +1,7 @@
 ---
 title: Creo模板文件配置
-updated: 2026-06-06T10:05
-created: 2018-03-11T13:06:38
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:43
 ---
 
 1.  打开D:\ipem路径下的ipem.xml文件，找到如图所示位置并将其改为如图所示内容，其中PRTSEED是PRT的种子文件在TC中的零组件ID，ASMSEED是ASM的种子文件在TC中的零组件ID

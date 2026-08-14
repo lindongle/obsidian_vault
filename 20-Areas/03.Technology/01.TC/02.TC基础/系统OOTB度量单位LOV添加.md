@@ -1,7 +1,7 @@
 ---
 title: 系统OOTB度量单位LOV添加
-updated: 2026-06-06T10:05
-created: 2018-11-27T17:11:33
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:41
 ---
 
 默认情况下OOTB的度量单位，在BMDIE中无法添加

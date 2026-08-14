@@ -1,7 +1,7 @@
 ---
 title: 导入项目时提示缺少xml模板
-updated: 2026-06-06T10:08
-created: 2020-07-23T17:27:52
+updated: 2026-06-06T10:08:50
+created: 2026-07-05T17:04:45
 ---
 
 ![image1](2f3154c91b2640af9b2d5e3cf8aec770.png)

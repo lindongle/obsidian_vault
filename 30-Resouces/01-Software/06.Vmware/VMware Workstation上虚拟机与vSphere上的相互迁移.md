@@ -1,7 +1,7 @@
 ---
 title: VMware Workstation上虚拟机与vSphere上的相互迁移
-updated: 2026-06-06T10:05
-created: 2020-08-26T11:06:34
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:54
 ---
 
 <span style='color:black'>**VMware Workstation上虚拟机与vSphere上的相互迁移**</span>

@@ -1,7 +1,7 @@
 ---
 title: VMwareWorkstation导入vSphere
-updated: 2026-06-06T10:05
-created: 2018-06-05T18:47:45
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:55
 ---
 
 <span style='color:#333333'>vSphere Center如何导入vmdk文件</span>

@@ -1,7 +1,7 @@
 ---
 title: 为何从APQP转换到IPD?|项目管理|流程|研发_新浪新闻
-updated: 2026-06-06T10:08
-created: 2024-08-07T17:24:43
+updated: 2026-06-06T10:08:56
+created: 2026-07-05T17:04:37
 ---
 
 已剪辑自: <https://k.sina.com.cn/article_3009742660_b365074401901jltd.html>

@@ -1,7 +1,7 @@
 ---
 title: AI api key
-created: 2026-07-04T21:09:14+08:00
-updated: 2026-08-12T15:04:00+08:00
+created: 2026-07-05T17:04:36
+updated: 2026-08-12T15:04:00
 ---
 - DeepSeek 
 	- BaseUrl:

@@ -1,7 +1,7 @@
 ---
 title: TortoiseSVN设置自动锁定功能 - fantly的专栏 - CSDN博客
-updated: 2026-06-06T00:25
-created: 2019-07-26T23:21:18
+updated: 2026-06-06T00:25:01
+created: 2026-07-05T17:04:55
 ---
 
 TortoiseSVN设置自动锁定功能 - fantly的专栏 - CSDN博客

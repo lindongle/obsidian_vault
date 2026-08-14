@@ -1,7 +1,7 @@
 ---
 title: 转换的JT无法进入result文件
-updated: 2026-06-06T10:05
-created: 2023-08-21T17:39:36
+updated: 2026-06-06T10:05:38
+created: 2026-07-05T17:04:44
 ---
 
 ![image1](48a20751c95a4b43a7c560a3cd2a5af5.png)

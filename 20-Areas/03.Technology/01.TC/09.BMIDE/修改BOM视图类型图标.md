@@ -1,7 +1,7 @@
 ---
 title: 修改BOM视图类型图标
-updated: 2026-06-06T10:08
-created: 2019-11-19T14:19:14
+updated: 2026-06-06T10:08:49
+created: 2026-07-05T17:04:45
 ---
 
 In your customer.properties file define the icon

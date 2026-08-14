@@ -1,7 +1,7 @@
 ---
 title: "EPM-require-authentication "
-updated: 2026-06-06T00:09
-created: 2018-05-28T20:19:47
+updated: 2026-06-06T00:09:52
+created: 2026-07-05T17:04:42
 ---
 
 如果需要进行用户身份验证才能执行这个 Do 任务，则将 EPM-require-authentication 处理程

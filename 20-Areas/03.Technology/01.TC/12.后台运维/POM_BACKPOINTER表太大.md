@@ -1,7 +1,7 @@
 ---
 title: POM_BACKPOINTER表太大
-updated: 2026-06-19T15:54:32+08:00
-created: 2020-06-23T13:25:18
+updated: 2026-06-19T15:54:32
+created: 2026-07-05T17:04:47
 ---
 
 用clean_backpointer命令进行清理

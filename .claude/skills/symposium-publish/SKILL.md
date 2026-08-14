@@ -4,6 +4,8 @@ description: Publish, update, or withdraw an existing Markdown note through Symp
 metadata:
   copilot-enabled-agents: claude, codex, opencode
   copilot-builtin-version: "8"
+created: 2026-08-13T14:43:33
+updated: 2026-08-13T14:43:33
 ---
 
 # Publish Markdown to Symposium

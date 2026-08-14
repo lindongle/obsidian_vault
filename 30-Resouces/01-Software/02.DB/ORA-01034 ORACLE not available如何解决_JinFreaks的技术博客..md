@@ -1,7 +1,7 @@
 ---
 title: "ORA-01034: ORACLE not available如何解决_JinFreaks的技术博客..."
-updated: 2026-06-06T10:05
-created: 2021-05-11T18:29:25
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:54
 ---
 
 上午

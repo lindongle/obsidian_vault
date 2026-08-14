@@ -1,7 +1,7 @@
 ---
 title: BMIDE打包过程
-updated: 2026-06-05T23:15
-created: 2025-07-19T23:58:10
+updated: 2026-06-05T23:15:13
+created: 2026-07-05T17:04:45
 ---
 
 <span style='background:white'>After you populate the template with extensions, you can package the template so that it can be installed to a server. Packaging refers to the bundling of the components in the template project. The template is packaged into a format that TEM recognizes so that TEM can install the template into the server, or for usage with the Business Modeler IDE client as a reference template.</span>

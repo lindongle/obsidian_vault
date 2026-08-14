@@ -1,7 +1,7 @@
 ---
 title: ID生成规则渲染
-updated: 2026-06-06T10:08
-created: 2020-09-27T11:55:39
+updated: 2026-06-06T10:08:55
+created: 2026-07-05T17:04:47
 ---
 
 \<section title="IdGenerator Configuration" titleKey="tc_xrt_IdGenInfo"\>

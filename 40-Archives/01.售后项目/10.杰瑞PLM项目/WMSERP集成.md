@@ -1,7 +1,7 @@
 ---
 title: WMS/ERP集成
-updated: 2026-06-06T10:08
-created: 2020-08-17T18:17:14
+updated: 2026-06-06T10:08:58
+created: 2026-07-05T17:04:59
 ---
 
 **MES/WMS集成：**

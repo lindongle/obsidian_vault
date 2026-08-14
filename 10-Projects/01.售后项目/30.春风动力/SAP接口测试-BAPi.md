@@ -1,7 +1,7 @@
 ---
 title: SAP接口测试-BAPi
-updated: 2026-06-09T18:30
-created: 2025-10-30T15:07:36
+updated: 2026-06-13T22:07:53
+created: 2026-07-05T17:04:34
 tags:
   - 春风
 ---

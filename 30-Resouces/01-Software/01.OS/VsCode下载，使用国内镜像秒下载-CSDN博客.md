@@ -1,7 +1,7 @@
 ---
 title: VsCode下载，使用国内镜像秒下载-CSDN博客
-updated: 2026-06-06T00:23
-created: 2023-10-10T17:34:27
+updated: 2026-06-06T00:23:06
+created: 2026-07-05T17:04:53
 ---
 
 VsCode下载，使用国内镜像秒下载-CSDN博客

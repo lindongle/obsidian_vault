@@ -1,11 +1,12 @@
 ---
-title: "<span style='color:black'>1.背景介绍</span>"
-updated: 2026-06-23T08:58:11+08:00
-created: 2026-04-10T07:43:35
+title: <span style='color:black'>1.背景介绍</span>
+updated: 2026-06-23T08:58:11
+created: 2026-07-05T17:04:52
 tags:
   - TC
-aliases: ["<span style='color:black'>1.背景介绍</span>"]
-linter-yaml-title-alias: "<span style='color:black'>1.背景介绍</span>"
+aliases:
+  - <span style='color:black'>1.背景介绍</span>
+linter-yaml-title-alias: <span style='color:black'>1.背景介绍</span>
 ---
 
 TC与SolidWorks集成开发

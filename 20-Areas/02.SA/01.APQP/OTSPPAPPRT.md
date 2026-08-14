@@ -1,7 +1,7 @@
 ---
 title: OTS/PPAP/PRT
-updated: 2026-06-06T00:01
-created: 2021-03-11T09:58:49
+updated: 2026-06-13T22:09:18
+created: 2026-07-05T17:04:37
 tags:
   - APQP
 ---

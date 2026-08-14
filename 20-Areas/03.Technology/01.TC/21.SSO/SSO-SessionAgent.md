@@ -1,7 +1,7 @@
 ---
 title: SSO-SessionAgent
-updated: 2026-06-06T10:08
-created: 2018-04-27T17:14:21
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:50
 ---
 
 三种方式安装：

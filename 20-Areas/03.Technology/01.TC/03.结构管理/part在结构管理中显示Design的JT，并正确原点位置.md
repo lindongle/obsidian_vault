@@ -1,7 +1,7 @@
 ---
 title: part在结构管理中显示Design的JT，并正确原点位置
-updated: 2026-06-08T14:36
-created: 2020-01-10T14:39:52.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:41
 tags:
   - bom
   - BOM

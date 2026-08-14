@@ -1,7 +1,7 @@
 ---
 title: 将BOM的自定义的BOM属性粘贴指派为消耗件时，自动带到BOP的BOM属性中
-updated: 2026-06-05T23:41
-created: 2021-04-16T10:29:40
+updated: 2026-06-13T15:25:42
+created: 2026-07-05T17:04:49
 ---
 
 <table>

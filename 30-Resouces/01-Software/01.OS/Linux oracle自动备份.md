@@ -1,7 +1,7 @@
 ---
 title: Linux oracle自动备份
-updated: 2026-06-06T00:28
-created: 2018-10-20T00:03:56
+updated: 2026-06-06T00:28:15
+created: 2026-07-05T17:04:53
 ---
 
 1、新建备份目录

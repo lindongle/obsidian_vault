@@ -1,7 +1,7 @@
 ---
 title: Serverpool.propertity参数
-updated: 2026-06-05T23:19
-created: 2019-09-29T15:40:11
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

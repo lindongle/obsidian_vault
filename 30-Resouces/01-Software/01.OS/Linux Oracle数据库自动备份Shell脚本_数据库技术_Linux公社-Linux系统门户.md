@@ -1,7 +1,7 @@
 ---
 title: Linux Oracle数据库自动备份Shell脚本_数据库技术_Linux公社-Linux系统门户...
-updated: 2026-06-06T10:05
-created: 2018-10-20T02:46:21
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 Linux Oracle数据库自动备份Shell脚本_数据库技术_Linux公社-Linux系统门户网站

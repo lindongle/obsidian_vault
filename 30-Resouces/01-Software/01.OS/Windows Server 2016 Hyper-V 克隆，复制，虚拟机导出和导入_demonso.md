@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2016 Hyper-V 克隆，复制，虚拟机导出和导入_demonso...
-updated: 2026-06-06T10:05
-created: 2021-05-11T21:44:56
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:53
 ---
 
 Windows Server 2016 Hyper-V 克隆，复制，虚拟机导出和导入_demonson的专栏-CSDN博客_hyperv复制虚拟机

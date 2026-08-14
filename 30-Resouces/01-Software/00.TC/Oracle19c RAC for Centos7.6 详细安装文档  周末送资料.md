@@ -1,7 +1,7 @@
 ---
 title: Oracle19c RAC for Centos7.6 详细安装文档 | 周末送资料
-updated: 2026-06-06T10:08
-created: 2021-05-22T11:00:42
+updated: 2026-07-05T17:08:54
+created: 2026-07-05T17:08:54
 tags:
   - TC
 ---

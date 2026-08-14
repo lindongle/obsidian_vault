@@ -1,7 +1,7 @@
 ---
 title: EPM-assign-team-selector
-updated: 2026-06-06T00:09
-created: 2018-03-11T12:13:42
+updated: 2026-06-06T00:09:35
+created: 2026-07-05T17:04:42
 ---
 
 将整个工作流程中的所有 m select-signoff-team 任务指派给工作流程中的指定用户、

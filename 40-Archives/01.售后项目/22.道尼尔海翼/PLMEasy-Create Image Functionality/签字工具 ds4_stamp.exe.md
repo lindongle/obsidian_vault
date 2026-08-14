@@ -1,7 +1,7 @@
 ---
 title: 签字工具 ds4_stamp.exe
-updated: 2026-06-06T10:09
-created: 2023-04-24T12:50:36
+updated: 2026-06-13T15:39:36
+created: 2026-07-05T17:05:02
 ---
 
 1.  activePDF Toolkit

@@ -1,7 +1,7 @@
 ---
 title: Creo集成-mapping
-updated: 2026-06-06T10:05
-created: 2018-03-11T12:20:57
+updated: 2026-06-06T10:05:36
+created: 2026-07-05T17:04:43
 ---
 
 ![image1](483a2f397b21479ab3de49b7259c16d8.gif)

@@ -1,7 +1,7 @@
 ---
 title: DECLARE
-updated: 2026-06-06T00:06
-created: 2018-11-29T20:25:32
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

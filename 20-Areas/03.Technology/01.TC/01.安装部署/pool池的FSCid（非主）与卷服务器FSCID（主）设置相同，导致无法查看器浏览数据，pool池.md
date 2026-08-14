@@ -1,7 +1,7 @@
 ---
 title: pool池的FSCid（非主）与卷服务器FSCID（主）设置相同，导致无法查看器浏览数据，pool池...
-updated: 2026-06-06T00:05
-created: 2018-06-12T21:51:37
+updated: 2026-07-05T17:09:03
+created: 2026-07-05T17:09:03
 tags:
   - TC安装部署
 ---

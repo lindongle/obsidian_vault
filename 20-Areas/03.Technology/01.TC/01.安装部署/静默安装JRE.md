@@ -1,7 +1,7 @@
 ---
 title: 静默安装JRE
-updated: 2026-06-05T23:16
-created: 2019-02-22T14:19:35
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

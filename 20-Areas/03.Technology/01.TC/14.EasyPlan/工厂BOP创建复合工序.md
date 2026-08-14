@@ -1,7 +1,7 @@
 ---
 title: 工厂BOP创建复合工序
-updated: 2026-06-06T10:09
-created: 2025-03-24T18:54:17
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 设置首选项EP_CreateSubtypesForType_MEProcess

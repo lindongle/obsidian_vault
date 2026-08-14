@@ -1,7 +1,7 @@
 ---
 title: 添加BMIDE模板
-updated: 2026-06-06T10:09
-created: 2023-09-11T13:50:44
+updated: 2026-06-06T10:09:06
+created: 2026-07-05T17:05:03
 ---
 
 ![image1](4a7781232f2d40c1aea1e75841228d06.png)

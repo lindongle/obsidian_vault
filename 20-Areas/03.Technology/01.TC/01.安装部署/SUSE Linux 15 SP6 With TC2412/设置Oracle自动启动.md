@@ -1,7 +1,7 @@
 ---
 title: 设置Oracle自动启动
-updated: 2026-06-05T23:17
-created: 2025-05-19T19:36:56
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

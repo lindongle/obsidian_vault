@@ -1,7 +1,7 @@
 ---
 title: 重复安装fundation多出站点ID
-updated: 2026-06-05T23:22
-created: 2023-04-19T13:07:12
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

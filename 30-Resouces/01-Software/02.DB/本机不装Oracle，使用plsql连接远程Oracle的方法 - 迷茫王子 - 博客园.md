@@ -1,7 +1,7 @@
 ---
 title: 本机不装Oracle，使用plsql连接远程Oracle的方法 - 迷茫王子 - 博客园
-updated: 2026-06-06T00:30
-created: 2018-10-22T22:21:27
+updated: 2026-06-06T00:30:27
+created: 2026-07-05T17:04:54
 ---
 
 本机不装Oracle，使用plsql连接远程Oracle的方法 - 迷茫王子 - 博客园

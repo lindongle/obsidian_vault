@@ -1,7 +1,7 @@
 ---
 title: 精确BOM的背景颜色设置
-updated: 2026-06-06T00:14
-created: 2018-08-29T13:51:34.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:42
 tags:
   - bom
   - BOM

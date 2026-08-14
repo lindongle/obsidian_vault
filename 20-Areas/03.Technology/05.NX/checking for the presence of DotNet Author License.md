@@ -1,7 +1,7 @@
 ---
 title: checking for the presence of DotNet Author License
-updated: 2026-06-06T10:08
-created: 2024-08-09T15:00:45
+updated: 2026-06-06T10:08:51
+created: 2026-07-05T17:04:51
 ---
 
 Tobeabletoload/runanexecutable(.dll,.exe,.class,.jar)youwillneedanNXOpenAuthorLicense.ThiscomesintwoflavorsNXOpen.NETAuthor(dotnet_author)andNXOpenToolkitsAuthor(c_p_p_author).TheToolkitsAuthorisrequiredforC/C++(bothufuncandNXOpen)andJava.

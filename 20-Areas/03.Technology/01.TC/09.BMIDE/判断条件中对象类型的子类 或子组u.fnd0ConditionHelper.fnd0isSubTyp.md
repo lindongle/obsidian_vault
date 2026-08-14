@@ -1,7 +1,7 @@
 ---
 title: 判断条件中对象类型的子类 或子组u.fnd0ConditionHelper.fnd0isSubTyp...
-updated: 2026-06-05T23:14
-created: 2019-12-07T21:46:09
+updated: 2026-06-05T23:14:21
+created: 2026-07-05T17:04:45
 ---
 
 ( ( o!=null ) AND u.fnd0ConditionHelper.fnd0isSubTypeOf(o,"ItemRevision" ))OR( ( t!= null) AND u.fnd0ConditionHelper.fnd0isSubTypeOf(t,"ItemRevision")) AND u.fnd0ConditionHelper.fnd0isSubGroupOf(u.group, "Engineeering")

@@ -1,7 +1,7 @@
 ---
 title: 调优JVM参数以优化TC客户端性能
-updated: 2026-06-06T10:08
-created: 2019-09-12T10:05:27
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:53
 tags:
   - TC
 ---

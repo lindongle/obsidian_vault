@@ -1,7 +1,7 @@
 ---
 title: 方案讨论-仿真及CAM
-updated: 2026-06-05T22:08
-created: 2020-04-13T12:59:49
+updated: 2026-06-05T22:08:31
+created: 2026-07-05T17:04:59
 ---
 
 **Tecnomatix集成：**

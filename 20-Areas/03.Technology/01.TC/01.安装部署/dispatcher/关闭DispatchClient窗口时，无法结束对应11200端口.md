@@ -1,7 +1,7 @@
 ---
 title: 关闭DispatchClient窗口时，无法结束对应11200端口
-updated: 2026-06-05T23:27
-created: 2019-11-25T15:42:21
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

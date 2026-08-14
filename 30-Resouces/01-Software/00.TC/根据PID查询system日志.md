@@ -1,7 +1,7 @@
 ---
 title: 根据PID查询system日志
-updated: 2026-06-06T10:08
-created: 2019-12-06T22:06:25
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

@@ -1,7 +1,7 @@
 ---
 title: 切换home下显示item
-updated: 2026-06-06T10:09
-created: 2023-11-21T18:19:09
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

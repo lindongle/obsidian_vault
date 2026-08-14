@@ -1,7 +1,7 @@
 ---
 title: ugclone
-updated: 2026-06-06T10:08
-created: 2023-03-01T15:40:42
+updated: 2026-06-13T14:57:08
+created: 2026-07-05T17:04:51
 ---
 
 命令中添加set UGII_UGMGR_ALLOW_PFM_IMPORT_EXPORT=1及-fam=strip_status参数

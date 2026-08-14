@@ -1,7 +1,7 @@
 ---
 title: 配置Nginx+Tomcat负载均衡集群_51CTO博客_nginx做负载均衡配置
-updated: 2026-06-06T10:05
-created: 2023-05-13T19:29:31
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:55
 ---
 
 上午

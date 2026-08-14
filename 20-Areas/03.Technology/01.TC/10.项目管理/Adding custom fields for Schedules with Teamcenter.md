@@ -1,7 +1,7 @@
 ---
 title: Adding custom fields for Schedules with Teamcenter...
-updated: 2026-06-06T10:08
-created: 2022-04-11T19:45:39
+updated: 2026-06-06T10:08:54
+created: 2026-07-05T17:04:46
 ---
 
 上午

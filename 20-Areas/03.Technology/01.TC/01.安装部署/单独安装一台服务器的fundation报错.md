@@ -1,7 +1,7 @@
 ---
 title: 单独安装一台服务器的fundation报错
-updated: 2026-06-06T10:08
-created: 2025-08-12T23:17:33
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

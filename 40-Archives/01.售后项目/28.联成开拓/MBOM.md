@@ -1,7 +1,7 @@
 ---
 title: MBOM
-updated: 2026-06-06T10:08
-created: 2024-07-29T10:40:31
+updated: 2026-06-06T10:08:59
+created: 2026-07-05T17:05:04
 ---
 
 1.  PCBA，芯片烧录

@@ -1,7 +1,7 @@
 ---
 title: 安装tc基础、企业层、卷、客户端、BMIDE-10.1.7.0
-updated: 2026-06-06T10:09
-created: 2023-09-06T10:41:54
+updated: 2026-06-06T10:09:06
+created: 2026-07-05T17:05:03
 ---
 
 1.  创建卷路径：E:\Siemens\volume

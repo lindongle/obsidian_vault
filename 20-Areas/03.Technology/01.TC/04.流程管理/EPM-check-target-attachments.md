@@ -1,7 +1,7 @@
 ---
 title: EPM-check-target-attachments
-updated: 2026-06-06T00:09
-created: 2018-03-11T12:12:47
+updated: 2026-06-06T00:09:27
+created: 2026-07-05T17:04:42
 ---
 
 检查指定目标对象是否包含带有所需状态的所需附件。可将目标对象类型、关系类

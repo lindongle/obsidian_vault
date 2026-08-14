@@ -1,7 +1,7 @@
 ---
 title: 配置dispatcher关系/类型
-updated: 2026-06-05T23:27
-created: 2023-11-14T22:41:40
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

@@ -1,7 +1,7 @@
 ---
 title: 在Linux中执行.sh脚本提示找不到文件
-updated: 2026-06-06T00:28
-created: 2018-10-19T23:59:18
+updated: 2026-06-06T00:28:12
+created: 2026-07-05T17:04:53
 ---
 
 使用windows环境编辑的，复制到Linux，导致不识别。

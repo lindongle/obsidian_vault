@@ -1,7 +1,7 @@
 ---
 title: MES集成
-updated: 2026-06-05T22:54
-created: 2024-07-23T11:16:02
+updated: 2026-06-05T22:54:25
+created: 2026-07-05T17:05:04
 ---
 
 1.  Camstar MES，隶属于Siemens Opcenter

@@ -1,7 +1,7 @@
 ---
 title: No gateway available at [http://PLMServer:3000
-updated: 2026-06-05T23:56
-created: 2024-09-11T13:52:32
+updated: 2026-07-05T17:09:03
+created: 2026-07-05T17:09:03
 tags:
   - TC安装部署
 ---

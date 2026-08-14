@@ -1,7 +1,7 @@
 ---
 title: RASCI责任分配矩阵
-updated: 2026-06-08T16:07
-created: 2018-03-23T11:25:46
+updated: 2026-06-08T16:07:39
+created: 2026-07-05T17:04:36
 ---
 
 <span style='background: white'>什么是RACI模型？ 释义</span>

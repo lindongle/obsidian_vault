@@ -1,7 +1,7 @@
 ---
 title: Doker中注册微服务（MPS）失败
-updated: 2026-06-06T10:09
-created: 2025-06-09T14:47:46
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

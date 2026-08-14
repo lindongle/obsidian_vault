@@ -1,7 +1,7 @@
 ---
 title: PLMXML管理
-updated: 2026-06-06T10:09
-created: 2023-04-23T16:23:56
+updated: 2026-06-06T10:09:05
+created: 2026-07-05T17:05:02
 ---
 
 1.  传输模式：DS4_StampExport

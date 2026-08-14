@@ -1,7 +1,7 @@
 ---
 title: linux 下添加用户并赋予root权限 - du_minchao的专栏 - CSDN博客
-updated: 2026-06-06T00:27
-created: 2018-10-15T04:14:32
+updated: 2026-06-06T00:27:40
+created: 2026-07-05T17:04:53
 ---
 
 linux 下添加用户并赋予root权限 - du_minchao的专栏 - CSDN博客

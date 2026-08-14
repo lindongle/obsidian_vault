@@ -1,7 +1,7 @@
 ---
 title: Design-Part
-updated: 2026-06-06T10:08
-created: 2020-09-03T13:36:59
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:49
 ---
 
 ![image1](e158de26da894759b73731a1767d12c6.png)

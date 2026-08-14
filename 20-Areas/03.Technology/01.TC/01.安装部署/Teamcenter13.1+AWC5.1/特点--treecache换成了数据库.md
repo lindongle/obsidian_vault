@@ -1,7 +1,7 @@
 ---
 title: 特点--treecache换成了数据库
-updated: 2026-06-06T10:09
-created: 2021-01-26T22:32:32
+updated: 2026-07-05T17:09:09
+created: 2026-07-05T17:09:09
 tags:
   - TC安装部署
 ---

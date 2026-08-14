@@ -1,7 +1,7 @@
 ---
 title: 自动转JT
-updated: 2026-06-06T10:09
-created: 2019-02-27T12:06:44
+updated: 2026-06-06T10:09:00
+created: 2026-07-05T17:04:42
 ---
 
 TSTK-CreateTranslationRequest

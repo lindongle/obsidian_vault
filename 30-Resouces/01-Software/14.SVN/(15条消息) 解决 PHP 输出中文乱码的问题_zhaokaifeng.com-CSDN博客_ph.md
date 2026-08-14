@@ -1,7 +1,7 @@
 ---
 title: (15条消息) 解决 PHP 输出中文乱码的问题_zhaokaifeng.com-CSDN博客_ph...
-updated: 2026-06-06T10:05
-created: 2021-08-19T20:42:32
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:55
 ---
 
 已剪辑自: <https://blog.csdn.net/wy_bk/article/details/88124285>

@@ -1,7 +1,7 @@
 ---
 title: Tomcat启动后中文乱码，怎么解决这个问题 - WaterStream - 博客园
-updated: 2026-06-06T10:05
-created: 2020-12-21T23:44:34
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:55
 ---
 
 Tomcat启动后中文乱码，怎么解决这个问题 - WaterStream - 博客园

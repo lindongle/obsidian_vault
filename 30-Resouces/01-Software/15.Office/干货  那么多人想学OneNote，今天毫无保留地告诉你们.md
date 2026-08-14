@@ -1,7 +1,7 @@
 ---
 title: 干货 | 那么多人想学OneNote，今天毫无保留地告诉你们
-updated: 2026-06-06T10:08
-created: 2018-03-12T10:06:09
+updated: 2026-06-13T15:38:59
+created: 2026-07-05T17:04:56
 ---
 
 ## <span style='color:#2E75B5'>干货 \| 那么多人想学OneNote，今te，今天毫无保留地告诉你 </span>

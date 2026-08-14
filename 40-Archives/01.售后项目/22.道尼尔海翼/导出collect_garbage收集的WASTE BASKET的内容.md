@@ -1,7 +1,7 @@
 ---
 title: 导出collect_garbage收集的WASTE BASKET的内容
-updated: 2026-06-05T22:49
-created: 2024-01-16T15:46:04
+updated: 2026-06-05T22:49:03
+created: 2026-07-05T17:05:02
 ---
 
 SELECT FOLD.pvalu_0,FOLD.pseq,OBJ.pobject_name,OBJ.pobject_type,APP.plast_mod_date ,

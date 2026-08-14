@@ -1,7 +1,7 @@
 ---
 title: BI
-updated: 2026-06-06T10:08
-created: 2023-06-07T13:06:24
+updated: 2026-06-06T10:08:59
+created: 2026-07-05T17:05:04
 ---
 
 ![image1](094f3fdd5a4147d4b81310cb8e6b2675.png)

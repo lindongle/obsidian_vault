@@ -1,7 +1,7 @@
 ---
 title: 禁用VMware的vmem文件
-updated: 2026-06-06T00:32
-created: 2018-12-07T00:26:23
+updated: 2026-06-06T00:32:13
+created: 2026-07-05T17:04:55
 ---
 
 禁用VMware的vmem文件

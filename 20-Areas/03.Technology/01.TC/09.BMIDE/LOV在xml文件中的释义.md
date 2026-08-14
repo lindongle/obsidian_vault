@@ -1,7 +1,7 @@
 ---
 title: LOV在xml文件中的释义
-updated: 2026-06-06T10:08
-created: 2020-11-29T00:07:17
+updated: 2026-06-06T10:08:49
+created: 2026-07-05T17:04:45
 ---
 
 LOV在xml文件中的释义

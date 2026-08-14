@@ -1,7 +1,7 @@
 ---
 title: 升级license版本后，更换license文件无法启动服务
-updated: 2026-06-18T13:40:12+08:00
-created: 2023-08-12T10:28:11
+updated: 2026-06-18T13:40:12
+created: 2026-07-05T17:04:50
 ---
 
 将license文件如下内容，换为VENDOR saltd saltd PORT=28001

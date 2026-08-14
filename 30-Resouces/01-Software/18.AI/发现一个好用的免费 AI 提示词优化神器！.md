@@ -8,10 +8,11 @@ tags:
   - 提示词
 id: aa213ced-47c5-4872-b0df-ea1ac937300d
 title: 大家好，分享一个最近发现的宝藏工具：**AI Prompt Generator / 提示词优化器**。
-aliases: [大家好，分享一个最近发现的宝藏工具：**AI Prompt Generator / 提示词优化器**。]
+aliases:
+  - 大家好，分享一个最近发现的宝藏工具：**AI Prompt Generator / 提示词优化器**。
 linter-yaml-title-alias: 大家好，分享一个最近发现的宝藏工具：**AI Prompt Generator / 提示词优化器**。
-created: 2026-06-22T08:57:33+08:00
-updated: 2026-06-22T08:59:52+08:00
+created: 2026-07-05T17:04:56
+updated: 2026-06-22T08:59:52
 ---
 
 公众号名称：子瞻成长之路

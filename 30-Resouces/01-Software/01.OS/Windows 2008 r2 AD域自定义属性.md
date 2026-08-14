@@ -1,7 +1,7 @@
 ---
 title: Windows 2008 r2 AD域自定义属性
-updated: 2026-06-06T10:05
-created: 2018-04-24T23:22:32
+updated: 2026-06-06T10:05:38
+created: 2026-07-05T17:04:53
 ---
 
 Windows 2008 r2 AD域自定义属性

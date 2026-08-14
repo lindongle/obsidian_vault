@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2012 iSCSI目标服务器群集 - 鸿网互联
-updated: 2026-06-06T10:05
-created: 2018-06-06T23:25:50
+updated: 2026-06-06T10:05:38
+created: 2026-07-05T17:04:53
 ---
 
 Windows Server 2012 iSCSI目标服务器群集 - 鸿网互联

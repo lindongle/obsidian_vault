@@ -1,7 +1,7 @@
 ---
 title: VPN及密码
-updated: 2026-06-05T22:05
-created: 2019-07-01T22:34:35
+updated: 2026-06-05T22:05:08
+created: 2026-07-05T17:04:58
 ---
 
 <https://vpn3.galanz.com>

@@ -1,7 +1,7 @@
 ---
 title: 【Sql Server】SQL SERVER 收缩日志 - willingtolove - 博客园
-updated: 2026-06-06T00:31
-created: 2023-08-28T22:08:34
+updated: 2026-06-13T17:16:46
+created: 2026-07-05T17:04:54
 ---
 
 已剪辑自: <https://www.cnblogs.com/willingtolove/p/10165665.html>

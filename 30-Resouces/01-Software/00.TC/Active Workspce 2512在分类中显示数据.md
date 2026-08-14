@@ -9,8 +9,8 @@ tags:
   - 系统配置
 id: 7e337a6c-79e5-4693-adb7-00e9ac758737
 title: Active Workspce 2512在分类中显示数据
-created: 2026-06-23T08:54:52+08:00
-updated: 2026-06-23T08:55:58+08:00
+created: 2026-07-05T17:04:51
+updated: 2026-06-23T08:55:58
 ---
 
 公众号名称：PLM菜鸟

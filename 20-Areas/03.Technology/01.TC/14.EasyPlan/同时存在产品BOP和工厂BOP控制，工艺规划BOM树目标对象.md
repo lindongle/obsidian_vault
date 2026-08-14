@@ -1,7 +1,7 @@
 ---
 title: 同时存在产品BOP和工厂BOP控制，工艺规划BOM树目标对象
-updated: 2026-06-06T10:09
-created: 2025-04-02T20:10:43
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 首选项EP_ShowProductBOPInProcessPlanning

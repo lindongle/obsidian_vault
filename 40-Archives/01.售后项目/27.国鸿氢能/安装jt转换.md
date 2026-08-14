@@ -1,7 +1,7 @@
 ---
 title: 安装jt转换
-updated: 2026-06-06T10:08
-created: 2024-04-16T17:51:48
+updated: 2026-06-06T10:08:59
+created: 2026-07-05T17:05:04
 ---
 
 Creo短路径“C:\PROGRA~1\PTC\CREO80~1.0\COMMON~1\\

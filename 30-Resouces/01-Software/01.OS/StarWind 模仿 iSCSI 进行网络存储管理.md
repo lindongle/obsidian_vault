@@ -1,7 +1,7 @@
 ---
 title: StarWind 模仿 iSCSI 进行网络存储管理
-updated: 2026-06-06T10:05
-created: 2018-06-06T23:18:54
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 iSCSI Software Target 是一个可选的Windows 服务组件，在存储区域网络 (SAN)中提供中心化、基于软件和硬件独立的 iSCSI 磁盘子系统。iSCSI设备是通过普通的TCP/IP网络访问共享存储。官方提供的 iSCSI Software Target 支持 Windows Server 2008 R2 和 Windows Server 2008 R2 SP1（[下载地址](http://www.microsoft.com/en-us/download/details.aspx?id=19867)），iSCSI 的客户端连接工具为SCSI Software Initiator（iSCSI 发起程序），Windows Server 2008 默认已安装，若没有安装，请点击[这里下载](http://www.microsoft.com/en-us/download/details.aspx?id=18986)，SCSI Software Initiator 安装程序适应较多Windows系统版本。

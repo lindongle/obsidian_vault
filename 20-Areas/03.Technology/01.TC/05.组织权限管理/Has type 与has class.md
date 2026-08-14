@@ -1,7 +1,7 @@
 ---
 title: Has type 与has class
-updated: 2026-06-05T23:38
-created: 2019-12-07T12:51:53
+updated: 2026-06-05T23:38:11
+created: 2026-07-05T17:04:42
 ---
 
 Has type的对象类型不会继承到子类型

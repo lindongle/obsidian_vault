@@ -1,7 +1,7 @@
 ---
 title: 基于Dispatcher，将UGpart自动转PDF
-updated: 2026-06-06T10:08
-created: 2020-09-09T16:13:04
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

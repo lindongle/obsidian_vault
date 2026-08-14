@@ -1,7 +1,7 @@
 ---
 title: TC管理模型命名规范
-updated: 2026-06-05T21:53
-created: 2021-07-15T10:09:24
+updated: 2026-06-05T21:53:27
+created: 2026-07-05T17:04:36
 ---
 
 # <span style='color:#1E4E79'>定义原则：</span>

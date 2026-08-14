@@ -1,7 +1,7 @@
 ---
 title: Teamcenter AWC界面中缺少AI_Chat命令解决方法2025-10-11T12:55:2...
-updated: 2026-06-06T10:08
-created: 2025-10-11T12:55:28
+updated: 2026-06-13T22:08:29
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

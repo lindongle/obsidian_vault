@@ -1,7 +1,7 @@
 ---
 title: 证书到期，GS无法访问BGS
-updated: 2026-08-11T10:14:09+08:00
-created: 2025-06-04T13:19:22
+updated: 2026-08-11T10:14:09
+created: 2026-07-05T17:04:48
 ---
 
 ![image1](a2cdd6d571244183a35e0c7deada90fb.png)

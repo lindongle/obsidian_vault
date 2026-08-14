@@ -1,7 +1,7 @@
 ---
 title: 最新Navicat 15 for MySQL破解加教程 正确的破解方式！ - 最新工具 - php中...
-updated: 2026-06-06T10:05
-created: 2022-03-07T23:27:53
+updated: 2026-06-12T08:50:12
+created: 2026-07-05T17:04:55
 ---
 
 已剪辑自: <https://www.php.cn/blog/detail/21250.html>

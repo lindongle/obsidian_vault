@@ -1,7 +1,7 @@
 ---
 title: BOM许可
-updated: 2026-06-17T11:27:36+08:00
-created: 2025-11-27T13:29:06
+updated: 2026-06-17T11:27:36
+created: 2026-07-05T17:04:50
 ---
 
 TC030750 Design BOM Alignment

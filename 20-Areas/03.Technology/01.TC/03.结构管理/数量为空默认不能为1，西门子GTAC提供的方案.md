@@ -1,7 +1,7 @@
 ---
 title: 数量为空默认不能为1，西门子GTAC提供的方案
-updated: 2026-06-06T10:08
-created: 2019-12-17T12:46:44.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:41
 tags:
   - bom
   - awc

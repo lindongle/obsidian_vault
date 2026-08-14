@@ -1,7 +1,7 @@
 ---
 title: 保存到 Teamcenter 可能失败。  意外抛出 IFail。
-updated: 2026-06-06T10:08
-created: 2023-07-18T10:58:26
+updated: 2026-06-06T10:08:58
+created: 2026-07-05T17:05:02
 ---
 
 保存到 Teamcenter 可能失败。 意外抛出 IFail。

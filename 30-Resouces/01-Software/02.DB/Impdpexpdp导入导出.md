@@ -1,7 +1,7 @@
 ---
 title: Impdp/expdp导入导出
-updated: 2026-06-06T00:29
-created: 2018-06-13T14:31:39
+updated: 2026-06-06T00:29:39
+created: 2026-07-05T17:04:54
 ---
 
 样例：

@@ -1,7 +1,7 @@
 ---
 title: VMware 多文件转单文件
-updated: 2026-06-06T00:32
-created: 2025-09-01T18:28:04
+updated: 2026-06-06T00:32:51
+created: 2026-07-05T17:04:55
 ---
 
 cd "d:\Program Files (x86)\VMware\VMware Workstation\\

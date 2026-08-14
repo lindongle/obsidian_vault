@@ -1,7 +1,7 @@
 ---
 title: CATIA集成V12
-updated: 2026-06-06T10:08
-created: 2018-06-24T19:37:20
+updated: 2026-06-11T20:39:05
+created: 2026-07-05T17:04:43
 ---
 
 ![image1](d51b31e8335c4a3b8f92b988409b054c.png)

@@ -1,7 +1,7 @@
 ---
 title: 同步pool manger日志时间与服务器一致。
-updated: 2026-06-06T10:05
-created: 2018-08-16T10:17:46
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

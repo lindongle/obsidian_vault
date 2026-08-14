@@ -1,7 +1,7 @@
 ---
 title: Project集成映射OOTB类型的自定义任务
-updated: 2026-06-22T09:10:12+08:00
-created: 2022-01-10T17:26:02
+updated: 2026-06-22T09:10:12
+created: 2026-07-05T17:04:46
 ---
 
 <span style='font-weight:bold;background:white'>From docs:</span>

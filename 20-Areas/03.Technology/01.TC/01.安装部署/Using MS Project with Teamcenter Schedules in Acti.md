@@ -1,7 +1,7 @@
 ---
 title: Using MS Project with Teamcenter Schedules in Acti...
-updated: 2026-06-06T00:07
-created: 2021-03-23T11:07:40
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

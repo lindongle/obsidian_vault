@@ -1,7 +1,7 @@
 ---
 title: EBOM
-updated: 2026-06-23T18:42:55+08:00
-created: 2022-06-27T10:50:43
+updated: 2026-06-23T18:42:55
+created: 2026-07-05T17:05:01
 ---
 
 1.  <span style='color:#FA0000'>提前采购：</span>

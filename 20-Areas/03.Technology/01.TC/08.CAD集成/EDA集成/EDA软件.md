@@ -1,7 +1,7 @@
 ---
 title: EDA软件
-updated: 2026-06-05T23:37
-created: 2024-08-30T11:21:57
+updated: 2026-06-05T23:37:17
+created: 2026-07-05T17:04:44
 ---
 
 **Cadence、PADS、AD**

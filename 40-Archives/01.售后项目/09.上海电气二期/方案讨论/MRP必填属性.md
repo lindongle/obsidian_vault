@@ -1,7 +1,7 @@
 ---
 title: MRP必填属性
-updated: 2026-06-06T10:09
-created: 2020-05-20T16:37:18
+updated: 2026-06-06T10:09:05
+created: 2026-07-05T17:04:59
 ---
 
 ![image1](e6b1a4a8bc694bb3b65121490a464f71.png)

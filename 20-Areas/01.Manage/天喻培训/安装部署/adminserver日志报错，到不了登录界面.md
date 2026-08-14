@@ -1,7 +1,7 @@
 ---
 title: adminserver日志报错，到不了登录界面
-updated: 2026-06-06T00:00
-created: 2024-10-23T10:46:56
+updated: 2026-06-13T22:11:17
+created: 2026-07-05T17:04:37
 tags:
   - 天喻
   - 国产

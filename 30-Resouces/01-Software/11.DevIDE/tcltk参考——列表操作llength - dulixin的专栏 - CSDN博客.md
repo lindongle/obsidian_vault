@@ -1,7 +1,7 @@
 ---
 title: tcl/tk参考——列表操作llength - dulixin的专栏 - CSDN博客
-updated: 2026-06-06T00:33
-created: 2019-06-19T02:55:33
+updated: 2026-06-12T08:50:10
+created: 2026-07-05T17:04:55
 ---
 
 tcl/tk参考——列表操作llength - dulixin的专栏 - CSDN博客

@@ -1,7 +1,7 @@
 ---
 title: APQP
-updated: 2026-06-05T23:09
-created: 2018-03-11T15:01:12
+updated: 2026-06-13T22:09:18
+created: 2026-07-05T17:04:37
 tags:
   - APQP
 ---

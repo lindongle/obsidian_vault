@@ -1,7 +1,7 @@
 ---
 title: 解决WINDOWS SERVER 2008弹出INTERNET EXPLORER增强安全配置正在阻止...
-updated: 2026-06-06T10:05
-created: 2019-07-27T22:58:47
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:56
 ---
 
 解决WINDOWS SERVER 2008弹出INTERNET EXPLORER增强安全配置正在阻止来自下列网站的内容

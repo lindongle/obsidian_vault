@@ -1,7 +1,7 @@
 ---
 title: 使用csv2tcxml命令导入产品配置字典及关联
-updated: 2026-06-06T10:08
-created: 2025-07-10T09:16:41
+updated: 2026-06-13T15:34:15
+created: 2026-07-05T17:04:46
 ---
 
 使用<span style='color:#1E1E1E'>csv2tcxml命令导入产品配置字典及关联</span>

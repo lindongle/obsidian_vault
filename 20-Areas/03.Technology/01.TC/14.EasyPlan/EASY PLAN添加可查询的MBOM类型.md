@@ -1,7 +1,7 @@
 ---
 title: EASY PLAN添加可查询的MBOM类型
-updated: 2026-06-06T10:09
-created: 2025-03-13T18:44:35
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 设置首选项EP_SearchSubtypesForMbom添加类型（产品也是使用该首选项）

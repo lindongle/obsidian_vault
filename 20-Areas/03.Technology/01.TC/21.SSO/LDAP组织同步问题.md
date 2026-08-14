@@ -1,7 +1,7 @@
 ---
 title: LDAP组织同步问题
-updated: 2026-06-06T10:08
-created: 2018-04-25T11:25:57
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:50
 ---
 
 在TC的CMD中使用LDAPSync -t -v，后面-t -v，可以输出对应日志到Tc_root\tc_menu\LDAPSyncLog.txt下

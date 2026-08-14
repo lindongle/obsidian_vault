@@ -1,7 +1,7 @@
 ---
 title: Material Property材料属性对象（普通属性及智能表属性）
-updated: 2026-06-06T10:09
-created: 2020-02-13T09:57:04
+updated: 2026-06-06T10:09:04
+created: 2026-07-05T17:04:50
 ---
 
 Material Property材料属性对象（普通属性及智能表属性）

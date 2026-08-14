@@ -1,7 +1,7 @@
 ---
 title: Getting Error FSC proxy error errorCode -9002 a...
-updated: 2026-07-20T22:29:06+08:00
-created: 2026-01-07T18:19:20
+updated: 2026-07-20T22:29:06
+created: 2026-07-05T17:04:45
 ---
 
 **Problem**

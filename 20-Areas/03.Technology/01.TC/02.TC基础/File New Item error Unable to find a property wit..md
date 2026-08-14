@@ -1,7 +1,7 @@
 ---
 title: "File New Item error: Unable to find a property wit..."
-updated: 2026-06-06T00:08
-created: 2018-05-26T23:10:22
+updated: 2026-06-06T00:08:17
+created: 2026-07-05T17:04:40
 ---
 
 File New Item error: <span style='font-weight:bold;color:blue'>Unable to find a property with name</span> Item/<span style='font-weight:bold;color:blue'>item_id</span>

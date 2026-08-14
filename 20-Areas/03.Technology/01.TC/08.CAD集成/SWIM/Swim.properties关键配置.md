@@ -1,7 +1,7 @@
 ---
 title: Swim.properties关键配置
-updated: 2026-07-15T16:19:37+08:00
-created: 2022-11-23T17:42:04
+updated: 2026-07-15T16:19:37
+created: 2026-07-05T17:04:44
 ---
 
 **registernew.enable.manual.itemid =** true

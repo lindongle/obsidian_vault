@@ -1,7 +1,7 @@
 ---
 title: 批处理入门手册之批处理常用DOS命令篇(md、rd、ren、move)_DOS/BAT_脚本之家
-updated: 2026-06-06T00:24
-created: 2019-07-19T00:17:53
+updated: 2026-06-06T00:24:33
+created: 2026-07-05T17:04:55
 ---
 
 批处理入门手册之批处理常用DOS命令篇(md、rd、ren、move)\_DOS/BAT_脚本之家

@@ -1,7 +1,7 @@
 ---
 title: 注册windows服务
-updated: 2026-06-05T23:29
-created: 2019-05-14T15:52:03
+updated: 2026-06-05T23:29:15
+created: 2026-07-05T17:04:48
 ---
 
 cmd运行

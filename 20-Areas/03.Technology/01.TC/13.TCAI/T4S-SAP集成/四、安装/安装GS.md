@@ -1,7 +1,7 @@
 ---
 title: 安装GS
-updated: 2026-08-06T10:48:55+08:00
-created: 2019-05-07T10:16:57
+updated: 2026-08-06T10:48:55
+created: 2026-07-05T17:04:48
 ---
 
 1、启动安装脚本：E:\TC\01.Installer\T4S\\**Teamcenter_Gateway_for_SAP_18.2_install_and_patch_tool\t4x_install_and_patch_tool\\\_\_installer.bat**

@@ -1,7 +1,7 @@
 ---
 title: 企业级BOM管理
-updated: 2026-06-06T10:08
-created: 2025-05-10T13:28:39
+updated: 2026-06-13T22:09:26
+created: 2026-07-05T17:04:37
 tags:
   - BOM
 ---

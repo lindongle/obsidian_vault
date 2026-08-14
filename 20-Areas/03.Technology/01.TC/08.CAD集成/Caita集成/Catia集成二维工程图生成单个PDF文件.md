@@ -1,7 +1,7 @@
 ---
 title: Catia集成二维工程图生成单个PDF文件
-updated: 2026-06-06T10:05
-created: 2018-07-12T11:41:12
+updated: 2026-06-06T10:05:36
+created: 2026-07-05T17:04:43
 ---
 
 <span style='color:black'>CATIA集成环境设置保存时二维工程如生成PDF，具体配置首选项如下：</span>

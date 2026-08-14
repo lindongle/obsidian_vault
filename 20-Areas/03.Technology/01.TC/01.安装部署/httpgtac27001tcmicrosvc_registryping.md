@@ -1,7 +1,7 @@
 ---
 title: httpgtac27001tcmicrosvc_registryping
-updated: 2026-06-22T09:03:55+08:00
-created: 2024-04-15T18:05:23
+updated: 2026-06-22T09:03:55
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

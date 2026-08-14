@@ -1,7 +1,7 @@
 ---
 title: Plm-easyCRI服务梳理
-updated: 2026-06-06T10:09
-created: 2023-04-24T14:24:44
+updated: 2026-06-06T10:09:06
+created: 2026-07-05T17:05:03
 ---
 
 1.  Office转PDF（对于MSWordX或MSWord使用ds4_printpdf.exe）,针对流程目标中类型为-typ=MSPowerPointX/MSWordX/MSExcelX进行处理。-options=approve

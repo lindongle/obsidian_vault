@@ -1,7 +1,7 @@
 ---
 title: 解除outlook附件大小限制
-updated: 2026-06-06T00:20
-created: 2018-03-12T16:12:58
+updated: 2026-06-06T00:20:40
+created: 2026-07-05T17:04:56
 ---
 
 1.  <span style='background: white'>退出 Outlook。</span>

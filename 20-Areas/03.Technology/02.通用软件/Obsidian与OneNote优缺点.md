@@ -1,6 +1,6 @@
 ---
-created: 2026-06-08T23:52
-updated: 2026-06-18T11:29:02+08:00
+created: 2026-07-05T17:04:51
+updated: 2026-06-18T11:29:02
 title: Obsidian与OneNote优缺点
 ---
 - obsidian缺点：

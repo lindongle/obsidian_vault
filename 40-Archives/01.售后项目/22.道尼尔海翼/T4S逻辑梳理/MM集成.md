@@ -1,7 +1,7 @@
 ---
 title: MM集成
-updated: 2026-06-06T10:09
-created: 2023-10-09T11:08:55
+updated: 2026-06-06T10:09:06
+created: 2026-07-05T17:05:03
 ---
 
 1.  集成的Item类型：四种类型DS4_MPartRevision(ZMPG自制半成品)/DS4_MEEquipmentRevision（FHMI生产资源工具）/DS4_ToolRevision（FHMI生产资源工具）/DS4_PartRevision（ROH原材料/HALB采购半成品），通过首选项：T4S_MaterialMasterTypeList控制

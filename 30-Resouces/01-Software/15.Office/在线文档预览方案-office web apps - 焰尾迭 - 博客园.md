@@ -1,7 +1,7 @@
 ---
 title: 在线文档预览方案-office web apps - 焰尾迭 - 博客园
-updated: 2026-06-06T10:05
-created: 2018-10-11T21:10:11
+updated: 2026-06-13T16:06:24
+created: 2026-07-05T17:04:56
 ---
 
 已剪辑自: <https://www.cnblogs.com/yanweidie/p/4516164.html>

@@ -1,7 +1,7 @@
 ---
 title: 删除windows10/11中Administrator本地账户与微软账户绑定的方法 - 知乎
-updated: 2026-06-06T10:05
-created: 2023-08-03T06:24:13
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:53
 ---
 
 下午

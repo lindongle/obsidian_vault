@@ -1,3 +1,7 @@
+---
+created: 2026-08-13T14:43:33
+updated: 2026-08-13T14:43:33
+---
 # JSON Canvas examples
 
 ## Connected notes

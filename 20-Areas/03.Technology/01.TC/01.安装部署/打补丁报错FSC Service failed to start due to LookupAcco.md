@@ -1,7 +1,7 @@
 ---
 title: 打补丁报错FSC Service failed to start due to LookupAcco...
-updated: 2026-06-06T10:08
-created: 2019-08-26T18:03:57
+updated: 2026-07-05T17:09:04
+created: 2026-07-05T17:09:04
 tags:
   - TC安装部署
 ---

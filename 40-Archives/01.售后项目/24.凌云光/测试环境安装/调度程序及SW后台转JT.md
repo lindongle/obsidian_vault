@@ -1,7 +1,7 @@
 ---
 title: 调度程序及SW后台转JT
-updated: 2026-06-06T10:09
-created: 2023-05-15T15:25:12
+updated: 2026-06-06T10:09:05
+created: 2026-07-05T17:05:04
 ---
 
 ![image1](b58fd9ae0e254123b7e10c75b46c910b.png)

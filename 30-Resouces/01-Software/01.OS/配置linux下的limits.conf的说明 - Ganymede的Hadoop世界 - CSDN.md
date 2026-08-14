@@ -1,7 +1,7 @@
 ---
 title: 配置linux下的limits.conf的说明 - Ganymede的Hadoop世界 - CSDN...
-updated: 2026-06-06T00:27
-created: 2018-10-14T07:22:59
+updated: 2026-06-06T00:27:17
+created: 2026-07-05T17:04:54
 ---
 
 下午

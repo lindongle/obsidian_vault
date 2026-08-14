@@ -1,7 +1,7 @@
 ---
 title: windows企业层连接Linux卷服务的两种方式
-updated: 2026-06-06T10:05
-created: 2018-10-16T10:05:44
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

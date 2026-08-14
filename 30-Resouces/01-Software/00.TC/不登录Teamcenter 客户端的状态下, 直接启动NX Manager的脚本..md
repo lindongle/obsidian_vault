@@ -1,7 +1,7 @@
 ---
 title: 不登录Teamcenter 客户端的状态下, 直接启动NX Manager的脚本.
-updated: 2026-06-06T10:08
-created: 2019-07-10T00:40:11
+updated: 2026-07-05T17:08:54
+created: 2026-07-05T17:08:54
 tags:
   - TC
 ---

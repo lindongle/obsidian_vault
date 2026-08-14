@@ -1,7 +1,7 @@
 ---
 title: dispatcher使用windows服务 导致dispatch client无法启动
-updated: 2026-06-06T00:11
-created: 2018-10-17T15:13:31
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

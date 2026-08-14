@@ -1,7 +1,7 @@
 ---
 title: 转交owner所有权
-updated: 2026-06-06T10:05
-created: 2018-12-06T13:54:57
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:54
 ---
 
 chown infodba /plmdata/plmdatabackup

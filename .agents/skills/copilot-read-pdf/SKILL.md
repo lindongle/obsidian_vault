@@ -5,6 +5,8 @@ license: Copilot Plus
 metadata:
   copilot-enabled-agents: claude, codex, opencode
   copilot-builtin-version: "6"
+created: 2026-08-13T14:43:33
+updated: 2026-08-13T14:43:33
 ---
 
 # Copilot read PDF

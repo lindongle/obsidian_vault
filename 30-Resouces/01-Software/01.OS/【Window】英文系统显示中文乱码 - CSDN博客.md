@@ -1,7 +1,7 @@
 ---
 title: 【Window】英文系统显示中文乱码 - CSDN博客
-updated: 2026-06-06T00:22
-created: 2018-08-01T17:09:30
+updated: 2026-06-06T00:22:14
+created: 2026-07-05T17:04:53
 ---
 
 【Window】英文系统显示中文乱码 - CSDN博客

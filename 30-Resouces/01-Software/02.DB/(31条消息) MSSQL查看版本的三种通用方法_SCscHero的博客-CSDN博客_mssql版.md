@@ -1,7 +1,7 @@
 ---
 title: (31条消息) MSSQL查看版本的三种通用方法_SCscHero的博客-CSDN博客_mssql版...
-updated: 2026-06-06T10:05
-created: 2023-02-23T19:13:54
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:54
 ---
 
 已剪辑自: <https://blog.csdn.net/qq_33391499/article/details/105002900>

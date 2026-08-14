@@ -1,7 +1,7 @@
 ---
 title: dwg背景颜色修改和字体
-updated: 2026-06-06T10:09
-created: 2023-06-08T12:03:44
+updated: 2026-06-06T10:09:02
+created: 2026-07-05T17:04:49
 ---
 
 D:\Siemens\Teamcenter13\vispoolmanager\VisServerFV\etc\Initialization.xml

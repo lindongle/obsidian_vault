@@ -1,7 +1,7 @@
 ---
 title: CRI（CreateImageServer）
-updated: 2026-06-05T23:47
-created: 2023-04-25T22:25:32
+updated: 2026-06-05T23:47:03
+created: 2026-07-05T17:04:50
 ---
 
 作为发布过程的一部分创建所需的文档，然后可用于不同类型的进一步使用。 Create Image 解决方案支持将 2D 工程图从 CAD 系统 NX、Solid Edge 和 I-DEAS 创建为 HPGL/2 或 CGM 文件，作为 Teamcenter 发布流程的一部分。一项可选功能允许使用 Acrobat Distiller（仅适用于 Windows——由客户提供）或 Ghostscript 将这些 2D 绘图转换为 TIFF-G4、Postscript 或 PDF。

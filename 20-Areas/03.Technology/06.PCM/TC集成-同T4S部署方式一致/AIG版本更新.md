@@ -1,7 +1,7 @@
 ---
 title: AIG版本更新
-updated: 2026-06-06T10:09
-created: 2022-05-05T18:06:07
+updated: 2026-06-06T10:09:04
+created: 2026-07-05T17:04:51
 ---
 
 将新版本的介质放到D:\DC_REPO\software中

@@ -1,7 +1,7 @@
 ---
 title: 3D rendering is not enabled for this server
-updated: 2026-06-22T09:03:48+08:00
-created: 2021-03-18T12:46:58
+updated: 2026-06-22T09:03:48
+created: 2026-07-05T17:04:49
 ---
 
 - <span style='color:red'>或对象关系不是Rendering</span>

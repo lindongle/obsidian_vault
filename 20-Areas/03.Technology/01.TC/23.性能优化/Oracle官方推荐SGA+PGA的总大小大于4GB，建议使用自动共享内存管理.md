@@ -1,7 +1,7 @@
 ---
 title: Oracle官方推荐SGA+PGA的总大小大于4GB，建议使用自动共享内存管理
-updated: 2026-06-05T23:35
-created: 2025-11-25T15:25:49
+updated: 2026-06-05T23:35:32
+created: 2026-07-05T17:04:50
 ---
 
 <span style='color:#4D4D4D'>ALTER SYSTEM SET SGA_TARGET =4G SCOPE = SPFILE;</span>

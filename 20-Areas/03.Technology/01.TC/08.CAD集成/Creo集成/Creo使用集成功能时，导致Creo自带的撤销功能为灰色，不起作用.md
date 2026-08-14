@@ -1,7 +1,7 @@
 ---
 title: Creo使用集成功能时，导致Creo自带的撤销功能为灰色，不起作用
-updated: 2026-06-06T00:15
-created: 2019-10-12T20:01:28
+updated: 2026-06-06T00:15:36
+created: 2026-07-05T17:04:43
 ---
 
 修改ipem.properties

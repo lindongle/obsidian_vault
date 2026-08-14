@@ -1,7 +1,7 @@
 ---
 title: Unable to view JT in AW 4.1 Symptom In this issue ...
-updated: 2026-06-05T23:48
-created: 2021-03-18T13:45:04
+updated: 2026-07-05T17:09:03
+created: 2026-07-05T17:09:03
 tags:
   - TC安装部署
 ---

@@ -1,7 +1,7 @@
 ---
 title: AD集成基础-变量管理
-updated: 2026-06-06T10:08
-created: 2018-03-24T20:15:22
+updated: 2026-06-06T10:08:50
+created: 2026-07-05T17:04:44
 ---
 
 **Altium designer之装配变量(Variant Management)**

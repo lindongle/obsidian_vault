@@ -1,7 +1,7 @@
 ---
 title: 如何删除bmide工程多余模板
-updated: 2026-06-06T10:08
-created: 2021-03-22T17:22:32
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

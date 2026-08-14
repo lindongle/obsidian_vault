@@ -1,7 +1,7 @@
 ---
 title: 渲染BOM属性信息栏
-updated: 2026-06-06T10:09
-created: 2018-09-28T15:49:56.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:42
 tags:
   - bom
   - BOM

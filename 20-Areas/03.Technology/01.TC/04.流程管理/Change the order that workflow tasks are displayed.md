@@ -1,7 +1,7 @@
 ---
 title: Change the order that workflow tasks are displayed...
-updated: 2026-06-05T23:10
-created: 2019-07-10T23:52:43
+updated: 2026-06-12T10:43:39
+created: 2026-07-05T17:04:42
 ---
 
 - <span style='font-weight:bold;background:white'>Change the order that workflow tasks are displayed on Assign All Tasks view</span>

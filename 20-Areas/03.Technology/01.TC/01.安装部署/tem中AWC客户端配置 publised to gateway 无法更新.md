@@ -1,7 +1,7 @@
 ---
 title: tem中AWC客户端配置 publised to gateway 无法更新
-updated: 2026-06-06T10:09
-created: 2021-05-19T23:29:50
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

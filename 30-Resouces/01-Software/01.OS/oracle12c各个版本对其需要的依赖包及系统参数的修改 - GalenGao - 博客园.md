@@ -1,7 +1,7 @@
 ---
 title: oracle12c各个版本对其需要的依赖包及系统参数的修改 - GalenGao - 博客园
-updated: 2026-06-06T10:05
-created: 2018-10-14T08:12:43
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 oracle12c各个版本对其需要的依赖包及系统参数的修改 - GalenGao - 博客园

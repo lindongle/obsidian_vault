@@ -1,7 +1,7 @@
 ---
 title: "解决Oracle数据库报错ORA-27104: system-defined limits for ..."
-updated: 2026-06-06T00:31
-created: 2024-08-27T04:29:03
+updated: 2026-06-13T15:25:47
+created: 2026-07-05T17:04:54
 ---
 
 解决Oracle数据库报错ORA-27104: system-defined limits for shared memory was misconfigured-CSDN博客

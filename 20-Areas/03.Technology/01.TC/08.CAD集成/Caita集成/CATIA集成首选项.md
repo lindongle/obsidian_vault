@@ -1,7 +1,7 @@
 ---
 title: CATIA集成首选项
-updated: 2026-06-06T10:08
-created: 2018-06-25T09:18:11
+updated: 2026-06-06T10:08:50
+created: 2026-07-05T17:04:43
 ---
 
 CATIA集成首选项

@@ -1,7 +1,7 @@
 ---
 title: WEB层负载均衡，两个gateway固定 一一对应web服务
-updated: 2026-06-06T10:09
-created: 2025-12-09T11:11:22
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

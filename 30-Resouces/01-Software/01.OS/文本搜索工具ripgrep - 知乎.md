@@ -1,7 +1,7 @@
 ---
 title: 文本搜索工具ripgrep - 知乎
-updated: 2026-06-06T10:05
-created: 2023-04-26T19:20:15
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:54
 ---
 
 已剪辑自: <https://zhuanlan.zhihu.com/p/113289784>

@@ -1,7 +1,7 @@
 ---
 title: 继承指定节点的任务选择的Handler配置
-updated: 2026-06-06T10:08
-created: 2019-12-06T22:15:31
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:53
 tags:
   - TC
 ---

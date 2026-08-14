@@ -1,7 +1,7 @@
 ---
 title: 在windows下远程访问linux桌面的配置方法 - MachiealFactory的博客 - C...
-updated: 2026-06-06T10:05
-created: 2018-10-15T23:09:25
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 在windows下远程访问linux桌面的配置方法 - MachiealFactory的博客 - CSDN博客

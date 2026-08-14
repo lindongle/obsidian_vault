@@ -1,7 +1,7 @@
 ---
 title: 配置CreateImage4Office
-updated: 2026-06-05T22:26
-created: 2023-04-23T17:07:51
+updated: 2026-07-05T17:09:19
+created: 2026-07-05T17:09:19
 ---
 
 1.  说明：

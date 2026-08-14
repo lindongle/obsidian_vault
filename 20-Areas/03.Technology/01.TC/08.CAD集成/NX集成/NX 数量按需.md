@@ -1,7 +1,7 @@
 ---
 title: NX 数量按需
-updated: 2026-06-06T10:08
-created: 2020-07-17T14:44:09
+updated: 2026-06-06T10:08:51
+created: 2026-07-05T17:04:44
 ---
 
 ![image1](1e205ed41f654963bb4dfd2f742ef65a.png)

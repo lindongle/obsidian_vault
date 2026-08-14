@@ -1,7 +1,7 @@
 ---
 title: oracle错误:ORACLE_HOME_LISTNER is not SET, unable to...
-updated: 2026-06-06T00:28
-created: 2019-09-20T00:49:16
+updated: 2026-06-13T17:16:25
+created: 2026-07-05T17:04:53
 ---
 
 oracle错误:ORACLE_HOME_LISTNER is not SET, unable to auto-start Oracle Net Listener - weixin_33725239的博客 - CSDN博客

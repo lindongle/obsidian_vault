@@ -1,7 +1,7 @@
 ---
 title: filters.checkout.choices
-updated: 2026-06-05T23:46
-created: 2023-12-01T13:57:16
+updated: 2026-06-05T23:46:25
+created: 2026-07-05T17:04:44
 ---
 
 <span style='color:green'>**Assemblies Only**     Excludes any model that is not an assembly.</span>

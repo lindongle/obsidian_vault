@@ -1,7 +1,7 @@
 ---
 title: 更新传输状态到SAP
-updated: 2026-06-05T23:29
-created: 2019-10-18T23:14:06
+updated: 2026-06-05T23:29:49
+created: 2026-07-05T17:04:48
 ---
 
 Mapping文件中的反写方法proc SAP_XXX2TC_Object

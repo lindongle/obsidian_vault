@@ -1,7 +1,7 @@
 ---
 title: Poolmanager报错
-updated: 2026-06-05T23:18
-created: 2019-03-27T10:27:27
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

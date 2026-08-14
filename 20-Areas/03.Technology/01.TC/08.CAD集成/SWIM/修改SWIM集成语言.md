@@ -1,7 +1,7 @@
 ---
 title: 修改SWIM集成语言
-updated: 2026-06-06T10:08
-created: 2023-07-10T18:33:39
+updated: 2026-06-06T10:08:52
+created: 2026-07-05T17:04:44
 ---
 
 修改swimrunner.bat，修改以下内容

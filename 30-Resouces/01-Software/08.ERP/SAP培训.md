@@ -1,7 +1,7 @@
 ---
 title: SAP培训
-updated: 2026-06-06T00:35
-created: 2021-04-16T18:56:47
+updated: 2026-06-06T00:35:04
+created: 2026-07-05T17:04:55
 ---
 
 ERP

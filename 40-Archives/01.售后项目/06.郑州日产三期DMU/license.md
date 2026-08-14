@@ -1,7 +1,7 @@
 ---
 title: license
-updated: 2026-06-06T10:08
-created: 2019-01-03T12:01:52
+updated: 2026-06-06T10:08:57
+created: 2026-07-05T17:04:57
 ---
 
 当前：

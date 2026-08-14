@@ -8,8 +8,8 @@ tags:
   - awc
 id: b12bbced-a085-435b-a95d-ea71714d0432
 title: 1.1.MBOM工作空间
-created: 2026-07-22T08:46:14+08:00
-updated: 2026-07-22T08:54:06+08:00
+created: 2026-07-22T08:46:14
+updated: 2026-07-22T08:54:06
 ---
 
 公众号名称：PLM云迹

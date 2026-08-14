@@ -1,7 +1,7 @@
 ---
 title: 安装openjdk
-updated: 2026-06-06T10:08
-created: 2023-09-05T15:02:33
+updated: 2026-06-06T10:08:59
+created: 2026-07-05T17:05:02
 ---
 
 1.  将D:\Media\amazon-corretto-11.0.18.10.1-windows-x64-jdk\jdk11.0.18_10复制到D:\Java\jdk

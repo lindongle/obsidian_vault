@@ -1,7 +1,7 @@
 ---
 title: 使用nginx负载均衡 不用ip_hash无法登录(--会掉线，已改回IP_HASH)
-updated: 2026-06-25T22:45:37+08:00
-created: 2025-12-08T14:47:47
+updated: 2026-06-25T22:45:37
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

@@ -1,7 +1,7 @@
 ---
 title: Tomcat+nginx配置web层负载均衡
-updated: 2026-06-06T10:08
-created: 2023-05-13T11:29:52
+updated: 2026-06-13T15:12:38
+created: 2026-07-05T17:04:51
 ---
 
 Tomcat1端口设置为8081；

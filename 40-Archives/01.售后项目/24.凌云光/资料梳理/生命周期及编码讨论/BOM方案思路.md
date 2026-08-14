@@ -1,7 +1,7 @@
 ---
 title: BOM方案思路
-updated: 2026-06-23T16:45:29+08:00
-created: 2023-06-04T15:55:16
+updated: 2026-06-23T16:45:29
+created: 2026-07-05T17:05:04
 ---
 
 1.  BOM的概念（DBOM/EBOM/MBOM/SBOM-SA02.BOM理念及BOM流案例分享）

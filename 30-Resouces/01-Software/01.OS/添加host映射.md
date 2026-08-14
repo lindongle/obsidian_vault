@@ -1,7 +1,7 @@
 ---
 title: 添加host映射
-updated: 2026-06-06T00:26
-created: 2018-12-06T14:53:12
+updated: 2026-06-06T00:26:46
+created: 2026-07-05T17:04:54
 ---
 
 vi /etc/hosts

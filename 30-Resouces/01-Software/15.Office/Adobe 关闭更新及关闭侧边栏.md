@@ -1,7 +1,7 @@
 ---
 title: Adobe 关闭更新及关闭侧边栏
-updated: 2026-06-06T00:21
-created: 2018-04-24T10:08:56
+updated: 2026-06-06T00:21:51
+created: 2026-07-05T17:04:55
 ---
 
 1.先找到reader DC 的安装目录。软件是默认安装在C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader路径的，如果没有可以找到桌面图标右键点击属性打开文件位置即可。

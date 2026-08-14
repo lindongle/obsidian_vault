@@ -1,7 +1,7 @@
 ---
 title: 注册GS
-updated: 2026-08-11T10:39:15+08:00
-created: 2021-12-02T13:39:14
+updated: 2026-08-11T10:39:15
+created: 2026-07-05T17:04:48
 ---
 
 修改E:\Siemens\AIG21\aig_root\gs\var\conf\script\t4xcust.bat文件，此文件在成功启动GS服务后会自动创建。

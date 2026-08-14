@@ -1,7 +1,7 @@
 ---
 title: 卸载CATIA集成时提示无法载入java或win64 not supported
-updated: 2026-06-05T23:28
-created: 2019-03-15T15:34:46
+updated: 2026-06-05T23:28:00
+created: 2026-07-05T17:04:43
 ---
 
 在TCIC安装目录中找到卸载程序配置文件

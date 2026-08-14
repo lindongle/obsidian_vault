@@ -1,7 +1,7 @@
 ---
 title: 微服务安装及https配置
-updated: 2026-06-05T23:16
-created: 2021-03-12T10:14:28
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

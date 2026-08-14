@@ -1,7 +1,7 @@
 ---
 title: 查询SAP接口字段（BAPI）
-updated: 2026-06-06T10:08
-created: 2024-09-26T09:33:50
+updated: 2026-06-06T10:08:52
+created: 2026-07-05T17:04:48
 ---
 
 查询SAP接口字段（BAPI）

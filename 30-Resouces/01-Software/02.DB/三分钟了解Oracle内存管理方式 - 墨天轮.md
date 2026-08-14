@@ -1,7 +1,7 @@
 ---
 title: 三分钟了解Oracle内存管理方式 - 墨天轮
-updated: 2026-06-06T00:31
-created: 2025-11-25T23:25:25
+updated: 2026-06-13T15:37:52
+created: 2026-07-05T17:04:54
 ---
 
 已剪辑自: <https://www.modb.pro/db/187016>

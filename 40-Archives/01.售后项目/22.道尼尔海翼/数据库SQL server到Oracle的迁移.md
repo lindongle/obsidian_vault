@@ -1,7 +1,7 @@
 ---
 title: 数据库SQL server到Oracle的迁移
-updated: 2026-06-05T22:26
-created: 2023-08-31T15:35:59
+updated: 2026-06-05T22:26:51
+created: 2026-07-05T17:05:02
 ---
 
 1.  测试环境：

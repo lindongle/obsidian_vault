@@ -1,7 +1,7 @@
 ---
 title: Teamcenter发行时间
-updated: 2026-06-06T10:08
-created: 2020-09-14T10:32:04
+updated: 2026-06-06T10:08:54
+created: 2026-07-05T17:04:50
 ---
 
 | <span style='color:black'>**版本**</span> | <span style='color:black'>**补丁版本**</span> | <span style='color:black'>**发行时间**</span> |

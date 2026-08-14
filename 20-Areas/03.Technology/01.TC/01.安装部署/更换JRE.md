@@ -1,7 +1,7 @@
 ---
 title: 更换JRE
-updated: 2026-06-06T00:05
-created: 2018-04-09T14:42:14
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
 ---

@@ -1,7 +1,7 @@
 ---
 title: DRAG_AND_DROP_default_dataset_type
-updated: 2026-06-06T10:08
-created: 2019-12-10T19:00:14
+updated: 2026-06-06T10:08:56
+created: 2026-07-05T17:04:47
 ---
 
 ![image1](781a80a8aaa5476a877a9d6b04365761.png)

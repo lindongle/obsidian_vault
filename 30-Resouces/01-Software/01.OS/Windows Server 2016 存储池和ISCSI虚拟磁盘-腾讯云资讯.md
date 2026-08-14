@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2016 存储池和ISCSI虚拟磁盘-腾讯云资讯
-updated: 2026-06-06T10:05
-created: 2018-06-13T19:02:11
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 上午

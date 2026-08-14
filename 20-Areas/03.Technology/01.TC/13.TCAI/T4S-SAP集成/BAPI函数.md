@@ -1,7 +1,7 @@
 ---
 title: BAPI函数
-updated: 2026-06-25T09:41:32+08:00
-created: 2020-05-28T21:45:55
+updated: 2026-06-25T09:41:32
+created: 2026-07-05T17:04:48
 ---
 
 可以从T4S的BGS日志中获取SAP的BAPI函数

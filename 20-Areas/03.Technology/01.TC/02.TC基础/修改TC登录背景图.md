@@ -1,7 +1,7 @@
 ---
 title: 修改TC登录背景图
-updated: 2026-06-06T10:05
-created: 2018-06-25T11:46:00
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:41
 ---
 
 aifrcp包splash.bmp(24位)；登陆对话框背景图：TC版本不一样，jar包不同，一般在common\login\images包下background.png,或者kenel包icon\background.png。

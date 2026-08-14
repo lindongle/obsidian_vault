@@ -1,7 +1,7 @@
 ---
 title: (27条消息) SAP 有关BOM有效期以及ECM_shaq10的博客-CSDN博客
-updated: 2026-06-06T00:35
-created: 2022-06-05T22:24:55
+updated: 2026-06-06T00:35:07
+created: 2026-07-05T17:04:55
 ---
 
 (27条消息) SAP 有关BOM有效期以及ECM_shaq10的博客-CSDN博客

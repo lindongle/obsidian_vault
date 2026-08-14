@@ -1,7 +1,7 @@
 ---
 title: 设置NX集成数量默认为1
-updated: 2026-06-05T23:24
-created: 2020-05-29T14:43:42.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:42
 tags:
   - bom
   - BOM

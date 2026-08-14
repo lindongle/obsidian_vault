@@ -1,7 +1,7 @@
 ---
 title: AWCBOM比较
-updated: 2026-06-06T10:09
-created: 2023-11-23T18:32:44.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:41
 tags:
   - awc
   - bom

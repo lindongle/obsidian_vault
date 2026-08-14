@@ -3,14 +3,14 @@
   "bijitongbu",
   "obsidian-minimal-settings",
   "copilot",
-  "obsidian-linter",
   "editing-toolbar",
   "remove-html-tag",
   "dataview",
   "code-block-plugin",
   "remotely-save",
   "obsidian-excalidraw-plugin",
-  "recent-files-obsidian",
   "obsidian-git",
-  "better-search-views"
+  "better-search-views",
+  "recent-files-obsidian",
+  "frontmatter-date-manager"
 ]

@@ -1,7 +1,7 @@
 ---
 title: Creo转JT需安装server2012
-updated: 2026-08-12T20:33:43+08:00
-created: 2021-09-12T00:46:37
+updated: 2026-08-12T20:33:43
+created: 2026-07-05T17:05:00
 ---
 
 Creo转JT需安装server2012

@@ -1,7 +1,7 @@
 ---
 title: PLM理念
-updated: 2026-06-05T23:09
-created: 2018-04-19T20:59:12
+updated: 2026-06-13T15:22:38
+created: 2026-07-05T17:04:37
 ---
 
 ![image1](3a930b0d5de44e02bdc1e0abbcd78e5a.png)

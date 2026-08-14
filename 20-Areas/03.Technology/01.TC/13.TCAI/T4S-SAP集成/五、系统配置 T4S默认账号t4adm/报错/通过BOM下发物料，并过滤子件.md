@@ -1,7 +1,7 @@
 ---
 title: 通过BOM下发物料，并过滤子件
-updated: 2026-08-11T10:14:05+08:00
-created: 2022-06-09T16:15:36
+updated: 2026-08-11T10:14:05
+created: 2026-07-05T17:04:48
 ---
 
 <span style='background:white'>The T4S-transfer-MaterialMaster4BomLine argument “</span><span style='font-weight:bold;background:white'>-skip_bomlines_by_condition=true</span><span style='background:white'>” </span>

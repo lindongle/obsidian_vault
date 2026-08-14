@@ -1,7 +1,7 @@
 ---
 title: 桓韵Tips|PCM中如何更新物质信息到特定项目
-updated: 2026-06-06T10:08
-created: 2022-04-29T11:27:32
+updated: 2026-06-06T10:08:46
+created: 2026-07-05T17:04:56
 ---
 
 # <span style='color:#1E4E79'>桓韵Tips\|PCM中如何更新物质信息到特定项目 </span>

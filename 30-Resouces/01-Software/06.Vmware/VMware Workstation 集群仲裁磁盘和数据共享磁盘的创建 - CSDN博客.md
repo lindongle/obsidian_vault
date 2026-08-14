@@ -1,7 +1,7 @@
 ---
 title: VMware Workstation 集群仲裁磁盘和数据共享磁盘的创建 - CSDN博客
-updated: 2026-06-06T10:05
-created: 2018-06-06T19:54:39
+updated: 2026-06-06T10:05:38
+created: 2026-07-05T17:04:54
 ---
 
 上午

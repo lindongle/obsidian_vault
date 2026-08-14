@@ -1,7 +1,7 @@
 ---
 title: 修改JRE后，需要对Dispatcher修改
-updated: 2026-06-06T10:08
-created: 2019-09-10T17:51:09
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

@@ -1,7 +1,7 @@
 ---
 title: xshell退格键无法识别如何设置|Xmanager中文官网
-updated: 2026-06-06T10:05
-created: 2019-09-18T21:28:50
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 xshell退格键无法识别如何设置\|Xmanager中文官网

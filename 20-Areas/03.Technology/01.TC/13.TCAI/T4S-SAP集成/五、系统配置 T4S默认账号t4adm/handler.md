@@ -1,7 +1,7 @@
 ---
 title: handler
-updated: 2026-06-06T10:09
-created: 2019-05-08T18:24:48
+updated: 2026-06-06T10:09:04
+created: 2026-07-05T17:04:48
 ---
 
 E:\TC\09.帮助文档\T4S18.2\Teamcenter_Gateway-Generic_Configuration_Guide.pdf（==总结用到的handler==）

@@ -1,7 +1,7 @@
 ---
 title: 挂在windows共享
-updated: 2026-06-06T00:28
-created: 2018-10-15T13:05:42
+updated: 2026-06-06T00:28:01
+created: 2026-07-05T17:04:54
 ---
 
 sudo mount.cifs //10.2.1.8/SiemensBackup /mnt/remote_tc_backup -o user="hryt\infodba",password="Hrytplm@#2018",uid=500

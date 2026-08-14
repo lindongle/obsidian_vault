@@ -1,7 +1,7 @@
 ---
 title: 文件扩展名和Content-Type(Mime-Type)对应表。
-updated: 2026-06-06T10:05
-created: 2022-12-07T22:13:27
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:54
 ---
 
 文件扩展名和Content-Type(Mime-Type)对应表。

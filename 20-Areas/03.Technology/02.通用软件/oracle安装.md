@@ -1,7 +1,7 @@
 ---
 title: oracle安装
-updated: 2026-06-06T10:09
-created: 2018-03-09T23:07:28
+updated: 2026-06-12T10:38:07
+created: 2026-07-05T17:04:51
 ---
 
 ![image1](4bb0826fd19e4bf2bff96be1a238cca2.gif)

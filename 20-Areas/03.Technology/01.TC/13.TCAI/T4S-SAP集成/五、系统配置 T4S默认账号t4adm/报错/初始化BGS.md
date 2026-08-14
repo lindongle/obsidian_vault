@@ -1,7 +1,7 @@
 ---
 title: 初始化BGS
-updated: 2026-08-06T10:48:41+08:00
-created: 2021-12-02T13:38:36
+updated: 2026-08-06T10:48:41
+created: 2026-07-05T17:04:48
 ---
 
 管理员身份运行D:\Siemens\AIG22\bgs_root\bgs\bin64\initpassword.exe，输入密码infodba，确认密码后，在1分中内启动D:\Siemens\AIG22\bgs_root\bgs\bin64\restart.exe

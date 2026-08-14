@@ -1,7 +1,7 @@
 ---
 title: ERP集成-生产、计划
-updated: 2026-06-10T15:23
-created: 2020-07-14T15:37:49
+updated: 2026-06-10T15:23:23
+created: 2026-07-05T17:05:00
 ---
 
 ![image1](eb6ccfdfcfb04bd5ba4856dd49ee3681.jpg)

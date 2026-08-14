@@ -1,7 +1,7 @@
 ---
 title: 设置Part和Design重号
-updated: 2026-06-06T10:08
-created: 2019-03-01T14:49:56
+updated: 2026-06-06T10:08:50
+created: 2026-07-05T17:04:46
 ---
 
 针对Part

@@ -1,7 +1,7 @@
 ---
 title: 手动调整Deployment Center 安装状态2025-08-08T19:30:59.441Z
-updated: 2026-06-06T10:08
-created: 2025-08-08T19:31:11
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

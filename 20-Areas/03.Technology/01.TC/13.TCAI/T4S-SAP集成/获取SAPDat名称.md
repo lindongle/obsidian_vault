@@ -1,7 +1,7 @@
 ---
 title: 获取SAPDat名称
-updated: 2026-06-08T23:23
-created: 2020-06-01T13:59:38
+updated: 2026-06-08T23:23:32
+created: 2026-07-05T17:04:48
 ---
 
 1、查到对应调用的BAPI函数名，可以通过调试接口添加断点或接口调用后再BGS的日志-系统日子-sap_function_calls.log中查询（但部分无法查到）。

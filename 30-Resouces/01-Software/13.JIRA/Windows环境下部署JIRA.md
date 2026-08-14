@@ -1,7 +1,7 @@
 ---
 title: Windows环境下部署JIRA
-updated: 2026-06-06T10:08
-created: 2019-07-27T02:59:57
+updated: 2026-06-06T10:08:45
+created: 2026-07-05T17:04:55
 ---
 
 Windows环境下部署JIRA

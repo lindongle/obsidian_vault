@@ -1,7 +1,7 @@
 ---
 title: DefaultChildProperties
-updated: 2026-06-06T00:14
-created: 2018-05-20T22:37:05
+updated: 2026-06-06T00:14:04
+created: 2026-07-05T17:04:47
 ---
 
 \<Type_Name\>\_DefaultChildProperties

@@ -1,7 +1,7 @@
 ---
 title: 三、Linux访问windows共享目录
-updated: 2026-06-06T10:08
-created: 2018-11-16T00:15:50
+updated: 2026-06-06T10:08:57
+created: 2026-07-05T17:04:57
 ---
 
 三、Linux访问windows共享目录

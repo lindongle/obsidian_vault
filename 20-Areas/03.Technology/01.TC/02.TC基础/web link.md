@@ -1,7 +1,7 @@
 ---
 title: web link
-updated: 2026-06-05T23:13
-created: 2021-01-19T13:10:43
+updated: 2026-06-05T23:13:09
+created: 2026-07-05T17:04:40
 ---
 
 修改weblink的默认打开浏览器

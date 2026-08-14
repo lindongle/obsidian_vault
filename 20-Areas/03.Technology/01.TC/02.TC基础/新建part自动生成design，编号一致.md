@@ -1,7 +1,7 @@
 ---
 title: 新建part自动生成design，编号一致
-updated: 2026-06-06T10:05
-created: 2018-07-12T11:34:13
+updated: 2026-06-06T10:05:36
+created: 2026-07-05T17:04:41
 ---
 
 <span style='color:black'>**要求：**创建part时，自动创建design，两者自动关联，并且两者ID与名称一致。</span>

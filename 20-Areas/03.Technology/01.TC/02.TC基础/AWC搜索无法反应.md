@@ -1,7 +1,7 @@
 ---
 title: AWC搜索无法反应
-updated: 2026-06-05T23:50
-created: 2021-06-22T11:30:39
+updated: 2026-06-05T23:50:40
+created: 2026-07-05T17:04:40
 ---
 
 1、solr_admin密码不对；

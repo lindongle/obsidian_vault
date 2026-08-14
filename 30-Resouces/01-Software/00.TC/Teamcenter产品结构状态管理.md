@@ -8,8 +8,8 @@ tags:
   - BOM
 id: b13bbce3-ea23-4b01-afe4-dc3e227fef84
 title: 1.说明
-created: 2026-06-26T08:53:01+08:00
-updated: 2026-06-26T09:40:27+08:00
+created: 2026-07-05T17:04:52
+updated: 2026-06-26T09:40:27
 ---
 
 公众号名称：PLM云迹

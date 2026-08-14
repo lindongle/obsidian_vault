@@ -1,7 +1,7 @@
 ---
 title: 永久关闭Adobe Acrobat Reader DC右侧的侧边栏 - Kevin的个人空间 - 开...
-updated: 2026-06-06T00:21
-created: 2018-08-23T05:44:18
+updated: 2026-06-06T00:21:56
+created: 2026-07-05T17:04:56
 ---
 
 永久关闭Adobe Acrobat Reader DC右侧的侧边栏 - Kevin的个人空间 - 开源中国

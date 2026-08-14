@@ -1,7 +1,7 @@
 ---
 title: 【HTML】设置NotePad++不打开上次关闭的文件 - CSDN博客
-updated: 2026-06-06T10:05
-created: 2018-06-25T22:07:10
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:53
 ---
 
 【HTML】设置NotePad++不打开上次关闭的文件 - CSDN博客

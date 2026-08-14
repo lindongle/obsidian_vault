@@ -1,7 +1,7 @@
 ---
 title: TCIN集成
-updated: 2026-06-06T10:08
-created: 2020-06-06T20:46:15
+updated: 2026-06-06T10:08:51
+created: 2026-07-05T17:04:51
 ---
 
 1、必须先安装TCIN环境，且Rulestream要跟TCIN安装在同一个客户端上。可以从Rulestream中启动NX。通过NX Spec对象建立关系。在Rulestream中配置NX与Rulestream的Mapping关系。

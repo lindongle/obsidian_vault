@@ -1,7 +1,7 @@
 ---
 title: MES基本需求
-updated: 2026-06-06T10:05
-created: 2020-08-10T16:52:51
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:55
 ---
 
 ![image1](dd01acdb5cb244fabef2456fa8523654.png)

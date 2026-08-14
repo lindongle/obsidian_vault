@@ -1,7 +1,7 @@
 ---
 title: 企业BOP
-updated: 2026-06-06T10:08
-created: 2020-08-10T14:53:10
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:49
 ---
 
 ![image1](c3268025601c455ca70912ee896de072.png)

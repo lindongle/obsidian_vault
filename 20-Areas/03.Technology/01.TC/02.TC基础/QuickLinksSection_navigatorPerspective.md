@@ -1,7 +1,7 @@
 ---
 title: QuickLinksSection_navigatorPerspective
-updated: 2026-06-05T23:13
-created: 2023-06-30T09:58:37
+updated: 2026-06-05T23:13:25
+created: 2026-07-05T17:04:40
 ---
 
 QuickLinksSection_navigatorPerspective

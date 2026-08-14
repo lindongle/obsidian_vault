@@ -1,7 +1,7 @@
 ---
 title: 配置Creo转STP，二维图转PDF
-updated: 2026-06-06T10:05
-created: 2023-03-30T22:56:18
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:43
 ---
 
 [ipem.xml](da5ba90dc74549cc8ca9c43f77652352.xml)

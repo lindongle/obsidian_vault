@@ -1,7 +1,7 @@
 ---
 title: CATIA JT转换报错
-updated: 2026-06-06T10:35
-created: 2018-11-29T17:06:13
+updated: 2026-06-06T10:35:56
+created: 2026-07-05T17:04:43
 ---
 
 ERROR PXT_PART_prepare_xt returned: 11028 while catiav5tojt translation

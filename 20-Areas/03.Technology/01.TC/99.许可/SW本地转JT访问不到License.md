@@ -1,7 +1,7 @@
 ---
 title: SW本地转JT访问不到License
-updated: 2026-06-18T13:38:48+08:00
-created: 2023-03-31T09:01:02
+updated: 2026-06-18T13:38:48
+created: 2026-07-05T17:04:50
 ---
 
 SW本地转JT访问不到License

@@ -1,7 +1,7 @@
 ---
 title: 定制的流程handler（文档中部分）
-updated: 2026-06-05T22:25
-created: 2023-04-23T14:43:55
+updated: 2026-06-05T22:25:50
+created: 2026-07-05T17:05:03
 ---
 
 **DS4_WF_CreateBOMReports**

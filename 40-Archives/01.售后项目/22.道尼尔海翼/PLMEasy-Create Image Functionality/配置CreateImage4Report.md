@@ -1,7 +1,7 @@
 ---
 title: 配置CreateImage4Report
-updated: 2026-06-05T22:26
-created: 2023-04-24T10:27:00
+updated: 2026-06-13T15:32:53
+created: 2026-07-05T17:05:02
 ---
 
 1.  说明：

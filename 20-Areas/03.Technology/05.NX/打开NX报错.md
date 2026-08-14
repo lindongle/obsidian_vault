@@ -1,7 +1,7 @@
 ---
 title: 打开NX报错
-updated: 2026-06-05T23:46
-created: 2023-02-07T14:36:31
+updated: 2026-06-05T23:46:34
+created: 2026-07-05T17:04:51
 ---
 
 <span style='background:white'>When trying to start NX, the user receives the following error,</span>

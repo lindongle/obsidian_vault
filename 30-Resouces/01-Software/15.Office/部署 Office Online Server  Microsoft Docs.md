@@ -1,9 +1,10 @@
 ---
-title: "<span style='color:#2E75B5'>准备服务器以运行 Office Online ServerPrepare servers to run Office Online Server</span>"
-updated: 2026-06-16T13:51:04+08:00
-created: 2018-10-11T21:11:44
-aliases: ["<span style='color:#2E75B5'>准备服务器以运行 Office Online ServerPrepare servers to run Office Online Server</span>"]
-linter-yaml-title-alias: "<span style='color:#2E75B5'>准备服务器以运行 Office Online ServerPrepare servers to run Office Online Server</span>"
+title: <span style='color:#2E75B5'>准备服务器以运行 Office Online ServerPrepare servers to run Office Online Server</span>
+updated: 2026-07-05T17:09:14
+created: 2026-07-05T17:09:14
+aliases:
+  - <span style='color:#2E75B5'>准备服务器以运行 Office Online ServerPrepare servers to run Office Online Server</span>
+linter-yaml-title-alias: <span style='color:#2E75B5'>准备服务器以运行 Office Online ServerPrepare servers to run Office Online Server</span>
 ---
 
 已剪辑自: <https://docs.microsoft.com/zh-cn/officeonlineserver/deploy-office-online-server>

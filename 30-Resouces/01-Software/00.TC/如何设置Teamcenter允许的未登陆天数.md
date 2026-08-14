@@ -1,7 +1,7 @@
 ---
 title: 如何设置Teamcenter允许的未登陆天数
-updated: 2026-06-06T10:08
-created: 2019-10-26T00:13:53
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

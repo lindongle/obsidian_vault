@@ -1,7 +1,7 @@
 ---
 title: 配置TC/SAP连接
-updated: 2026-06-06T10:09
-created: 2021-12-02T14:54:45
+updated: 2026-06-06T10:09:07
+created: 2026-07-05T17:04:48
 ---
 
 通过GS脚本生成连接文件；或者直接根据SAP登录信息手动配置一下两个文件(730及以前版本，安装完后可以自动生成saplogon.ini或从已有电脑上上复制一份，避免填写各种配置信息，默认路径在C:\Users\infodba\AppData\Roaming\SAP\Common\saplogon.ini)；--注：SAP 750及以上可能没有这个文件，直接忽略此步（脚本生成），手动配置以下两个文件即可

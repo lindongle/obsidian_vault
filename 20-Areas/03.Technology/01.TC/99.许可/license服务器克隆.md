@@ -1,7 +1,7 @@
 ---
 title: license服务器克隆
-updated: 2026-06-18T13:38:31+08:00
-created: 2021-05-17T17:35:02
+updated: 2026-06-18T13:38:31
+created: 2026-07-05T17:04:50
 ---
 
 第一台license服务器：

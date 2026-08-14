@@ -1,7 +1,7 @@
 ---
 title: 修复BMIDE模型问题
-updated: 2026-06-06T10:08
-created: 2020-03-30T23:18:27
+updated: 2026-06-06T10:08:49
+created: 2026-07-05T17:04:45
 ---
 
 <span style='color:red'>manage_model_files</span> -u=user-id {-p=password \| -pf=password-file} \[-g=group\] -option=\[list \| upload \| download\] \[-dir=directory -template=template -release=Teamcenter-release -resource=project \] -syncToDb \[-h\]

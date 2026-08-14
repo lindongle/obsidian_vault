@@ -1,7 +1,7 @@
 ---
 title: 精确 BOM搭建
-updated: 2026-06-06T00:07
-created: 2018-03-11T12:03:19.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:42
 tags:
   - bom
   - BOM

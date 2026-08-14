@@ -1,7 +1,7 @@
 ---
 title: 导出文件夹下Item下版本下的数据集
-updated: 2026-06-05T23:22
-created: 2022-06-29T16:11:35
+updated: 2026-06-05T23:22:10
+created: 2026-07-05T17:04:41
 ---
 
 <span style='background:white'>When standing on a folder, that contains an Item/ItemRevision/Dataset, only</span>

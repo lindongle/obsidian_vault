@@ -1,7 +1,7 @@
 ---
 title: Creo集成保存界面 隐藏转JT的勾选
-updated: 2026-06-06T10:05
-created: 2020-06-04T18:31:06
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:43
 ---
 
 ![image1](fac508d468da463a90a2b41f0717d6dc.png)

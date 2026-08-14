@@ -1,7 +1,7 @@
 ---
 title: PS-attach-assembly-components
-updated: 2026-06-06T00:09
-created: 2018-03-11T12:14:07
+updated: 2026-06-06T00:09:41
+created: 2026-07-05T17:04:42
 ---
 
 为零组件版本发起工作流程时，该处理程序通过遍历附加于 BOM 的零组件版本来

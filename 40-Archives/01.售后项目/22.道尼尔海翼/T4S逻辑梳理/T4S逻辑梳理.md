@@ -1,7 +1,7 @@
 ---
 title: T4S逻辑梳理
-updated: 2026-06-10T15:30
-created: 2023-09-22T10:18:35
+updated: 2026-06-10T15:30:41
+created: 2026-07-05T17:05:03
 ---
 
 1.  t4s_mapping_config.sd，主配置

@@ -1,7 +1,7 @@
 ---
 title: BOM集成
-updated: 2026-07-29T13:49:46+08:00
-created: 2023-10-11T15:06:55
+updated: 2026-07-29T13:49:46
+created: 2026-07-05T17:05:02
 ---
 
 1.  集成的Item父级类型：DS4_MPartRevision/DS4_PartRevision（T4S_BillOfMaterialHeaderTypeList），视图类型为view（T4S_BillOfMaterialTypeList）,T4S_BillOfMaterialOccurrenceNotes4view，读取的BOM行属性

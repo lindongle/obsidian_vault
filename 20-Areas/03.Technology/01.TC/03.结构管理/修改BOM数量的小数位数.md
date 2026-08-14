@@ -1,7 +1,7 @@
 ---
 title: 修改BOM数量的小数位数
-updated: 2026-06-06T10:08
-created: 2024-09-18T13:39:14.000Z
+updated: 2026-06-13T22:12:21
+created: 2026-07-05T17:04:41
 tags:
   - bom
   - BOM

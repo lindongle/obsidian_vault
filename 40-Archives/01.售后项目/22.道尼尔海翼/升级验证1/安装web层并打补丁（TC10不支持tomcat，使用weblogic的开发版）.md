@@ -1,7 +1,7 @@
 ---
 title: 安装web层并打补丁（TC10不支持tomcat，使用weblogic的开发版）
-updated: 2026-06-06T10:09
-created: 2023-09-05T17:50:34
+updated: 2026-06-06T10:09:06
+created: 2026-07-05T17:05:03
 ---
 
 1.  安装tcweb层10.1.0

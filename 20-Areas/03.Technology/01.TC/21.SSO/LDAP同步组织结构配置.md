@@ -1,7 +1,7 @@
 ---
 title: LDAP同步组织结构配置
-updated: 2026-06-06T10:08
-created: 2018-04-18T12:54:19
+updated: 2026-06-13T15:24:44
+created: 2026-07-05T17:04:50
 ---
 
 # <span style='color:#1E4E79'>有两种方式：</span>

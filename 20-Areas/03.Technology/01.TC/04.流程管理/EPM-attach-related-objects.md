@@ -1,7 +1,7 @@
 ---
 title: EPM-attach-related-objects
-updated: 2026-06-06T10:05
-created: 2018-03-11T12:11:46
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:42
 ---
 
 将目标对象的指定相关对象附加为工作流程的目标/引用附件。此处理程序搜索所

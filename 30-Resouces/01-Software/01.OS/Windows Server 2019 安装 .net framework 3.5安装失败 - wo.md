@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2019 安装 .net framework 3.5安装失败 - wo...
-updated: 2026-06-06T00:23
-created: 2019-08-01T01:18:12
+updated: 2026-06-06T00:23:00
+created: 2026-07-05T17:04:53
 ---
 
 Windows Server 2019 安装 .net framework 3.5安装失败 - woiyyyy的专栏 - CSDN博客

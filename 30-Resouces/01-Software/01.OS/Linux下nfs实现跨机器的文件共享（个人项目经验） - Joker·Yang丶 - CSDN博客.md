@@ -1,7 +1,7 @@
 ---
 title: Linux下nfs实现跨机器的文件共享（个人项目经验） - Joker·Yang丶 - CSDN博客
-updated: 2026-06-06T00:28
-created: 2018-11-16T07:11:14
+updated: 2026-07-05T17:08:57
+created: 2026-07-05T17:08:57
 ---
 
 下午

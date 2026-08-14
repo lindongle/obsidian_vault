@@ -1,7 +1,7 @@
 ---
 title: (26条消息) Windows Nginx 环境搭建安装配置详细教程 2020(最新)_Bnana博...
-updated: 2026-06-24T11:26:11+08:00
-created: 2022-03-07T21:36:12
+updated: 2026-07-05T17:09:11
+created: 2026-07-05T17:09:11
 ---
 
 (26条消息) Windows Nginx 环境搭建安装配置详细教程 2020(最新)\_Bnana博客-CSDN博客_nginx 配置详解windows

@@ -1,7 +1,7 @@
 ---
 title: Linux中设置服务自启动的三种方式 - chunchill - 博客园
-updated: 2026-06-06T10:05
-created: 2018-11-16T00:22:25
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 Linux中设置服务自启动的三种方式 - chunchill - 博客园

@@ -1,7 +1,7 @@
 ---
 title: CATIA集成问题
-updated: 2026-06-06T10:08
-created: 2018-06-25T11:07:53
+updated: 2026-06-06T10:08:50
+created: 2026-07-05T17:04:43
 ---
 
 ![image1](77c997af117c475b8ac182c70c22d95a.png)

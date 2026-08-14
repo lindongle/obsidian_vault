@@ -1,7 +1,7 @@
 ---
 title: 注册GS及tc连接配置
-updated: 2026-08-12T20:31:33+08:00
-created: 2023-09-26T10:51:42
+updated: 2026-08-12T20:31:33
+created: 2026-07-05T17:05:02
 ---
 
 1.  修改d:\Siemens\AIG22\gs_root\gs\var\conf\script\t4xcust.bat文件

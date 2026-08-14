@@ -1,7 +1,7 @@
 ---
 title: 确定Teamcenter架构（两层或四层）。
-updated: 2026-06-05T23:42
-created: 2021-04-20T10:44:50
+updated: 2026-06-05T23:42:24
+created: 2026-07-05T17:04:47
 ---
 
 确定Teamcenter架构（两层或四层）。

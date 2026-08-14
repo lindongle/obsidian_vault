@@ -1,7 +1,7 @@
 ---
 title: 部署web层
-updated: 2026-06-06T10:08
-created: 2023-09-05T15:31:26
+updated: 2026-06-06T10:08:59
+created: 2026-07-05T17:05:02
 ---
 
 1.  复制D:\Media\apache-tomcat-9.0.73-windows-x64\apache-tomcat-9.0.73到D:\apache-tomcat

@@ -1,7 +1,7 @@
 ---
 title: VMware修改预先分配磁盘为自增长
-updated: 2026-06-06T00:32
-created: 2020-10-26T12:44:12
+updated: 2026-06-06T00:32:22
+created: 2026-07-05T17:04:55
 ---
 
 cd /d "D:\Program Files (x86)\VMware\VMware Workstation"

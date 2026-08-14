@@ -1,7 +1,7 @@
 ---
 title: nginx超时配置
-updated: 2026-06-25T23:07:34+08:00
-created: 2025-12-08T14:47:47
+updated: 2026-06-25T23:07:34
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
   - nginx

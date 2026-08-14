@@ -1,7 +1,7 @@
 ---
 title: BMIDE模板部署
-updated: 2026-06-18T23:28:07+08:00
-created: 2018-04-10T12:56:46
+updated: 2026-06-18T23:28:07
+created: 2026-07-05T17:04:45
 ---
 
 ![image1](ac05430bfdc54350b1449c84bd46b945.png)

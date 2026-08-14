@@ -1,7 +1,7 @@
 ---
 title: Win10开始菜单图标显示问题
-updated: 2026-06-06T00:22
-created: 2018-03-19T20:19:20
+updated: 2026-06-06T00:22:02
+created: 2026-07-05T17:04:53
 ---
 
 <span style='background:white'>C:\用户（Users）\用户名\AppData\Local\IconCache.db</span>

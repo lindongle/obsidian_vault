@@ -1,7 +1,7 @@
 ---
 title: Tomcat - 解决WAR包在高版本Tomcat下部署无法启动问题（10及以上）
-updated: 2026-06-06T10:05
-created: 2024-08-27T17:12:18
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:55
 ---
 
 Clipped from: <https://www.hangge.com/blog/cache/detail_3302.html>

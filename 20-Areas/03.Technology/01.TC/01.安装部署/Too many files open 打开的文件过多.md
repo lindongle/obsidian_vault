@@ -1,7 +1,7 @@
 ---
 title: Too many files open 打开的文件过多
-updated: 2026-06-05T23:21
-created: 2021-05-10T15:31:16
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

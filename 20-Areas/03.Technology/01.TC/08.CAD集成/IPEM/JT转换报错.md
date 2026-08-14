@@ -1,7 +1,7 @@
 ---
 title: JT转换报错
-updated: 2026-06-05T23:35
-created: 2019-09-24T12:49:17
+updated: 2026-06-05T23:35:51
+created: 2026-07-05T17:04:44
 ---
 
 at com.transcendata.ipemsoaaux.IpemAux.main(IpemAux.java:1197)

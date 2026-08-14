@@ -1,7 +1,7 @@
 ---
 title: Windows11恢复Windows10右键菜单样式 - 知乎
-updated: 2026-06-06T00:19
-created: 2022-03-16T17:42:24
+updated: 2026-06-06T00:19:51
+created: 2026-07-05T17:04:53
 ---
 
 Windows11恢复Windows10右键菜单样式 - 知乎

@@ -1,7 +1,7 @@
 ---
 title: 批量导入Creo模型
-updated: 2026-06-06T10:05
-created: 2023-07-06T16:09:21
+updated: 2026-06-06T10:05:37
+created: 2026-07-05T17:04:43
 ---
 
 ![image1](7190e33200c54e33aa58502cfe23ec12.png)

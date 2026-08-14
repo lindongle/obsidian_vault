@@ -1,7 +1,7 @@
 ---
 title: 设计BOM与制造BOM同步技术探讨
-updated: 2026-06-06T10:08
-created: 2020-07-30T23:04:38
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:53
 tags:
   - TC
 ---

@@ -1,7 +1,7 @@
 ---
 title: Oracle内存管理（修改SGA与PGA） - 墨天轮
-updated: 2026-06-05T23:35
-created: 2025-08-27T00:57:28
+updated: 2026-06-05T23:35:26
+created: 2026-07-05T17:04:50
 ---
 
 Oracle内存管理（修改SGA与PGA） - 墨天轮

@@ -1,7 +1,7 @@
 ---
 title: 设置定时任务Crontab
-updated: 2026-06-06T10:05
-created: 2018-12-06T13:57:17
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:54
 ---
 
 1、Crontab语法：使用root用户创建

@@ -1,7 +1,7 @@
 ---
 title: Windows server 2012 R2 解决“无法完成域加入，原因是试图加入的域的SID与本计...
-updated: 2026-06-06T10:05
-created: 2018-06-07T05:30:35
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 Windows server 2012 R2 解决“无法完成域加入，原因是试图加入的域的SID与本计算机的SID相同。” - CSDN博客

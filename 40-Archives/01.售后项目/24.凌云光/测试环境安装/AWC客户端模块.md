@@ -1,7 +1,7 @@
 ---
 title: AWC客户端模块
-updated: 2026-06-06T10:09
-created: 2023-05-12T15:51:08
+updated: 2026-06-06T10:09:05
+created: 2026-07-05T17:05:04
 ---
 
 ![image1](196a4506c48e4be6945f44c6a01a21be.png)

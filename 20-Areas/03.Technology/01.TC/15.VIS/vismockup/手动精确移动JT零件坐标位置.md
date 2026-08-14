@@ -1,7 +1,7 @@
 ---
 title: 手动/精确移动JT零件坐标位置
-updated: 2026-06-06T10:08
-created: 2019-02-28T20:38:24
+updated: 2026-06-13T15:27:47
+created: 2026-07-05T17:04:49
 ---
 
 | <span style='color:gray'>**主题**</span> | **手动/精确移动JT零件坐标位置** |

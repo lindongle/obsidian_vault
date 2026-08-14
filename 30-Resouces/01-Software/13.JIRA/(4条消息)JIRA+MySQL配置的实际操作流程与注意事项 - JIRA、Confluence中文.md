@@ -1,7 +1,7 @@
 ---
 title: (4条消息)JIRA+MySQL配置的实际操作流程与注意事项 - JIRA、Confluence中文...
-updated: 2026-06-06T00:26
-created: 2019-07-27T09:20:03
+updated: 2026-06-06T00:26:04
+created: 2026-07-05T17:04:55
 ---
 
 (4条消息)JIRA+MySQL配置的实际操作流程与注意事项 - JIRA、Confluence中文官方技术博客 - CSDN博客

@@ -1,7 +1,7 @@
 ---
 title: Nginx服务器之负载均衡策略（6种） - 左羽 - 博客园
-updated: 2026-06-06T10:05
-created: 2023-05-18T23:57:44
+updated: 2026-06-06T10:05:35
+created: 2026-07-05T17:04:55
 ---
 
 已剪辑自: <https://www.cnblogs.com/1214804270hacker/p/9325150.html>

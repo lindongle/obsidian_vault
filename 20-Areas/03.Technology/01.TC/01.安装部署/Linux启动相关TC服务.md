@@ -1,7 +1,7 @@
 ---
-title: Linux启动相关服务
-updated: 2026-06-06T10:09
-created: 2025-07-19T13:16:09
+title: Linux启动相关TC服务
+updated: 2026-08-14T10:56:18
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

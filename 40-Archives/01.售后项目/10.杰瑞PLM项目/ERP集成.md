@@ -1,7 +1,7 @@
 ---
 title: ERP集成
-updated: 2026-06-06T10:08
-created: 2021-01-13T19:28:08
+updated: 2026-06-06T10:08:57
+created: 2026-07-05T17:04:59
 ---
 
 ![image1](e1c197b54a3f4ec9ba9cc8977a229624.png)

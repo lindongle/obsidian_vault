@@ -1,7 +1,7 @@
 ---
 title: The instance is out of synchronization with its VLAs.
-created: 2026-07-21T14:58:25+08:00
-updated: 2026-07-21T20:27:35+08:00
+created: 2026-07-21T14:58:25
+updated: 2026-07-21T20:27:35
 ---
 ![[企业微信截图_17846163487449.png]]
 还原生产环境数据库时，数据库与卷不在同一时间，未停机还原导致数据库不一致；

@@ -8,8 +8,8 @@ tags:
   - EasyPLan
 id: 2d23b367-d500-44bb-88ac-d7cdc2ec307b
 title: PLM 交流集锦 | MBOM 工作包显示、TC+AI 应用、密码重置与配置器
-created: 2026-07-14T13:28:51+08:00
-updated: 2026-07-14T14:44:05+08:00
+created: 2026-07-14T13:28:51
+updated: 2026-07-14T14:44:05
 ---
 
 公众号名称：PLM之友

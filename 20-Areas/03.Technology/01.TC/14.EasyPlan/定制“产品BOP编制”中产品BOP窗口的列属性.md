@@ -1,7 +1,7 @@
 ---
 title: 定制“产品BOP编制”中产品BOP窗口的列属性
-updated: 2026-06-06T10:09
-created: 2025-12-05T10:55:28
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 1.配置首选项EP_BopBreakdownAssemblyTreeColumnConfiguration保护范围设为【站点】

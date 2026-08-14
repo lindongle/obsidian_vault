@@ -1,7 +1,7 @@
 ---
 title: Create 控制对象的创建；
-updated: 2026-06-05T23:41
-created: 2020-03-12T15:01:56
+updated: 2026-06-05T23:41:10
+created: 2026-07-05T17:04:42
 ---
 
 Create 控制对象的创建；

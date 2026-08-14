@@ -1,7 +1,7 @@
 ---
 title: EPM-NOTIFY外部邮箱显示客户端打开链接
-updated: 2026-06-06T10:09
-created: 2020-01-13T13:37:03
+updated: 2026-06-12T10:43:40
+created: 2026-07-05T17:04:42
 ---
 
 首选项：WEB_default_site_server

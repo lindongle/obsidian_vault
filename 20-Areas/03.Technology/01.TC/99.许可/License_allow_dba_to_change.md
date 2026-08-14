@@ -1,7 +1,7 @@
 ---
 title: License_allow_dba_to_change
-updated: 2026-06-18T13:38:20+08:00
-created: 2020-01-08T10:43:13
+updated: 2026-06-18T13:38:20
+created: 2026-07-05T17:04:50
 ---
 
 <span style='font-weight:bold;color:blue'>License</span><span style='color:#333333'>\_allow_dba_to_change</span>

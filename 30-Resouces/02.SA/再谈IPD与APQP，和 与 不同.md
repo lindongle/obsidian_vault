@@ -1,7 +1,7 @@
 ---
 title: 再谈IPD与APQP，"和" 与 "不同"
-updated: 2026-06-06T10:08
-created: 2021-03-09T21:26:29
+updated: 2026-06-13T15:29:10
+created: 2026-07-05T17:04:56
 ---
 
 ## <span style='color:#2E75B5'>再谈IPD与APQP，"和" 与 "不同" </span>

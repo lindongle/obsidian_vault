@@ -1,7 +1,7 @@
 ---
 title: vlookup
-updated: 2026-06-06T10:05
-created: 2023-08-17T22:54:34
+updated: 2026-06-06T10:05:33
+created: 2026-07-05T17:04:55
 ---
 
 ![image1](47c0c2231a4344e0945bf4040de4e539.png)

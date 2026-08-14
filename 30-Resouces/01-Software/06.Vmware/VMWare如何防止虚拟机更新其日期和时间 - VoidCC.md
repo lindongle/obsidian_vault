@@ -1,7 +1,7 @@
 ---
 title: VMWare如何防止虚拟机更新其日期和时间 - VoidCC
-updated: 2026-06-06T00:32
-created: 2021-05-19T05:01:16
+updated: 2026-06-06T00:32:31
+created: 2026-07-05T17:04:55
 ---
 
 VMWare如何防止虚拟机更新其日期和时间 - VoidCC

@@ -1,7 +1,7 @@
 ---
 title: 如何修改Teamcenter的站点ID
-updated: 2026-06-06T10:08
-created: 2019-07-10T00:19:00
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:46
 ---
 
 如何修改Teamcenter的站点ID

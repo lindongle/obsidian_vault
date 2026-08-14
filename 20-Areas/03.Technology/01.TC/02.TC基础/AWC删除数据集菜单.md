@@ -1,7 +1,7 @@
 ---
 title: AWC删除数据集菜单
-updated: 2026-06-05T23:52
-created: 2023-05-23T14:28:28
+updated: 2026-08-14T11:02:51
+created: 2026-07-05T17:04:40
 ---
 
 AWS_allowedTypesForDelete首选项控制可以删除的类型

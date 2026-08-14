@@ -1,7 +1,7 @@
 ---
 title: tc mobility配置
-updated: 2026-06-06T10:05
-created: 2018-03-11T11:57:38
+updated: 2026-06-13T22:21:08
+created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---

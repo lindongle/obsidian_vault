@@ -1,7 +1,7 @@
 ---
 title: 管理工作包BOM/BOE/BOP显示类型
-updated: 2026-06-06T10:09
-created: 2025-11-25T17:21:40
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 管理工作包BOM/BOE/BOP显示类型通过首选项【EP_WorkPackageContentType】控制

@@ -1,7 +1,7 @@
 ---
 title: PLMXML导出
-updated: 2026-06-06T10:08
-created: 2020-05-18T17:37:39
+updated: 2026-06-06T10:08:55
+created: 2026-07-05T17:04:40
 ---
 
 [ConfiguredDataExportDefault.xml](814ceb35e17044e99c9fa9cc29fdb82a.xml)

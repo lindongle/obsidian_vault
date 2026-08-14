@@ -1,7 +1,7 @@
 ---
 title: After patching Teamcenter, launching the BusinessM...
-updated: 2026-06-06T10:08
-created: 2024-09-07T12:52:49
+updated: 2026-06-06T10:08:49
+created: 2026-07-05T17:04:45
 ---
 
 After patching Teamcenter, launching the BusinessModelerIDE client ( bmide.bat) fails with

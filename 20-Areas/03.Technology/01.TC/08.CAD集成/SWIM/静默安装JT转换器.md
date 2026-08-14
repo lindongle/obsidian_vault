@@ -1,7 +1,7 @@
 ---
 title: 静默安装JT转换器
-updated: 2026-06-05T23:45
-created: 2022-12-22T18:20:06
+updated: 2026-06-05T23:45:37
+created: 2026-07-05T17:04:45
 ---
 
 PLM Components JT Translator for Solidworks 22.0.0 wntx64 22.0.0

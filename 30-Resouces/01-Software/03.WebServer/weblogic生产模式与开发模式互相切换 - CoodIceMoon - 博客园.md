@@ -1,7 +1,7 @@
 ---
 title: weblogic生产模式与开发模式互相切换 - CoodIceMoon - 博客园
-updated: 2026-06-06T00:33
-created: 2021-03-12T21:01:38
+updated: 2026-06-06T00:33:11
+created: 2026-07-05T17:04:54
 ---
 
 <span style='background:white'>weblogic12.1生产模式和开发模式切换</span>

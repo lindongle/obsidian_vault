@@ -1,7 +1,7 @@
 ---
 title: 修改JT转换对应license服务器
-updated: 2026-06-05T23:27
-created: 2019-02-27T13:40:14
+updated: 2026-06-13T22:12:00
+created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---

@@ -1,7 +1,7 @@
 ---
 title: 蓥石方案学习-Design零件管理
-updated: 2026-06-06T10:09
-created: 2018-06-21T15:21:08
+updated: 2026-06-06T10:09:00
+created: 2026-07-05T17:04:37
 ---
 
 1、一棵树、两棵树：EBOM及DBOM，两套BOM。DBOM主要将基于数模的装配BOM。EBOM为VAS中IA下所有一级USG零件集合。

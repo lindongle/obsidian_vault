@@ -1,7 +1,7 @@
 ---
 title: CBU/CKD/SKD
-updated: 2026-06-06T10:08
-created: 2024-07-25T15:19:34
+updated: 2026-06-06T10:08:56
+created: 2026-07-05T17:04:37
 ---
 
 <span style='color:#1F204C'>**车辆出口模式分类**</span>

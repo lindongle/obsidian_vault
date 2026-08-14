@@ -1,7 +1,7 @@
 ---
 title: 如何导出/导入 Transfer Mode(PLMXML管理器)
-updated: 2026-06-06T10:08
-created: 2020-06-03T11:47:37
+updated: 2026-06-13T15:25:44
+created: 2026-07-05T17:04:41
 ---
 
 **如何导出/导入 Transfer Mode**

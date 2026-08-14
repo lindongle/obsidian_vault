@@ -1,7 +1,7 @@
 ---
 title: 如何撤销对BOM的更改
-updated: 2026-06-06T10:08
-created: 2019-07-31T00:44:28
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

@@ -1,7 +1,7 @@
 ---
 title: linux的zip命令详解 - 黑默 - 博客园
-updated: 2026-06-06T00:28
-created: 2018-11-22T21:45:29
+updated: 2026-06-06T00:28:46
+created: 2026-07-05T17:04:53
 ---
 
 linux的zip命令详解 - 黑默 - 博客园

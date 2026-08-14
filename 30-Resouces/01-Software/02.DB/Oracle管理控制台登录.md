@@ -1,7 +1,7 @@
 ---
 title: Oracle管理控制台登录
-updated: 2026-06-06T00:30
-created: 2019-07-28T12:27:51
+updated: 2026-06-13T15:25:51
+created: 2026-07-05T17:04:54
 ---
 
 <https://localhost:1158/em/console/>

@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2012 iSCSI共享磁盘搭建 - CSDN博客
-updated: 2026-06-06T10:05
-created: 2018-06-12T09:36:46
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 Windows Server 2012 iSCSI共享磁盘搭建 - CSDN博客

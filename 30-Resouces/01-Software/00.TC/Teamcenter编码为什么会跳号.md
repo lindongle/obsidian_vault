@@ -1,7 +1,7 @@
 ---
 title: Teamcenter编码为什么会跳号
-updated: 2026-06-06T10:08
-created: 2019-12-19T00:01:18
+updated: 2026-06-13T22:08:29
+created: 2026-07-05T17:04:52
 tags:
   - TC
 ---

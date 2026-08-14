@@ -1,7 +1,7 @@
 ---
 title: 服务BOM
-updated: 2026-06-05T23:10
-created: 2020-04-03T10:08:23
+updated: 2026-06-13T22:09:26
+created: 2026-07-05T17:04:37
 tags:
   - BOM
 ---

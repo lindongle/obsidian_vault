@@ -1,7 +1,7 @@
 ---
 title: 控制Item版本和数据集的版次保留最新
-updated: 2026-06-05T23:24
-created: 2019-06-18T21:55:41
+updated: 2026-06-05T23:24:34
+created: 2026-07-05T17:04:47
 ---
 
 TCDefaultKeepLimitByType 值改为ItemRevision 1 --控制某类型版本限制，类型不继承，且清理无效，必须新建的数据有效

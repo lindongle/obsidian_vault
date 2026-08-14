@@ -1,7 +1,7 @@
 ---
 title: 安装office及vc++运行库
-updated: 2026-06-06T10:09
-created: 2023-09-06T14:32:46
+updated: 2026-07-05T17:09:20
+created: 2026-07-05T17:09:20
 ---
 
 安装vc++运行库；VC 2005/2008/2010/2012 Redistributables，安装完后重启服务器；

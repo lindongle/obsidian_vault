@@ -1,7 +1,7 @@
 ---
 title: SSO-LDAP集成-ldl
-updated: 2026-06-06T10:09
-created: 2023-05-18T10:18:36
+updated: 2026-06-06T10:09:05
+created: 2026-07-05T17:05:04
 ---
 
 1.  找到安装介质：D:\Media\Tc14.1.0_patch_9_wntx64\wntx64\additional_applications\sso

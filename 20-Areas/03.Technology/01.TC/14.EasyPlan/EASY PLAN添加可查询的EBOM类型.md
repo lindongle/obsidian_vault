@@ -1,7 +1,7 @@
 ---
 title: EASY PLAN添加可查询的EBOM类型
-updated: 2026-06-06T10:09
-created: 2025-11-24T15:25:03
+updated: 2026-06-06T10:09:01
+created: 2026-07-05T17:04:49
 ---
 
 设置首选项EP_SearchSubtypesForEbom添加类型

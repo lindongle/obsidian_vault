@@ -1,7 +1,7 @@
 ---
 title: 什么是计算流体力学（CFD）
-updated: 2026-06-06T10:09
-created: 2026-03-09T10:23:39
+updated: 2026-06-12T10:28:04
+created: 2026-07-05T17:04:38
 ---
 
 <span style='color:black'>**什么是计算流体力学（CFD）？**</span>

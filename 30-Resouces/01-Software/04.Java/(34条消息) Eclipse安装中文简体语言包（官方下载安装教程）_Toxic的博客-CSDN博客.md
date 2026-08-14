@@ -1,7 +1,7 @@
 ---
 title: (34条消息) Eclipse安装中文简体语言包（官方下载安装教程）_Toxic的博客-CSDN博客
-updated: 2026-06-06T10:05
-created: 2020-11-05T01:27:40
+updated: 2026-07-05T17:09:02
+created: 2026-07-05T17:09:02
 tags:
   - Java
 ---

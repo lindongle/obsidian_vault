@@ -1,7 +1,7 @@
 ---
 title: cmd chcp 937 invalid codepage
-updated: 2026-06-06T00:19
-created: 2021-06-22T09:45:19
+updated: 2026-06-06T00:19:40
+created: 2026-07-05T17:04:55
 ---
 
 cmd chcp 937 invalid codepage

@@ -9,10 +9,11 @@ tags:
   - TC基础
 id: 6e73bcca-2e63-44cb-b9fa-9bfae43628c0
 title: 1、说明
-aliases: [1、说明]
+aliases:
+  - 1、说明
 linter-yaml-title-alias: 1、说明
-created: 2026-06-16T10:20:52+08:00
-updated: 2026-06-16T10:26:10+08:00
+created: 2026-07-05T17:04:52
+updated: 2026-06-16T10:26:10
 ---
 [[数据库语句]]
 公众号名称：PLM云迹

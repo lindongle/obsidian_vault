@@ -1,7 +1,7 @@
 ---
 title: CentOS/用SWAT让Samba服务器的管理温和化 - 站长百科
-updated: 2026-06-06T00:27
-created: 2018-10-15T07:51:02
+updated: 2026-06-13T15:48:21
+created: 2026-07-05T17:04:53
 ---
 
 CentOS/用SWAT让Samba服务器的管理温和化 - 站长百科

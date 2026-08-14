@@ -1,7 +1,7 @@
 ---
 title: VIS客户端及服务端渲染
-updated: 2026-06-06T10:09
-created: 2021-05-21T12:29:24
+updated: 2026-06-06T10:09:02
+created: 2026-07-05T17:04:49
 ---
 
 <span style='font-weight:bold;background:white'>客户端渲染</span>

@@ -1,7 +1,7 @@
 ---
 title: (7条消息)xManger6中单击键盘出现两个字符的问题解决 - shangxiaqiusuo1的博...
-updated: 2026-06-06T10:05
-created: 2019-09-27T23:29:48
+updated: 2026-06-06T10:05:34
+created: 2026-07-05T17:04:53
 ---
 
 已剪辑自: <https://blog.csdn.net/shangxiaqiusuo1/article/details/85052217>

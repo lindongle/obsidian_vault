@@ -1,7 +1,7 @@
 ---
 title: linux sudoers修改导致不能在终端使用sudo 和su的解决方法 - zwlq131452...
-updated: 2026-06-06T00:27
-created: 2018-10-15T04:25:18
+updated: 2026-06-06T00:27:43
+created: 2026-07-05T17:04:53
 ---
 
 linux sudoers修改导致不能在终端使用sudo 和su的解决方法 - zwlq1314521的专栏 - CSDN博客

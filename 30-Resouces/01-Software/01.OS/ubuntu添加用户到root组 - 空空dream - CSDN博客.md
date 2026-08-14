@@ -1,7 +1,7 @@
 ---
 title: ubuntu添加用户到root组 - 空空dream - CSDN博客
-updated: 2026-06-06T00:27
-created: 2018-10-14T07:59:06
+updated: 2026-06-06T00:27:26
+created: 2026-07-05T17:04:53
 ---
 
 下午

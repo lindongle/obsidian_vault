@@ -1,7 +1,7 @@
 ---
 title: 如何修改vismockup的语言
-updated: 2026-06-06T10:08
-created: 2019-02-21T09:24:23
+updated: 2026-06-06T10:08:53
+created: 2026-07-05T17:04:49
 ---
 
 <span style='color:silver'></span>

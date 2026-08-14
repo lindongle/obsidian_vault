@@ -1,7 +1,7 @@
 ---
 title: SQL Server 日志收缩方法_sqlserver日志收缩_夜光小兔纸的博客-CSDN博客
-updated: 2026-06-06T00:31
-created: 2023-08-28T22:59:33
+updated: 2026-06-13T15:25:51
+created: 2026-07-05T17:04:54
 ---
 
 已剪辑自: <https://blog.csdn.net/Ruishine/article/details/112917414>

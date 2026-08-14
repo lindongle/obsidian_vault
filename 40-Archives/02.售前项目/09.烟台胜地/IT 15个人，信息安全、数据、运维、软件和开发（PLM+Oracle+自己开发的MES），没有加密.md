@@ -1,7 +1,7 @@
 ---
 title: IT 15个人，信息安全、数据、运维、软件和开发（PLM+Oracle+自己开发的MES），没有加密...
-updated: 2026-06-05T23:00
-created: 2021-02-26T09:00:16
+updated: 2026-06-05T23:00:00
+created: 2026-07-05T17:05:05
 ---
 
 <span style='color:silver'></span>

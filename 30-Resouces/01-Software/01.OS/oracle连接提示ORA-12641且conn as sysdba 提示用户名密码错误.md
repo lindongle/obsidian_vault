@@ -1,7 +1,7 @@
 ---
 title: oracle连接提示ORA-12641且conn /as sysdba 提示用户名密码错误
-updated: 2026-06-06T00:28
-created: 2019-09-19T17:27:38
+updated: 2026-06-06T00:28:59
+created: 2026-07-05T17:04:53
 ---
 
 后来在support上看到修改sqlnet.ora成

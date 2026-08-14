@@ -1,7 +1,7 @@
 ---
 title: 一体化的BOM管理模式
-updated: 2026-06-06T00:02
-created: 2025-05-09T19:30:35
+updated: 2026-06-13T22:09:26
+created: 2026-07-05T17:04:37
 tags:
   - BOM
 ---

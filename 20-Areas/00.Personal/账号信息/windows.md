@@ -1,6 +1,6 @@
 ---
-created: 2026-06-06T10:12
-updated: 2026-08-11T13:24:09+08:00
+created: 2026-07-05T17:04:36
+updated: 2026-08-11T13:24:09
 title: windows
 ---
 win11专业版【支持重装】秘钥卡号：NHY4P-JXC88-DMTRC-DVYGM-VQR92  

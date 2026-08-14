@@ -1,7 +1,7 @@
 ---
 title: 单独启动NX集成
-updated: 2026-06-06T10:08
-created: 2024-08-22T18:14:00
+updated: 2026-06-06T10:08:51
+created: 2026-07-05T17:04:44
 ---
 
 ![image1](75b16ae2cc22430f9a8a79827b06bcbd.png)

@@ -1,7 +1,7 @@
 ---
 title: 通过Global Pool参数解决 TeamCenter四层pool服务器锁死的问题
-updated: 2026-06-06T10:08
-created: 2020-03-01T11:58:30
+updated: 2026-06-13T22:08:30
+created: 2026-07-05T17:04:53
 tags:
   - TC
 ---
