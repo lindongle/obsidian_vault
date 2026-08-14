@@ -1,6 +1,6 @@
 ---
-title: 池中的最大服务器Maximum servers in pool，允许在此池（对于单主机配置）或此子池...
-updated: 2026-06-06T10:08
+title: 池中的最大服务器Maximum servers in pool，允许在此池（对于单主机配置）或此子池
+updated: 2026-08-14T10:43:11+08:00
 created: 2021-04-08T16:10:59
 tags:
   - TC安装部署

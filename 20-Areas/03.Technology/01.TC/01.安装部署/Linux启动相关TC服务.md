@@ -12,6 +12,8 @@ fsc及vault：
 ![image2](5c5ec0d9307e464392da9630ab9a1c5e.png)
 Pool：
 ![image3](5e4066882de047e6b9b6333210e78cf1.png)
+查看日志：
+![[Pasted image 20260814104401.png]]
 管理控制台：
 ![image4](0980a0d7818a4de281185e1262c5631e.png)
 Nginx：

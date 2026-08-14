@@ -1,6 +1,6 @@
 ---
 title: verify_tasks -u=infodba -p=infodba -g=dba
-updated: 2026-08-06T09:40:50+08:00
+updated: 2026-08-14T10:31:53+08:00
 created: 2018-03-11T12:09:47
 ---
 
@@ -8,7 +8,7 @@ created: 2018-03-11T12:09:47
 删除错误的流程对象：verify_tasks-m=delete-u=infodba-p=infodba-g=dba
 查看现有登录用户：list_users
 清理所有进程：clearlocks-assert_all_dead-u=infodba-p=infodba-g=dba
-清死进程：clearlocks-verbose-assert_dead-u=infodba-p=infodba-g=dba
+清死进程：clearlocks-verbose -assert_dead -u=infodba -p=infodba -g=dba
 重新注册schema文件：install-regen_schema_fileinfodbainfodbadba
 导出fsc信息：Backup_xmlinfo.exeinfodbainfodbadba
 当BMIDE部署时没有勾选生成缓存时，部署后要运行，否则无法登陆：generate_client_meta_cache -u=infodba -p=infodba -g=dba generate all
