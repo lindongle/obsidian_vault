@@ -1,6 +1,6 @@
 ---
 title: AWC表属性渲染
-updated: 2026-08-13T16:05:20
+updated: 2026-08-18T15:19:09
 created: 2026-07-05T17:04:47
 ---
 
@@ -38,3 +38,71 @@ created: 2026-07-05T17:04:47
 ![[Pasted image 20260812110957.png]]
 ![[Pasted image 20260813152020.png]]
 ![[企业微信截图_17866054782301.png]]
+
+<column width="60%">
+
+<section >
+
+<tableProperty name="y6_MaterialTAB">
+
+<property name="y6_ProcurementType"/>
+
+<property name="y6_SPProcurementType"/>
+
+<property name="y6_NDPDStatus"/>
+
+<property name="y6_MateriaExID"/>
+
+<property name="y6_Factory"/>
+
+</tableProperty>
+
+</section>
+
+</column>
+```xml
+<column width="60%">
+<!-- 表属性1，可以复制，新增直接表中新增，没有导出功能，需要点击编辑显示相关按钮 -->
+          <section >
+            <tableProperty name="y6_MaterialTAB">            
+                <property name="y6_ProcurementType"/>             
+                <property name="y6_SPProcurementType"/>            
+                <property name="y6_NDPDStatus"/>            
+                <property name="y6_MateriaExID"/>  
+                <property name="y6_Factory"/>    
+            </tableProperty>   
+            </section>
+        </column>
+        <!-- <column width="100%">
+            <inject type="dataset" src="Awp0GlobalAlternatesProvider"/>
+        </column> -->
+        <column width="100%">
+        <!-- 表属性2，不能复制，新增弹出新建界面，有导出功能 -->
+            <objectSetSection titleKey="tc_xrt_TABMaterial" source="y6_MaterialTAB.Y6_TAB_Material" defaultdisplay="tableDisplay" showConfiguredRev="true">
+                <tableDisplay>
+                    <property name="y6_ProcurementType"/>
+                    <property name="y6_SPProcurementType"/>
+                    <property name="y6_NDPDStatus"/>
+                    <property name="y6_MateriaExID"/>
+                    <property name="y6_Factory"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <!-- <treeDisplay>可以不配置，表属性展示为树结构时可以使用 -->
+                <!--<treeDisplay>
+                    <property name="y6_ProcurementType"/>
+                    <property name="y6_SPProcurementType"/>
+                    <property name="y6_NDPDStatus"/>
+                    <property name="y6_MateriaExID"/>
+                    <property name="y6_Factory"/>
+                </treeDisplay>
+                <listDisplay/>-->
+                 <!--<command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton"/> 
+                 <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/> 
+            
+               <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+                    <parameter name="localSelection" value="true"/>
+                </command>-->
+            </objectSetSection>
+```
+以下对应效果图：
+![[Pasted image 20260818151857.png]]
