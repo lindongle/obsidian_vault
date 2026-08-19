@@ -1,6 +1,6 @@
 ---
 title: AWC表属性渲染
-updated: 2026-08-18T15:19:09
+updated: 2026-08-19T14:17:59
 created: 2026-07-05T17:04:47
 ---
 
@@ -87,21 +87,6 @@ created: 2026-07-05T17:04:47
                     <property name="y6_Factory"/>
                 </tableDisplay>
                 <thumbnailDisplay/>
-                <!-- <treeDisplay>可以不配置，表属性展示为树结构时可以使用 -->
-                <!--<treeDisplay>
-                    <property name="y6_ProcurementType"/>
-                    <property name="y6_SPProcurementType"/>
-                    <property name="y6_NDPDStatus"/>
-                    <property name="y6_MateriaExID"/>
-                    <property name="y6_Factory"/>
-                </treeDisplay>
-                <listDisplay/>-->
-                 <!--<command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton"/> 
-                 <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/> 
-            
-               <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
-                    <parameter name="localSelection" value="true"/>
-                </command>-->
             </objectSetSection>
 ```
 以下对应效果图：
