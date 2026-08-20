@@ -1,6 +1,6 @@
 ---
 title: verify_tasks -u=infodba -p=infodba -g=dba
-updated: 2026-08-14T10:31:53
+updated: 2026-08-20T10:23:52
 created: 2026-07-05T17:04:46
 ---
 
@@ -15,7 +15,8 @@ created: 2026-07-05T17:04:46
 解锁数据库BMIDE部署锁定：bmide_deployment_lock-u=infodba-p=infodba-g=dba-release
 
 1、清理账户
-清理死进程，执行两遍：clearlocks-verbose
+查询并死进程：clearlocks -verbose，会自动把以下Dead的给清理掉
+![[Pasted image 20260820102336.png]]
 杀掉所有账户：clearlocks -assert_all_dead 需要重启四层服务
 clearlocks -assert_all_dead -u=infodba -p=infodba -g=dba
 
