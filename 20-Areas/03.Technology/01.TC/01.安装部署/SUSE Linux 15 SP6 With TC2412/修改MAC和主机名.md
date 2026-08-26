@@ -1,6 +1,6 @@
 ---
 title: 修改MAC和主机名
-updated: 2026-06-13T22:12:00
+updated: 2026-08-26T18:25:20
 created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
