@@ -1,6 +1,6 @@
 ---
 title: TreeCache
-updated: 2026-06-13T22:12:00
+updated: 2026-08-27T15:14:05
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
