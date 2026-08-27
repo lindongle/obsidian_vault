@@ -1,17 +1,17 @@
 ---
 name: copilot-web-search
-description: Search the web for current information using Copilot Plus. Use when the user asks to search online, look something up on the internet, or needs up-to-date facts beyond the vault. Prefer reading the vault for anything about the user's own notes. Requires an active Copilot Plus license.
-license: Copilot Plus
+description: Search the web for current information using Copilot Plus or the configured Self-Host search provider. Use when the user asks to search online, look something up on the internet, or needs up-to-date facts beyond the vault. Prefer reading the vault for anything about the user's own notes.
+license: Copilot Plus or Self-Host
 metadata:
   copilot-enabled-agents: claude, codex, opencode
-  copilot-builtin-version: "5"
+  copilot-builtin-version: "6"
 created: 2026-08-13T14:43:32
-updated: 2026-08-13T14:43:32
+updated: 2026-08-27T09:25:13
 ---
 
 # Copilot web search
 
-Search the web through Copilot Plus and return results for the user's query.
+Search the web through Copilot and return results for the user's query.
 
 ## How to run
 
@@ -43,3 +43,4 @@ the request when you have one (otherwise tell the user it's unavailable) — nev
 refuse or block the user. Only mention upgrading or renewing Copilot Plus when
 the script's message explicitly invites it, and keep any such note short and
 friendly.
+

@@ -4,9 +4,9 @@ description: Fetch and read the full contents of a specific web page (URL) as cl
 license: Copilot Plus
 metadata:
   copilot-enabled-agents: claude, codex, opencode
-  copilot-builtin-version: "5"
+  copilot-builtin-version: "6"
 created: 2026-08-13T14:43:33
-updated: 2026-08-13T14:43:33
+updated: 2026-08-27T09:25:13
 ---
 
 # Copilot web fetch
@@ -43,3 +43,11 @@ the request when you have one (otherwise tell the user it's unavailable) — nev
 refuse or block the user. Only mention upgrading or renewing Copilot Plus when
 the script's message explicitly invites it, and keep any such note short and
 friendly.
+
+## Self-Host mode
+
+Self-Host search providers do not provide a common full-page fetch contract. If
+the script reports that Self-Host mode is active, never use an agent-native web
+fetch tool. Use `copilot-web-search` when search results can answer the request;
+otherwise tell the user that fetching the page is unavailable.
+
