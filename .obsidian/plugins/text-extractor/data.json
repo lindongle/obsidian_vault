@@ -1,0 +1,9 @@
+{
+  "ocrLanguages": [
+    "eng",
+    "chi_sim",
+    "chi_tra"
+  ],
+  "rightClickMenu": true,
+  "useSystemOCR": false
+}

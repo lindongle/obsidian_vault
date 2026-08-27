@@ -12,5 +12,7 @@
   "obsidian-git",
   "better-search-views",
   "recent-files-obsidian",
-  "frontmatter-date-manager"
+  "frontmatter-date-manager",
+  "omnisearch",
+  "text-extractor"
 ]

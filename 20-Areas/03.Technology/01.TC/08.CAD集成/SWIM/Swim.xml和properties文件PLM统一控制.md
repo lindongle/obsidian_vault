@@ -1,6 +1,6 @@
 ---
 title: Swim.xml和properties文件PLM统一控制
-updated: 2026-06-06T10:08:52
+updated: 2026-08-27T09:08:22
 created: 2026-07-05T17:04:44
 ---
 

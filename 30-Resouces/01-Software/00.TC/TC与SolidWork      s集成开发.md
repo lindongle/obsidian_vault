@@ -1,6 +1,6 @@
 ---
 title: <span style='color:black'>1.背景介绍</span>
-updated: 2026-06-23T08:58:11
+updated: 2026-08-27T08:47:40
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -18,7 +18,7 @@ TC与SolidWorks集成开发
 作者名称：刘大少爷
 发布时间：2026-04-09 20:07
 # <span style='color:black'>1.背景介绍</span>
-<span style='color:black'>官方供用户针对 SWIM环境中的保存、检入（Check-in）操作进行自定义校验和业务逻辑扩展。用户可以根据需求实现特定校验、自动物料编号生成等功能。</span>
+官方供用户针对 SWIM环境中的保存、检入（Check-in）操作进行自定义校验和业务逻辑扩展。用户可以根据需求实现特定校验、自动物料编号生成等功能。
 <span style='color:black'>例如，保存前校验弹框</span>
 ![image1](34483bd123cd45aeb73c80a4dac97c32.png)
 <span style='color:black'>**2.实现步骤**</span>

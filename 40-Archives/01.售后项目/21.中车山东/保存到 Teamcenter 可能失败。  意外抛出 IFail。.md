@@ -1,6 +1,6 @@
 ---
 title: 保存到 Teamcenter 可能失败。  意外抛出 IFail。
-updated: 2026-06-06T10:08:58
+updated: 2026-08-27T09:08:38
 created: 2026-07-05T17:05:02
 ---
 
