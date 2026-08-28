@@ -1,0 +1,1 @@
+{"path":"99-Assets/Pasted image 20260619105412.png","text":"推 荐 配 置 表 格 @ & 参 数 推 荐 值 说 明 processes 3000 已 确 定 sessions 4524 自 动 计 算 (1.5x3000+24) , 无 需 手 动 设 置 db_writer_processes 8~16 根 据 CPU 核 数 和 存 储 MO 能 力 open_cursors 500~1000 取 决 于 应 用 是 否 有 游 标 泄 滴 session_cached_cursors 100~200 高 并 发 系 统 建 议 适 当 提 高","libVersion":"0.5.0","langs":"chi_sim+eng"}
