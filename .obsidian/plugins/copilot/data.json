@@ -508,7 +508,7 @@
     "activeBackend": "opencode",
     "backends": {},
     "debugFullFrames": true,
-    "welcomeDismissed": false,
+    "welcomeDismissed": true,
     "skills": {
       "folder": "copilot/skills"
     },
