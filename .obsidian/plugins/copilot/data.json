@@ -634,6 +634,15 @@
       },
       "configuredModelId": "86bef3f9-6fce-440c-94ae-2a997f65707a",
       "configuredAt": 1787794004127
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/ling-3.0-flash-fin-free",
+        "displayName": "OpenCode Zen/Ling 3.0 Flash Fin Free"
+      },
+      "configuredModelId": "29af2b6b-d930-4cb3-ae3e-74b73e6bba69",
+      "configuredAt": 1787960251116
     }
   ],
   "backends": {
