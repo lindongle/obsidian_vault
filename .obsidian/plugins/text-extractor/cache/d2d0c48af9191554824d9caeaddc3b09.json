@@ -1,0 +1,1 @@
+{"path":"99-Assets/d8781c84790a4ac38e41895bcc7c44b9.png","text":"T45 Configuration To enable File Stream, set the following parameter in the Mapping: set ::TPSAP::DIR::CtrlDat (UseRfcDirectFileCheckin) \"TRUE\" 阮","libVersion":"0.5.0","langs":"chi_sim+eng"}

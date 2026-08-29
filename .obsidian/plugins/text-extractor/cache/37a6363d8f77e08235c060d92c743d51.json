@@ -1,0 +1,1 @@
+{"path":"99-Assets/eb10f7d4035e4bf7a20feadee1d664d5.png","text":"if {$saPStatus eq \"Obsolete\" 1 { set ::SAPDat (Material:MarcData:DEL_FLAG) \"x\"; 钗 删 除 标 记 } else { set ::SAPDat (Material:MarcData:DEL_FLAG) \"o # 不 打 删 除 标 记 }","libVersion":"0.5.0","langs":"chi_sim+eng"}
