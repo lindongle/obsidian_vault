@@ -611,15 +611,6 @@
     {
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
-        "id": "opencode/hy3-free",
-        "displayName": "OpenCode Zen/Hy3 Free"
-      },
-      "configuredModelId": "ce349e09-2bf9-42e0-8b2c-58b502128d94",
-      "configuredAt": 1787794004120
-    },
-    {
-      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
-      "info": {
         "id": "opencode/muse-spark-1.2-contributor-free",
         "displayName": "OpenCode Zen/Muse Spark 1.2 Free"
       },
