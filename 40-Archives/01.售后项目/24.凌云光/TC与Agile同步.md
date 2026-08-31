@@ -1,6 +1,6 @@
 ---
 title: TC与Agile同步
-updated: 2026-06-05T22:51:32
+updated: 2026-08-31T15:27:14
 created: 2026-07-05T17:05:03
 ---
 
