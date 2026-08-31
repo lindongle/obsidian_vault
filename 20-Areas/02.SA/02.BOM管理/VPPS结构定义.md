@@ -1,6 +1,6 @@
 ---
 title: VPPS结构定义
-updated: 2026-06-13T22:09:26
+updated: 2026-08-31T14:12:42
 created: 2026-07-05T17:04:37
 tags:
   - BOM
@@ -20,6 +20,7 @@ VPPS将整车分解为<span style='color:#FA0000'>八个层级</span>。第一�
 其次，<span style='font-weight:bold'>为工程开发活动提供基础支持</span>，辅助进行早期设计相关工作的展开。这些工作包括：在规划阶段<span style='color:#FA0000'>生成设计BOM</span>：根据整车结构在PDM系统中生成一个虚拟的产品结构树，并给各部件命名和编码；在产品造型阶段，可以基于整车结构生成一个<span style='color:#FA0000'>造型设计BOM</span>，所有和造型A面相关的数据都会生成，便于和A面相关的零部件进行关联设计。
 第三，可以**通过VPPS规范设计数据的组织形式**。在设计过程中（设计早期）​，可以根据需要按照VPPS迅速在PDM系统中生成符合设计规范的设计结构，以进行数模的组织和管理；可以针对同一车型生成不同用途的结构，如用于预研的结构和用于正式数据发布的结构。在PDM中通过VPPS组织数模数据，如图5-2所示
 ![image1](311b8872b87c4788b644752368d26d39.png)
+
 «span style='font-family:"Microsoft YaHei"'»图«/span»<span style='font-family:Calibri'>5-2</span>«span style='font-family:"Microsoft YaHei"'»中，在采用«/span»<span style='font-family: Calibri'>VPPS</span>«span style='font-family:"Microsoft YaHei"'»规范的车企，一般将«/span»<span style='font-family:Calibri;color:#FA0000'>VPPS</span>«span style='font-family: "Microsoft YaHei";color:#FA0000'»的前两层«/span»«span style='font-family:"Microsoft YaHei"'»作为«/span»<span style='font-family:Calibri'>PDM</span>«span style='font-family:"Microsoft YaHei"'»中的数模组织层级，而«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»第三层«/span»«span style='font-family:"Microsoft YaHei"'»对应到«/span»<span style='font-family:Calibri'>PDM</span>«span style='font-family:"Microsoft YaHei"'»中的安装装配（«/span»<span style='font-family: Calibri;color:#FA0000'>Installation Assembly</span>«span style='font-family: "Microsoft YaHei";color:#FA0000'»，«/span»<span style='font-family:Calibri; color:#FA0000'>IA</span>«span style='font-family:"Microsoft YaHei"'»）层级。«/span»<span style='font-family:Calibri'>IA</span>«span style='font-family:"Microsoft YaHei"'»是整车中按照配置和零件位置组织在一起的、具有特定功能的子系统。«/span»<span style='font-family:Calibri;color:#FA0000'>IA</span>«span style='font-family: "Microsoft YaHei";color:#FA0000'»是由设计者创建并维护«/span»«span style='font-family: "Microsoft YaHei"'»，«/span»<span style='font-family:Calibri'>IA</span>«span style='font-family:"Microsoft YaHei"'»的准确与完整是在整车位置创建和共享数据（生产零件、售后零件、焊点、造型面等）的基础。«/span»
 第四，**通过VPPS可以支持更高效的BOM组织模式**。BOM从管理层面而言，越扁平管理，沟通效率越高。通过**VPPS码**，可以将**扁平结构与产品结构关联起来**，形成一种层级结构。这使得完全扁平的BOM搭建方式成为可能。我们还可以看到，通用汽车体系的零部件编码是采用流水码的，这种流水码机制也是在有一整套VPPS体系下使用才会更加方便。因为整车上的每一个零部件，并不需要通过零件号来表达该零件属于哪个分组，直接通过VPPS代码就可以。同时，VPPS码还可以用来辅助进行**配置校验和BOM校验**工作。如将配置特征项按照VPPS方式组织（**按VPPS结构组织配置的组-族-特征的结构**），辅助在超级BOM上进行零部件配置条件的编写；可以利用VPPS结构在整车开发时标定哪些零部件在该车型上是必装的，从而可以将这个清单作为检查解析的单车BOM完整性的辅助工具。
 第五，VPPS在产品数据的分析比较、设计的标准化、企业知识管理等方面起到促进作用，包括以下方面。

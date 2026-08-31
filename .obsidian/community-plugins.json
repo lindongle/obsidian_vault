@@ -4,7 +4,6 @@
   "obsidian-minimal-settings",
   "copilot",
   "editing-toolbar",
-  "remove-html-tag",
   "dataview",
   "code-block-plugin",
   "remotely-save",
@@ -13,7 +12,6 @@
   "better-search-views",
   "recent-files-obsidian",
   "frontmatter-date-manager",
-  "text-lens",
   "omnisearch",
   "text-extractor"
 ]
