@@ -1,6 +1,6 @@
 ---
 title: Ebom dbom场景
-updated: 2026-06-13T22:09:26
+updated: 2026-09-01T10:33:07
 created: 2026-07-05T17:04:37
 tags:
   - BOM
