@@ -1,1 +1,0 @@
-{"path":"99-Assets/3051b3f977bd4af2a06bd30e0e6e74a6.png","text":"MySQL [(none) ]> create database jira defautt character set utf8 collate utf8_bini; 0uery OK, 1 row affected (0.00 sec) MySQL [(none) ]> show databases; 木 | Database | 木 | information_schema | | jira | | mysql | | performance_schema | | shiback | | sys | 木","libVersion":"0.5.0","langs":"chi_sim+eng"}

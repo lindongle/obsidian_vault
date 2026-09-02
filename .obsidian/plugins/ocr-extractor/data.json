@@ -3,7 +3,7 @@
   "mistralSecret": "",
   "openAiCompatibleBaseUrl": "http://localhost:11434/v1",
   "openAiCompatibleModel": "qwen2.5:14b",
-  "openAiCompatibleSecret": "glm",
+  "openAiCompatibleSecret": null,
   "openAiCompatiblePrompt": "",
   "customCommand": "\"D:\\OneDrive\\SoftWare\\Umi_OCR_Paddle\\Umi-OCR.exe\" --path \"{input}\"",
   "customCommandConvertPdfs": false,

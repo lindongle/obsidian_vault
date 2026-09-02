@@ -10,6 +10,5 @@
   "text-lens",
   "copilot",
   "ocr-extractor",
-  "obsidian-pandoc",
-  "text-extractor"
+  "image-transcriber"
 ]

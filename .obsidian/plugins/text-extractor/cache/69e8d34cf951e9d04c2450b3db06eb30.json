@@ -1,1 +1,0 @@
-{"path":"99-Assets/2a674d9e53e7438eab190fbca75103e8.png","text":"[oracle@racl db_1]$ pwd /u01/app/oracle/product/19.0.0/db_1 [oracle@racl db_1]$ unzip /opt/LINUX X64_193000_db_home zip [oracle@racl db_1]$ /runinstaller","libVersion":"0.5.0","langs":"chi_sim+eng"}

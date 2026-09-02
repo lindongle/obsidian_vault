@@ -1,1 +1,0 @@
-{"path":"99-Assets/d06821b95a454886bee170c7e4ad1452.png","text":"此 时 关 于 转 换 PDF 的 配 置 习 配 置 完 成 了 。 然 后 开 始 调 用 dispateher 服 务 进 行 转 换 , 分 别 打 开 scheduler、 Module、Dispatcherclent 三 个 文 件 夹 , 将 bi 文 件 夹 下 相 应 的 服 务 runschedulerbat 、runmoduletbat 、 runDispatcherCient bat 依 照 此 顺 序 启 动 , 并 确 认 启 动 正 常 无 误 , 如 图 9,10,11。","libVersion":"0.5.0","langs":"chi_sim+eng"}

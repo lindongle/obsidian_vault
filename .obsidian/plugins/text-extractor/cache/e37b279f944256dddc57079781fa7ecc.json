@@ -1,1 +1,0 @@
-{"path":"99-Assets/464b0f48bf7441d98957e358de7b7a8f.png","text":"有 机 构 专 门 做 过 一 个 测 试 , 根 据 HEPSpec06 测 试 标 准 , 这 三 种 模 式 的 性 能 分 别 如 下 host-passthrough host-model custom 100% 95.84% 94.73% 可 以 看 出 这 三 种 模 式 的 性 能 差 距 并 没 有 我 们 愚 象 中 的 那 么 大 , 除 非 对 CPU 指 令 集 有 特 殊 要 求 , 一 般 情 况 下 不 建 议 使 用 host-passthough,","libVersion":"0.5.0","langs":"chi_sim+eng"}
