@@ -1,12 +1,12 @@
 ---
 title: 布尔值True中文字符差异显示的解决方法
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>布尔值True中文字符差异显示的解决方法 </span>
+## 布尔值True中文字符差异显示的解决方法 
 ![image1](466c89631f4b441280e59e9251b66f4e.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：丁建新 审校：常勇«/span»
 **测试版本：TC11**
@@ -44,17 +44,17 @@ My Teamcenter查看器中显示为真，如下图所示：
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image11](584e3687fd3e4ee29dc020e66fe014d9.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

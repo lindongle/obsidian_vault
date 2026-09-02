@@ -1,12 +1,12 @@
 ---
 title: Teamcenter -- 时间表首选项
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Teamcenter -- 时间表首选项 </span>
+## Teamcenter -- 时间表首选项 
 时间表
 在运行时间表管理器之前，首先要对Schedule Manager模块首选项进行设置，确保此模块的各项功能能够使用。
 下表是相关首选项的说明。
@@ -25,7 +25,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 Teamcenter -- 时间表首选项
 最多200字，当前共字

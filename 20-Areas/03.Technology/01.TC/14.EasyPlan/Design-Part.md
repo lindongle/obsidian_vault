@@ -1,6 +1,6 @@
 ---
 title: Design-Part
-updated: 2026-06-06T10:08:53
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:49
 ---
 
@@ -13,6 +13,6 @@ created: 2026-07-05T17:04:49
 ![image4](d5cdf16331334d2cbccc29122c428bec.png)
 
 ![image5](c5c372a700cc4c6eb9fc8d59ecaaae1c.png)
-<span style='color:red'>勾选变更可以带过位置，如不勾选形状，在tecno中无法加载JT；</span>
+勾选变更可以带过位置，如不勾选形状，在tecno中无法加载JT；
 ![image6](ff0bdd91615349328259730abd12e71c.png)
 

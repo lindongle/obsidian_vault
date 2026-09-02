@@ -1,6 +1,6 @@
 ---
 title: EWI用户帮助手册的配置
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -10,7 +10,7 @@ EWI用户帮助手册的配置
 2020年3月17日
 8:14
 
-## <span style='color:#2E75B5'>EWI用户帮助手册的配置 </span>
+## EWI用户帮助手册的配置 
 ![image1](a4972531d5b74b70aa930cbecc8d90e0.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：王怀金 审校：刘杰«/span»
 **系统版本：TC 10.1.5、EWI 3.3**
@@ -18,7 +18,7 @@ EWI用户帮助手册的配置
 EWI(Electronic Work Instructions，电子作业指导书)部署后，生产现场的工人可以通过浏览器、移动端查看结构化工艺及工艺文件的内容；在显示面板中可以通过配置展示自定义的EWI-用户帮助手册。
 
 ![image2](291a2c9d138841a3ae8e8264c6da968c.png)
-<span style='color:#3F3F3F;text-align:center'>**配 置 过 程**</span>
+**配 置 过 程**
 ![image2](291a2c9d138841a3ae8e8264c6da968c.png)
 ![image3](e798e653a71c4923bf632a2bc427f7df.png)
 找到TC_ROOT\install\ewi0electronicwi\data\EwiGatewayTiles
@@ -51,7 +51,7 @@ ewi0electronicwi \data\\ EwiGatewayTilesCots_Install.xml
 **图7**
 ![image11](8ba2013bed2f4cd5b346b879211747d6.jpg)
 **图8**
-<span style='color:#FEFEFE;text-align:center'>**关注我们**</span>
+**关注我们**
 ![image12](44dc9a2f70ed408c923a0fc9ddd2aa39.png)
 ![image13](5c0a01efc80c47a3856b27a1e9c2d464.jpg)
 阅读
@@ -65,7 +65,7 @@ ewi0electronicwi \data\\ EwiGatewayTilesCots_Install.xml
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 EWI用户帮助手册的配置
 最多200字，当前共字

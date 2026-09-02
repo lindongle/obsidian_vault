@@ -1,12 +1,12 @@
 ---
 title: 根据PID查询system日志
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Teamcenter 技术技巧 </span>
+## Teamcenter 技术技巧 
 ***1. 如何根据PID 查找对应的tcserver syslog？***
 问题：
 多个ServerManager 运行有大量的warm 进程，此时某个特定进程，难以找到其对应的tcserver syslog。
@@ -50,7 +50,7 @@ AND
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

@@ -1,14 +1,14 @@
 ---
 title: 修复BMIDE模型问题
-updated: 2026-06-06T10:08:49
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:45
 ---
 
-<span style='color:red'>manage_model_files</span> -u=user-id {-p=password \| -pf=password-file} \[-g=group\] -option=\[list \| upload \| download\] \[-dir=directory -template=template -release=Teamcenter-release -resource=project \] -syncToDb \[-h\]
+manage_model_files -u=user-id {-p=password \| -pf=password-file} \[-g=group\] -option=\[list \| upload \| download\] \[-dir=directory -template=template -release=Teamcenter-release -resource=project \] -syncToDb \[-h\]
 
 1、business_model_extractor -u=infodba -p=infodba -g=dba -mode=all -outfile=c:\extracted.xml
 导出系统模型，查看分析那些属性有问题
-<span style='color:#FA0000'>导出后当前目录的lang文件夹中也有对应文件</span>
+导出后当前目录的lang文件夹中也有对应文件
 
 2、business_model_updater -u=infodba -p=infodba -g=dba -mode=upgrade -update=all -file=c\delta.xml
 删除问题属性，删除模板如下：将以下内容粘贴到xml文件中
@@ -35,7 +35,7 @@ created: 2026-07-05T17:04:45
 7、查看tcdata下delta.xml的更新信息
 
 BMIDE步骤：
-<span style='background:yellow;mso-highlight:yellow'>business_model_extractor从数据库导出模型文件</span>
+business_model_extractor从数据库导出模型文件
 删除原model.xml及model_lang的backup文件
 将model.xml及model_lang备份，后面加backup
 将当前bmide项目的内容重新整合到model.xml及model_lang中，

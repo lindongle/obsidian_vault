@@ -1,71 +1,71 @@
 ---
 title: Ug_clone
-updated: 2026-06-05T23:46:37
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:51
 ---
 
-<span style='color:#1E1E1E'>Run ug_clone</span>
-<span style='color:#212529'>Use the following command syntax to run the**ug_clone**utility:</span>
-<span style='color:#212529'>ug_clone</span>
-<span style='color:#212529'>\[-pim=\<yes\>\]</span>
-<span style='color:#212529'>\[-u=\<username\>\]\[-p=\<password\>\]\[-g=\<group\>\]</span>
-<span style='color:#212529'>\[-pf=\<filename\>\]</span>
-<span style='color:#212529'>\[-corba_ior_file=\<iorfile\>\]</span>
-<span style='color:#212529'>\[-corba_soa_ior_file=\<soafile\>\]</span>
-<span style='color:#212529'>\[-http_url=\<4-tierserverurl\>\]</span>
-<span style='color:#212529'>\[-http_cookie=\<4–tierhttpcookie\>\]</span>
-<span style='color:#212529'>\[-o=\<operation\>\]</span>
-<span style='color:#212529'>\[-fam=\<lose\|strip_status\|error\>\]</span>
-<span style='color:#212529'>\[-asse=\<assembly\>\]</span>
-<span style='color:#212529'>\[-par=\<part\>\]</span>
-<span style='color:#212529'>\[-dir=\<directoryname\></span>
-<span style='color:#212529'>\[-fol=\<foldername\>as\<user\>:\<folder\>:\<folder...\></span>
-<span style='color:#212529'>\[-default_checki=\<defaultcheckin\>\]</span>
-<span style='color:#212529'>\[-default_checko=\<defaultcheckout\>\]</span>
-<span style='color:#212529'>\[-default_a=\<defaultaction\>\]</span>
-<span style='color:#212529'>\[-default_n=\<defaultnaming\>\]</span>
-<span style='color:#212529'>\[-default_t=\<defaultitemtype\>\]</span>
-<span style='color:#212529'>\[-asso=\<associateddirectory\>\]</span>
-<span style='color:#212529'>\[-copy_a=\<copyassociatedfiles\>\]</span>
-<span style='color:#212529'>\[-copy_n=\<copynon-mastertype\>\]</span>
-<span style='color:#212529'>\[-copy_related_draw\]=\<yes\|no\></span>
-<span style='color:#212529'>\[-copy_related_cae\]=\<none\|ideal\|fem\|all\></span>
-<span style='color:#212529'>\[-default_o=\<defaultowner=\<user\>:\<group\>\]</span>
-<span style='color:#212529'>\[-default_f=\<defaultfolder\>\]</span>
-<span style='color:#212529'>\[-default_d=\<defaultdirectory\>\]</span>
-<span style='color:#212529'>\[-n=\<namerule\>\]</span>
-<span style='color:#212529'>\[-l=\<loadlogfile\>\]</span>
-<span style='color:#212529'>\[-s=\<savelogfile\>\]</span>
-<span style='color:#212529'>\[-r=\<revisionrule\></span>
-<span style='color:#212529'>\[-aut=\<default\|legacy\></span>
-<span style='color:#212529'>\[-propagate=\<yes\|no\></span>
-<span style='color:#212529'>\[-export_dfa_kf=\<dfa_only\|dfa_in_part\></span>
-<span style='color:#212529'>\[-export_dfa_list\]</span>
-<span style='color:#212529'>\[-rev_up\]</span>
-<span style='color:#212529'>\[-attach_log_file\]</span>
-<span style='color:#212529'>\[-dr=\<dryrun\>\]</span>
-<span style='color:#212529'>\[-e\[ncrypt\]</span>
-<span style='color:#212529'>\[-http_vmid=\<4–tierhttpvmid\>\]</span>
-<span style='color:#212529'>\[-validation_m\]</span>
-<span style='color:#212529'>\[-validation_r\]</span>
-<span style='color:#212529'>\[-abort_import\]</span>
-<span style='color:#212529'>\[—treat_validation_w\]</span>
-<span style='color:#212529'>\[-treat_validation_o\]</span>
-<span style='color:#212529'>\[-h=\<help\>\]</span>
-<span style='color:#212529'>You must run the**ug_clone**utility from a NX command shell that also has a Teamcenter environment set. This will allow you to connect to a database.</span>
-<span style='color:#212529'>For example, after you open an NX command shell type:</span>
-<span style='color:#212529'>setTC_ROOT=C:\ProgramFiles\Teamcenter\Teamcenter8</span>
-<span style='color:#212529'>setTC_DATA=C:\ProgramFiles\Teamcenter\tcdata</span>
-<span style='color:#212529'>call%TC_DATA%\tc_profilevars</span>
-<span style='color:#212529'>You must have the following environment variable and preference set to run NX in four-tier mode:</span>
+Run ug_clone
+Use the following command syntax to run the**ug_clone**utility:
+ug_clone
+\[-pim=\<yes\>\]
+\[-u=\<username\>\]\[-p=\<password\>\]\[-g=\<group\>\]
+\[-pf=\<filename\>\]
+\[-corba_ior_file=\<iorfile\>\]
+\[-corba_soa_ior_file=\<soafile\>\]
+\[-http_url=\<4-tierserverurl\>\]
+\[-http_cookie=\<4–tierhttpcookie\>\]
+\[-o=\<operation\>\]
+\[-fam=\<lose\|strip_status\|error\>\]
+\[-asse=\<assembly\>\]
+\[-par=\<part\>\]
+\[-dir=\<directoryname\>
+\[-fol=\<foldername\>as\<user\>:\<folder\>:\<folder...\>
+\[-default_checki=\<defaultcheckin\>\]
+\[-default_checko=\<defaultcheckout\>\]
+\[-default_a=\<defaultaction\>\]
+\[-default_n=\<defaultnaming\>\]
+\[-default_t=\<defaultitemtype\>\]
+\[-asso=\<associateddirectory\>\]
+\[-copy_a=\<copyassociatedfiles\>\]
+\[-copy_n=\<copynon-mastertype\>\]
+\[-copy_related_draw\]=\<yes\|no\>
+\[-copy_related_cae\]=\<none\|ideal\|fem\|all\>
+\[-default_o=\<defaultowner=\<user\>:\<group\>\]
+\[-default_f=\<defaultfolder\>\]
+\[-default_d=\<defaultdirectory\>\]
+\[-n=\<namerule\>\]
+\[-l=\<loadlogfile\>\]
+\[-s=\<savelogfile\>\]
+\[-r=\<revisionrule\>
+\[-aut=\<default\|legacy\>
+\[-propagate=\<yes\|no\>
+\[-export_dfa_kf=\<dfa_only\|dfa_in_part\>
+\[-export_dfa_list\]
+\[-rev_up\]
+\[-attach_log_file\]
+\[-dr=\<dryrun\>\]
+\[-e\[ncrypt\]
+\[-http_vmid=\<4–tierhttpvmid\>\]
+\[-validation_m\]
+\[-validation_r\]
+\[-abort_import\]
+\[—treat_validation_w\]
+\[-treat_validation_o\]
+\[-h=\<help\>\]
+You must run the**ug_clone**utility from a NX command shell that also has a Teamcenter environment set. This will allow you to connect to a database.
+For example, after you open an NX command shell type:
+setTC_ROOT=C:\ProgramFiles\Teamcenter\Teamcenter8
+setTC_DATA=C:\ProgramFiles\Teamcenter\tcdata
+call%TC_DATA%\tc_profilevars
+You must have the following environment variable and preference set to run NX in four-tier mode:
 - «span style='color:#212529'»**UGII_UGMGR_HTTP_URL  **
   Note:  
   The**UGII_UGMGR_HTTP_URL**environment variable and the**–http_url**parameter provide the same information.«/span»
 - «span style='color:#212529'»**UGII_UGMGR_COMMUNICATION  **
   Note:  
   The**UGII_UGMGR_COMMUNICATION**environment variable must be set to HTTP, and HTTP must be in uppercase.«/span»
-<span style='color:#212529'>If you want the leafnames to become item IDs and a default revision of A, you must set**UGII_UGMGR_ITEMID_IS_OSFILE_NAME**to**yes**. For example, after you set**UGII_UGMGR_ITEMID_IS_OSFILE_NAME**=**yes**, and you import a sample.prt file into NX, the file is imported as sample/A.</span>
-<span style='color:#212529'>The following table lists the values corresponding to the command line options:</span>
+If you want the leafnames to become item IDs and a default revision of A, you must set**UGII_UGMGR_ITEMID_IS_OSFILE_NAME**to**yes**. For example, after you set**UGII_UGMGR_ITEMID_IS_OSFILE_NAME**=**yes**, and you import a sample.prt file into NX, the file is imported as sample/A.
+The following table lists the values corresponding to the command line options:
 <table>
 <colgroup>
 <col style="width: 47%" />
@@ -363,29 +363,29 @@ Maps to UGMGR_reltype_name_keyword and UGMGR_apptype_name_keyword</p></li>
 </tr>
 </tbody>
 </table>
-<span style='color:#212529'>If you have any characters other than letters, digits, underscores, and hyphens in the value that you specify for a particular option, it is recommended that you enclose the value in quotes (" ") to avoid errors. For example, if you want to clone a part named Wing Assembly/A from Teamcenter to your current directory, it is advisable to specify the following command:</span>
-<span style='color:#212529'>ug_clone-part="@DB/WingAssembly/A"</span>
-<span style='color:#212529'>Ensure that the part name is surrounded by quotes.</span>
-<span style='color:#212529'>Note:</span>
-<span style='color:#212529'>Any invalid characters in the Teamcenter item ID or dataset name are replaced by an underscore when**ug_clone**forms the operating system filename. Invalid characters are generally defined as any character that is not a letter, digit, hyphen, or period.</span>
-<span style='color:#212529'>Note:</span>
-<span style='color:#212529'>When specifying part files, use the command line interface (CLI) format. For additional information, see</span>[CLI format for part files](https://docs.sw.siemens.com/documentation/external/PL20190529153444861/zh-CN/nx/11.0.1/nx_help_sc/zh-CN/tcint/id1299838/command_line_inter.html)<span style='color:#212529'>.</span>
-<span style='color:#212529'>Model views are not imported with the part. To also import model views, use the**tcin_import**utility with the**-publish_information**option.</span>
-<span style='color:#212529'>**Using the user_name method for naming**</span>
-<span style='color:#212529'>When you use the**–default_n=user_name**method for naming of cloned files you must include a log file that contains the new names.</span>
-<span style='color:#212529'>When you run clone using the**Clone Assembly**dialog box, NX prompts you for the new clone name for each item that is cloned. When you use the**ug_clone**utility, a log file must be used that contains all of the names for all of the parts that you are cloning. If the log file is not present or incomplete, the clone operation fails.</span>
-<span style='color:#212529'>When specifying the log file, ensure the**–l**option is before the**–default_n=user_name**option so the**user_name**option is applied. If the**–l**option is after the**–default_n**option, the default naming rule specified in the log file is used. The latter option is applied.</span>
-<span style='color:#212529'>For additional information on the format, content, and syntax of the log file, see</span>[Clone Log Files](https://docs.sw.siemens.com/documentation/external/PL20190529153444861/zh-CN/nx/11.0.1/nx_help_sc/zh-CN/tcint/id1299690/id1299704/clone_log_files1.html)<span style='color:#212529'>.</span>
-<span style='color:#212529'>**Wave linked geometry**</span>
-<span style='color:#212529'>When you are performing a clone operation on an item that has wave linked geometry, you must first enter the name of the parent to the wave linked geometry to get a new link to the cloned part source. Otherwise, there is a reference back to the original part source. For example, if you are cloning a subassembly, enter the top assembly first:</span>
-<span style='color:#212529'>ug_clone—o=clone—asse=\<topassembly\>—asse=\<subassembly\>..........</span>
-<span style='color:#212529'>**Using the tilde character**</span>
-<span style='color:#212529'>Use of the tilde character (~) in the file name (Teamcenter Item ID) can cause an error when running ug_clone. The error may be reported as an “Internal Hookup Error.” The tilde character is used as the default escape character by Teamcenter and causes problems on clone import.</span>
-<span style='color:#212529'>Note:</span>
-<span style='color:#212529'>The tilde character may be added to your file name due to Windows/DOS shortnaming, for example: ABC-00009864~KVA12 Left Bracket</span>
-<span style='color:#212529'>To enable clone import, change the value for the following preference to a character that is not part of the Item ID, such as “\\</span>
-- <span style='color:#212529'>**TC_escape_character**</span>
-<span style='color:#212529'>Note:</span>
-<span style='color:#212529'>You can create Items and datasets in NX and Teamcenter with tildes in the Item ID, but they cannot be used when you run ug_clone unless you change the default escape character.</span>
+If you have any characters other than letters, digits, underscores, and hyphens in the value that you specify for a particular option, it is recommended that you enclose the value in quotes (" ") to avoid errors. For example, if you want to clone a part named Wing Assembly/A from Teamcenter to your current directory, it is advisable to specify the following command:
+ug_clone-part="@DB/WingAssembly/A"
+Ensure that the part name is surrounded by quotes.
+Note:
+Any invalid characters in the Teamcenter item ID or dataset name are replaced by an underscore when**ug_clone**forms the operating system filename. Invalid characters are generally defined as any character that is not a letter, digit, hyphen, or period.
+Note:
+When specifying part files, use the command line interface (CLI) format. For additional information, see[CLI format for part files](https://docs.sw.siemens.com/documentation/external/PL20190529153444861/zh-CN/nx/11.0.1/nx_help_sc/zh-CN/tcint/id1299838/command_line_inter.html).
+Model views are not imported with the part. To also import model views, use the**tcin_import**utility with the**-publish_information**option.
+**Using the user_name method for naming**
+When you use the**–default_n=user_name**method for naming of cloned files you must include a log file that contains the new names.
+When you run clone using the**Clone Assembly**dialog box, NX prompts you for the new clone name for each item that is cloned. When you use the**ug_clone**utility, a log file must be used that contains all of the names for all of the parts that you are cloning. If the log file is not present or incomplete, the clone operation fails.
+When specifying the log file, ensure the**–l**option is before the**–default_n=user_name**option so the**user_name**option is applied. If the**–l**option is after the**–default_n**option, the default naming rule specified in the log file is used. The latter option is applied.
+For additional information on the format, content, and syntax of the log file, see[Clone Log Files](https://docs.sw.siemens.com/documentation/external/PL20190529153444861/zh-CN/nx/11.0.1/nx_help_sc/zh-CN/tcint/id1299690/id1299704/clone_log_files1.html).
+**Wave linked geometry**
+When you are performing a clone operation on an item that has wave linked geometry, you must first enter the name of the parent to the wave linked geometry to get a new link to the cloned part source. Otherwise, there is a reference back to the original part source. For example, if you are cloning a subassembly, enter the top assembly first:
+ug_clone—o=clone—asse=\<topassembly\>—asse=\<subassembly\>..........
+**Using the tilde character**
+Use of the tilde character (~) in the file name (Teamcenter Item ID) can cause an error when running ug_clone. The error may be reported as an “Internal Hookup Error.” The tilde character is used as the default escape character by Teamcenter and causes problems on clone import.
+Note:
+The tilde character may be added to your file name due to Windows/DOS shortnaming, for example: ABC-00009864~KVA12 Left Bracket
+To enable clone import, change the value for the following preference to a character that is not part of the Item ID, such as “\\
+- **TC_escape_character**
+Note:
+You can create Items and datasets in NX and Teamcenter with tildes in the Item ID, but they cannot be used when you run ug_clone unless you change the default escape character.
 
 *来自 \< <https://docs.sw.siemens.com/documentation/external/PL20190529153444861/zh-CN/nx/11.0.1/nx_help_sc/zh-CN/tcint/id1299838/id1299882/impexp_clone_run.html>\>*

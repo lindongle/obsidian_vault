@@ -1,6 +1,6 @@
 ---
 title: Windows Server2008、IIS7启用CA认证及证书制作完整过程 - Javi - 博客...
-updated: 2026-06-06T10:05:33
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -20,7 +20,7 @@ Windows Server2008、IIS7启用CA认证及证书制作完整过程 - Javi - 博�
 1.4然后点击安装，等待安装完成，关闭窗口即可，如下图：
 ![image4](4b8f5591cd75410aaf0bef4992b607e9.png)
 
-### <span style='color:#5B9BD5'>2创建证书申请</span>
+### 2创建证书申请
 2.1启动IIS管理器，在连接中选择服务器，选中功能视图，选中服务器证书，如下图：
 
 ![image5](df02753b93f24963ad23141e4bcec935.png)
@@ -34,7 +34,7 @@ Windows Server2008、IIS7启用CA认证及证书制作完整过程 - Javi - 博�
 
 ![image8](1ea8862664fe4a6285d4de29b7c3ee84.png)
 2.4点击完成，在指定位置生成了证书申请文件ca_apply.txt。
-### <span style='color:#5B9BD5'>3提交申请、批准申请</span>
+### 3提交申请、批准申请
 3.1在开始-程序-管理工具，打开Certification Authority，如下图：
 
 ![image9](7622441a748249568e01e43b8ada2d4e.png)
@@ -62,7 +62,7 @@ Windows Server2008、IIS7启用CA认证及证书制作完整过程 - Javi - 博�
 3.9点击，直到完成，提示“导出成功”，如下图：
 
 ![image16](0308a4b19f62487e81f2c778d34abb85.jpg)
-### <span style='color:#5B9BD5'>4完成申请</span>
+### 4完成申请
 4.1启动IIS管理器，在连接中选择服务器，选中功能视图，点击打开服务器证书，如下图：
 ![image17](cca548002b074945ad2e93504b4afd1f.jpg)
 
@@ -72,7 +72,7 @@ Windows Server2008、IIS7启用CA认证及证书制作完整过程 - Javi - 博�
 4.3点击确定，完成证书申请，如下图：
 
 ![image19](68af794387614322b53382b9e07fd9f1.png)
-### <span style='color:#5B9BD5'>5网站SSL设置</span>
+### 5网站SSL设置
 5.1启动IIS管理器，选中网站-Default Web Site,在功能视图的IIS区域下，选择并打开SSL设置，选中“客户证书”下的“忽略”，点击应用，如下图：
 
 ![image20](798fd8f44b7b4dc9997164d27ba9b466.png)

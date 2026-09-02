@@ -1,16 +1,16 @@
 ---
 title: 如何编辑进行中的流程handler参数
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何编辑进行中的流程handler参数 </span>
+## 如何编辑进行中的流程handler参数 
 ![image1](96a59345de3d4b6eaccad4ba6e51a1a7.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：李达 审校：李定伟«/span»
 **测试版本：Teamcenter11**
-<span style='color:#3F3F3F;text-align:center'>在系统运维的过程中，由于系统和操作等各种因素，导致流程出现问题或者不能满足实际的工作流程需要，这时候需要对流程模板进行参数修改，以解决出现的问题；但是有些流程是修改流程模板前就已经提起的，对于这些有问题的流程，可以单独的把流程发送到流程查看器中进行编辑。</span>
+在系统运维的过程中，由于系统和操作等各种因素，导致流程出现问题或者不能满足实际的工作流程需要，这时候需要对流程模板进行参数修改，以解决出现的问题；但是有些流程是修改流程模板前就已经提起的，对于这些有问题的流程，可以单独的把流程发送到流程查看器中进行编辑。
 ![image2](4c4664b271af4a1c85d21ac9ef6dd4ee.png)
 登陆DBA账号，找到对应进行中的流程，并发送到流程查看器中。
 ![image3](5d7c22c05d8f4d6d85f3daf55bb2b65a.png)
@@ -54,7 +54,7 @@ tags:
 ![image15](f0c9a3f670094b018a41c99328cb5ceb.png)
 **图13  **
 
-<span style='color:#FEFEFE;text-align:center'>**关注我们**</span>
+**关注我们**
 ![image16](6552422ba6fd42899650f7dea58bdfde.png)
 ![image17](07cb34abeae0430ea2d08febebe4761b.jpg)
 阅读
@@ -68,7 +68,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 如何编辑进行中的流程handler参数
 最多200字，当前共字

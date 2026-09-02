@@ -1,12 +1,12 @@
 ---
 title: 威马EX5配置表！
-updated: 2026-06-13T22:10:01
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - 产品配置
 ---
 
-## <span style='color:#2E75B5'>快看！这里有你们期待已久的威马EX5配置表！ </span>
+## 快看！这里有你们期待已久的威马EX5配置表！ 
 [威马粉丝联盟](javascript:void(0);)
 ![image1](9887252203eb4d3782826f0247870728.jpg)
 ![image2](e7ddf020ab294cb9bf14a6259d00fb94.jpg)

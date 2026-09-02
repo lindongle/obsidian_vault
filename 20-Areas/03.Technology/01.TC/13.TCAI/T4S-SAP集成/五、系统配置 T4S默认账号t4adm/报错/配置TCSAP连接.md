@@ -1,6 +1,6 @@
 ---
 title: 配置TC/SAP连接
-updated: 2026-06-06T10:09:07
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:48
 ---
 
@@ -18,7 +18,7 @@ created: 2026-07-05T17:04:48
 将生成的配置文件sapnwrfc.ini和saplogon.properties从tmp复制到etc文件夹中，重启GS服务
 ![image4](c58504e0e6984a1abd4fdead55924a2e.png)
 
-<span style='color:#FA0000'>以下分别生成TC和SAP的连接别名，即存储用户密码库的实例名，后续通过这个别名去连接，不在直接使用用户名、密码的方式</span>
+以下分别生成TC和SAP的连接别名，即存储用户密码库的实例名，后续通过这个别名去连接，不在直接使用用户名、密码的方式
 GS中使用脚本Tc database connection test，下拉框选择Define Default …，输入用户名/密码/组，执行，得到TC连接的Credentials Alias，即 'Default@Teamcenter'
 ![image5](4ca6741e2d7240129d1e5f8b984dd3df.png)
 

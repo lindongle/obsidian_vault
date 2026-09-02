@@ -1,10 +1,10 @@
 ---
 title: 再谈IPD与APQP，"和" 与 "不同"
-updated: 2026-06-13T15:29:10
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:56
 ---
 
-## <span style='color:#2E75B5'>再谈IPD与APQP，"和" 与 "不同" </span>
+## 再谈IPD与APQP，"和" 与 "不同" 
 收录于话题
 
 上一篇文章，主要是为了回答我的一次直播分享《IPD精要及落地推行》有不止一位学员提出的问题，APQP与IPD的区别。因为很多做体系以及在汽车行业做质量的同学，几乎把APQP等同于研发质量管理，而IPD在很多质量人员眼中也是研发质量管理，APQP是体系所以，APQP应该包含IPD。上篇文章发出来后，有不少同学给我留言，认为讲的太简单，比较肤浅，不过瘾。今天稍微有点空闲，就再系统谈谈，希望大家能过瘾一点哦。  
@@ -16,8 +16,8 @@ created: 2026-07-05T17:04:56
 4、组织支撑
 5、工具方法
 
-<span style='font-weight: bold;background:white'>01</span>
-<span style='color:red;text-align:center'>核心思想</span>
+01
+核心思想
 首先看IPD的核心思想：  
 
 - 产品开发是投资行为
@@ -59,13 +59,13 @@ FMEA、控制计划、SPC应用，包括APQP本身就是支撑整个P的。
 客户满意，不一定能取得 财务和市场成功；
 但客户不满意，一定不会有财务和市场的成功。
 
-<span style='font-weight: bold;background:white'>02</span>
-<span style='color:red;text-align:center'>目的</span>
+02
+目的
 
 APQP的前身是福特汽车的AQP(Advanced Quality Planning)。1980年代初期，福特汽车使用AQP流程来帮助供应商提高产品开发质量。由于效果不错，AQP的成功经验随即在美国其他OEM得到推广使用。
 我们知道在汽车行业，一家供应商往往对应多家主机厂，如果每家主机厂都搞一套自己的AQP，那么供应商就会疲于应对，导致混乱。为了规范行业要求，1994年美国三大汽车公司福特、通用、克莱斯勒共同发布了第一版APQP流程。
 在其第二版的描述中，明确指出：
-本手册的目的在于将克莱斯勒,福特和通用汽车联合开发的产品质量策划与控制计划指南,传达给组织(内部和外部)和供应商。本手册提供了生成产品质量策划的<span style='font-weight:bold;color:red'>指南</span>,支持开发使顾客满意的产品和服务。
+本手册的目的在于将克莱斯勒,福特和通用汽车联合开发的产品质量策划与控制计划指南,传达给组织(内部和外部)和供应商。本手册提供了生成产品质量策划的指南,支持开发使顾客满意的产品和服务。
 
 按手册提出的，使用APQP好处：  
 
@@ -78,8 +78,8 @@ IPD的框架的目的，在分享视频中已经讲了：
 2、产品开发（创新）目标就是,多、快、好、省 的推出产品；
 所以，从目的角度还是有巨大差异的。当然，由于目的不一致，需要涵盖的内容就有区别了。  
 
-<span style='font-weight: bold;background:white'>03</span>
-<span style='color:#70B4BA;text-align:center'>流程</span>
+03
+流程
 首先看APQP，产品质量策划的进度表  
 
 ![image2](2b69936b12fd4520a635b8cf9102694c.jpg)
@@ -95,8 +95,8 @@ APQP展现的流程框架，实际与IPD产品开发流程类似，其实也可�
 ![image4](9dc6f31510bc4eb088ce6c4e59f9d436.jpg)
 APQP与IPD最大的重合点，可能也就在此了。
 
-<span style='font-weight: bold;background:white'>04</span>
-<span style='color:#70B4BA;text-align:center'>组织支撑</span>
+04
+组织支撑
 APQP，强调跨职能小组运作，强调与客户还有其他组的沟通。  
 
 我们看看IPD中的几个重要跨职能团队，见红框
@@ -109,8 +109,8 @@ APQP，强调跨职能小组运作，强调与客户还有其他组的沟通。
 但IPD的产品开发团队，不仅仅考虑满足客户需求，还需要完成商业目标，因此，除了和产品开发相关的，还 包括，品牌宣传、市场推广、销售、售后服务、投资、知识产权，相关的人员。
 因此，支撑组织，IPD相对更加常态化，而且更多。APQP的团队组织成员，实际IPD的 PDT团队中实际已经涵盖了的。
 
-<span style='font-weight: bold;background:white'>05</span>
-<span style='color:#70B4BA;text-align:center'>工具方法</span>
+05
+工具方法
 相比较APQP里面应用到的质量工具，比如：SPC/FMEA/MSA/PPAP  
 
 ![image6](1253b36d5b92401eb54061a9812c2221.png)
@@ -121,16 +121,16 @@ APQP，强调跨职能小组运作，强调与客户还有其他组的沟通。
 即使，在产品开发环节，APQP吸收IPD的相关系统工程方法体系，
 但技术、平台、市场、战略，这些领域相关的工具方法，显然也是APQP不具备的。
 
-## <span style='font-weight: bold;background:white'>小结</span>
-<span style='background:white'>IPD可以称为产品管理体系，更加贴切。</span>
-<span style='background:white'>而APQP，更多是一个指导产品质量策划的工具。</span>
-<span style='background:white'>因此，虽然有一些相同点，但整体不宜用来相提并论。</span>
-<span style='background:white'>好了，这次应该说的比较多一点，相信大家对2者的区别有更好的认识了吧！！</span>
+## 小结
+IPD可以称为产品管理体系，更加贴切。
+而APQP，更多是一个指导产品质量策划的工具。
+因此，虽然有一些相同点，但整体不宜用来相提并论。
+好了，这次应该说的比较多一点，相信大家对2者的区别有更好的认识了吧！！
 
-<span style='font-weight:bold;background:white'>-End-</span>
-<span style='color:black;background: white'>如果觉得文章还行，别忘记点</span><span style='color:red;background:white'></span><span style='font-weight:bold;color:red;background:white'>在看</span><span style='color:red;background:white'>！</span>
+-End-
+如果觉得文章还行，别忘记点在看！
 
-<span style='background:white'>由于一群已满，对质量研发管理感兴趣同学，可以扫我的码，入二群</span>
+由于一群已满，对质量研发管理感兴趣同学，可以扫我的码，入二群
 ![image7](15a331ab37af4459abfd5de1e8af2b54.jpg)
 
 预览时标签不可点
@@ -149,7 +149,7 @@ APQP，强调跨职能小组运作，强调与客户还有其他组的沟通。
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 再谈IPD与APQP，"和" 与 "不同"
 最多200字，当前共字

@@ -1,6 +1,6 @@
 ---
 title: 设置作业服务JOB及邮件通知
-updated: 2026-06-06T10:09:04
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:48
 ---
 
@@ -22,7 +22,7 @@ GS中，配置-作业代理-右上角添加
 为了在此期间不阻止Teamcenter用户，可以将T4x作业服务器配置为在后台处理工作流，以便用户可以在启动工作流后立即继续使用Teamcenter）==类似于dispatcher，但会在前台报错，工作任务也报错。==
 可以设置在发送SAP的任务的开始上，在发送前创建工作批处理任务。
 对应handler：
-<span style='color:red'>T4X-create-T4X-BatchJob</span>
+T4X-create-T4X-BatchJob
 参数：
 -JobNamePrefix，作业名称的前缀，可以不设置（默认T4X_WF_BATCH），如
 \$SITE
@@ -34,7 +34,7 @@ GS中，配置-作业代理-右上角添加
 -tc_user：设置默认任务的创建者，可以不设置，默认责任方（ResponsibleParty），即工作任务创建用户，可以通过，跟OOTB的EPM-auto-assign的-assignee 参数的使用方式一致。
 在BGS的配置-作业中可以看到批处理的作业及执行进度（状态）。
 ![image6](11d88b7052c6486a86add37ed3a5b7d8.png)
-<span style='color:red'>如果不添加代理，下面的作业只会创建，不会被执行。</span>
+如果不添加代理，下面的作业只会创建，不会被执行。
 ![image7](2aeab7019d064e1d84d73cd624ad24fd.png)
 **6、邮件通知**
 如果发生错误，会自动发邮件到设置的责任方。可以通过BGS的脚本Mail Proxy Test，测试邮箱是否好使。

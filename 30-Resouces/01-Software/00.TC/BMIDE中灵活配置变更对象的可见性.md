@@ -1,12 +1,12 @@
 ---
 title: BMIDE中灵活配置变更对象的可见性
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>BMIDE中灵活配置变更对象的可见性 </span>
+## BMIDE中灵活配置变更对象的可见性 
 收录于话题
 ![image1](dd478f7fefc5474aaa5ca2e4a936a1bd.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：李晓东 审校：游振君«/span»
@@ -57,7 +57,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 BMIDE中灵活配置变更对象的可见性
 最多200字，当前共字

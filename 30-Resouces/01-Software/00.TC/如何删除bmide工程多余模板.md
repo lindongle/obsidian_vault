@@ -1,18 +1,18 @@
 ---
 title: 如何删除bmide工程多余模板
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何删除bmide工程多余模板 </span>
+## 如何删除bmide工程多余模板 
 收录于话题
 ![image1](4fd647acd887403dade3ad9cc82d347f.gif)
-<span style='font-weight: bold;background:#59C3F9'>作者：陈扬鑫 审校：陈泓希</span>
+作者：陈扬鑫 审校：陈泓希
 **使用版本：TC11.3**
 ![image2](5fba19e2e23b43c4993399b44771adf1.png)
-<span style='background:#FEFEFE'>有时候实施或者开发人员需要使用客户的BMIDE工程用来进行测试、分析问题或者开发调试。但是通常客户的BMIDE工程都会有除了foundation以外的模板，比如nx集成、catia集成、变更、PS集成等等的模板。而实施或者开发人员的虚拟环境往往没有安装这些模块并且使用过程不需要用到这些模块，如果直接使用客户提供的BMIDE工程就会很繁琐，需要先安装各个模块。那么有没有办法移除BMIDE工程中多余的模板呢？</span>
+有时候实施或者开发人员需要使用客户的BMIDE工程用来进行测试、分析问题或者开发调试。但是通常客户的BMIDE工程都会有除了foundation以外的模板，比如nx集成、catia集成、变更、PS集成等等的模板。而实施或者开发人员的虚拟环境往往没有安装这些模块并且使用过程不需要用到这些模块，如果直接使用客户提供的BMIDE工程就会很繁琐，需要先安装各个模块。那么有没有办法移除BMIDE工程中多余的模板呢？
 **具体操作步骤**  
 **  
   **
@@ -51,7 +51,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 如何删除bmide工程多余模板
 最多200字，当前共字

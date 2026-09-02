@@ -1,6 +1,6 @@
 ---
 title: web层集群部署步骤
-updated: 2026-08-27T15:54:02
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
@@ -95,7 +95,7 @@ password=weblogic123
 ![image23](5fa4751a3a9b4ddb9c6c706ee1744afb.png)
 修改分发实例参数
 只写第一行代理服务器即可，可以自动分配，可以都配置上，让用户登录时手动选择。
-<span style='color:red'>注：各个接口使用的四层地址使用proxy对应的IP及端口号，如http://10.2.1.32:8080/tc，而不是7001</span>
+注：各个接口使用的四层地址使用proxy对应的IP及端口号，如http://10.2.1.32:8080/tc，而不是7001
 ![image24](b0107d4d303346509b25e490f1f37c49.png)
 
 ![image25](bbb1febddaa044d09d7c249c2db2fd5b.png)
@@ -113,4 +113,4 @@ D:\Siemens\Teamcenter11\pool_manager\confs\config1\TreeCacheTCP.xml，将下面�
 2、关闭PoolA，原在PoolA上的客户端无法立即切换到PoolB，等一会儿会自动指派服务器可以正常连接到PoolB。
 3、关闭Admin服务或代理服务，无法切换，直接无法使用。如果代理服务器宕机，可以在登录时手动选择一台Pool服务。
 4、关闭A的weblogic，原A的TC客户端会提示已自动指派新的服务器，会切换到PoolB上，但PoolA上还会存在。再关闭PoolA服务，也没有问题。同时关闭A的weblogic和PoolA服务，与单独关闭PoolA服务效果一样。
-<span style='color:red'>**5、四层地址为10.2.1.32:8080/tc，而不是7001**</span>
+**5、四层地址为10.2.1.32:8080/tc，而不是7001**

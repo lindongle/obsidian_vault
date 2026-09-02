@@ -1,12 +1,12 @@
 ---
-title: <span style='color:#2E75B5'>【技术应用】安装TC12安全服务实现与AD域集成 </span>
-updated: 2026-07-31T10:03:18
+title: 【技术应用】安装TC12安全服务实现与AD域集成
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-# <span style='color:#2E75B5'>【技术应用】安装TC12安全服务实现与AD域集成 </span>
+# 【技术应用】安装TC12安全服务实现与AD域集成 
   Teamcenter可以实现与AD与集成，实现单点登录，本文将描述如何安装TC12的安全服务，其他版本TC安装安全服务也类似。如果安装过程出现问题，请参考TC官方安装手册。
 
 前提条件：
@@ -83,7 +83,7 @@ a\) 设置 LDAP configuration
 [我知道了](javascript:;)
 已发送
 取消
-## *<span style='color:#5B9BD5'>发送到看一看 </span>*
+## *发送到看一看 *
 发送
 【技术应用】安装TC12安全服务实现与AD域集成
 最多200字，当前共字

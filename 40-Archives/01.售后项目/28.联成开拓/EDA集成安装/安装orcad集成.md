@@ -1,6 +1,6 @@
 ---
 title: 安装orcad集成
-updated: 2026-06-06T10:09:06
+updated: 2026-09-02T16:30:08
 created: 2026-07-05T17:05:04
 ---
 
@@ -20,6 +20,6 @@ created: 2026-07-05T17:05:04
 12. 登录Teamcenter，成功后关闭对话框
 13. ![image1](1c9694acf32c46cab9c2c53d8926cc89.png)
 14. 修改"D:\Siemens\TeamcenterEDA6\eda\orcad_schematic_config.xml"
-\<PartInBom id=<span style='color:#FA0000'>"</span>Part Number<span style='color:#FA0000'>"</span> name="DESCRIPTION" refdes="Reference"/\>
+\<PartInBom id="Part Number" name="DESCRIPTION" refdes="Reference"/\>
 前面是原理图中中对应写物料号的地方，后面是对应引用指示符的地方。
 15. \<INSTALL_DIR\>\orcad_pcb\custom\allegro\skill\integrate_menu.il，可以对菜单进行修改

@@ -1,6 +1,6 @@
 ---
 title: (34条消息) Eclipse安装中文简体语言包（官方下载安装教程）_Toxic的博客-CSDN博客
-updated: 2026-07-05T17:09:02
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:09:02
 tags:
   - Java
@@ -11,23 +11,23 @@ tags:
 1:27
 已剪辑自: <https://blog.csdn.net/qq_41101213/article/details/84405452>
 <https://download.eclipse.org/technology/babel/update-site/R0.18.0/2020-06/>
-### <span style='color:#5B9BD5'>更新2020/1/26</span>
+### 更新2020/1/26
 <https://download.eclipse.org/technology/babel/update-site/R0.17.1/2019-12/>
-### <span style='color:#5B9BD5'>更新2019/7/20</span>
+### 更新2019/7/20
 <https://download.eclipse.org/technology/babel/update-site/R0.17.0/2019-06/>
-### <span style='color:#5B9BD5'>更新2019/5/22</span>
+### 更新2019/5/22
 附：eclipse代码自动提示设置，（同时解决自动补全变量名的问题）。配置eclipse,设置空格，等号，回车，左括号等不自动补全详细教程。[传送门](https://mp.csdn.net/postedit/84489656)
 
-# <span style='color:#1E4E79'>前言：</span>
+# 前言：
     刚开始接触Eclipse，会都头疼于eclipse的汉化问题。好在的是，Eclipse的汉化比较简单，不用到网上自己下载汉化包，而且关于这个软件的汉化也非常的多，所以我也就写一下我这边的Eclipse版本的汉化。
-# <span style='color:#1E4E79'>方法一：</span>
+# 方法一：
 1\. 下载中文语言包；
    打开网址： <https://www.eclipse.org/babel/downloads.php>
    此网页列出当下主流版本的下载链接， 旧版本可进入如下网址：http://archive.eclipse.org/technology/babel/index.php
    在此网页查找适合的版本，找到相应链接，进入下一页面，依照语言进行选择，
 2\. 将文件下载后，解压，将eclipse文件夹中的features与plugins两个文件夹，**覆盖正式路径中的同名文件夹**即可。  
 
-# <span style='color:#1E4E79'>方法二：</span>
+# 方法二：
 版本：Eclipse Photon（2018 9月）（推荐解压版安装）
 ![image1](b68e0c1e370e40808834b61195870939.png)
    **1**、以 eclipse-committers-2018-09-win32-x86_64 为例

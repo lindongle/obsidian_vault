@@ -1,6 +1,6 @@
 ---
 title: 安装单点登录（SSO）运行索引时提示登录错误
-updated: 2026-07-31T10:03:20
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
@@ -24,9 +24,9 @@ at java.util.TimerThread.run(Timer.java:506) \[?:?\]
 解决：更新密码
 D:\Siemens\Teamcenter14\tc_menu\>cd /d D:\Siemens\Teamcenter14\TcFTSIndexer\bin
 
-D:\Siemens\Teamcenter14\TcFTSIndexer\bin\>set tcenv=<span style='color:#FA0000'>Luster2023</span>
+D:\Siemens\Teamcenter14\TcFTSIndexer\bin\>set tcenv=Luster2023
 
-D:\Siemens\Teamcenter14\TcFTSIndexer\bin\><span style='color:#FA0000'>encryptPass.bat -tc tcenv</span>
+D:\Siemens\Teamcenter14\TcFTSIndexer\bin\>encryptPass.bat -tc tcenv
 Updated encrypted Password file D:\Siemens\Teamcenter14\TcFTSIndexer\cache\TeamcenterFtsIndexer.pwf
 
 如更新

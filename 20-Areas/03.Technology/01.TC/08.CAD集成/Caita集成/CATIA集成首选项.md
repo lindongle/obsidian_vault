@@ -1,6 +1,6 @@
 ---
 title: CATIA集成首选项
-updated: 2026-06-06T10:08:50
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:43
 ---
 
@@ -19,11 +19,11 @@ CATPRODUCT_item_type：CATPRODUCT的零组件类型，零件图
 CATDRAWING_item_type：CATDRW的零组件类型，二维工程图
 TC_register_internal_service_modules：注册外部服务模块，将CATIA上移。
 CATIA_pv_dataset_owner：可视化数据集的默认所有者是转换代理账户还是CAD集成账户，改为CAD。
-<span style='color:black'>==CATIA_ETS_catiav5tojtdirect_available：改为true，使用调服服务转换。==</span>
-<span style='color:black'>==ETS_available：新建，改为true，同上一个一块用。按照完==</span>
+==CATIA_ETS_catiav5tojtdirect_available：改为true，使用调服服务转换。==
+==ETS_available：新建，改为true，同上一个一块用。按照完==
 ![image2](24fd26332d7d479ea1108bd463628e78.png)
 CATIA_translation_service_name：转换调度服务器名称，默认即可。
-<span style='background:yellow;mso-highlight:yellow'>ETS.TRANSLATORS.SIEMENS：可用的转换器列表，增加catiav5tojtdirect</span>
+ETS.TRANSLATORS.SIEMENS：可用的转换器列表，增加catiav5tojtdirect
 COMMONcatiatojt_ets_ds_types：转换JT的文件类型，增加变形件图，去掉product，即总成图不转JT。- CATProduct + CATPart + CATShape
 CATIA_component_dataset_types，增加part图和shape图类型。+ CATPart + CATShape
 COMMONcatiatojt_CATShape_ets_nr_types：默认即可，变形件类型

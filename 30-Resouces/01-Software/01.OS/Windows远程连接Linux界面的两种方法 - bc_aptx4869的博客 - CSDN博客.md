@@ -1,12 +1,12 @@
 ---
 title: Windows远程连接Linux界面的两种方法 - bc_aptx4869的博客 - CSDN博客
-updated: 2026-06-06T00:22:26
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
 已剪辑自: <https://blog.csdn.net/bc_aptx4869/article/details/78218084>
 版权声明：Yes, I still love you, let me accompany you around, staged an impossible love <https://blog.csdn.net/bc_aptx4869/article/details/78218084>
-# <span style='color:#1E4E79'>使用VNC连接,最简单.</span>
+# 使用VNC连接,最简单.
 **首先在linux端键入命令安装vncserver**
 yum -y install vnc \*vnc-server\*
 - 1
@@ -33,7 +33,7 @@ service firewalld stop
 TIPS:删除一个vncserver的端口命令是:
 vncserver -kill :7
 - 1
-# <span style='color:#1E4E79'>使用Xmanager+Xshell连接</span>
+# 使用Xmanager+Xshell连接
 我目前掌握的阶段是只有输入命令时才有对应的互动界面弹出,也就是说初识界面还是命令行….  
 ok,需要下载两个软件,Xmanager+Xshell.  
 只说核心步骤吧:  

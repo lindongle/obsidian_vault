@@ -1,6 +1,6 @@
 ---
 title: BOM疑问
-updated: 2026-06-05T22:54:41
+updated: 2026-09-02T16:30:08
 created: 2026-07-05T17:05:04
 ---
 
@@ -11,9 +11,9 @@ created: 2026-07-05T17:05:04
 - 包装在什么时候出？每个阶段的BOM结构大概什么样子？
 - A/B样走EBOM，C/D样走MBOM？A/B样BOM不下发SAP
 - A样EBOM，B样开始MBOM--SAP顾问。
-- <span style='color:#FA0000'>B样为OTS件，B样后进行OTS认证，C样后PV。</span>
-- <span style='color:#FA0000'>跟潘总沟通，A/B样不下发（走设计变更），到C样下发SAP，走ECR/ECN（工程变更）</span>
-- <span style='color:#FA0000'>EBOM上成品-裸机-PCBA料号先给出来。</span>
+- B样为OTS件，B样后进行OTS认证，C样后PV。
+- 跟潘总沟通，A/B样不下发（走设计变更），到C样下发SAP，走ECR/ECN（工程变更）
+- EBOM上成品-裸机-PCBA料号先给出来。
 - A样阶段，无结构件，只有PCBA
 - 成品BOM（带包装）B样才会搭建
 - 物料上体现自制/采购/可供

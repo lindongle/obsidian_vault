@@ -1,12 +1,12 @@
 ---
 title: 控制BOMline属性修改及表格属性查询配置
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Teamcenter技术技巧 </span>
+## Teamcenter技术技巧 
 ***1. 如何控制BOMLine属性的可修改性***
 默认情况下，从零组件和零组件版本传递过来的BOM行属性都可以被修改
 如何控制结构管理器中属性的可修改性呢?
@@ -59,7 +59,7 @@ TCVIS_allow_NGC_expand=FALSE
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

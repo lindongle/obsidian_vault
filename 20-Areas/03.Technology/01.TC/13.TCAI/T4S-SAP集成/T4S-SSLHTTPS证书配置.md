@@ -1,12 +1,12 @@
 ---
 title: T4S-SSLHTTPS证书配置
-updated: 2026-08-06T10:53:47
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:48
 ---
 
 1.  备份以下两个文件：\<BGS_ROOT\>/var/conf/tpds.overlay和\<GS_ROOT\>/var/conf/tpds.overlay
 2.  证书要求：
-    1.  AIG要求使用<span style='color:#FA0000'>\*.pem</span>文件扩展名的X.509 pem编码证书。没有扩展名或扩展名不同的其他文件将不会显示在用户界面中，并且不能在配置期间使用。使用的服务器和客户端证书需要包含<span style='color:#FA0000'>公共证书及其关联的私钥</span>(通常在证书之前插入密钥)。证书文件的<span style='color:#FA0000'>私钥不得加密</span>，因为AIG目前不支持指定密码短语。
+    1.  AIG要求使用\*.pem文件扩展名的X.509 pem编码证书。没有扩展名或扩展名不同的其他文件将不会显示在用户界面中，并且不能在配置期间使用。使用的服务器和客户端证书需要包含公共证书及其关联的私钥(通常在证书之前插入密钥)。证书文件的私钥不得加密，因为AIG目前不支持指定密码短语。
     2.  将公钥和私钥证书合并，使用文本打开yapp2021.pem和yapp2021private.pem，将两个文件粘贴到一个文本中，私钥在上，公钥在下，后缀名必须位.pem
 ![image1](473aeaa13da14de5af94398ba1cb33ae.png)
 3.  将证书文件分别放在\<BGS_ROOT\>/var/conf/cert\<和\<GS_ROOT\>/var/conf/cert目录中，以使它们可用于AIG和Admin UI中的配置对话框。--已有证书，跳过上述步骤，到第四步

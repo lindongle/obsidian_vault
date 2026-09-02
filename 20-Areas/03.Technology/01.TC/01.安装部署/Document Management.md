@@ -1,12 +1,12 @@
 ---
 title: Document Management
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---
 
-<span style='color:red'>**[www.p30download.com](http://www.p30download.com) office online 解压密码**</span>
+**[www.p30download.com](http://www.p30download.com) office online 解压密码**
 **静默安装：**TcClientAppLauncher
 D:\HRYTPLMInstall\TC11.5.0.2patch\Tc11.5.0_patch_2_wntx64\wntx64\additional_applications\TcClientAppLauncher\setup.exe
 

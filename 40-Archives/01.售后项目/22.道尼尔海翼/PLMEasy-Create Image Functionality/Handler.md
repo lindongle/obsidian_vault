@@ -1,6 +1,6 @@
 ---
 title: Handler
-updated: 2026-07-05T17:09:19
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:09:19
 ---
 
@@ -28,7 +28,7 @@ created: 2026-07-05T17:09:19
 <tbody>
 <tr>
 <td></td>
-<td><span style='color:#FA0000'>-win_destination_path=</span> [win_destination_path]</td>
+<td>-win_destination_path= [win_destination_path]</td>
 <td>如果未指定，则从首选项 (TCPB_CJF_DESTINATION_PATH) 中读取。可以使用路径变量 (%xxx%\...) 进行指定。如果此条目不存在，则使用 %TEMP%\job，如果未定义变量 %TEMP%，则使用 c:\temp\job。</td>
 <td></td>
 <td>否</td>
@@ -37,14 +37,14 @@ created: 2026-07-05T17:09:19
 <td></td>
 <td><p>-unix_destination_path=</p>
 <p>[unix_destination_path]</p></td>
-<td><p><span style='color:black'>如果未指定，则从首选项 (TCPB_CJF_DESTINATION_PATH) 中读取。可以使用路径变量 ($xxx/…) 进行指定。</span></p>
-<p><span style='color:black'>如果此条目不存在，则使用 /tmp/job。</span></p></td>
+<td><p>如果未指定，则从首选项 (TCPB_CJF_DESTINATION_PATH) 中读取。可以使用路径变量 ($xxx/…) 进行指定。</p>
+<p>如果此条目不存在，则使用 /tmp/job。</p></td>
 <td></td>
 <td>否</td>
 </tr>
 <tr>
 <td></td>
-<td><p><span style='color:#FA0000'>-options</span>=[approve | complete | delete |</p>
+<td><p>-options=[approve | complete | delete |</p>
 <p>STAMPTYPE=&lt;stamptype&gt;]</p></td>
 <td><p>-options由 CreateImageServer 中的这些组件使用：</p>
 <p>-tcpb_set_decision：approve | complete或delete ，</p>
@@ -55,7 +55,7 @@ created: 2026-07-05T17:09:19
 </tr>
 <tr>
 <td></td>
-<td><span style='color:#FA0000'>-typ=</span>[&lt;dataset_type&gt; | Item | all ]</td>
+<td>-typ=[&lt;dataset_type&gt; | Item | all ]</td>
 <td><p>Item或数据集或所有类型，指定要为其生成作业文件的数据集类型。这里也可以使用“分号”来指定多个类型。</p>
 <p>关键字“item”：生成包含Item信息的作业文件。如果不存在数据集，也会创建它。</p>
 <p>“关键字“all”：为使用条目“-rel”的关系指定的所有数据集创建作业文件。注意：考虑了参数 -all_types！</p></td>

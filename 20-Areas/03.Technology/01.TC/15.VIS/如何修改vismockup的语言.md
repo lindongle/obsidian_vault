@@ -1,16 +1,16 @@
 ---
 title: 如何修改vismockup的语言
-updated: 2026-06-06T10:08:53
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:49
 ---
 
-<span style='color:silver'></span>
+
 2019年2月21日
 9:24
 
 如何修改vismockup的语言
-<span style='color:gray'>2019年2月20日</span>
-<span style='color:gray'>11:38</span>
+2019年2月20日
+11:38
 ![image1](de42bd6cd47540c682e18ac0640c4599.jpg)
 1、安装时已经选择了所需语言
 ![image2](1aafec8cca8149c3a0910c147eec1b2f.jpg)
@@ -39,4 +39,4 @@ Chinese.936=JaPCK
 可以先重新安装一个所有语言都有的vismockup，将对应的语言包放到Visualization\Program文件夹下
 ![image4](4acc0d1ba5524c78a890d8d62401fc9b.jpg)
 
-<span style='color:#969696'>已使用 Microsoft OneNote 2016 创建。</span>
+已使用 Microsoft OneNote 2016 创建。

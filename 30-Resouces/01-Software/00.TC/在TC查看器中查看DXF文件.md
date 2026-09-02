@@ -1,12 +1,12 @@
 ---
 title: 在TC查看器中查看DXF文件
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>在TC查看器中查看DXF文件 </span>
+## 在TC查看器中查看DXF文件 
 ![image1](20419a8c08ad491ab40f3d8ad9cb38cc.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：吴庭韦 审校：陈泓希«/span»
 **适用版本：Teamcenter**
@@ -29,7 +29,7 @@ DXF文件在很多设计软件中都有该格式文件。而且在很多与TC集
 添加完成后，保存首选项。选中DXF数据集，点击“查看器”。
 ![image5](60a871ecbddc48d283855bfe03b94760.png)
 **图3**
-<span style='color:#FEFEFE;text-align:center'>**关注我们**</span>
+**关注我们**
 ![image6](31583101fd5344e5983ecdf2f9407be9.png)
 ![image7](fdc3cd82ac074ac0b220da542af7aac4.jpg)
 阅读
@@ -43,7 +43,7 @@ DXF文件在很多设计软件中都有该格式文件。而且在很多与TC集
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 在TC查看器中查看DXF文件
 最多200字，当前共字

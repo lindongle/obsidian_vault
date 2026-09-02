@@ -1,15 +1,15 @@
 ---
 title: 如何配置选中Item Revision时在查看器不显示JT
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何配置选中Item Revision时在查看器不显示JT </span>
+## 如何配置选中Item Revision时在查看器不显示JT 
 收录于话题
 ![image1](7bb72e33b3e642868351849ad15ea6d8.gif)
-<span style='font-weight: bold;background:#59C3F9'>作者：吴庭韦 审校：李洋</span>
+作者：吴庭韦 审校：李洋
 **测试版本：Teamcenter 11**
 
 有的时候，选择零组件版本时，如果零组件版本下面带有JT数据集，在查看器中自动显示JT视图。但是加载JT时有时候有点卡，影响工作效率。
@@ -49,7 +49,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 如何配置选中Item Revision时在查看器不显示JT
 最多200字，当前共字

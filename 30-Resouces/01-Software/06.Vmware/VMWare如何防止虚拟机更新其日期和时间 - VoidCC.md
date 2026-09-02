@@ -1,6 +1,6 @@
 ---
 title: VMWare如何防止虚拟机更新其日期和时间 - VoidCC
-updated: 2026-06-06T00:32:31
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:55
 ---
 
@@ -16,5 +16,5 @@ time.synchronize.restore = FALSE
 time.synchronize.resume.disk = FALSE  
 time.synchronize.shrink = FALSE  
 time.synchronize.tools.startup = FALSE
-<span style='color:#FA0000'>需先关掉虚拟机修改，不能修改后再重启虚拟机。</span>
+需先关掉虚拟机修改，不能修改后再重启虚拟机。
 其中两个给我造成了问题，首先tool.syncTime已被设置为false（可能是因为我转换的Virtual PC映像已禁用时间同步）。接下来是“time.synchronize.tools.startup = FALSE”。这会阻止VMWare工具在启动时在OS上设置客户操作系统时间，并且从我在线看到的关于处理此问题的所有其他帖子中都没有找到。

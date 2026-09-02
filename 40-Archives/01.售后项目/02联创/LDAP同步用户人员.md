@@ -1,12 +1,12 @@
 ---
 title: LDAP同步用户/人员
-updated: 2026-06-13T22:07:03
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:56
 tags:
   - 联创
 ---
 
-# <span style='color:#1E4E79'>具体配置方式：</span>
+# 具体配置方式：
 ## 1、必须安装安全服务。
 ## 2、配置LDAP连接信息。
 编辑站点级首选项：
@@ -37,7 +37,7 @@ LDAPUserGroup（TC中用户的组名）
 Engineering（默认值，工程组，也可以定义为无，用%REPLACE_ME%代替）
 LDAPUserRole（TC中用户角色名）
 %REPLACE_ME%（LDAP用户角色名不用定义，无）
-<span style='font-family:Calibri;color:red'>Designer</span>«span style='font-family: "Microsoft YaHei"'»（默认值，必须要包含一个默认值，不能为空）«/span»
+Designer«span style='font-family: "Microsoft YaHei"'»（默认值，必须要包含一个默认值，不能为空）«/span»
 
 ![image2](a915ed46e701430ead8365edc6cd4470.png)
 注：cn表示AD中对象的显示名称，sAMAccountname表示AD中用户的登录账号（不带.com后缀）。
@@ -82,7 +82,7 @@ telephoneNumber
 dc=siemens,dc=com，表示整个Siemens.com下的所有用户。
 ou=Engineering Groups,ou=specials users,db=siemens,dc=com，表示Siemens.com下Engineering Groups和specials users两个组织单位下的用户。
 这里填写的是ou=TC,dc=ldl,dc=com，即只同步ldl.com域下TC组织单位下的用户。
-<span style='color:red'>注：创建及更新会从这个范围中查找，但停用会停用所有跟TC中存在相同用户名的用户，因此，建议将LDAP_sync_user_flags首选项默认值cdesu，改为cesu。不进行同步停用。</span>
+注：创建及更新会从这个范围中查找，但停用会停用所有跟TC中存在相同用户名的用户，因此，建议将LDAP_sync_user_flags首选项默认值cdesu，改为cesu。不进行同步停用。
 ![image3](ddd19cffd6ca427f9df5fd06f6e8e110.png)
 4）LDAP_ignore_users，不同步或修改更新哪些用户。默认管理账户infodba。即上述同步范围中哪些用户不需要同步更新到TC。首选项就是不填写值，系统也不会同步更新、或停用infodba账号。保持OOTB默认即可。
 5）LDAP_user_object_class，要同步的用户的类型，通常有两种，即User或inetOrgPerson，只能写一个类型，这里根据企业修改为Uesr。
@@ -91,7 +91,7 @@ ou=Engineering Groups,ou=specials users,db=siemens,dc=com，表示Siemens.com下
 ![image5](c8f69fcd44164c30a5a367ce15cf1810.png)
 
 5）LDAP_user_query_filter，用户在LDAP中的某些属性满足某一条件的用户进行同步。默认为(sAMAccountName=\*),即全用户同步。条件的编写语法与LDAP查询过滤的语法一致。修改原uid为sAMAccountName。
-<span style='font-size:12.0pt;color:#4F4F4F;background:white'>(& (...K1...) (...K2...))</span><span style='font-size:11.0pt'>表示且，</span><span style='font-size:12.0pt; color:#4F4F4F;background:white'>(\| (...K1...) (...K2...))</span><span style='font-size:11.0pt'>表示或。</span>
+(& (...K1...) (...K2...))表示且，(\| (...K1...) (...K2...))表示或。
 *来自 \< <https://blog.csdn.net/jbgtwang/article/details/39180915>\>*
 6）LDAP_sync_user_flags，值改为cesu
 ## 6、执行同步

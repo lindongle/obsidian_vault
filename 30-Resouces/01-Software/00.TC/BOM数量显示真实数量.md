@@ -1,6 +1,6 @@
 ---
 title: BOM数量显示真实数量
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -10,7 +10,7 @@ BOM数量显示真实数量
 2019年7月10日
 0:36
 
-## <span style='color:#2E75B5'>Teamcenter 技术技巧 </span>
+## Teamcenter 技术技巧 
 ***1. 无法注册bat 文件为数据集***
 问题：
 无法注册bat 文件为数据集，Batch 文件可以成功创建数据集，但是没有Imanfile （没有命名的引用）。
@@ -43,17 +43,17 @@ BOM数量显示真实数量
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image6](53e5079dbd814e0999bff95ea32caf6c.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

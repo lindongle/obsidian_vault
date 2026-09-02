@@ -1,6 +1,6 @@
 ---
 title: 安装原数据库守护程序Action Manager Service/Subscription Mana...
-updated: 2026-07-05T17:09:04
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:09:04
 tags:
   - TC安装部署
@@ -13,7 +13,7 @@ tags:
 
 ![image2](bc277503f53b4c7fab4228634bb2fbf2.png)
 
-<span style='background:white'>Process daemons include the following:</span>
+Process daemons include the following:
 - [Action Manager](https://docs.sw.siemens.com/en-US/product/282219420/doc/PL20230510731367206.plm00035/html/using_actionmgrd_daemon)  
   Dispatches events that have a specified execution time or subscription events that have failed to process.
 - [Subscription Manager](https://docs.sw.siemens.com/en-US/product/282219420/doc/PL20230510731367206.plm00035/html/using_subscriptionmgrd_daemon)  

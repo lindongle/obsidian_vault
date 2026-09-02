@@ -1,18 +1,18 @@
 ---
 title: 指定流程节点owner为特定人员
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>指定流程节点owner为特定人员 </span>
+## 指定流程节点owner为特定人员 
 收录于话题
 ![image1](43f88398728e474a9a21896d73dea2ce.gif)
-<span style='font-weight: bold;background:#59C3F9'>作者：王明皓 审校：柳汉杰</span>
+作者：王明皓 审校：柳汉杰
 **适用版本：TC11**
 ![image2](e37c735a32144aa7aa17b14ea1c9059a.png)
-<span style='background:#FEFEFE'>Teamcenter中若发起流程，流程节点的owner，默认会是发起人。某些派生的流程，不会在流程发起界面中选择流程节点owner，有些需求为派生后的流程节点，需要将该流程节点owner修改为流程目标中的某个对象属性。</span>
+Teamcenter中若发起流程，流程节点的owner，默认会是发起人。某些派生的流程，不会在流程发起界面中选择流程节点owner，有些需求为派生后的流程节点，需要将该流程节点owner修改为流程目标中的某个对象属性。
 **具体操作步骤**  
 **  
   **
@@ -54,7 +54,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 指定流程节点owner为特定人员
 最多200字，当前共字

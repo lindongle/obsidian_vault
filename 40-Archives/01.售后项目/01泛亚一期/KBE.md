@@ -1,6 +1,6 @@
 ---
 title: KBE
-updated: 2026-06-13T22:06:44
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:56
 tags:
   - 泛亚
@@ -17,5 +17,5 @@ VPPS
 SYSML：system modeling language
 ICD：ingtegrater control Document
 DDR
-<span style='font-size:10.5pt'>SOR:</span><span style='font-size:12.0pt;color:#333333; background:white'> Statement of Requirements </span>
+SOR: Statement of Requirements 
 可测量属性没有ID，但需要体现可测量属性对应的需求的索引号，用来区分不同的零件对应的相同的可测量属性。

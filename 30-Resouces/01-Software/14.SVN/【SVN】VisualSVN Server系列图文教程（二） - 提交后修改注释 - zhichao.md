@@ -1,6 +1,6 @@
 ---
 title: 【SVN】VisualSVN Server系列图文教程（二） - 提交后修改注释 - zhichao...
-updated: 2026-06-06T10:05:35
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:55
 ---
 
@@ -8,12 +8,12 @@ created: 2026-07-05T17:04:55
 2019年7月27日
 6:47
 已剪辑自: <https://blog.csdn.net/zhichaosong/article/details/86578473>
-## <span style='color:#2E75B5'>1. 打开项目设置</span>
+## 1. 打开项目设置
 注意每个项目都是要单独设置的  
 项目名称右键 -\> Properties -\> Hooks 标签 -\> 编辑 Pre-version property change hook
 ![image1](f5b538f01932465d9867182dcd5507d7.png)
 
-## <span style='color:#2E75B5'>2. 编辑 Pre-version property change hook 内容</span>
+## 2. 编辑 Pre-version property change hook 内容
 脚本如下
 setlocal  
 set REPOS=%1  
@@ -48,6 +48,6 @@ exit 0
 - 15
 - 16
 
-## <span style='color:#2E75B5'>3. 测试效果</span>
+## 3. 测试效果
 保存后立即生效，在 SVN log 界面，右键注释区域，点击 Edit log message，在弹出框修改注释即可
 

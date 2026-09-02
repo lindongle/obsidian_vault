@@ -1,36 +1,36 @@
 ---
 title: 在工作流程模板中对DO任务设置无法完成选项
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>在工作流程模板中对DO任务设置无法完成选项 </span>
+## 在工作流程模板中对DO任务设置无法完成选项 
 收录于话题
 ![image1](f0a5e8dbdc61448d81d9f6a44944b30d.gif)
-<span style='font-weight: bold;background:#59C3F9'>作者：王怀金 审校：刘琛琳</span>
+作者：王怀金 审校：刘琛琳
 **适用版本：Teamcenter11**
 ![image2](87f2c34df8e84fd09246b9d830b4b7fd.png)
 在设置工作流程模板时，DO任务默认情况下只有一个“完成”选项，可以通过设置增加一个“无法完成”选项。下面介绍设置方法。
 ![image3](98777cc6d23b4c74902a404a8ba3b88b.png)
 在“流程设计器”中，在“校验”任务和“或”任务之间设置“无法完成”路径。当“校验”任务无法完成时，工作流程返回“编制”任务。如图1，图2所示；
 ![image4](ba4409c84f9b402d8e62524eb3311ec4.png)
-<span style='font-weight:bold;background:white'>图1</span>
+图1
 ![image5](90ae8652d2ae467ea0ad217ae371eb1f.png)
-<span style='font-weight:bold;background:white'>图2</span>
+图2
 ![image3](98777cc6d23b4c74902a404a8ba3b88b.png)
 选择零组件版本发起流程
 ![image6](d7df76939bac4e0b9a72afb944caa20f.png)
-<span style='font-weight:bold;background:white'>图3</span>
+图3
 ![image3](98777cc6d23b4c74902a404a8ba3b88b.png)
 执行“校验”任务时，选择“无法完成”选项，点击“确定”
 ![image7](14afa30d29264747916d042827b06120.png)
-<span style='font-weight:bold;background:white'>图4</span>
+图4
 ![image3](98777cc6d23b4c74902a404a8ba3b88b.png)
 流程返回到“编制”节点
 ![image8](9b2216f5321f4d2bb82b5bf12bf3ba9d.png)
-<span style='font-weight:bold;background:white'>图5</span>
+图5
 **关注我们**  
 
 ![image9](d27018b037ac4bc6a3321bfbe328a58c.png)
@@ -48,7 +48,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 在工作流程模板中对DO任务设置无法完成选项
 最多200字，当前共字

@@ -1,6 +1,6 @@
 ---
 title: 蓥石SA
-updated: 2026-06-13T15:22:38
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:37
 ---
 
@@ -18,11 +18,11 @@ DRE:Design Release Engineer设计发放工程师
 PAD:Product Assembly Document产品总成文档，工艺装配文档
 EWO:Engineering Work Order,工程工作指令，跟变更有啥关系？为何老有人叫工程更改指令。
 DRAF：草案
-<span style='color:black'>==SPEC是什么角色？BOM管理员，标准化工程师。==</span>
+==SPEC是什么角色？BOM管理员，标准化工程师。==
 ![image5](fc3c22e6b2304eeabc3b556bc9680d20.png)
 车型（整车）属于哪个类型，跟系统、子系统属于一个类型？--就是工程分支节点。
 ![image6](0fd0df501a1b4fc19bfc0d0f88a7151d.png)
-<span style='background:yellow;mso-highlight:yellow'>这三个为何单独加控制？控制什么？没有特殊处理</span>
+这三个为何单独加控制？控制什么？没有特殊处理
 ![image7](b136289ea4034262813e5e0126f73737.png)
 什么业务场景？EWO概念
 ![image8](73842ec138504982ac8aa47f8928f1f2.png)

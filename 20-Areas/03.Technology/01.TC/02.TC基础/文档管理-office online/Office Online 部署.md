@@ -1,6 +1,6 @@
 ---
 title: Office Online 部署
-updated: 2026-08-19T13:46:59
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:41
 ---
 
@@ -9,10 +9,10 @@ created: 2026-07-05T17:04:41
 前期：
 1.转换文档需要两台服务器，一台为转换server，另外一台为域控server。（安装office web apps的服务器必须加域才能安装成功，如果没有加域后面步骤会出现错误，疑难问题里面会介绍）
 
-2.系统要求为widow server2008R2 64bit SP1或者以上，NET Framework 4.5，KB2592525，Windows PowerShell 3.0，IIS，保证80 443 809端口不被占用，<span style='color:red'>确保当前机器没有安装office</span>，确保当前机器没有安装Exchange,sharepoint,lync server,sql server
+2.系统要求为widow server2008R2 64bit SP1或者以上，NET Framework 4.5，KB2592525，Windows PowerShell 3.0，IIS，保证80 443 809端口不被占用，确保当前机器没有安装office，确保当前机器没有安装Exchange,sharepoint,lync server,sql server
 
 3.服务器带宽和内存越高越好，测试发现比较耗性能，原因得从服务的实现原理上讲起。office web apps服务会通过用户提供的文档src，从src服务器上把文档下载下来，然后进行转换，根据文档名称进行缓存，转换完成以后返回。 带宽越大下载过程使用的时间越短，服务器性能越好转换速度越快。
-<span style='color:#E84C22'>4、域控不能和Office Online Server装在一台服务器</span>
+4、域控不能和Office Online Server装在一台服务器
 2）
 添加角色服务：选择.NET FRAMEWORK 4.6和identity foundation3.5
 ![image1](18e98ee36f924fc2ada84921d0cb8de8.png)

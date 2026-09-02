@@ -1,11 +1,11 @@
 ---
 title: ApacheTomcat 8 9 安全配置与高并发优化 - 爱你爱自己 - 博客园
-updated: 2026-06-06T10:05:33
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 ---
 
 已剪辑自: <https://www.cnblogs.com/grimm/p/12167751.html>
-### <span style='color:#5B9BD5'>编辑修改配置文件</span>
+### 编辑修改配置文件
 \[root@DaMoWang ~\]# vim /usr/local/tomcat/conf/server.xml
 **禁用8005端口**
 **telnet localhost 8005 然后输入 SHUTDOWN 就可以关闭 Tomcat，为了安全我们要禁用该功能**

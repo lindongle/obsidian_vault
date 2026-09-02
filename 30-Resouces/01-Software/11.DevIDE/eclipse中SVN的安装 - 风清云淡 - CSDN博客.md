@@ -1,6 +1,6 @@
 ---
 title: eclipse中SVN的安装 - 风清云淡 - CSDN博客
-updated: 2026-06-06T10:05:34
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:55
 ---
 
@@ -11,7 +11,7 @@ eclipse中SVN的安装 - 风清云淡 - CSDN博客
 已剪辑自: <https://blog.csdn.net/qq_34975710/article/details/84929940>
 进行版本控制可以有SVN、Git等等，具体使用哪个看公司了。  
 实际开发中会存在一些需求，如备份、协同修改、查看历史版本等等，要是靠每个开发人员自己解决肯定不现实，到时候会出现五花八门的情况，这就需要版本管理。不多说，首先来看看SVN在eclipse上的安装。
-### <span style='color:#5B9BD5'>一、安装</span>
+### 一、安装
 1、点击eclipse菜单栏上的help —\> Eclipse Marketplace
 ![image1](71ca419619074ce4bc9a404f74007e8e.png)
 2、在弹出的窗口中搜索subclipse，然后install
@@ -23,9 +23,9 @@ eclipse中SVN的安装 - 风清云淡 - CSDN博客
 5、检查是否安装成功  
 点击菜单栏Window—\>Preferences，然后找到Team点开，看到有SVN就说明插件安装成功。
 ![image5](b3e5b3fcf0ea40188551a0a9fa76e53a.png)
-### <span style='color:#5B9BD5'>二、使用</span>
+### 二、使用
 首先可以提前创建好一个工程。
-#### *<span style='color:#5B9BD5'>1、准备</span>*
+#### *1、准备*
 1、打开SVN资源库视图窗口  
 window —\> show view —\> other —\> svn,点击svn资源库
 ![image6](44c8637fe4e44eed8661d5011aca18cc.png)
@@ -35,7 +35,7 @@ window —\> show view —\> other —\> svn,点击svn资源库
 ![image7](7863074f3a804b5a8308be3e8e81a347.png)
 OA就是svn版本库根目录下与工程工程对应的版本库子目录
 ![image8](45a1216634724a068969ca78228598e0.png)
-#### *<span style='color:#5B9BD5'>2、提交</span>*
+#### *2、提交*
 右键单击工程 --\> team --\> shared projects
 ![image9](e2eee9be0f9c48da86d515a2a255bc1d.png)
 
@@ -50,7 +50,7 @@ OA就是svn版本库根目录下与工程工程对应的版本库子目录
 ![image14](3201a99f9b82489c83b01582d0bf8566.png)
 
 ![image15](9258fbc6da164000a37f919a3a9284e8.png)
-#### *<span style='color:#5B9BD5'>3、检出</span>*
+#### *3、检出*
 第一次从SVN获取工程时叫检出（check out），import找到svn
 ![image16](d7ebbfef31ed4a509f5209d41bdccfc8.png)
 选着资源库位置，第一次需要新建位置，跟上面提交工程时创建位置一样，其实就是设定所要检出的目标工程的位置，next
@@ -61,7 +61,7 @@ next
 ![image19](e5c5c33bef4d4f4aa31e48de82315bfa.png)
 finish
 ![image20](a2e56240af1b4523a67b19acb58584d4.png)
-#### *<span style='color:#5B9BD5'>4.更改后提交</span>*
+#### *4.更改后提交*
 更改内容后，同样右键单击工程 --\> team --\> 提交即可，后续步骤一样
-#### *<span style='color:#5B9BD5'>5.更新</span>*
+#### *5.更新*
 工程已经检出后，若若要获取最新的版本则只需更新即可，右键单击工程 --\> team --\> 更新

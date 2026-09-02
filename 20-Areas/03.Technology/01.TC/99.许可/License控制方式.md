@@ -1,6 +1,6 @@
 ---
 title: License控制方式
-updated: 2026-06-18T13:38:21
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:50
 ---
 
@@ -11,29 +11,29 @@ created: 2026-07-05T17:04:50
 </colgroup>
 <thead>
 <tr>
-<th><span style='color:gray'><strong>主题</strong></span></th>
+<th><strong>主题</strong></th>
 <th><strong>License控制方式</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span style='color:gray'><strong>发件人</strong></span></td>
+<td><strong>发件人</strong></td>
 <td><a href="mailto:zwk@dtecpro.com">zwk@dtecpro.com</a></td>
 </tr>
 <tr>
-<td><span style='color:gray'><strong>收件人</strong></span></td>
+<td><strong>收件人</strong></td>
 <td>何芳霞</td>
 </tr>
 <tr>
-<td><span style='color:gray'><strong>抄送</strong></span></td>
+<td><strong>抄送</strong></td>
 <td>徐礼胜; 孙毅; 林东乐; 王峥; 龚龙宇; 宋海良; 寇宝松</td>
 </tr>
 <tr>
-<td><span style='color:gray'><strong>发送时间</strong></span></td>
+<td><strong>发送时间</strong></td>
 <td>2020年5月25日 9:40</td>
 </tr>
 <tr>
-<td><span style='color:gray'><strong>附件</strong></span></td>
+<td><strong>附件</strong></td>
 <td><p>&lt;&lt;ugslmd.opt&gt;&gt;</p>
 <p>&lt;&lt;License控制.png&gt;&gt;</p></td>
 </tr>
@@ -48,11 +48,11 @@ created: 2026-07-05T17:04:50
 3.  使用单独的license管理软件。
 
 谢谢！
-<span style='color:#219296'>**\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**</span>
-<span style='color:black'>赵文凯</span>
-<span style='color:black'>迪融数字科技（上海）有限公司</span>
-<span style='color:gray'>上海市徐汇区斜土路1223号之俊大厦1305室</span>
-<span style='color:gray'>手机：13817070541</span>
+**\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
+赵文凯
+迪融数字科技（上海）有限公司
+上海市徐汇区斜土路1223号之俊大厦1305室
+手机：13817070541
 邮箱：<zwk@dtecpro.com>
 ![image1](0d30bf979d9a4f5aa6c9bf82310ad36c.png)
 

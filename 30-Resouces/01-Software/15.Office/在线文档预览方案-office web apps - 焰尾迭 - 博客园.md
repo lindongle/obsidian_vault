@@ -1,6 +1,6 @@
 ---
 title: 在线文档预览方案-office web apps - 焰尾迭 - 博客园
-updated: 2026-06-13T16:06:24
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:56
 ---
 
@@ -19,7 +19,7 @@ created: 2026-07-05T17:04:56
 - [服务器部署疑难问题](https://www.cnblogs.com/yanweidie/p/4516164.html#_label2)
 - [总结](https://www.cnblogs.com/yanweidie/p/4516164.html#_label3)
 [回到顶部](https://www.cnblogs.com/yanweidie/p/4516164.html#_labelTop)
-# <span style='color:#1E4E79'>安装部署步骤</span>
+# 安装部署步骤
 　　介绍完特性以后，下面介绍服务的安装部署。个人感觉初次部署可能会觉得比较困难，因为这个服务限制还是很多的。
 **服务器环境要求**
 　　1.转换文档需要两台服务器，一台为转换server，另外一台为域控server。（安装office web apps的服务器必须加域才能安装成功，如果没有加域后面步骤会出现错误，疑难问题里面会介绍）
@@ -78,7 +78,7 @@ New-OfficeWebAppsFarm 的使用及各参数含义可以去微软官网查看： 
 Set-OfficeWebAppsFarm -AllowHttp
 我这边装完以后通过花生壳映射了一个外网地址，大家可以访问预览（网络可能不稳定）。 <http://myscloud.vicp.cc/op/generate.aspx>
 [回到顶部](https://www.cnblogs.com/yanweidie/p/4516164.html#_labelTop)
-# <span style='color:#1E4E79'>使用示例</span>
+# 使用示例
 安装完成office web apps以后，你可以采用以下方式实现在线预览。
 ![image7](91b836a432b945a1a8376776564768ef.png)
 //在线预览服务地址  
@@ -93,7 +93,7 @@ var strUrl =strOfficeApps+"/op/embed.aspx/src="+encodeURIComponent(strFileUrl);
 \<iframe src='strUrl' width='476px' height='288px' frameborder='0'\>This is an embedded \<a target='\_blank' href='http://office.com'\>Microsoft Office\</a\> document, powered by \<a target='\_blank' href='http://office.com/webapps'\>Office Web Apps\</a\>.\</iframe\>
 
 [回到顶部](https://www.cnblogs.com/yanweidie/p/4516164.html#_labelTop)
-# <span style='color:#1E4E79'>服务器部署疑难问题</span>
+# 服务器部署疑难问题
 下面列举一下安装部署过程中出现的几个问题及解决办法
 　 1.New-OfficeWebAppsFarm : 登录失败: 未知的用户名或错误密码
 ![image7](91b836a432b945a1a8376776564768ef.png)
@@ -167,7 +167,7 @@ OpenFromUrlMaxFileSizeInKBytes=(System.Int32)512000
 ![image12](7ee995c22fb14dab86337aa1d3d762c8.png)
 Redirect站点代码下载地址:[Redirect站点](http://files.cnblogs.com/files/yanweidie/Redirect%E7%AB%99%E7%82%B9.rar)
 [回到顶部](https://www.cnblogs.com/yanweidie/p/4516164.html#_labelTop)
-# <span style='color:#1E4E79'>总结</span>
+# 总结
 　　整个方案不需要自己额外写代码，麻烦的地方在于安装部署，出现错误很难排查，主要还是因为资料少。所以建议安装到office web apps步骤时，用ghost工具备份一下系统，以免出错从头开始安装。
 　　如果你在安装过程中遇到奇怪的错误并且解决了，希望可以告诉我一下，以供我补充完善疑难问题这一项。目前该方案已经在购买服务器实施的过程中，有需要实现在线文档预览的可以考虑使用。
 

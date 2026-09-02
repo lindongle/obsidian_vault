@@ -1,12 +1,12 @@
 ---
 title: "File New Item error: Unable to find a property wit..."
-updated: 2026-06-06T00:08:17
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:40
 ---
 
-File New Item error: <span style='font-weight:bold;color:blue'>Unable to find a property with name</span> Item/<span style='font-weight:bold;color:blue'>item_id</span>
+File New Item error: Unable to find a property with name Item/item_id
 
-- <span style='font-weight:bold;text-decoration: underline;background:white'>Solution</span>
+- Solution
 - «span style='color:#333333'»1) Shut down the 'Teamcenter Server Manager' service.  
 
   3) Delete the %TEMP%\shared_memory folder.  

@@ -1,6 +1,6 @@
 ---
 title: 签字工具 ds4_stamp.exe
-updated: 2026-06-13T15:39:36
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:05:02
 ---
 
@@ -24,9 +24,9 @@ created: 2026-07-05T17:05:02
 </colgroup>
 <thead>
 <tr>
-<th><span style='color:black'><strong>Parameter</strong></span></th>
-<th><span style='color:black'><strong>Description</strong></span></th>
-<th><span style='color:black'><strong>Required / Default</strong></span></th>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Required / Default</strong></th>
 </tr>
 </thead>
 <tbody>

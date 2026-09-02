@@ -1,17 +1,17 @@
 ---
 title: 调优JVM参数以优化TC客户端性能
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>调优JVM参数以优化TC客户端性能 </span>
+## 调优JVM参数以优化TC客户端性能 
 ![image1](fd8dd36960d04a34aad79f98b2af64ea.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：恽君达 审校：倪洁«/span»
 **适用版本：TC10.1.7**
 ![image2](6247212a14684e75bd67285c1d085861.png)
-<span style='color:black'>参考西门子官方《优化Teamcenter客户端性能手册》,在OOTB的设置中可以通过调优JVM参数来优化TC客户端性能。</span>
+参考西门子官方《优化Teamcenter客户端性能手册》,在OOTB的设置中可以通过调优JVM参数来优化TC客户端性能。
 
 TC8.3-9.x的版本可以通过编辑在\<tc_root\> \\ portal中找到的teamcenter.ini文件来优化,从TC10.1开始，不再使用teamcenter.ini文件,添加到teamcenter.ini文件的任何更改或参数都将被忽略,取而代之是在portal.bat文件中指定所有JVM参数。
 用户登录到TC，点击菜单栏à帮助à关于，可以简明地看到JVM的可用内存和空闲内存大小，如图1。
@@ -38,17 +38,17 @@ set VM_XMX=1024m 下面添加一行 set VM_XMS=1024m
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image9](b395084facff4b168c191d1d610f267a.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

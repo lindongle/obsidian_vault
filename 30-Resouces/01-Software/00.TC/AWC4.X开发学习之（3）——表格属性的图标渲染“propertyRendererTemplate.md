@@ -1,12 +1,12 @@
 ---
 title: AWC4.X开发学习之（3）——表格属性的图标渲染“propertyRendererTemplate...
-updated: 2026-07-05T17:08:53
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:08:53
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>AWC4.X开发学习之（3）——表格属性的图标渲染“propertyRendererTemplates”的配置 </span>
+## AWC4.X开发学习之（3）——表格属性的图标渲染“propertyRendererTemplates”的配置 
 ![image1](14bd8573e417462982fcdf8d03304cb9.gif)
   最近在翻阅AWC的邮件列表时，发现了关于propertyRendererTemplates的相关讨论邮件，propertyRendererTemplates是AWC4.2加入的新功能，其主要适用于配置表格控件的属性需要进行特别的渲染时进行的配置。在OOTB的stage\components\activeworkspace\repo\kit\tc-aw-framework\module.json文件中提供了很多系统配置的例子，主要有是三个“对象发布状态”（两个）“对象流程状态”，“对象签出状态”。
 ![image2](adc4dcfe619849058e2228d0b722ec7d.jpg)

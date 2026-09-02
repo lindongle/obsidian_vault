@@ -1,6 +1,6 @@
 ---
 title: AWC负载均衡
-updated: 2026-06-13T22:11:59
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
@@ -24,4 +24,4 @@ If TC web tier is NOT clustered, then you need to support session affinity based
 微服务框架及微服务主节点、awc客户端网关放到web层；主节点指向两台pool上的微服务的调度服务和文件存储服务。
 微服务进程节点分别配置到2个pool服务器，微服务其他三个服务器分别2个pool节点。
 或AWC网关装两个放到两个pool上，web层装微服务主节点
-<span style='color:#FA0000'>AWC网关放到web层，Pool1上微服务主节点，Pool2上微服务工作节点。AWC Client Builder放Pool1或tcdata上。</span>
+AWC网关放到web层，Pool1上微服务主节点，Pool2上微服务工作节点。AWC Client Builder放Pool1或tcdata上。

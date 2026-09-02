@@ -1,6 +1,6 @@
 ---
 title: 如何修改Teamcenter的站点ID
-updated: 2026-06-06T10:08:53
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:46
 ---
 
@@ -12,8 +12,8 @@ How to change Teamcenter Site ID
 
 After cloning the production environment to update a development environment the customer had a need to access both environments with the same client. Both environments having the same Site ID caused FMS issues.
 Two sites having the same Site ID could result in customer data being written to the wrong location and possible data corruption.
-In Tc10.1.4 and later, you can create a new FMS enterprise ID for your cloned environment which let <span style='color:#333333'>FMS support to switch between cloned and original environments.</span>
-<span style='color:#333333'>All Teamcenter related services must be stopped.</span>
+In Tc10.1.4 and later, you can create a new FMS enterprise ID for your cloned environment which let FMS support to switch between cloned and original environments.
+All Teamcenter related services must be stopped.
 In a Teamcenter command window execute the generate_site_id utility.
 
 ![image1](ec225cfffcb04d6aa7ab74dc206396e7.png)

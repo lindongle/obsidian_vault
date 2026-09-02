@@ -1,6 +1,6 @@
 ---
 title: Teamcenter AWC界面中缺少AI_Chat命令解决方法2025-10-11T12:55:2...
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -11,14 +11,14 @@ tags:
 公众号名称：PLMCoder
 作者名称：dxh
 发布时间：2025-09-23 09:29
-<span style='color:black'>问题：</span>
+问题：
 
-<span style='color:black'>  在安装 Teamcenter AI Chat并进行相关配置后，AWC UI 中缺少AI_Chat命令。</span>
+  在安装 Teamcenter AI Chat并进行相关配置后，AWC UI 中缺少AI_Chat命令。
 
-<span style='color:black'>解决方法：</span>
+解决方法：
 
-- <span style='color:black'>检查首选项“TC_AI_Question_Answering_Enabled”值，将其设置为“true”，如果没有，则将其设置为 true。</span>
-- <span style='color:black'>如果未添加到首选项“AWC_StartupPreferences”中，请将首选项“TC_AI_Question_Answering_Enabled”添加到首选项“TC_AI_Question_Answering_Enabled”。</span>
+- 检查首选项“TC_AI_Question_Answering_Enabled”值，将其设置为“true”，如果没有，则将其设置为 true。
+- 如果未添加到首选项“AWC_StartupPreferences”中，请将首选项“TC_AI_Question_Answering_Enabled”添加到首选项“TC_AI_Question_Answering_Enabled”。
 
 ![image1](c8a0dfd469f64d8784801fec2d41bb53.png)
 **网页截图：**

@@ -1,6 +1,6 @@
 ---
 title: 异步服务配置With SSO
-updated: 2026-07-31T10:03:25
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
@@ -11,19 +11,19 @@ tags:
 打开model下的conf文件夹中的translator.xml中异步服务是否开启。
 ![image1](c38b660da41f4c2c9bba2a5e6201ba02.png)
 2、在组织模块-站点，选择站点，在SOA URL中填写四层连接地址，如http://172.16.254.41:7001/tc/
-<span style='background:white'>二、首选项配置：（流程异步，只设置最后一个即可）</span>
+二、首选项配置：（流程异步，只设置最后一个即可）
 1、 设置订阅可以勾选后台允许： c.ASYNC_subscribe_to_background_task=BOTH  
 设置订阅可用： d.TC_subscription=ON  
 设置邮箱服务器名称，便于异步完成后邮件通知。 e.Mail_server_name= your mail server value  
 设置通知的内容，可以自定义f.TC_notification_msg_ext= tmp change it to txt  
 设置流程任务可以出现后台处理的勾选框。 g.EPM_task_execution_mode value is “CONFIGURABLE”
-<span style='background:white'>三、验证：</span>
-<span style='color:black'>1、将item版本发送到结构管理，选择文件-复制，勾选后台允许，看是否dispatcher能转换成功。</span>
-<span style='background:white'>四、配置流程</span>
-<span style='color:black'>1、在需要后台执行的任务，右键勾选后台处理。</span>
-<span style='color:black'></span>
-<span style='font-weight:bold;background:white'>如果有单点登录，需要单独进行配置。</span>
-<span style='color:black'>1、必须存在与windows用户名相同的TC账号。</span>
+三、验证：
+1、将item版本发送到结构管理，选择文件-复制，勾选后台允许，看是否dispatcher能转换成功。
+四、配置流程
+1、在需要后台执行的任务，右键勾选后台处理。
+
+如果有单点登录，需要单独进行配置。
+1、必须存在与windows用户名相同的TC账号。
 2、修改D:\Apps\Dispatcher\Module\Translators\asyncservice\asyncservice.bat文件
 ![image2](022ec970834b4782b72b2c827b81fe97.png)
 注释掉相关SSO的三行或删掉。

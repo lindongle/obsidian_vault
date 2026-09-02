@@ -1,6 +1,6 @@
 ---
 title: Teamcenter中如何管理汽车行业的Usage BOM2025-11-11T23:27:29.9...
-updated: 2026-09-02T16:05:57
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:08:54
 tags:
   - TC
@@ -11,13 +11,13 @@ tags:
 公众号名称：PLM加油站
 作者名称：黄老师
 发布时间：2024-06-06 07:00
-<span style='color:black'>在汽车行业，Usage BOM（用法物料清单）概念尤为重要，因为汽车产品往往具有高度的定制性和配置多样性。汽车行业的Usage BOM主要用于管理不同车型、配置以及客户个性化需求下的物料使用情况。具体来说，它涉及到以下几个方面：</span>
-1.  <span style='color:black'>**配置化管理：**现代汽车生产多采用订单式生产，即消费者可以根据个人偏好选择车辆的颜色、内饰、配置（如发动机类型、变速箱、驾驶辅助系统等）。Usage BOM确保了针对每一个具体订单，都能准确无误地生成包含所有必要零部件及相应数量的物料清单，以满足定制化生产需求。</span>
-2.  <span style='color:black'>**变型管理：**同一款车型往往有多个变型（比如基本款、豪华款、运动款等），每个变型的零部件组成和数量可能有所不同。Usage BOM帮助区分这些变型，确保生产线上使用的物料精确对应车型变型。</span>
-3.  <span style='color:black'>**成本控制：**通过精确的用量物料清单，汽车制造商能更有效地控制成本，避免过度采购或缺料，优化库存管理，同时为不同配置的车辆提供准确的成本估算。</span>
-4.  <span style='color:black'>**生产计划与执行：**在生产调度中，Usage BOM为每一份订单或批次生产提供详细的物料需求计划，指导生产线上的物料供应、装配顺序和作业指导，确保生产流程顺畅高效。</span>
-5.  <span style='color:black'>**与PDM/ERP集成：**在汽车企业的信息系统中，Usage BOM通常与PDM（产品数据管理）和ERP（企业资源规划）系统紧密集成，从PDM中获取配置选项并转化为ERP系统可执行的生产指令和物料需求，实现从设计到制造的信息流无缝对接。</span>
-<span style='color:black'>综上所述，汽车行业的Usage BOM是一种动态、灵活的物料清单管理模式，它能够适应复杂多变的市场需求，提高生产灵活性和效率，同时优化资源配置和成本管理。</span>
+在汽车行业，Usage BOM（用法物料清单）概念尤为重要，因为汽车产品往往具有高度的定制性和配置多样性。汽车行业的Usage BOM主要用于管理不同车型、配置以及客户个性化需求下的物料使用情况。具体来说，它涉及到以下几个方面：
+1.  **配置化管理：**现代汽车生产多采用订单式生产，即消费者可以根据个人偏好选择车辆的颜色、内饰、配置（如发动机类型、变速箱、驾驶辅助系统等）。Usage BOM确保了针对每一个具体订单，都能准确无误地生成包含所有必要零部件及相应数量的物料清单，以满足定制化生产需求。
+2.  **变型管理：**同一款车型往往有多个变型（比如基本款、豪华款、运动款等），每个变型的零部件组成和数量可能有所不同。Usage BOM帮助区分这些变型，确保生产线上使用的物料精确对应车型变型。
+3.  **成本控制：**通过精确的用量物料清单，汽车制造商能更有效地控制成本，避免过度采购或缺料，优化库存管理，同时为不同配置的车辆提供准确的成本估算。
+4.  **生产计划与执行：**在生产调度中，Usage BOM为每一份订单或批次生产提供详细的物料需求计划，指导生产线上的物料供应、装配顺序和作业指导，确保生产流程顺畅高效。
+5.  **与PDM/ERP集成：**在汽车企业的信息系统中，Usage BOM通常与PDM（产品数据管理）和ERP（企业资源规划）系统紧密集成，从PDM中获取配置选项并转化为ERP系统可执行的生产指令和物料需求，实现从设计到制造的信息流无缝对接。
+综上所述，汽车行业的Usage BOM是一种动态、灵活的物料清单管理模式，它能够适应复杂多变的市场需求，提高生产灵活性和效率，同时优化资源配置和成本管理。
 ![image1](13b8b52f9aca495aa2446378ebb77966.png)
 > [!note]+ OCR: 13b8b52f9aca495aa2446378ebb77966.png
 > BVR BOM VS Usage BOM BVR (BOM View Revision)  用法BOM Collaborative Assembly  Part Part  Part  Part  Part BOM视图/事例  协同部件/零件用法Page 2  Restricted | © Siemens 2024 | Siemens Digital Industries Software | Yang Wenming | Where today meets tomorrow.  SIEMENS公众号·PLM加油站
@@ -68,13 +68,13 @@ tags:
 > [!note]+ OCR: b3043e17a4fc4a32a6b93d97e87fe991.jpg
 > BVR (BOM View Revision)  用法BOM Collaborative Assembly  Part Part  Part  Part  Part BOM视图/事例  协同部件/零件用法
 
-<span style='color:black'>原创 黄老师 PLM加油站 </span>
-<span style='color:black'>继续滑动看下一个 </span>
+原创 黄老师 PLM加油站 
+继续滑动看下一个 
 ![image13](52ef20f9fd3c44d3908c2d4b4ebd17d7.png)
 > [!note]+ OCR: 52ef20f9fd3c44d3908c2d4b4ebd17d7.png
 > Portfolio Project  Process PLM Product  Design Validation
 
-<span style='color:black'>PLM加油站 </span>
-<span style='color:black'>向上滑动看下一个 </span>
+PLM加油站 
+向上滑动看下一个 
 **网页截图：**
 [Webpage.html](443d85dc733c444fb5e7f498c3a98a28.html)

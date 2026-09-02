@@ -1,12 +1,12 @@
 ---
 title: 元数据缓存过期导致TC无法登录问题解决方法
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>元数据缓存过期导致TC无法登录问题解决方法 </span>
+## 元数据缓存过期导致TC无法登录问题解决方法 
 
 ![image1](97adc12d6303427d9cc850748ae4e931.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：陈瑞航 审校：陈泓希«/span»
@@ -45,17 +45,17 @@ generate_client_meta_cache -u=infodba -p=infodba -g=dba -t generate all
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image10](d3622b281f2f48fdaeb1452ef63629b9.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

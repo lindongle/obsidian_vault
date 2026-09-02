@@ -1,14 +1,14 @@
 ---
 title: 设置Oracle自动启动
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:40
 tags:
   - TC安装部署
 ---
 
-<span style='color:#FA0000'>vim /etc/oratab</span>
+vim /etc/oratab
 tc:/home/infodba/app/oracle/product/19c/db_1:Y \# N改成Y
-<span style='color:#FA0000'>vim /etc/systemd/system/oracle.service，写入以下内容</span>
+vim /etc/systemd/system/oracle.service，写入以下内容
 \[Unit\]
 Description=Oracle Database and Listener
 After=network.target

@@ -1,6 +1,6 @@
 ---
 title: Java基础
-updated: 2026-06-13T22:08:52
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 tags:
   - Java
@@ -22,8 +22,8 @@ JDK：Java开开发工具包（包含JRE）
 3、类名与当前java文件的文件名一致。
 ![image1](59d75216668046ac9f367c09003b098f.png)
 public static void main（String \[\] args）{
-<span style='background:white'>system.out.println"helloworld!";</span>
-<span style='background:white'>} </span>
+system.out.println"helloworld!";
+} 
 通过命令窗口，javac XXX.java运行进行编译，会自动生成一个class文件。然后通过Java XXX进行执行。
 4、配置JAVA_HOME Jdk的根目录，和path（jdk的bin目录）。
 5、配置了classpath，则默认优先执行配置的路径下的class文件。

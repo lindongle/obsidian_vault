@@ -1,6 +1,6 @@
 ---
 title: TC报错
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
@@ -111,7 +111,7 @@ java.net.BindException: Address already in use: JVM_Bind
 33、进行升级时，提示无法读取元素Unrecognized element 'prep'。
 不能直接升级补丁，需要先升级tem本身，即复制补丁中的install压缩包解压后的文件到tc_root下的installer文件夹中进行覆盖，再在tem中进行升级。
 34、tem更新了bmide模板后，2层客户端无法登陆，提示：com.teamcenter.soa.client.SoaRuntimeException: The **Shared Metadata Cache** **cannot** be updated, because it has not been initialized. Please report this error to your system administrator.
-<span style='color:#333333'>处理：关闭TC四层服务poolmanager，到%temp%中找到V11000\*开头的文件夹删掉，如果提示被占用无法删除，则进程中结束掉java.exe及tcserver.exe，删除后，重启服务，重新登录即可。</span>
+处理：关闭TC四层服务poolmanager，到%temp%中找到V11000\*开头的文件夹删掉，如果提示被占用无法删除，则进程中结束掉java.exe及tcserver.exe，删除后，重启服务，重新登录即可。
 35、Teamcenter.exe进程无法启动，闪退。
 WARN 2017-08-31 11:57:05,085 - Windows 7 (Service Pack 1) - win32.win32.x86_64 - null - Java(TM) SE Runtime Environment (1.7.0_60-b19) - 3.8.0.v20120529-1548
 ERROR 2017-08-31 11:57:05,411 - 1 字节的 UTF-8 序列的字节 1 无效。

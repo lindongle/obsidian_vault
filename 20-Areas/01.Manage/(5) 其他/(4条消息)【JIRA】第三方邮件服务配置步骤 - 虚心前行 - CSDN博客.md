@@ -1,6 +1,6 @@
 ---
 title: (4条消息)【JIRA】第三方邮件服务配置步骤 - 虚心前行 - CSDN博客
-updated: 2026-06-06T10:08:49
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:36
 ---
 
@@ -8,16 +8,16 @@ created: 2026-07-05T17:04:36
 2019年7月28日
 8:04
 已剪辑自: <https://blog.csdn.net/zouguo1211/article/details/82988516>
-# <span style='color:#1E4E79'>前言</span>
+# 前言
 使用JIRA工具，邮件服务当然不能少，踩了不少坑，本文以网易163为例，记录一下注意事项
-# <span style='color:#1E4E79'>一、管理员邮箱设置</span>
+# 一、管理员邮箱设置
 登陆163邮箱，在主页面上侧的菜单栏，找到 设置-\>POP3/SMTP/IMAP
 ![image1](a1346a70c5654129ae9e7139757856c1.png)
 开启POP3/SMTP和IMAP/SMTP服务，并设置客户端授权码(后面有用)
 ![image2](c022611d85ca4d2a888e345428f9c2cd.png)
 ![image3](c170dc3d53bb42619e676b751c48e05c.png)
 邮箱端设置完毕。
-# <span style='color:#1E4E79'>二、JIRA配置</span>
+# 二、JIRA配置
 管理员登陆，然后进入到系统设置，找到左侧菜单栏，发件选项
 ![image4](74d8f6eebbfe47dc86f4a05e04742871.png)
 点击配置一个新的SMTP电邮服务器
@@ -31,7 +31,7 @@ created: 2026-07-05T17:04:36
 下面会有日志显示，进入到邮箱查看
 ![image9](32ec0e9673994ba88b5169d3c6635c95.png)
 发件服务配置成功
-# <span style='color:#1E4E79'>总结</span>
+# 总结
 主要注意事项就是，配置时用户密码是第三方授权码，而并非邮箱真实密码
 接收邮件的服务配置类似，注意密码是授权码即可。
 

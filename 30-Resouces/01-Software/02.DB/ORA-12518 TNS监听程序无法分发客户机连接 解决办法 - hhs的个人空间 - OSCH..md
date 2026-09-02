@@ -1,6 +1,6 @@
 ---
 title: ORA-12518 TNS:监听程序无法分发客户机连接 解决办法 - hhs的个人空间 - OSCH...
-updated: 2026-06-06T10:05:35
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 ---
 
@@ -65,7 +65,7 @@ system altered
 3.http://blog.csdn.net/wudi_1982/archive/2007/06/08/1643610.aspx
 
 正解：
-<span style='color:#FA0000'>Oracle监听及数据库服务改为系统本地账号登录。重启两个服务即可</span>
+Oracle监听及数据库服务改为系统本地账号登录。重启两个服务即可
 
 2020年10月30日
 21:13

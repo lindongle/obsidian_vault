@@ -1,12 +1,12 @@
 ---
 title: Teamcenter应用程序条显示的设置方法
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Teamcenter应用程序条显示的设置方法 </span>
+## Teamcenter应用程序条显示的设置方法 
 ![image1](9862d650896a413ab26e6f2b3340ee5b.jpg)
 如何修改上图中红线部分的显示内容，后面一堆的空括号真是莫名其妙？
 这个地方的显示组合是由appbar_title_contents首选项来控制的，该首选项可指定要在瘦客户端和胖客户端的应用程序条的标题字符串中显示的值。有效值包括：
@@ -51,7 +51,7 @@ change_notice
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

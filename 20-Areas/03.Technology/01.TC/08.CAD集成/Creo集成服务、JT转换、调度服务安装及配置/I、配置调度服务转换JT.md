@@ -1,6 +1,6 @@
 ---
 title: I、配置调度服务转换JT
-updated: 2026-06-06T10:05:38
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:44
 ---
 
@@ -19,15 +19,15 @@ D:\PTC\CREO2~1.0\COMMON~1\M230\x86e_win64\obj\pro_comm_msg.exe
 2）在系统的环境变量path中增加D:\PTC\CREO2~1.0\COMMON~1\M230\x86e_win64\lib
 ![image3](191b15aca3bf42828221fb89f7a8bbc5.png)
 
-<span style='color:red'>将首选项ETS.PROVIDERS中的值ITI移除。</span>
-<span style='color:red'></span>
-<span style='color:red'></span>
+将首选项ETS.PROVIDERS中的值ITI移除。
+
+
 2、ipem配置。路径d:\apps\ipem
 1）修改ipem.xml文件。
 修改模板文件路径：
 ![image4](a3f41cd3edfb44848ab157bf795d0ac1.png)
 以下设置asm格式不转JT，去除ASM:
-«span style='font-family:"Microsoft YaHei"; font-size:10.5pt;background:yellow;mso-highlight:yellow'»必要时，增加«/span»<span style='font-family:Calibri;font-size:11.0pt;background:yellow;mso-highlight: yellow'>\<jt_file action="translate" cad_type="ASM:PRT"/\></span>
+«span style='font-family:"Microsoft YaHei"; font-size:10.5pt;background:yellow;mso-highlight:yellow'»必要时，增加«/span»\<jt_file action="translate" cad_type="ASM:PRT"/\>
 
 ![image5](82221feb6828466f9bcefaa824f367bd.png)
 
@@ -42,7 +42,7 @@ D:\PTC\CREO2~1.0\COMMON~1\M230\x86e_win64\obj\pro_comm_msg.exe
 3）修改ipemaux.bat文件。添加ETS登台路径。D:\apps\ets\Stage
 ![image10](2ad9328c038f455eba51edf1953ac250.png)
 
-<span style='color:red'>所有配置PTC相关路径的地方，均需要将空格进行短路径转换，CD到目录下，使用dir /x显示短路径。否则服务闪退</span>
+所有配置PTC相关路径的地方，均需要将空格进行短路径转换，CD到目录下，使用dir /x显示短路径。否则服务闪退
 ![image11](aa167f7056cb4cd9b2d3930b7425d1ea.png)
 
 按照下图配置以下文件。

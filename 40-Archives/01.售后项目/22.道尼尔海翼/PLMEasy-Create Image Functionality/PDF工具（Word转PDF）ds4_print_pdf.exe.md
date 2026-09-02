@@ -1,6 +1,6 @@
 ---
 title: PDF工具（Word转PDF）ds4_print_pdf.exe
-updated: 2026-06-05T22:26:14
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:05:02
 ---
 
@@ -10,7 +10,7 @@ created: 2026-07-05T17:05:02
 2.  ds4_print_pdf
     1.  Visual Basic 源代码和项目可以在 X:\CreateImage4Office\ds4_print_pdf 下找到。
     2.  该工具接受以下参数
-| <span style='color:black'>**Parameter**</span> | <span style='color:black'>**Description**</span> | <span style='color:black'>**Required / Default**</span> |
+| **Parameter** | **Description** | **Required / Default** |
 |----|----|----|
 | -input | 定义要转换为 PDF 格式的 MSWord 文档。 | Required |
 | -output | 定义输出 PDF 文件 | Required |

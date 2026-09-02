@@ -1,6 +1,6 @@
 ---
 title: 注册GS
-updated: 2026-08-11T10:39:15
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:48
 ---
 
@@ -43,7 +43,7 @@ Copy the extracted files into following directories in the installation:
 
 ![image5](d058cb34eeef4a50b62e990a2d20b117.png)
 
-<span style='color:#FA0000'>点击批准后，先变为等待确认状态；重启BGS，再点击批准，变为已批准状态；否则GS启动后服务登录网页；</span>
+点击批准后，先变为等待确认状态；重启BGS，再点击批准，变为已批准状态；否则GS启动后服务登录网页；
 ![image6](e4eee5d8ead94c67953ab42af814b1a9.png)
 
 ==自动注册：BGS-配置-常规-高级配置，新建令牌，复制令牌值==

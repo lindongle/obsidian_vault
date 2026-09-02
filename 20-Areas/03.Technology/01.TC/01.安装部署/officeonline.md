@@ -1,6 +1,6 @@
 ---
 title: officeonline
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
@@ -22,30 +22,30 @@ Sponsor密码：Y#pp#2020
 ![image7](ee1a912f503c47e1a63e6b9612b0d698.png)
 
 ![image8](ac7235a558254247ac072ebe4f020a46.png)
-<span style='color:#FA0000'>启动微服务后后，再执行下一步；如果还连不上，重启fsc服务。需安装IIS服务</span>
+启动微服务后后，再执行下一步；如果还连不上，重启fsc服务。需安装IIS服务
 ![image9](02606ab8b7f24b7eaca2295cb20d5947.png)
-<span style='color:#FA0000'>没装IIS</span>
+没装IIS
 ![image10](8b8e6dffffbf4aa48f00d674ee9ba1e9.png)
-<span style='color:#FA0000'>IIS网站添加everyone权限；</span>
-<span style='color:#FA0000'>新建首选项：</span>
+IIS网站添加everyone权限；
+新建首选项：
 ![image11](1fe892dbb72f4254a5600339bf8837be.png)
 
 ![image12](3074ea3f666a40cfa5af01d227252a8f.png)
 
 ![image13](1a4e5d7d9ef3462f82e836fb301ff515.png)
-<span style='color:#FA0000'>TC中创建Sponsor用户，上图可以修改安装时的密码，改成一致。Y#pp#2020</span>
-<span style='color:#FA0000'>新建环境变量：--可不设置，待验证</span>
+TC中创建Sponsor用户，上图可以修改安装时的密码，改成一致。Y#pp#2020
+新建环境变量：--可不设置，待验证
 ![image14](c443d01d050048c09a1347ff22d44127.png)
 
 ![image15](0af7d624d612401ab0c86568306f8e73.png)
-<span style='color:#FA0000'>修改</span>
-<span style='color:#FA0000'>在IIS中浏览网站进行配置测试：</span>
+修改
+在IIS中浏览网站进行配置测试：
 ![image16](647da402417245978cd837398b0b1f55.png)
-<span style='color:#FA0000'>根据提示删除下面文件中开头乱码</span>
+根据提示删除下面文件中开头乱码
 ![image17](eab9bae2748e4d10b31827bad8b81ed8.png)
-<span style='color:#FA0000'>出现以下错误，安装下面.net模块，需重启服务器</span>
+出现以下错误，安装下面.net模块，需重启服务器
 ![image18](cb90654a1f7c43a3b7c2c16a998acd4e.png)
-<span style='color:#FA0000'></span>
+
 ![image19](345fff07695f45bcbae13252c4b388d0.png)
 以下错误，需要安装.4.5.2及以上版本，安装方式及补丁，可百度
 ![image20](00a99faa1ac548d48be31f0b831da6f6.png)
@@ -56,14 +56,14 @@ Sponsor密码：Y#pp#2020
 
 ![image23](512b367ec7624b06800099a2a7fa1b35.png)
 以上报错：首选项不要有主机名或sponsor角色下没有添加infodba用户
-<span style='color:#FA0000'>更换officeonline服务器（提前将新服务器进行域名绑定）或首选项地址格式不对</span>
-<span style='color:#FA0000'>Chrome浏览器需将3000对应的服务器和officeonline服务器地址加入可信站点</span>
+更换officeonline服务器（提前将新服务器进行域名绑定）或首选项地址格式不对
+Chrome浏览器需将3000对应的服务器和officeonline服务器地址加入可信站点
 ![image24](e32c480cd1454764a5ef1010f915e414.png)
-<span style='color:#FA0000'></span>
-<span style='color:#FA0000'></span>
-<span style='color:#FA0000'>Import-Module -Name OfficeWebApps</span>
-<span style='color:#FA0000'></span>
-<span style='color:#FA0000'>New-OfficeWebAppsFarm -InternalURL " <http://officeonline.yapp.com>" -ExternalUrl " <http://172.20.2.112>" -AllowHttp –EditingEnabled –OpenFromUrlEnabled</span>
+
+
+Import-Module -Name OfficeWebApps
+
+New-OfficeWebAppsFarm -InternalURL " <http://officeonline.yapp.com>" -ExternalUrl " <http://172.20.2.112>" -AllowHttp –EditingEnabled –OpenFromUrlEnabled
 
 Get-OfficeWebAppsMachine
 
@@ -73,14 +73,14 @@ Get-OfficeWebAppsHost
 Repair-OfficeWebAppsFarm
 
 Set-OfficeWebAppsFarm -InternalURL " <http://officeonline.yapp.com>" -ExternalUrl " <http://172.20.2.112>" -AllowHttp –EditingEnabled –OpenFromUrlEnabled
-<span style='color:#FA0000'></span>
-<span style='color:#FA0000'></span>
+
+
 ![image25](85660604abe540bab6bcc326730a9798.png)
 
 ![image26](838fca50b4b2455bb933a6b4504fc884.png)
 
 ![image27](825ab478bc3f42319f152b627d19eaef.png)
-<span style='color:#FA0000'></span>
+
 
 FarmOU :
 InternalURL : <http://officeonline.yapp.com/>
@@ -137,8 +137,8 @@ PicturePasteDisabled : False
 RemovePersonalInformationFromLogs : False
 AllowHttpSecureStoreConnections : False
 Machines : {OFFICEONLINE}
-<span style='color:#FA0000'></span>
-<span style='color:#FA0000'></span>
-<span style='color:#FA0000'>独立服务器安装tc的officeonline，即IIS服务器，需要在每个pool上勾选以下模块。否则awc中officeonline空白</span>
+
+
+独立服务器安装tc的officeonline，即IIS服务器，需要在每个pool上勾选以下模块。否则awc中officeonline空白
 ![image28](26ab3996f390445da4616dadd9fa3f17.png)
 ![image12](3074ea3f666a40cfa5af01d227252a8f.png)

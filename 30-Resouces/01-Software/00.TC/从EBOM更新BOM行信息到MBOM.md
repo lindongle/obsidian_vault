@@ -1,43 +1,43 @@
 ---
 title: 从EBOM更新BOM行信息到MBOM
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>从EBOM更新BOM行信息到MBOM </span>
+## 从EBOM更新BOM行信息到MBOM 
 ![image1](9e9f10552b7f4b969e68248158446b41.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：林文杰 审校：李达«/span»
 **测试版本：Teamcenter 10.1**
-<span style='color:#59C3F9'>“</span>
+“
 本文主要介绍如何将EBOM中的BOM行信息快速同步至MBOM，比如绝对变换矩阵、数量等信息。
-<span style='font-size:60.0pt;color:#59C3F9'>”</span><span style='font-size:13.5pt; color:#0064A0'>1</span>
-<span style='color:black'>把两个已经链接的结构发送到制造工艺规划器。</span>
+”1
+把两个已经链接的结构发送到制造工艺规划器。
 ![image2](585b9e27d2f3403986a03b49c70955e5.png)
 **图1**
-<span style='color:#0064A0;text-align:center'>2</span>
-<span style='color:black'>对其中的EBOM修改一些bom行信息。</span>
+2
+对其中的EBOM修改一些bom行信息。
 ![image3](fe25636bfb8349be85d4fd1040a4e75d.png)
 **图2**
-<span style='color:#0064A0;text-align:center'>3</span>
-<span style='color:black'>选择MBOM总成，点击工具-对应检查。</span>
+3
+选择MBOM总成，点击工具-对应检查。
 ![image4](59310deeda3941e592da402276f8f5fd.jpg)
 **图3**
-<span style='color:#0064A0;text-align:center'>4</span>
-<span style='color:black'>点击确定</span>
+4
+点击确定
 ![image5](a8c91a265cbd449fa53acb3b232f42e2.png)
 **图4**
-<span style='color:#0064A0;text-align:center'>5</span>
-<span style='color:black'>可以看到EBOM是作为源结构，MBOM是作为目标结构，数据信息会从源结构传递到目标结构中。当前信息是不匹配的。</span>
+5
+可以看到EBOM是作为源结构，MBOM是作为目标结构，数据信息会从源结构传递到目标结构中。当前信息是不匹配的。
 ![image6](710340d05a5f4a1fb49a87103a95b94d.png)
 **图5**
-<span style='color:#0064A0;text-align:center'>6</span>
-<span style='color:black'>点击更新所选的，数据完成推送。</span>
+6
+点击更新所选的，数据完成推送。
 ![image7](91d7b0c610ac4ebeba0c8d562e041e63.png)
 **图6**
-<span style='color:#0064A0;text-align:center'>7</span>
-<span style='color:black'>效果如图。</span>
+7
+效果如图。
 ![image8](dcfa2dc69ceb4548aeca7f0e2e0ff625.png)
 **图7**
 ![image9](d4a5e5f10f60418f812d9ab18d3cb023.jpg)
@@ -53,7 +53,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

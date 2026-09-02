@@ -1,10 +1,10 @@
 ---
 title: 打开到vis
-updated: 2026-06-06T10:09:01
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:49
 ---
 
-<span style='background:white'>EP_EnableOpeninTCVisforBOP</span>
+EP_EnableOpeninTCVisforBOP
 
 ![image1](34b1e4b5467d4681bafa4ba4d4b73ad1.png)
 

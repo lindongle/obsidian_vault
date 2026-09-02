@@ -1,6 +1,6 @@
 ---
 title: EBOM->PBOM
-updated: 2026-06-06T10:08:58
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:05:01
 ---
 
@@ -26,8 +26,8 @@ created: 2026-07-05T17:05:01
 方案一：
 ==场内不安装的物料如何放到PBOM中；加一个现场虚拟工位？==
 ==提前采购分支谁来负责发到SAP？==
-<span style='background:yellow;mso-highlight:yellow'>工艺路线怎么维护？与工位维护的先后顺序</span>
-<span style='background:yellow;mso-highlight:yellow'>手动拉平后数量需要自己算</span>
+工艺路线怎么维护？与工位维护的先后顺序
+手动拉平后数量需要自己算
 方案一：
 1.  正常整机：
     1.  将EBOM发送到制造工艺规划器；

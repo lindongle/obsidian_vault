@@ -1,13 +1,13 @@
 ---
 title: dispatcher使用windows服务 导致dispatch client无法启动
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
 ---
 
 添加两个环境变量
-<span style='color:#333333;background:white'>make sure to set</span><span style='color:red;background:white'> TC_DATA</span><span style='color:#333333; background:white'> and </span><span style='color:red;background:white'>TC_ROOT</span> as system environment variables and  
+make sure to set TC_DATA and TC_ROOT as system environment variables and  
 retest.
 On Windows systems, you can optionally configure the dispatcher client as a Windows
 service.
@@ -15,11 +15,11 @@ Note
 If you run the dispatcher client as a service, Siemens PLM Software recommends
 running the scheduler and modules also as a service.
 1\. If you use Teamcenter, set the TC_DATA and TC_ROOT system variables as appropriate.
-<span style='color:red'>You must set a permanent system variable from My Computer or Control Panel \> Advanced</span>
-<span style='color:red'>system settings \> Environment variables.</span>
-<span style='color:red'>Examples:</span>
-<span style='color:red'>TC_DATA=C:\Progra~1\Siemens\tcdata</span>
-<span style='color:red'>TC_ROOT=C:\Progra~1\Siemens\Teamcenter8</span>
+You must set a permanent system variable from My Computer or Control Panel \> Advanced
+system settings \> Environment variables.
+Examples:
+TC_DATA=C:\Progra~1\Siemens\tcdata
+TC_ROOT=C:\Progra~1\Siemens\Teamcenter8
 Note
 When you install Teamcenter, TEM automatically sets the FMS_HOME system variable.
 The Dispatcher Client service fails to start as a Windows service if you do not

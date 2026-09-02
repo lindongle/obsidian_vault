@@ -1,6 +1,6 @@
 ---
 title: Substance物质
-updated: 2026-06-06T10:09:04
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:50
 ---
 
@@ -17,10 +17,10 @@ created: 2026-07-05T17:04:50
 
 ![image4](a5c493e9c60d4925a57a0691611e6f0d.png)
 其中首选项MATERIALMGMT_substance_composition_tolerance_lower和MATERIALMGMT_substance_composition_tolerance_upper（1e-007，即0.0000001）决定了成分的最大和最小的偏差值。
-<span style='background:yellow;mso-highlight:yellow'>这些首选项定义了百分比偏差值，其中材料的物质成分可以小于或大于完全含量（100％）。 例如：</span>
-<span style='background:yellow;mso-highlight:yellow'>lower如果将下限设置为10％，则表示成分不能少于90％。</span>
-<span style='background:yellow;mso-highlight:yellow'>upper如果上限设置为20％，则表示成分不能超过120％。</span>
-<span style='background:yellow;mso-highlight:yellow'>这些值还将用于确定材料的实际成分不足。</span>
+这些首选项定义了百分比偏差值，其中材料的物质成分可以小于或大于完全含量（100％）。 例如：
+lower如果将下限设置为10％，则表示成分不能少于90％。
+upper如果上限设置为20％，则表示成分不能超过120％。
+这些值还将用于确定材料的实际成分不足。
 移除物质，点击右上方移除属性的图标（物质也为材料的一种特殊属性）即可。
 ![image5](52837a8731a346d5955f98f023b4ea2b.png)
 

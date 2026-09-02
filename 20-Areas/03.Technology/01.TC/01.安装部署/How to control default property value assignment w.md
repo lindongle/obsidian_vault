@@ -1,6 +1,6 @@
 ---
 title: How to control default property value assignment w...
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
@@ -9,7 +9,7 @@ tags:
 已剪辑自: <https://support.sw.siemens.com/zh-CN/knowledge-base/PL8512888>
 Teamcenter does not yet provide a way to assign a default value to a property based on user group, role or other conditional criteria. The most it will do is conditionally attach an LOV (List of Values) to a property. But customers with a large number of custom properties on their items, revisions, forms, etc. would like a way to pre-populate values in the Save interface with default values, and for those default values to change based on which site or group the current user is associated with.  
 
-## <span style='color:#2E75B5'>Solution</span>
+## Solution
 This can be done with the integrations' attribute map, by adding a default tag as shown in the following example.  
 Setup  
 In this example, the customer has attached a custom property called Product Line to his custom item revision. A classic exhaustive LOV controls the allowed values for Product Line:
@@ -30,7 +30,7 @@ Group B Save dialog:
 
 ![image5](cf638e03ef22423b99c99a9c34930c80.png)
 
-## <span style='color:#2E75B5'>Hardware/Software Configuration</span>
+## Hardware/Software Configuration
 Platform: INTL64  
 OS: windows  
 OS Version: xp64  

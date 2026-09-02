@@ -1,12 +1,12 @@
 ---
 title: 在AWC界面输入账号密码后提示服务错误
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>在AWC界面输入账号密码后提示服务错误 </span>
+## 在AWC界面输入账号密码后提示服务错误 
 收录于话题
 ![image1](97219b3c912a4978809388ffb4b5da28.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：张耀伟 审校：徐帅辉«/span»
@@ -51,7 +51,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 在AWC界面输入账号密码后提示服务错误
 最多200字，当前共字

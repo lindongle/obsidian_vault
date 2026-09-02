@@ -1,6 +1,6 @@
 ---
 title: 不登录Teamcenter 客户端的状态下, 直接启动NX Manager的脚本.
-updated: 2026-07-05T17:08:54
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:08:54
 tags:
   - TC
@@ -9,33 +9,33 @@ tags:
 不登录Teamcenter 客户端的状态下, 直接启动NX Manager的脚本.
 2019年7月10日
 0:40
-## <span style='color:#2E75B5'>Teamcentet 技术技巧 </span>
+## Teamcentet 技术技巧 
 ***1. 不登录Teamcenter 客户端的状态下, 直接启动NX Manager的脚本.***
 问题/症状:
 是否有办法直接登录NX Manager, 而不用启动Teamcenter 的客户端?
 解决方法:
 可以的, 有时候登录Teamcenter 会比较慢, 不输入密码也可以减少登录启动的时间, 请看下面的启动登录脚本, 用户可以根据自己的需要修改相应的内容:
-<span style='background:#A5C8FF'>@ECHO OFF</span>
-<span style='background:#A5C8FF'>TITLE NX11 Manager Mode</span>
+@ECHO OFF
+TITLE NX11 Manager Mode
 «span style='background:#A5C8FF'»cd /D d:\\/span»
-<span style='background:#A5C8FF'>rem ====设置用户的环境变量=======</span>
-<span style='background:#A5C8FF'>set NXPATH=d:\siemens\NX11</span>
-<span style='background:#A5C8FF'>set UGII_ENABLE_TC_NAVIGATOR=1</span>
-<span style='background:#A5C8FF'>set UGII_BASE_DIR=%NXPATH%</span>
-<span style='background:#A5C8FF'>set UGII_ROOT_DIR=%UGII_BASE_DIR%\ugii</span>
-<span style='background:#A5C8FF'>set TC_ROOT=C:\Teamcenter10</span>
-<span style='background:#A5C8FF'>set FMS_HOME=C:\Teamcenter10\tccs</span>
-<span style='background:#A5C8FF'>rem ======这是2 层的启动方式======</span>
-<span style='background:#A5C8FF'>set TC_DATA=\\TcServer\tcdata</span>
-<span style='background:#A5C8FF'>rem ======下面的是4 层的启动======</span>
-<span style='background:#A5C8FF'>rem set UGII_UGMGR_COMMUNICATION=http</span>
-<span style='background:#A5C8FF'>rem set UGII_UGMGR_HTTP_URL=http://webserver:8080/tc</span>
-<span style='background:#A5C8FF'>rem ----直接登录, 不需要账号密码----</span>
-<span style='background:#A5C8FF'>set vm_user=infodba</span>
-<span style='background:#A5C8FF'>set vm_pawd=%vm_user%</span>
-<span style='background:#A5C8FF'>%ugii_root_dir%\ugraf.exe -pim=yes -u=%vm_user% -p=%vm_pawd% -nx</span>
-<span style='background:#A5C8FF'>pause</span>
-<span style='background:#A5C8FF'>exit</span>
+rem ====设置用户的环境变量=======
+set NXPATH=d:\siemens\NX11
+set UGII_ENABLE_TC_NAVIGATOR=1
+set UGII_BASE_DIR=%NXPATH%
+set UGII_ROOT_DIR=%UGII_BASE_DIR%\ugii
+set TC_ROOT=C:\Teamcenter10
+set FMS_HOME=C:\Teamcenter10\tccs
+rem ======这是2 层的启动方式======
+set TC_DATA=\\TcServer\tcdata
+rem ======下面的是4 层的启动======
+rem set UGII_UGMGR_COMMUNICATION=http
+rem set UGII_UGMGR_HTTP_URL=http://webserver:8080/tc
+rem ----直接登录, 不需要账号密码----
+set vm_user=infodba
+set vm_pawd=%vm_user%
+%ugii_root_dir%\ugraf.exe -pim=yes -u=%vm_user% -p=%vm_pawd% -nx
+pause
+exit
 
 ***2. 如何解决升级过程中preferences_manager error 10004错误?***
 问题:
@@ -74,17 +74,17 @@ Tc11.5 kit\additional_applications\SPLMLicenseServer_v9.0.0_win_setup.exe
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image3](e4ac7ec2e04f41109309936fea7e2c64.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

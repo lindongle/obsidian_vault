@@ -1,6 +1,6 @@
 ---
 title: oracle12c各个版本对其需要的依赖包及系统参数的修改 - GalenGao - 博客园
-updated: 2026-06-06T10:05:34
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -10,7 +10,7 @@ oracle12c各个版本对其需要的依赖包及系统参数的修改 - GalenGao
 已剪辑自: <http://www.cnblogs.com/galengao/p/5764693.html>
 **本文来自我的github pages博客http://galengao.github.io/ 即www.gaohuirong.cn**
 以下是我在oracle官网上对oracle12c 各个版本的依赖包需求整理
-#### *<span style='color:#5B9BD5'>1、Packages for Oracle Linux 7 and Red Hat Enterprise Linux 7</span>*
+#### *1、Packages for Oracle Linux 7 and Red Hat Enterprise Linux 7*
 The following packages (or later versions) must be installed:
 ![image1](8a3b8a728c1345b28f01e2fdb5885e77.png)
 binutils-2.23.52.0.1-12.el7.x86_64  
@@ -39,7 +39,7 @@ libXtst-1.2.2-1.el7.x86_64
 make-3.82-19.el7.x86_64  
 sysstat-10.1.5-1.el7.x86_64
 ![image1](8a3b8a728c1345b28f01e2fdb5885e77.png)
-#### *<span style='color:#5B9BD5'>2、Packages for Oracle Linux 6 and Red Hat Enterprise Linux 6</span>*
+#### *2、Packages for Oracle Linux 6 and Red Hat Enterprise Linux 6*
 The following packages (or later versions) must be installed:
 ![image1](8a3b8a728c1345b28f01e2fdb5885e77.png)
 bc
@@ -82,7 +82,7 @@ sysstat-9.0.4-11.el6 (x86_64)
 smartmontools-5.43-1.el6.x86_64
 
 ![image1](8a3b8a728c1345b28f01e2fdb5885e77.png)
-#### *<span style='color:#5B9BD5'>3、Package requirements for Oracle Linux 5 and Red Hat Enterprise Linux 5</span>*
+#### *3、Package requirements for Oracle Linux 5 and Red Hat Enterprise Linux 5*
 The following packages (or later versions) must be installed:
 ![image1](8a3b8a728c1345b28f01e2fdb5885e77.png)
 binutils-2.17.50.0.6  
@@ -121,7 +121,7 @@ sysstat-7.0.2
 ==============================================
 Oracle Preinstallation RPM for your Oracle Linux 6 kernel (oracle-rdbms-server-12cR1-preinstall).  
 Oracle Validated RPM (oracle-validated) for your Oracle Linux 5 kernel.
-#### *<span style='color:#5B9BD5'>before install oracle software needs update OS parameters</span>*
+#### *before install oracle software needs update OS parameters*
 a、vi /etc/security/limits.conf
 For each installation software owner, check the resource limits for installation, using the following recommended ranges:
 Table 5-1 Installation Owner Resource Limit Recommended Ranges

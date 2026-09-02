@@ -1,6 +1,6 @@
 ---
 title: Apache24发布多端口网站
-updated: 2026-06-06T10:35:30
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:51
 ---
 
@@ -22,26 +22,26 @@ created: 2026-07-05T17:04:51
 2、修改D:\Apps\Apache24\conf\extra\httpd-vhosts.conf文件，
 [httpd-vhosts.conf](25043b2b530e4c53a028b7f71c22ff5a.conf)
 1）直接在最后添加以下内容：
-\<VirtualHost \*:<span style='color:red'>80</span>\>
+\<VirtualHost \*:80\>
 ServerAdmin webmaster@dummy-host.localhost
-DocumentRoot "<span style='color:red'>D:\Siemens\WebTier\Web_Tier\RichClient\webapp_root\otwwe</span>b"
-ServerName <span style='color:red'>172.16.254.39</span>
+DocumentRoot "D:\Siemens\WebTier\Web_Tier\RichClient\webapp_root\otwweb"
+ServerName 172.16.254.39
 ErrorLog "logs/dummy-host.localhost-error.log"
 CustomLog "logs/dummy-host.localhost-access.log" common
-\<Directory "<span style='color:red'>D:\Siemens\WebTier\Web_Tier\RichClient\webapp_root\otwweb</span>"\>
+\<Directory "D:\Siemens\WebTier\Web_Tier\RichClient\webapp_root\otwweb"\>
 Options FollowSymLinks
 AllowOverride None
 Require all granted
 \</Directory\>
 \</VirtualHost\>
 
-\<VirtualHost \*:<span style='color:red'>8090</span>\>
+\<VirtualHost \*:8090\>
 ServerAdmin webmaster@dummy-host.localhost
-DocumentRoot "<span style='color:red'>D:\Siemens\WebTier\Web_Tier\RichClientTest\webapp_root\otwweb</span>"
-ServerName <span style='color:red'>172.16.254.39</span>
+DocumentRoot "D:\Siemens\WebTier\Web_Tier\RichClientTest\webapp_root\otwweb"
+ServerName 172.16.254.39
 ErrorLog "logs/dummy-host.localhost-error.log"
 CustomLog "logs/dummy-host.localhost-access.log" common
-\<Directory "<span style='color:red'>D:\Siemens\WebTier\Web_Tier\RichClientTest\webapp_root\otwweb</span>"\>
+\<Directory "D:\Siemens\WebTier\Web_Tier\RichClientTest\webapp_root\otwweb"\>
 Options FollowSymLinks
 AllowOverride None
 Require all granted

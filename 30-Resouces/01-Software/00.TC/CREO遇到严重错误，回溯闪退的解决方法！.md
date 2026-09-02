@@ -1,6 +1,6 @@
 ---
 title: CREO遇到严重错误，回溯闪退的解决方法！
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -10,7 +10,7 @@ CREO遇到严重错误，回溯闪退的解决方法！
 2019年10月26日
 0:43
 
-## <span style='color:#2E75B5'>CREO遇到严重错误，回溯闪退的解决方法！ </span>
+## CREO遇到严重错误，回溯闪退的解决方法！ 
 CREO
 | CREO模块: | Creo Parametric   |
 |:---------:|--------------------|
@@ -32,7 +32,7 @@ CREO
 <p>«span style='color:black'»<br />
 <br />
 下面看看如果解决这个问题：«/span»</p>
-<h4 id="span-stylecolorff6666text-aligncenter本帖隐藏的内容span"><em><span style='color:#FF6666;text-align:center'>本帖隐藏的内容</span></em></h4>
+<h4 id="span-stylecolorff6666text-aligncenter本帖隐藏的内容span"><em>本帖隐藏的内容</em></h4>
 <p>«span style='color:black'»PTC官方给出的解决方法原文是这样的：<br />
 Our systems also met the min requirements and the only way to keep it from crashing was eliminating the video card by changing thegraphics config to "win32_gdi" instead of the default "opengl". This made rotation choppy and caused some flashing on certain things. 90% of the traceback.logs came up with the atio6axx error.<br />
 Ended up putting a certified graphics card in a couple of the PCs and haven't had any crashes of any kind in over 2 months. Hope that helps.«/span»</p>
@@ -57,7 +57,7 @@ Ended up putting a certified graphics card in a couple of the PCs and haven't ha
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

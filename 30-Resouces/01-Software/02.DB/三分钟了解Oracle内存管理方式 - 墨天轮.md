@@ -1,6 +1,6 @@
 ---
 title: 三分钟了解Oracle内存管理方式 - 墨天轮
-updated: 2026-06-13T15:37:52
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 ---
 
@@ -17,7 +17,7 @@ MEMORY_TARGET用于设置目标内存大小，Oracle会尝试将内存稳定在�
 MEMORY_MAX_TARGET用于设置最大允许的内存大小，Oracle以此来限制内存使用的最大值。如果你修改了该参数，你需要重启数据库。
 在修改以上两个值时需要特别注意，**MEMORY_MAX_TARGET必须大于或者等于MEMORY_TARGET**。
 
-### <span style='color:#5B9BD5'>如何调整内存</span>
+### 如何调整内存
 调整内存的命令如下：
 ALTER SYSTEM SETMEMORY_MAX_TARGET = 1000M SCOPE = SPFILE;
 ALTER SYSTEM SET MEMORY_TARGET =1000MSCOPE= SPFILE;
@@ -27,7 +27,7 @@ SPFILE：指修改服务器参数文件中的数据。
 MEMORY：指修改内存中的数据，对于要重启数据库才生效的参数，该值不可用
 BOTH：指同时修改服务器参数文件和内存中的数据。
 
-### <span style='color:#5B9BD5'>什么情况下使用自动内存管理</span>
+### 什么情况下使用自动内存管理
 Oracle官方推荐SGA+PGA的内存总大小如果小于或等于4GB，建议使用自动内存管理。如果你的SGA+PGA大于4G也使用了自动内存管理，那么建议最好设置SGA_TARGET和PGA_AGGREGATE_TARGET的值。那么这些值将作为SGA和PGA的最小值。该设置主要是为了避免过大的内存抖动。
 
 自动共享内存管理
@@ -38,8 +38,8 @@ SGA_TARGET用于设置共享内存目标大小，Oracle会努力维持共享内�
 
 SGA_MAX_SIZE用于设置最大允许的共享内存大小，Oracle以此来限制共享内存的最大值，如果你修改了该参数，你需要重启数据库。
 在修改以上两个值时需要注意，**SGA_MAX_SIZE必须大于或者等于SGA_TARGET**。
-### <span style='color:#5B9BD5'> </span>
-### <span style='color:#5B9BD5'>如何调整内存</span>
+###  
+### 如何调整内存
 调整内存的命令如下：
 ALTER SYSTEM SET SGA_TARGET =1000M SCOPE = SPFILE;
 ALTER SYSTEM SET SGA_MAX_SIZE =1000MSCOPE= SPFILE;
@@ -52,8 +52,8 @@ SPFILE：指修改服务器参数文件中的数据。
 MEMORY：指修改内存中的数据，对于要重启数据库才生效的参数，该值不可用
 BOTH：指同时修改服务器参数文件和内存中的数据。
 
-### <span style='color:#5B9BD5'>什么情况下使用自动共享内存管理</span>
-### <span style='color:#5B9BD5'>Oracle官方推荐SGA+PGA的总大小大于4GB，建议使用自动共享内存管理。如果我们启用了自动共享内存管理，Oracle会自动的调整SGA各组件大小，一般我们并不需要干预。但如果我们知道各组件高峰期时这些值的使用量，那么我们也可以为这些组件设置指定值，这些值将作为组件的最小值。从而避免高峰期时不必要的内存调整</span>
+### 什么情况下使用自动共享内存管理
+### Oracle官方推荐SGA+PGA的总大小大于4GB，建议使用自动共享内存管理。如果我们启用了自动共享内存管理，Oracle会自动的调整SGA各组件大小，一般我们并不需要干预。但如果我们知道各组件高峰期时这些值的使用量，那么我们也可以为这些组件设置指定值，这些值将作为组件的最小值。从而避免高峰期时不必要的内存调整
 
 手动共享内存管理
 
@@ -69,19 +69,19 @@ BOTH：指同时修改服务器参数文件和内存中的数据。
 ****
 **STREAMS_POOL_SIZE**：流池，存储缓冲队列消息的内存池。
 
-### <span style='color:#5B9BD5'>什么情况下使用手动共享内存管理</span>
+### 什么情况下使用手动共享内存管理
 不推荐使用手动共享内存管理，首先你需要对内存的各参数的作用非常的了解。其次你必须对系统各阶段内存的使用情况非常了解。并且由于不同时期对各个组件内存使用的多少可能有较大的差异，这极大的增加了管理成本。所以不推荐使用手动共享内存管理。
 
 自动PGA内存管理
 
 自动PGA内存管理的英文全称为Automatic PGA Memory Management。当使用自动PGA内存管理时，Oracle会自动的管理实例PGA的内存总量。我们可以通过设置初始化参数PGA_AGGREGATE_TARGET为非0值来开启自动PGA内存管理。Oracle会尝试确保分配给所有数据库服务器进程和后台进程的PGA内存总量不会超过这个目标，但实际使用时可能超过该设置。当我们使用自动PGA内存管理时，SQL工作区的大小是自动的，并且会忽略所有\*\_AREA_SIZE初始化参数
 **注意：Oracle推荐使用自动PGA内存管理，不推荐使用手动PGA内存管理**
-## <span style='color:#2E75B5'> </span>
+##  
 手动PGA内存管理
 
 手动PGA内存管理的英文全称为Manual PGA Memory Management。当自动内存管理被禁用并且PGA_AGGREGATE_TARGET被设置为0时，将启用手动PGA内存管理。使用手动PGA内存管理时，意味着你需要手工设置\*\_AREA_SIZE初始化参数。
 **注意：Oracle推荐使用自动PGA内存管理，不推荐使用手动PGA内存管理**
-## <span style='color:#2E75B5'> </span>
+##  
 如何分配内存
 
 不管是采用自动内存管理还是自动共享内存管理+自动PGA内存管理。在分配内存时，普遍的做法是分配机器总内存的50%~75%。例如：机器内存是128G,SGA+PGA合计会分配64G~96G。需要注意的是50%~75%只是一个普遍值，但不是个绝对值。机器内存只有4G的情况下，分配50%是很有必要的，但是如果机器内存有512G，对于只部署数据库的机器来说分配75%仍然有大量的内存未使用。

@@ -1,6 +1,6 @@
 ---
 title: Oracle内存管理（修改SGA与PGA） - 墨天轮
-updated: 2026-06-05T23:35:26
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:50
 ---
 
@@ -9,7 +9,7 @@ Oracle内存管理（修改SGA与PGA） - 墨天轮
 0:57
 
 已剪辑自: <https://www.modb.pro/db/1788096417373442048>
-#### *<span style='color:#5B9BD5'>目录：</span>*
+#### *目录：*
 - 
 
 - Oracle11g数据库内存管理  
@@ -54,8 +54,8 @@ Oracle内存管理（修改SGA与PGA） - 墨天轮
 
 - （6）、重启数据库：  
 
-### <span style='color:#5B9BD5'>Oracle11g数据库内存管理</span>
-#### *<span style='color:#5B9BD5'>一、Oracle数据库内存管理概念：</span>*
+### Oracle11g数据库内存管理
+#### *一、Oracle数据库内存管理概念：*
 内存管理涉及到根据数据库变化的需要为Oracle实例内存结构保持最佳大小,Oracle数据库根据与内存相关的初始化参数的设置来管理内存。  
 内存管理有三种基本方式：
 **AMM**(自动内存管理)  
@@ -67,7 +67,7 @@ Automatic shared memory management:
 **Manual memory management**(手动内存管理)
 - 不是设置总内存大小,而是设置许多初始化参数来分别管理SGA和实例PGA的组件
 如果使用数据库配置助手（DBCA）创建数据库并选择基本安装选项，则默认为AMM（自动内存管理）
-#### *<span style='color:#5B9BD5'>二、内存管理方式的切换：</span>*
+#### *二、内存管理方式的切换：*
 **MEMORY_TARGET ：**  
 **[操作系统](https://link.csdn.net/?target=https%3A%2F%2Fauth.huaweicloud.com%2Fauthui%2Fsaml%2Flogin%3FxAccountType%3Dcsdndev_IDP%26isFirstLogin%3Dfalse%26service%3Dhttps%253A%252F%252Flab.huaweicloud.com%252Fexperiment-detail_2384%253Futm_source%253Dhwc-csdn%2526utm_medium%253Dshare-op%2526utm_campaign%253D%2526utm_content%253D%2526utm_term%253D%2526utm_adplace%253DAdPlace070851)上 Oracle 所能使用的最大内存值（动态参数），是PAG 和SGA的总和。**
 1、AMM(自动内存管理)
@@ -87,15 +87,15 @@ memory_target=0 and sga_target=0，指定 share_pool_size 、db_cache_size 等 s
 （ORA-00843 ORA-00849 Trying to Change SGA_TARGET with MEMORY_MAX_TARGET=0 Being Active (Doc ID 1397761.1)）  
 SQL\> alter system reset memory_max_target;  
 SQL\> alter system set memory_target=0;
-#### *<span style='color:#FA0000'>三、修改实例SGA与PGA大小（ASMM）</span>*
-##### <span style='color:#2E75B5'>1、使用sqlplus命令在数据库中修改</span>
+#### *三、修改实例SGA与PGA大小（ASMM）*
+##### 1、使用sqlplus命令在数据库中修改
 **思路**：首先通过spfile指定路径创建一个pfile作为备份，然后在数据库中进行内存参数调整操作，最后重启数据库。
 在对数据库参数修改前创建pfile文件作为spfile备份
 SQL\> create pfile='/tmp/pfile20220706.ora' from spfile;  
 
 File created.
 复制
-###### *<span style='color:#2E75B5'>（1）、查看memory_target与memory_max_target大小：</span>*
+###### *（1）、查看memory_target与memory_max_target大小：*
 SQL\> show parameter memory  
 
 NAME TYPE VALUE  
@@ -107,7 +107,7 @@ shared_memory_address integer 0
 SQL\>  
 \#根据输出的结果显示 memory_max_target=0 与 memory_target=0 说明目前已经是 ASMM 模式直接修改sga与pga大小即可
 复制
-###### *<span style='color:#2E75B5'>（2）、(如果值非零) 修改memory_target与memory_max_target大小：</span>*
+###### *（2）、(如果值非零) 修改memory_target与memory_max_target大小：*
 \#如果memory_max_target非0 与 memory_target非0，使用下面命令将值改为0  
 1、修改memory_max_target大小：  
 SQL\> alter system set memory_max_target=0 scope=spfile;  
@@ -119,7 +119,7 @@ SQL\> alter system set memory_target=0 scope=spfile;
 
 System altered.
 复制
-###### *<span style='color:#2E75B5'>（3）、修改SGA与PGA大小：</span>*
+###### *（3）、修改SGA与PGA大小：*
 1、修改sga大小：  
 SQL\> alter system set sga_max_size=4096M scope=spfile;  
 
@@ -135,7 +135,7 @@ SQL\> alter system set pga_aggregate_target=1024M scope=spfile;
 System altered.
 复制
 因为将参数修改写在了spfile中，在数据库重启后参数生效
-###### *<span style='color:#2E75B5'>（4）、重启数据库：</span>*
+###### *（4）、重启数据库：*
 SQL\> shutdown immediate  
 Database closed.  
 Database dismounted.  
@@ -152,7 +152,7 @@ Database mounted.
 Database opened.  
 SQL\>
 复制
-###### *<span style='color:#2E75B5'>（5）、验证SGA与PGA大小：</span>*
+###### *（5）、验证SGA与PGA大小：*
 SQL\> show parameter sga  
 
 NAME TYPE VALUE  
@@ -168,10 +168,10 @@ NAME TYPE VALUE
 pga_aggregate_target big integer 200M  
 SQL\>
 复制
-##### <span style='color:#2E75B5'>2、通过修改pfile启动数据库在写入到spfile中</span>
+##### 2、通过修改pfile启动数据库在写入到spfile中
 **思路**：首先通过spfile指定路径创建一个pfile，修改pfile中内存参数—\>关闭数据库—\>使用pfile启动数据库—\>通过该pfile创建spfile—\>重启数据库  
 首先：创建spfile备份
-###### *<span style='color:#2E75B5'>（1）、创建pfile文件：</span>*
+###### *（1）、创建pfile文件：*
 \#/tmp/pfile20220706.ora是通过当前spfile创建  
 SQL\> create pfile='/tmp/pfile20220706.ora' from spfile;  
 
@@ -179,7 +179,7 @@ File created.
 
 SQL\>
 复制
-###### *<span style='color:#2E75B5'>（2）、编辑pfile文件：</span>*
+###### *（2）、编辑pfile文件：*
 vi /tmp/pfile20220706.ora
 复制
 若在/tmp/pfile20220706.ora文件中存在memory_max_target与memory_target参数，屏蔽或删除即可。
@@ -215,7 +215,7 @@ orcl.\_\_streams_pool_size=0
 \*.sga_target=2684354560#sga_target大小  
 \*.undo_tablespace='UNDOTBS1'
 复制
-###### *<span style='color:#2E75B5'>（3）、通过pfile启动实例：</span>*
+###### *（3）、通过pfile启动实例：*
 关闭数据库实例
 SQL\> shutdown immediate  
 Database closed.  
@@ -236,7 +236,7 @@ Database mounted.
 Database opened.  
 SQL\>
 复制
-###### *<span style='color:#2E75B5'>（4）、验证SGA与PGA大小：</span>*
+###### *（4）、验证SGA与PGA大小：*
 \#查看pga大小：  
 SQL\> show parameter pga  
 
@@ -264,12 +264,12 @@ memory_target big integer 0
 shared_memory_address integer0  
 SQL\>
 复制
-###### *<span style='color:#2E75B5'>（5）、通过pfile创建spfile：</span>*
+###### *（5）、通过pfile创建spfile：*
 SQL\> create spfile from pfile='/tmp/pfile20220706.ora';  
 
 File created.
 复制
-###### *<span style='color:#2E75B5'>（6）、重启数据库：</span>*
+###### *（6）、重启数据库：*
 SQL\> shutdown immediate  
 Database closed.  
 Database dismounted.  

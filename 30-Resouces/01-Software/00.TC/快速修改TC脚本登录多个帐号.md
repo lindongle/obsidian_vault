@@ -1,6 +1,6 @@
 ---
 title: 快速修改TC脚本登录多个帐号
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -10,17 +10,17 @@ tags:
 2019年10月26日
 0:27
 
-## <span style='color:#2E75B5'>快速修改TC脚本登录多个帐号 </span>
+## 快速修改TC脚本登录多个帐号 
 ![image1](4433e0904885427383e1d339255bf785.jpg)
-<span style='color:white'>**作者：吴明敏 审校：夏春飞**</span>
+**作者：吴明敏 审校：夏春飞**
 **适用版本：TC11**
-<span style='color:#59C3F9'>“</span>
+“
 在Teamcenter二层客户端配置使用的过程中，管理员经常会有登录多个TC帐号以便快速进行操作测试的需求
-<span style='color:#59C3F9'>”</span>
+”
 但是TC二层客户端默认情况下只能登录一个帐号，管理员进行测试时非常不方便。一般我们通过配置环境管理器去实现这个功能需求，如下图1，此处不对此方法做过多累述。
 ![image2](7c33a35bd03b419b8700a6c68f897bac.png)
 **图1**
-<span style='color:black'>这里给大家介绍一种方法，通过修改TC脚本快速实现登录多个帐号需求。</span>
+这里给大家介绍一种方法，通过修改TC脚本快速实现登录多个帐号需求。
 ![image3](11f0d5df8c264fe39402a5558a18c58d.png)
 找到“TC_ROOT”目录下“iiopservers”文件夹中的start_imr.bat文件和tcserver.xml文件，如图2
 ![image4](a4e0ec9237f5498fa07d1523d3a9b218.jpg)
@@ -53,7 +53,7 @@ activation_mode="PER_CLIENT"，如图4
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

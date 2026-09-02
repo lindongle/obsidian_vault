@@ -1,6 +1,6 @@
 ---
 title: (30条消息) AD域建设管理（一）| 安装windows server2019、AD域、AD域证书...
-updated: 2026-06-06T10:05:34
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -9,12 +9,12 @@ created: 2026-07-05T17:04:53
 最后更新时间:2020/8/5  
 更新说明：1.安装配置了[虚拟机](https://so.csdn.net/so/search?q=%E8%99%9A%E6%8B%9F%E6%9C%BA&spm=1001.2101.3001.7020)、AD域、AD域证书服务，并将域提升为控制器；  
 2.简单介绍下AD DS的用户和计算机、ADSI编辑器；
-## <span style='color:#2E75B5'>1.环境介绍及前言</span>
+## 1.环境介绍及前言
 虚拟机ip
 |                    |                |
 |---------------------|-----------------|
 | windows server 2019 | 192.168.255.222 |
-## <span style='color:#2E75B5'>2.安装配置win server 2019虚拟机</span>
+## 2.安装配置win server 2019虚拟机
 步骤1：VMware操作(蛮简单的)
 1.  用VMware\>新建虚拟机\>典型\>稍后安装系统\>Windows Server 2016\>虚拟机名称位置(修改下)\>容量(默认)\>完成;
 2.  编辑虚拟机设置\>CD/DVD(SATA)\>使用镜像文件(server 2019镜像)\>确定\>开启虚拟机傻瓜安装不要怂;  
@@ -41,10 +41,10 @@ created: 2026-07-05T17:04:53
 ![image6](f21df39d9a394b228f1e2e96615c6ff4.png)
 重启后生效：
 ![image7](6a8c27f0b75a442a89888d43659c3983.png)
-## <span style='color:#2E75B5'>3.安装AD域服务、AD证书服务</span>
+## 3.安装AD域服务、AD证书服务
 1.  安装AD域服务，并将主机升级为域控主机;
 2.  安装AD域证书服务并配置生成秘钥；
-### <span style='color:#5B9BD5'>3.1.安装AD域服务</span>
+### 3.1.安装AD域服务
 步骤1：服务器管理器\>管理\>添加角色和功能
 ![image7](6a8c27f0b75a442a89888d43659c3983.png)
 步骤2：确认服务器所需配置
@@ -67,7 +67,7 @@ created: 2026-07-05T17:04:53
 ![image13](0ef2b2143506467b92827cc5e4879fea.png)
 步骤8：勾选允许重启服务器\>安装
 ![image14](3474a960fcec41e28319098189b406aa.png)
-### <span style='color:#5B9BD5'>3.2.配置AD域服务(将此服务器提升为域控制器)</span>
+### 3.2.配置AD域服务(将此服务器提升为域控制器)
 步骤1：添加新林\>根域名 randolph.com\>下一步  
 填写根域名，可以先了解下命名规范： [Active Directory 中计算机、域、站点和 OU 的命名约定](https://support.microsoft.com/zh-cn/help/909264/naming-conventions-in-active-directory-for-computers-domains-sites-and)
 ![image15](10dd4d4adaa447db86f1219839defcf0.png)
@@ -85,7 +85,7 @@ created: 2026-07-05T17:04:53
 ![image21](b94030c21bad4ffaa593872b217c45ba.png)
 步骤8：安装重启，服务器就变成了域控制器了
 ![image22](bccd230402c049038d8a9469766ba3d5.png)
-### <span style='color:#5B9BD5'>3.3.安装AD域证书服务</span>
+### 3.3.安装AD域证书服务
 重复的步骤在3.1中已经写到，这里只标出需要注意的地方
 步骤1：选择AD证书服务\>下一步
 ![image23](40844cdb27ac4d228dd71c536bb345b0.png)
@@ -95,7 +95,7 @@ created: 2026-07-05T17:04:53
 ![image25](bf63d8ff37f0404abac3493122466e1e.png)
 步骤4：勾选允许重启服务器\>点击安装即可
 ![image26](dc8459918e554ecf925e6c93c46a340b.png)
-### <span style='color:#5B9BD5'>3.4.配置AD域证书服务</span>
+### 3.4.配置AD域证书服务
 步骤1：检查需要配置AD证书服务
 ![image27](d553e51a6d624f10a6b4c0146f938ede.png)
 步骤2：默认凭据\>下一步
@@ -133,13 +133,13 @@ created: 2026-07-05T17:04:53
 安装完成后，测试是可以636端口访问的，这样就可以用LDAP3远程批量修改密码了。
 - 1
 - 2
-## <span style='color:#2E75B5'>4.AD DS的用户和计算机、ADSI编辑器</span>
-### <span style='color:#5B9BD5'>4.1.AD DS的用户和计算机</span>
+## 4.AD DS的用户和计算机、ADSI编辑器
+### 4.1.AD DS的用户和计算机
 服务器管理器\>AD DS\>右键\>Actice Directory用户和计算机
 ![image40](c6d1617a3135439685109d3978bf6a36.png)
 记得点击查看\>勾选高级功能
 ![image41](2344267de6484dc5b82c1ccf22c70532.png)
-### <span style='color:#5B9BD5'>4.2.ADSI编辑器</span>
+### 4.2.ADSI编辑器
 打开方式上小结可以看到\>更多操作\>连接到\>直接确定默认即可
 ![image42](d9fac2fd85bf4615b47fbfcf5761234c.png)
 之后我们用程序管理AD域账号的效果都将在这里呈现

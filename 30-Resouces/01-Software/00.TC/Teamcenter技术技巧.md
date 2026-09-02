@@ -1,12 +1,12 @@
 ---
 title: Teamcenter技术技巧
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Teamcenter技术技巧 </span>
+## Teamcenter技术技巧 
 ***1. 安装低版本的安全会话代理应用时出现错误***
 问题：
 在已安装有TC11.5 或者更高版本的安全会话代理应用的客户端电脑上，安装低版本的安全会话代理应用时出现错误
@@ -47,17 +47,17 @@ fmsmaster clientmap需要更新来包含该地址范围
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image10](3a3b6e7295e84509830ef7aab739585c.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

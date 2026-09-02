@@ -1,6 +1,6 @@
 ---
 title: 部署中心安装及配置BGSGS
-updated: 2026-08-11T10:14:03
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:48
 ---
 
@@ -26,7 +26,7 @@ F:\DeploymentCenter_4.2.0.1\deployment_center\>deployment_center.bat -install -s
 ![image3](79a1391b5c654cb4bdfe30ab51a0ea08.png)
 环境类型最好选择单项式，如果在虚拟机中，否则占用CPU很大；
 ![image4](03e61880e9444031a71edbc563e415fe.png)
-勾选一下两个，<span style='color:#FA0000'>不要全选</span>
+勾选一下两个，不要全选
 ![image5](2dfee907408b431ca5de801203822df9.png)
 
 ![image6](44e8c574c01d4821bf12eab6275d5339.png)

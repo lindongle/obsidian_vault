@@ -1,6 +1,6 @@
 ---
 title: 验证双机-集群部署及TC基础环境安装
-updated: 2026-06-13T22:07:03
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:04:57
 tags:
   - 联创
@@ -18,7 +18,7 @@ IP:172.16.254.201
 心跳IP:172.1.1.10
 主机名：PLMSource1
 集群IP：172.16.254.220
-<span style='color:red'>集群名称：PLMSource</span>
+集群名称：PLMSource
 Administrator密码123
 Infodba/pdm_1234
 3、PLM02
@@ -39,12 +39,12 @@ Infodba/pdm_1234
 安装：
 **一、安装域控服务器、添加用户PLM--略**
 1）部署域控环境-略
-<span style='color:#BFBFBF'>3）创建共享磁盘（仲裁盘1G，共享盘2\*2G）</span>
+3）创建共享磁盘（仲裁盘1G，共享盘2\*2G）
 2）安装starwind软件，新建Server，新建Target，新建虚拟磁盘（仲裁盘、oracledata共享盘、FMSVolume共享盘）--正式环境，有存储，此过程不需要。
 StarWind 模仿 iSCSI 进行网络存储管理
 ![image2](5d925e19f7db476b989b2730540b70b7.png)
 
-<span style='color:red'>如果两台同时连接，则添加target时，必须勾选允许多路径交互连接（集群）。否则只能连接一台，除非一台关机。</span>
+如果两台同时连接，则添加target时，必须勾选允许多路径交互连接（集群）。否则只能连接一台，除非一台关机。
 **二、PLM01**
 1）加域，并将登陆账号添加本地Administrators组（登陆本地Administrator添加，需登陆域管理员）
 2）配置IP及心跳线，心跳线，DNC去注册、禁用NETBOIS，修改手动全工为1G全工。
@@ -120,8 +120,8 @@ StarWind 模仿 iSCSI 进行网络存储管理
 
 七、安装卷服务器
 跟oracle安装方式一致，装完修改mastserfms配置文件，主机改为PLMFMS角色的虚拟IP 172.16.254.204。装完手动停止服务。再切换到另一节点一样路径一样配置。
-<span style='color:red'>1）安装介质不能使用VMware共享方式，因为域环境下，管理员权限不识别网络磁盘，需要拷贝到每个服务器的本地磁盘中。</span>
-<span style='color:red'>2）FSC ID统一命名为FSC_TC_infodba</span>
+1）安装介质不能使用VMware共享方式，因为域环境下，管理员权限不识别网络磁盘，需要拷贝到每个服务器的本地磁盘中。
+2）FSC ID统一命名为FSC_TC_infodba
 ![image23](291ce6336a274b48addac670e03dc2e1.png)
 
 ![image24](0d7b74af532e448097a813629dff105a.png)
@@ -133,19 +133,19 @@ StarWind 模仿 iSCSI 进行网络存储管理
 ![image26](bb369261f2044cd1ba7f974a31e9f29b.png)
 
 十、安装企业层、客户端、BMIDE、J2EE等
-<span style='color:red'>先安装vc_redist.x64.exe 2015 否则安装vis可能报错</span>
-<span style='color:red'>安装过程不要移动集群角色的节点，保存集群服务一直不动。</span>
-<span style='color:red'>按照联创测试环境中的模块安装的所有模块（BMIDE模板也是），尽量1、先安装企业层（去掉文件服务-FSC cache的勾选）及2层客户端。2、打补丁后再安装其他的。3、最后安装安全服务。</span>
+先安装vc_redist.x64.exe 2015 否则安装vis可能报错
+安装过程不要移动集群角色的节点，保存集群服务一直不动。
+按照联创测试环境中的模块安装的所有模块（BMIDE模板也是），尽量1、先安装企业层（去掉文件服务-FSC cache的勾选）及2层客户端。2、打补丁后再安装其他的。3、最后安装安全服务。
 ![image27](27a1ef5baccf464c980e0267f4cda21a.png)
-<span style='color:black'>安装选择项：</span>
+安装选择项：
 [configuration.xml](554721046c0f4a8fb4abb0dfd833e362.xml)
-<span style='color:red'>安装J2EE时，选择的FSCid**==不要==**跟卷服务器的FSCID一样，否则企业层FSC无法启动，且不会产生临时卷信息，查看器查看数据集无法查看。默认即可。下图为示例</span>
+安装J2EE时，选择的FSCid**==不要==**跟卷服务器的FSCID一样，否则企业层FSC无法启动，且不会产生临时卷信息，查看器查看数据集无法查看。默认即可。下图为示例
 ![image28](25216e2309c2424ba2f90da31a664fe6.png)
-<span style='color:red'>注：FSCID填写pool池fscid（非主FSC）,不能和主FSCid一样。**下面地址填写非主FSC服务的地址**</span>
+注：FSCID填写pool池fscid（非主FSC）,不能和主FSCid一样。**下面地址填写非主FSC服务的地址**
 
 ![image29](d3afbb3f5c074734b143b179af5f6d31.png)
 
-<span style='color:red'>**目录将共享映射为网络磁盘。不要用\\**</span>
+**目录将共享映射为网络磁盘。不要用\\**
 
 ![image30](dbfd2205e5614f758e20f8d0ed5f6ab8.png)
 
@@ -154,7 +154,7 @@ StarWind 模仿 iSCSI 进行网络存储管理
 ![image32](6f9f80f1bdbf4395ac51f363bfc24dcc.png)
 
 ![image33](f0d27c52e3904fc0a1820c0cd57cd6c3.png)
-<span style='color:red'>安装完成企业服务器后，将节点1的FSCmaster配置文件复制更新到节点2的对应位置并覆盖，重启节点2的FSC服务（确保PLMFSC角色所有权在节点1的时候进行覆盖更新重启fsc服务）。</span>
+安装完成企业服务器后，将节点1的FSCmaster配置文件复制更新到节点2的对应位置并覆盖，重启节点2的FSC服务（确保PLMFSC角色所有权在节点1的时候进行覆盖更新重启fsc服务）。
 \<volume id="00eb5b1f05a58fe32efe" enterpriseid="-1880936706" root="\\172.16.254.204\G\$\plmvolume" priority="0" /\>
 \</fsc\>
 ![image34](8c21cc339a1c4b5d8767878fc787bbe9.png)

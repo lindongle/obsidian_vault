@@ -1,6 +1,6 @@
 ---
 title: SVN 项目版本管理之trunk(主线) branch(分支) tag(标记)使用 - M义薄云天的...
-updated: 2026-07-05T17:09:13
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:09:13
 ---
 
@@ -8,18 +8,18 @@ SVN 项目版本管理之trunk(主线) branch(分支) tag(标记)使用 - M义�
 2019年7月27日
 0:07
 已剪辑自: <https://blog.csdn.net/weixin_39494923/article/details/83211104>
-### <span style='color:#5B9BD5'>应用场景：</span>
+### 应用场景：
 1.  优异的跨平台支持，对windows平台支持非常友好。
 2.  简单易用，安装后稍微培训下就知道怎么操作。
 3.  代码，需求，文档，涉及稿都可以用svn进行管理，适合不同部门的技术非技术的同事协作。
 4.  当研发成本比较低，协作开发人数不多，开发人员对于版本管理的水平参差不齐的时候，或者对于代码的安全性要求更高一点的时候，适合用svn
-### <span style='color:#5B9BD5'>SVN仓库目录结构Repository：</span>
+### SVN仓库目录结构Repository：
 truck(主干\|主线\|主分支)：是用来做主方向开发的，新功能的开发应放在主线中，当模块开发完成后，需要修改，就用branch；  
 branch(分支)：分支开发和主线开发是可以同时进行的，也就是并行开发，分支通常用于修复bug时使用；  
 tag(标记)：用于标记某个可用的版本，可以标记已经上线发布的版本，也可以标记正在测试的版本，通常是只读的；
 以上权限是通过服务端右键 Properties forxx目录来控制该目录权限以及赋予权限（前提是添加用户，分组来分配对应的权限）
-### <span style='color:#5B9BD5'>SVN具体操作步骤：</span>
-### <span style='color:#5B9BD5'>一：创建本地仓库</span>
+### SVN具体操作步骤：
+### 一：创建本地仓库
 1\. 创建目录结构D:\TortoiseSVN\Repository\XXX
 2\. 在该目录结构上右键
 ---\> TortoiseSVN
@@ -30,7 +30,7 @@ tag(标记)：用于标记某个可用的版本，可以标记已经上线发布
 最后如下：（branches,tags,trunk是手动创建的文件结构）
 ![image1](b05e559a9ef04524a5f789f240c02e89.png)
 备注：还有一种是通过直接在VisualSvn Server上直接在Repository右键Create New Repository下一步选择single-projiect-reprository进行创建带有文件结构的仓库，然后update到本地也是一样的；
-### <span style='color:#5B9BD5'>二：将项目上传到SVN上</span>
+### 二：将项目上传到SVN上
    桌面(或者文件下空白处)右键  
 ---\> TortoiseSVN
 ---\>repo-browser--\> URL: <file:///D:/TortoiseSVN/Repository/xxx>
@@ -40,7 +40,7 @@ tag(标记)：用于标记某个可用的版本，可以标记已经上线发布
 ---\> 选中要上传到SVN的项目的最外层目录，输入日志
 ---\> Ok  
 备注：Check Out 检出代码就不需要讲啦
-### <span style='color:#5B9BD5'>三：开发周期</span>
+### 三：开发周期
 1.因为项目刚建立，这是在开发新功能，所以要在主线trunk上开发;
 2.开发一段时间后，经测试，上线;打包到Tags
 在D:\TortoiseSVN\Repository\Source\tags 目录下新建一个目录：1.0,并将该目录提交到SVN上，然后右键 D:\TortoiseSVN\Repository\Source\trunk\MyAppProject该目录 ---\> TortoiseSVN ----\>Branch/tag... -----\> To Path :/tags/1.0/MyAppProject 并选中 Head revision in repository ---\> Ok 此时Source/tags/1.0 目录中没有任何内容，需要更新一下该 目录做update操作。更新之后看到一个完整的项目源码保存到该目录中（该目录下的源码可看做是trunk目录下版本为1.0的一个 副本）;这样就1.0的版本包就在tags里面了  

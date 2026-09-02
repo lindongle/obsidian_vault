@@ -1,6 +1,6 @@
 ---
 title: HyperV虚拟机的显卡直通 -2- Win11的22H2部署 - 知乎
-updated: 2026-06-13T15:25:46
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 ---
 
@@ -22,7 +22,7 @@ HyperV虚拟机的显卡直通 -2- Win11的22H2部署 - 知乎
 </colgroup>
 <thead>
 <tr>
-<th><h2 id="span-stylecolor2e75b5hyperv虚拟机的显卡直通--2--win11的22h2部署---知乎span"><span style='color:#2E75B5'>HyperV虚拟机的显卡直通 -2- Win11的22H2部署 - 知乎</span></h2></th>
+<th><h2 id="span-stylecolor2e75b5hyperv虚拟机的显卡直通--2--win11的22h2部署---知乎span">HyperV虚拟机的显卡直通 -2- Win11的22H2部署 - 知乎</h2></th>
 </tr>
 </thead>
 <tbody>

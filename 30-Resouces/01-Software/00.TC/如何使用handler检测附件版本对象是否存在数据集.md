@@ -1,15 +1,15 @@
 ---
 title: 如何使用handler检测附件版本对象是否存在数据集
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何使用handler检测附件版本对象是否存在数据集 </span>
+## 如何使用handler检测附件版本对象是否存在数据集 
 
 ![image1](b5ea00264bd842979debf1fee201aa0a.gif)
-<span style='color:white'>**作者：李达 审校：刘宓放**</span>
+**作者：李达 审校：刘宓放**
 **测试版本：Teamcenter10**
 在实际的应用中，一般配置流程都有必要配置检查数据的handler, 用于检查item版本是否存在数据集，以下配置流程实例。
 
@@ -17,39 +17,39 @@ tags:
 如图1流程，选中流程任务根任务节点，点击处理程序，选择开始节点，规则处理程序选择TCRS-has-target-drawing。  
 
 ![image3](7b89dda6a16a4f9faa57e001a475b051.png)
-<span style='color:black;text-align:center'>**图1**</span>
+**图1**
 
 ![image2](6e72d1db24de4db8befee490cd37d455.png)
 编辑好流程，点击阶段设为可用，再点击是。
 
 ![image4](fd337aa8f08d4eccb6b2bb1c259180e8.png)
-<span style='color:black;text-align:center'>**图2**</span>
+**图2**
 
 ![image2](6e72d1db24de4db8befee490cd37d455.png)
 验证，TC中有如图数据，版本下有catia图纸数据的。
 
 ![image5](ec2d740eaf4c4463b02b9018333c7203.png)
-<span style='color:black;text-align:center'>**图3**</span>
+**图3**
 
 ![image2](6e72d1db24de4db8befee490cd37d455.png)
 选中该版本数据，同时按下Ctrl+P键创建流程，选中配置的流程模板，点击确定。
 
 ![image6](e4cbeb7e9cda4dc493788269e6021baa.png)
-<span style='color:black;text-align:center'>**图4**</span>
+**图4**
 
 ![image2](6e72d1db24de4db8befee490cd37d455.png)
 如图所示，流程目前在进行中。
 
 ![image7](f1ee863cf8684e76a63502d9dbd48baf.png)
-<span style='color:black;text-align:center'>**图5**</span>
+**图5**
 
 ![image2](6e72d1db24de4db8befee490cd37d455.png)
 把该版本数据集删除了，重新对该版本提流程。可见流程报错，提示没事指定类型附件。
 
 ![image8](bed4a39fc54b4ebe9d5bc98d53dfb2db.png)
-<span style='color:black;text-align:center'>**图6**</span>
+**图6**
 ![image9](8636d59c02f944ed86c9b0a7c9b4e56c.png)
-<span style='color:black;text-align:center'>**图7**</span>
+**图7**
 
 ![image10](176edf18d73244a4a7f6d9cd98505d77.jpg)
 ![image11](caf80d6b6da940dc876437e42e28bc3b.jpg)
@@ -64,7 +64,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

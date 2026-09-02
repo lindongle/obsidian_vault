@@ -1,6 +1,6 @@
 ---
 title: Linux中设置服务自启动的三种方式 - chunchill - 博客园
-updated: 2026-06-06T10:05:34
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -18,7 +18,7 @@ ntsysv 伪图形运行级别设置
 **注意：**1.这三种方式主要用于以redhat为基础的发行版
  2.如果还不知道运行级别是什么，那么最好先看看相关资料再实验
 
-#### *<span style='color:#5B9BD5'>第一种方式：ln -s 建立启动软连接</span>*
+#### *第一种方式：ln -s 建立启动软连接*
 在Linux中有7种运行级别（可在*/etc/inittab*文件设置），每种运行级别分别对应着*/etc/rc.d/rc\[0~6\].d*这7个目录
 ![image1](0cb23b4693ae444bb6f0e1869a876658.png)
 **Tips：***/etc/rc\[0~6\].d*其实是*/etc/rc.d/rc\[0~6\].d*的软连接，主要是为了保持和Unix的兼容性才做此策
@@ -34,7 +34,7 @@ K开头的脚本文件代表运行级别加载时需要关闭的，S开头的代
 这种方式比较繁琐，适用于自定义的服务脚本
 如果系统中已经存在某些服务（比如安装apache时就会有httpd服务项），可以使用下面的两种方式
 
-#### *<span style='color:#5B9BD5'>第二种方式：chkconfig</span>*
+#### *第二种方式：chkconfig*
 ![image3](298a31f94c2844cc8f3b34f2535ba500.png)
 如果需要自启动某些服务，只需使用*chkconfig 服务名 on*即可，若想关闭，*将on改为off*
 在默认情况下，*chkconfig*会自启动*2345*这四个级别，如果想自定义可以加上*--level*选项
@@ -42,7 +42,7 @@ K开头的脚本文件代表运行级别加载时需要关闭的，S开头的代
 上面我们先将sshd服务的所有启动级别关闭，然后使用*--level*选项启动自定义级别
 **Tips：***--list*选项可查看指定服务的启动状态，*chkconfig*不带任何选项则查看所有服务状态
 
-#### *<span style='color:#5B9BD5'>第三种方式：ntsysv 伪图形</span>*
+#### *第三种方式：ntsysv 伪图形*
 *ntsysv*和*chkconfig*其实是一样的，只不过加上了图形而已
 启动*ntsysv*有两种方式，一是直接在命令行中输入*ntsysv*，二是使用*setup*命令，然后选择系统服务
 ![image5](bce8ff0ce06f4ab4bc5be741fa3f5cde.png)

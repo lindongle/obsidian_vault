@@ -1,14 +1,14 @@
 ---
 title: 如何在CATIA树中显示Item ID_Rev ID_Item Name
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何在CATIA树中显示Item ID_Rev ID_Item Name </span>
+## 如何在CATIA树中显示Item ID_Rev ID_Item Name 
 ![image1](edd2d991ab934b058a5253a7144cd78e.gif)
-<span style='color:white'>**作者：张浩 审校：马鑫**</span>
+**作者：张浩 审校：马鑫**
 **系统版本：TC11**
 通常当CATIA数据从Teamcenter中加载时，客户会要求在CATIA树中能显示为Item ID_Rev ID_Item Name，如图1。
 
@@ -39,7 +39,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

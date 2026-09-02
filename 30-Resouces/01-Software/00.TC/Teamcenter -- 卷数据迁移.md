@@ -1,24 +1,24 @@
 ---
 title: Teamcenter -- 卷数据迁移
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Teamcenter -- 卷数据迁移 </span>
+## Teamcenter -- 卷数据迁移 
 «span style='background: \#FFE8DF'»方式1«/span»
-<span style='color:#333333'>move_volume_files -u=infodba -p=infodba -g=dba -f=list -srcvol=volume1 - destvol=volume2</span>
-<span style='color:#333333'>Edit the text file in</span>
-<span style='color:#333333'>%TC_root%\tc_menu\move_tcfiles_list.txt (Default</span>
-<span style='color:#333333'>output location)</span>
+move_volume_files -u=infodba -p=infodba -g=dba -f=list -srcvol=volume1 - destvol=volume2
+Edit the text file in
+%TC_root%\tc_menu\move_tcfiles_list.txt (Default
+output location)
 «span style='background: \#FFE8DF'»方式2«/span»
-<span style='color:#333333'>move_volume_files -u=infodba -p=infodba -g=dba -f=move -2</span>
-<span style='color:#333333'>presorted_file=%tc_root%\tc_menu\move_tcfiles_list.txt -srcvol=volume1 - destvol=volume2</span>
+move_volume_files -u=infodba -p=infodba -g=dba -f=move -2
+presorted_file=%tc_root%\tc_menu\move_tcfiles_list.txt -srcvol=volume1 - destvol=volume2
 ![image1](890ced3c3ee2464ebf38a0b448b79d05.png)
-<span style='background:#F2F4F5'>感谢王总的付出</span>
+感谢王总的付出
 ![image2](70dcf52abb31424caf74a743a6619ae1.jpg)
-<span style='color:black;text-align:center'>来来关注一下</span>
+来来关注一下
 
 阅读
 在看
@@ -31,7 +31,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

@@ -1,12 +1,12 @@
 ---
 title: 如何处理AWC中白屏问题
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何处理AWC中白屏问题 </span>
+## 如何处理AWC中白屏问题 
 ![image1](80961243c1a347509ee8d0e091ffba7f.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：陈嘉颖 审校：陈泓希«/span»
 **适用版本：AWC3.4**
@@ -42,7 +42,7 @@ tags:
 ![image13](8189bff2a0514bc5bb672dadce5968b9.png)
 在AWC的搜索栏中输入AWCTEST，执行“\*AWCTEST\*”的搜索命令。
 ![image14](87bdac91890848f18ff75f22a1c45c53.png)
-<span style='color:#FEFEFE;text-align:center'>**关注我们**</span>
+**关注我们**
 ![image15](3c25ea91f4e045dba8217bb5cff2004c.png)
 ![image16](a3aa76109174477fb32738a6dbb96368.jpg)
 阅读
@@ -56,7 +56,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 如何处理AWC中白屏问题
 最多200字，当前共字

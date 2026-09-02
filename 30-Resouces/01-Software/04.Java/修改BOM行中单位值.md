@@ -1,31 +1,31 @@
 ---
 title: 修改BOM行中单位值
-updated: 2026-06-13T22:08:52
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 tags:
   - Java
 ---
 
-- <span style='font-weight:bold;color:#333333;background:white'>How to set </span><span style='font-weight:bold;color:blue;background:white'>unit of measure</span><span style='font-weight:bold;color:#333333;background:white'> on </span><span style='font-weight:bold;color:blue;background:white'>BOMLine</span><span style='font-weight:bold;color:#333333;background:white'> and released item using RAC cust</span>
-- <span style='font-weight:bold;text-decoration: underline;background:white'>Symptom</span>
+- How to set unit of measure on BOMLine and released item using RAC cust
+- Symptom
 - ---------------  
-  User want to set <span style='font-weight:bold;color:blue;background:white'>unit</span><span style='color:#333333;background:white'> of </span><span style='font-weight: bold;color:blue;background:white'>measure</span> on already present item (released or  
-  unreleased) and also want to set <span style='font-weight:bold;color:blue;background:white'>unit</span><span style='color:#333333;background:white'> of </span><span style='font-weight: bold;color:blue;background:white'>measure</span><span style='color:#333333; background:white'> on </span><span style='font-weight:bold;color:blue; background:white'>BOMLine</span> using Rich client  
+  User want to set unit of measure on already present item (released or  
+  unreleased) and also want to set unit of measure on BOMLine using Rich client  
   customization or using SOA customization(Rich client is priority)  
 
-  How to set <span style='font-weight:bold;color:blue;background:white'>unit</span><span style='color:#333333;background:white'> of </span><span style='font-weight: bold;color:blue;background:white'>measure</span><span style='color:#333333; background:white'> on </span><span style='font-weight:bold;color:blue; background:white'>BOMLine</span> and released item using RAC  
+  How to set unit of measure on BOMLine and released item using RAC  
   customization.
-- <span style='font-weight:bold;text-decoration: underline;background:white'>Hardware/Software Configuration</span>
+- Hardware/Software Configuration
 - «span style='color:#333333'»PLATFORM: INTL64 OPERATING SYSTEM: WINDOW  
   OS VERSION: 764 PRODUCT VERSIONS: Tc 11.2.2«/span»
-- <span style='font-weight:bold;text-decoration: underline;background:white'>Solution</span>
-- <span style='color:#333333;background:white'>bl_sequence, </span><span style='font-weight:bold;color:blue;background:white'>quantity</span><span style='color:#333333;background:white'> and UOM (</span><span style='font-weight: bold;color:blue;background:white'>unit</span><span style='color:#333333; background:white'> of </span><span style='font-weight:bold;color:blue; background:white'>measure</span>) are some special properties,  
+- Solution
+- bl_sequence, quantity and UOM (unit of measure) are some special properties,  
   probably there is an event which update the RAC when modifying the property.  
 
   Use "setProperties" method of the datamanagementService to set the UOM Property  
-  on <span style='font-weight:bold;color:blue;background:white'>BOMLine</span>.  
+  on BOMLine.  
 
-  Below is Sample Code to set the UOM Property on <span style='font-weight:bold;color:blue;background:white'>BOMLine</span>:  
+  Below is Sample Code to set the UOM Property on BOMLine:  
 
   PropInfo\[\] pInfo = new PropInfo\[1\];  
   pInfo\[0\] = new PropInfo();  

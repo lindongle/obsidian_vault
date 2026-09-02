@@ -1,15 +1,15 @@
 ---
 title: Oracle19c RAC for Centos7.6 详细安装文档 | 周末送资料
-updated: 2026-07-05T17:08:54
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:08:54
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>Oracle19c RAC for Centos7.6 详细安装文档 \| 周末送资料 </span>
+## Oracle19c RAC for Centos7.6 详细安装文档 \| 周末送资料 
 收录于话题
-<span style='font-weight: bold;background:#888888'>相关推荐资料：</span>
-- [<span style='text-decoration:underline;font-family:-apple-system-font;font-size:10.5pt; background:white'>Oracle RAC 资料大全 \| 周末送资料</span>](http://mp.weixin.qq.com/s?__biz=MjM5NTk0MTM1Mw==&mid=2650651649&idx=1&sn=e6e8441be818574b17fa585d69a5f063&chksm=bef9c287898e4b9136d5414f48320ae9d66a4d4689672fe5c76094871bcda41eb0e6170acc00&scene=21#wechat_redirect)
+相关推荐资料：
+- [Oracle RAC 资料大全 \| 周末送资料](http://mp.weixin.qq.com/s?__biz=MjM5NTk0MTM1Mw==&mid=2650651649&idx=1&sn=e6e8441be818574b17fa585d69a5f063&chksm=bef9c287898e4b9136d5414f48320ae9d66a4d4689672fe5c76094871bcda41eb0e6170acc00&scene=21#wechat_redirect)
 
 目录  
 
@@ -46,15 +46,15 @@ tags:
 6.2 查看集群状态
 6.3 查看数据库版本
 
-<span style='color:#007AAA'>**1 环境**</span>
-<span style='color:#007AAA'>**1.1 系统版本**</span>
+**1 环境**
+**1.1 系统版本**
 \[root@rac19c1 Packages\]# cat /etc/redhat-release
 CentOS Linux release 7.6.1810 (Core)
-<span style='color:#007AAA'>**1.2 ASM 磁盘组规划**</span>
+**1.2 ASM 磁盘组规划**
 ![image1](e1efbd1b03774aec952d57c875277906.png)
-<span style='color:#007AAA'>**1.3 主机网络规划**</span>
+**1.3 主机网络规划**
 ![image2](404a801d7f464fdaa1f7cd03120293a3.png)
-<span style='color:#007AAA'>**1.4操作系统配置部分**</span>
+**1.4操作系统配置部分**
 1\. 关闭防火墙
 ![image3](b2f7fe00ded54e55ba217accc683f853.png)
 2\. 关闭 selinux
@@ -62,8 +62,8 @@ CentOS Linux release 7.6.1810 (Core)
 3\. hosts 文件配置
 ![image5](eb1ce53451bb4613a62d4054846a4577.png)
 ![image6](f3df3754cd2845eea44c472811cb105a.png)
-<span style='color:#007AAA'>**2 准备工作（rac1 与 rac2 同时配置）**</span>
-<span style='color:#007AAA'>**2.1 配置本地 yum 源**</span>
+**2 准备工作（rac1 与 rac2 同时配置）**
+**2.1 配置本地 yum 源**
 ![image7](8eb71e9760694e169aa0a364c910c438.png)
 ![image8](2f7d858d257f4837bd7c8675290c5b8b.png)
 ![image9](5de6d264967a413999f58b5e459b7cf9.png)
@@ -73,16 +73,16 @@ CentOS Linux release 7.6.1810 (Core)
 ![image11](38a620b1f8d74af6952b626886c5a4ce.png)
 ![image12](71f0cdbb095b4cb99601811ddcdb8a3d.png)
 ![image13](6bb17adca85e4b2e9dd1d762d46b0ccb.png)
-<span style='color:#007AAA'>**2.3 创建用户**</span>
+**2.3 创建用户**
 ![image14](f1ea9c787d3a4286838aaf607553129c.png)
-<span style='color:#007AAA'>**2.4 配置 host 表**</span>
+**2.4 配置 host 表**
 ![image15](c91135267d6c4af09df1cd6867528e35.png)
 **2.5 禁用 NTP**  
 
 ![image16](4e692f8b54d94aaeb6837afe4057253c.png)
-<span style='color:#007AAA'>**2.6创建所需要目录**</span>
+**2.6创建所需要目录**
 ![image17](033ccee7a2d84edcb3a6ea4876855509.png)
-<span style='color:#007AAA'>**2.7 其它配置：**</span>
+**2.7 其它配置：**
 ![image18](71d11cd3d753461085768e2e8ce1fe7c.png)
 ![image19](0fd13e858f2947d7b274720ea9ac607a.png)
 ![image20](036891b68ee4455291ca9a5b27f4cd69.png)
@@ -94,28 +94,28 @@ CentOS Linux release 7.6.1810 (Core)
 
 ![image25](01e7a1e25909458f908fc6de2bba2ef5.png)
 
-<span style='color:#007AAA'>**2.8 配置环境变量**</span>
+**2.8 配置环境变量**
 ![image26](887c5e58cee64fc7a4bafd960fd359b6.png)
 ![image27](c40845da1197485a95b390f4e20ec95a.png)
 ![image28](de7fcf856c4343dc881983c8b6406f2f.png)
-<span style='color:#007AAA'>**2.9 配置共享磁盘权限**</span>
+**2.9 配置共享磁盘权限**
 ![image29](1084276fbb2a49dfba4a0190e9da0d4c.png)
 ![image30](11fc3de3f1ba4747b375057a0fee1d27.png)
 ![image31](4ab269b4ea6547f1ab43a0f80a0405ca.png)
 ![image32](621b747156504e52beffc6cb6de86aec.png)
-<span style='color:#007AAA'>**2.10 配置互信**</span>
+**2.10 配置互信**
 ![image33](b83b8b63b64e4ed1a463aef3c5635885.png)
 ![image34](a866ebcac20649f2b7fb39c83151844e.png)
-<span style='color:#007AAA'>**2.11在 在 d grid 安装文件中安 装 cvuqdisk**</span>
+**2.11在 在 d grid 安装文件中安 装 cvuqdisk**
 ![image35](b1f16240899b4ac5b7ef2b854b7d9f9a.png)
-<span style='color:#007AAA'>**3 开始安装 grid**</span>
-<span style='color:#007AAA'>**3.1 上传集群软件包**</span>
+**3 开始安装 grid**
+**3.1 上传集群软件包**
 ![image36](688d81c97ed84e9c84f52efc7ba683f8.png)
-<span style='color:#007AAA'>**3.2 解压 grid 安装包**</span>
+**3.2 解压 grid 安装包**
 在 19C 中需要把 grid 包解压放到 grid 用户下 ORACLE_HOME 目录内
 解压文件到/u01/app/19.0.0/grid
 ![image37](c1ddf8b7ab4a4ef68881e7267c7d3819.png)
-<span style='color:#007AAA'>**3.3 进入 grid 集群软件目录执行安装**</span>
+**3.3 进入 grid 集群软件目录执行安装**
 \[grid@rac1 grid\]\$ ./gridSetup.sh
 ![image38](93adf9a0110e48f4a79e5c60d14dd546.png)
 **3.4 GUI 安装步骤**  
@@ -164,14 +164,14 @@ CentOS Linux release 7.6.1810 (Core)
 ![image62](470cda789d7444cfb70b8439a2a7a136.png)
 ![image63](2f27dd9467784f2a95b1a3abd5c7a73f.png)
 ![image64](3a608b5f5d4543d89cc4b6dfcaa384f3.png)
-<span style='color:#007AAA'>**3.5 查看状态**</span>
+**3.5 查看状态**
 ![image65](145fda79b4c54f37bc28ccac5fff1a09.png)
 ![image66](be46d60afab7476cbae9df60d9d6007d.png)
 ![image67](8f5b75e2863b40fe9d668bdf67426f7d.png)
-<span style='color:#007AAA'>**4 以 Oracle 用户登录图形化界面**</span>
+**4 以 Oracle 用户登录图形化界面**
 将数据库软件解压至\$ORACLE_HOME 安装 Oracle 数据库软件
 ![image68](2a674d9e53e7438eab190fbca75103e8.png)
-<span style='color:#007AAA'>**4.1 执行安装**</span>
+**4.1 执行安装**
 ![image69](505afc2c769846e2b9ad57fc676a3e56.png)
 ![image70](35edccac098848d3a89346e04636264e.png)
 ![image71](64ea585d846648638fbb4d7435e1e5d0.png)
@@ -182,20 +182,20 @@ CentOS Linux release 7.6.1810 (Core)
 预安装前检查忽略如下警告
 ![image76](f66eab02ea5c448fbbdcc597d7ea781c.png)
 ![image77](02b705024c8d4328aee8e2977b5b9d5a.png)
-<span style='color:#007AAA'>**4.2 执行 t root 脚本**</span>
+**4.2 执行 t root 脚本**
 ![image78](e989137563b3470f9142961f24a99a36.png)
 ![image79](601c38af9df84647b9113e41b9c78f0b.png)
-<span style='color:#007AAA'>**5 创建 ASM 数据磁盘**</span>
-<span style='color:#007AAA'>**5.1 grid 账户登录图形化界面，执行 asmca**</span>
+**5 创建 ASM 数据磁盘**
+**5.1 grid 账户登录图形化界面，执行 asmca**
 ![image80](e8c7d92c395046fa9616615d6d69eecf.png)
 ![image81](bf52ea9ac1274ab99485ea4c29030ce5.png)
 ![image82](2a2f3dcd14e7468e97b6d8b38d3f595c.png)
 ![image83](776dce82b1b2450da38cf81535a6e8fa.png)
 ![image84](122e5803a34f4ab68741a08a42ab8ffc.png)
 ![image85](5526c9b3230b4ca28cc85db066a25379.png)
-<span style='color:#007AAA'>**6 建立数据库**</span>
+**6 建立数据库**
 以 Oracle 账户登录。
-<span style='color:#007AAA'>**6.1. 执行建库 dbca**</span>
+**6.1. 执行建库 dbca**
 ![image86](c7e1014e76eb403e82f7b2ace87dcce3.png)
 ![image87](269c270b641140f79823a711cd3805b3.png)
 ![image88](378d68e7e3dc472e9a6a1589d86fed3c.png)
@@ -214,31 +214,31 @@ CentOS Linux release 7.6.1810 (Core)
 ![image101](116e4ec7d46b42dabed1277736008d4a.png)
 ![image102](2c2b5473bc2a4ba09153646283779d7a.png)
 ![image103](acad1e22b8344a458609a5a897c88d7c.png)
-<span style='color:#007AAA'>**6.2 查看集群状态**</span>
+**6.2 查看集群状态**
 ![image104](fc07d898f3d04c4bb31ef9494897b8ef.png)
 ![image105](a2b928a2e8d7405c92715a6e146ca37d.png)
 ![image106](83cb314edb234019bb0f45ef2da690c6.png)
 ![image107](bca9579dabb043428c12b7cb004fbfc1.png)
 ![image108](006481d060e145a5b6872c4ef61688cc.png)
-<span style='color:#007AAA'>**6.3 查看数据库版本**</span>
+**6.3 查看数据库版本**
 ![image109](a03d45d189eb40069703fdfde53f2270.png)
 
-<span style='font-family:-apple-system-font;font-size:10.5pt;background:white'>来自社区会员上传分享，相关版权归原作者所有点击阅读原文可下载原文档</span><span style='font-weight:bold;font-family:-apple-system-font;font-size:10.5pt; background:white'>觉得本文有用，请</span><span style='font-weight:bold;font-family: -apple-system-font;font-size:10.5pt;color:#007AAA;background:white'>转发、点赞</span><span style='font-weight:bold;font-family:-apple-system-font;font-size:10.5pt; background:white'>或点击</span><span style='font-weight:bold;font-family:-apple-system-font; font-size:10.5pt;color:#007AAA;background:white'>“在看”</span><span style='font-weight:bold;font-family:-apple-system-font;font-size:10.5pt; background:white'>，让更多同行看到</span>  
+来自社区会员上传分享，相关版权归原作者所有点击阅读原文可下载原文档觉得本文有用，请转发、点赞或点击“在看”，让更多同行看到  
 
-<span style='font-family:-apple-system-font;font-size:10.5pt;color:#888888; background:white'>欢迎关注社区</span><span style='font-weight:bold;font-family: -apple-system-font;font-size:10.5pt;color:white;background:#888888'>“数据库”技术主题</span><span style='font-family:-apple-system-font;font-size:10.5pt;color:#888888; background:white'>，将会不断更新优质资料、文章。地址：</span>  
+欢迎关注社区“数据库”技术主题，将会不断更新优质资料、文章。地址：  
 
-[<span style='font-family:-apple-system-font; font-size:10.5pt;color:#888888;background:white'>https://www.talkwithtrend.com/Channel/597</span>](https://www.talkwithtrend.com/Channel/597)
+[https://www.talkwithtrend.com/Channel/597](https://www.talkwithtrend.com/Channel/597)
 
-<span style='font-weight: bold;background:white'>下载 twt 社区客户端 APP</span>
+下载 twt 社区客户端 APP
 ![image110](9e05676ffdda4ef9bf915350ba18819b.png)
 
 ![image111](2bad252874c8424a9e19f609888cb4ed.png)
-<span style='background: white'>长按识别二维码即可下载</span>
-<span style='background: white'>或到应用商店搜索“twt”</span>
+长按识别二维码即可下载
+或到应用商店搜索“twt”
 
-<span style='background:white'>长按二维码关注公众号</span>
+长按二维码关注公众号
 ![image112](2073e271971444f3981cb72389839ab9.jpg)
-<span style='background:white'>\*本公众号所发布内容仅代表作者观点，不代表社区立场</span>
+\*本公众号所发布内容仅代表作者观点，不代表社区立场
 预览时标签不可点
 收录于话题 \#
 个
@@ -254,7 +254,7 @@ CentOS Linux release 7.6.1810 (Core)
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 Oracle19c RAC for Centos7.6 详细安装文档 \| 周末送资料
 最多200字，当前共字

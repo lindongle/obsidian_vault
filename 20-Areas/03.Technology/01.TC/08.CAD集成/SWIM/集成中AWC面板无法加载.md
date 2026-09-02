@@ -1,6 +1,6 @@
 ---
 title: 集成中AWC面板无法加载
-updated: 2026-06-13T15:25:44
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:45
 ---
 
@@ -11,9 +11,9 @@ created: 2026-07-05T17:04:45
 </colgroup>
 <thead>
 <tr>
-<th><p><span style='color:black'>删除首选项ActiveWorkspaceHosting.Sw2.URL</span></p>
-<p><span style='color:black'>新建首选项ActiveWorkspaceHosting.URL</span></p>
-<p><span style='color:black'>值为：http://tcqas.lusterinc.com:3000</span></p></th>
+<th><p>删除首选项ActiveWorkspaceHosting.Sw2.URL</p>
+<p>新建首选项ActiveWorkspaceHosting.URL</p>
+<p>值为：http://tcqas.lusterinc.com:3000</p></th>
 </tr>
 </thead>
 <tbody>

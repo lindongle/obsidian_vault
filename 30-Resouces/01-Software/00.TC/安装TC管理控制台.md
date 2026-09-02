@@ -1,18 +1,18 @@
 ---
 title: 安装TC管理控制台
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>安装TC管理控制台 </span>
+## 安装TC管理控制台 
 
 在11.2版本TC中官方加入了新的管理控制器，基于 JMX 的服务器管理器和 Web 层 HTML 适配器被替换为基于 Web 的 Teamcenter 管理控制台。这是一个安全控制台，可管理和监控服务器端组件，如 Java EE 服务器管理器和 Java EE Web 层。可以在四层Java EE 部署中使用控制台。这个新控制台通过支持 SSL 来满足安全要求。管理员可以使用新控制台，从单个页面访问许多 Teamcenter 管理任务。新控制台类似于 Web 应用 程序服务器控制台。它具有选项卡式页面，使管理员可以管理 Teamcenter 的不同方面。
 
 ![image1](4cb49fbaeab04d5e97614b8b69f193b1.png)
 **图1**
-<span style='color:#3F3F3F;text-align:center'>**安 装 步 骤**</span>
+**安 装 步 骤**
 ![image2](27db257c88fa467096f31f2b28b3416b.png)
 双击打开环境管理器（需要在每台Pool服务器上均安装，且安装后均启动该服务）
 ![image3](0ab6e987de57438397ea2f8e51197916.png)

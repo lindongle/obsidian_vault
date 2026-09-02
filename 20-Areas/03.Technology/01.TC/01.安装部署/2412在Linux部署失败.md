@@ -1,6 +1,6 @@
 ---
 title: 2412在Linux部署失败
-updated: 2026-06-13T22:11:59
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:38
 tags:
   - TC安装部署
@@ -39,12 +39,12 @@ Deployment Failed
 ![image1](e4dbe5ba0ae14051b5148d7a20c8945e.png)
 
 ![image2](464b0f48bf7441d98957e358de7b7a8f.png)
-<span style='color:#333333'></span>
+
 ![image3](3e4238ff83594a9cb941a72e16c52f44.jpg)
-<span style='color:#333333'></span>
-<span style='color:#333333'>兼容模式：将不同的型号物理CPU虚拟成相同型号的vCPU，迁移兼容性好。</span>
-<span style='color:#333333'>主机匹配模式：将不同的物理CPU虚拟成不同型号的vCPU，迁移兼容性差，相对于兼容模式可以给虚拟机操作系统提供更优的性能。</span>
-<span style='font-weight:bold;color:#333333'>直通模式</span><span style='color:#333333'>：直接将物理CPU暴露给虚拟机使用，迁移兼容性差，相对于兼容模式和主机匹配模式可以给虚拟机操作系统提供更优的性能。 如果 CPU工作模式设置为直通模式，则该虚拟机在迁移时，要求目的主机的与源主机的</span><span style='color:#FA0000'>CPU型号</span><span style='color:#333333'>必须保持一致。</span>
+
+兼容模式：将不同的型号物理CPU虚拟成相同型号的vCPU，迁移兼容性好。
+主机匹配模式：将不同的物理CPU虚拟成不同型号的vCPU，迁移兼容性差，相对于兼容模式可以给虚拟机操作系统提供更优的性能。
+直通模式：直接将物理CPU暴露给虚拟机使用，迁移兼容性差，相对于兼容模式和主机匹配模式可以给虚拟机操作系统提供更优的性能。 如果 CPU工作模式设置为直通模式，则该虚拟机在迁移时，要求目的主机的与源主机的CPU型号必须保持一致。
 
 *From \< <https://zhiliao.h3c.com/questions/dispcont/229222>\>*
 

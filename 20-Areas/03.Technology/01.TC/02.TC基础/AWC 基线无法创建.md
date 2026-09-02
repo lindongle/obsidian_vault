@@ -1,6 +1,6 @@
 ---
 title: AWC 基线无法创建
-updated: 2026-08-14T10:58:43
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:40
 ---
 
@@ -23,6 +23,6 @@ Set the EPM_task_execution_mode preference to "CONFIGURABLE"
 4、修改首选项EPM_task_execution_mode，将值改为CONFIGURABLE。
 o Restart all TC services
 5、重启四层服务。
-<span style='background:yellow;mso-highlight:yellow'>o In workflow Designed edit workflow used for baseline.</span>
-<span style='background:yellow;mso-highlight: yellow'>and enable "Process in Back ground" in Display Task Attribute panel & Set 'Stage to be available' for workflow template</span>
-<span style='color:#DF402A'>==6、在流程设计器中，找到对应的基线流程（系统默认为TC Default Baseline Process），进行编辑，勾选后台运行及并勾选==</span>
+o In workflow Designed edit workflow used for baseline.
+and enable "Process in Back ground" in Display Task Attribute panel & Set 'Stage to be available' for workflow template
+==6、在流程设计器中，找到对应的基线流程（系统默认为TC Default Baseline Process），进行编辑，勾选后台运行及并勾选==

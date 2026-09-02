@@ -1,6 +1,6 @@
 ---
 title: EDA集成问题
-updated: 2026-06-13T15:34:47
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:44
 ---
 
@@ -38,8 +38,8 @@ These component instances will not be included in the BOM.
 
 5、添加辅料后，更新EDABOM，会不会把辅料更新没了？
 --只更新元器件，其他类型不会从BOM上移除。
-<span style='color:red'>6、AD如何调用分类管理中元器件库？AD的本地元器件库如何与分类管理中进行库关联。</span>
-<span style='color:red'></span>
+6、AD如何调用分类管理中元器件库？AD的本地元器件库如何与分类管理中进行库关联。
+
 7、
 PCABase及变量如何使用？
 ![image2](54ed26957c734574a08c63b2d3bb1aa3.png)

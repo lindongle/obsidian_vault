@@ -1,6 +1,6 @@
 ---
 title: 如何安装Teamcenter的帮助
-updated: 2026-06-13T22:12:00
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:39
 tags:
   - TC安装部署
@@ -10,12 +10,12 @@ tags:
 2019年7月10日
 0:29
 
-## <span style='color:#2E75B5'>如何安装Teamcenter的帮助 </span>
+## 如何安装Teamcenter的帮助 
 
-<span style='color:red'>1概述</span>
+1概述
 在TC的标准安装中是不包含帮助系统安装的。TC的帮助需要单独安装和配置。本文讲述如何安装TC12.1和AW4.1的帮助。
 
-# <span style='color:red'>2在线帮助服务</span>
+# 2在线帮助服务
 如果不安装帮助系统，用户可以使用Internet系统上的帮助。
 TC12.1的帮助位于
 <https://docs.plm.automation.siemens.com/tdoc/tc/12.1/help/>
@@ -25,7 +25,7 @@ AW4.1的帮助位于
 <https://www.plm.automation.siemens.com/global/en/support/docs.html>
 访问上述网址可能需要用户拥有Siemens颁发的Webkey
 
-# <span style='color:red'>3何时需要安装本地网络帮助</span>
+# 3何时需要安装本地网络帮助
 需要安装帮助系统的情况
 •不能访问internet
 •没有WebKey或WebKey已过期
@@ -35,11 +35,11 @@ AW4.1的帮助位于
 •有WebKey
 •测试系统
 
-# <span style='color:red'>4安装帮助服务的前置条件</span>
+# 4安装帮助服务的前置条件
 帮助服务可以安装在一台单独的服务器上，不需要与TC使用同一台服务器
 安装帮助服务需要事先安装JAVA JRE。
 
-# <span style='color:red'>5帮助服务器软件下载</span>
+# 5帮助服务器软件下载
 您需要有Wekey才能从西门子官网下载下列软件：
 <https://download.industrysoftware.automation.siemens.com/download-n.php/siemens_plm_doc_server/full_products/Win64/3.5/splmdocserver035.zip>
 ![image1](24a43ffef35e456faaa0be6756e75d5c.png)
@@ -52,7 +52,7 @@ AW4.1的帮助位于
 
 请注意安装具体的文档时，安装界面的语言要使用英文，不要使用中文。否则会报错。
 
-# <span style='color:red'>6安装TC的帮助</span>
+# 6安装TC的帮助
 您可以安装TC12.0帮助的中文版或者TC12.1帮助的英文版，或者同时安装。
 <https://download.industrysoftware.automation.siemens.com/download-n.php/teamcenter/full_products/Teamcenter12/Teamcenter12/Tc12.0.0.0_pub_chinese-simplified.zip>
 ![image4](30cfaf670e57429e9294ede1cf81181b.jpg)
@@ -74,7 +74,7 @@ AW4.1的帮助位于
 ![image12](bb7995c1f60e46cb9ace62136b7093e0.jpg)
 ![image13](11f6fde3b7494dccbadc4171676105ab.jpg)
 
-# <span style='color:red'>7安装AW的帮助</span>
+# 7安装AW的帮助
 Active Workspace的帮助是单独安装的，不包含在TC的帮助中
 <https://download.industrysoftware.automation.siemens.com/download-n.php/teamcenter/full_products/Teamcenter12/ActiveWorkspace/4.1/4.1/Tc12.0.0.0_ActiveWorkspace4.1_pub_simplified-chinese.zip>
 ![image14](cb394fe8ac5047f4a80338a1ae08ccfd.jpg)
@@ -100,7 +100,7 @@ Active Workspace的帮助是单独安装的，不包含在TC的帮助中
 
 将Awp0QuickStartTemplate对象的Action属性修改为内网帮助的路径。
 
-<span style='color:red'>更多信息，欢迎关注KigerPLM微信公众号。如果有问题，请留言。</span>
+更多信息，欢迎关注KigerPLM微信公众号。如果有问题，请留言。
 
 Kiger
 您的支持，我的动力
@@ -115,17 +115,17 @@ Kiger
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
+#### *朋友会在“发现-看一看”看到你“在看”的内容 *
 确定
 ![image21](967e6a2589974f52aacaec4615e20783.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
+#### *朋友将在看一看看到 *
 确定
 写下你的想法...
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 确定
 最多200字，当前共字
 发送中

@@ -1,6 +1,6 @@
 ---
 title: AD集成操作
-updated: 2026-06-06T10:08:50
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:44
 ---
 
@@ -151,15 +151,15 @@ ICS_classifiable_types值增加LC3_EDAComp，LC3_EDACompRevision
 引入了一个名为EDA_ForceCheckInOptionDefault的新首选项。 当此首选项设置为true时，签入选项复选框被禁用，以强制使用首选项EDA_CheckInOptionDefault。 尚未安装（或升级到）TC11.4的用户可以在服务器上手动创建此首选项，也可以使用eda_preferences.xml（请参阅下面的B. 1a节“EDA首选项”）。
 
 EDA_RemoveWorkingFilesOptionDefault 默认unchecked，默认不勾选，设置保存时是否默认勾选“从本地移除关联的设计文件”
-<span style='color:#FA0000'>**EDA_BOMExcludeItemId 设置为TP.\*，bom更新时排除itemid为TP开头的元器件，不要漏了星号前面的.**</span>
-<span style='color:#FA0000'>**EDA_BOMExcludeRefDes 设置为TP.\* ，bom更新时排除引用指示符为TP开头的元器件,不要漏了.**</span>
-<span style='color:red'></span>
+**EDA_BOMExcludeItemId 设置为TP.\*，bom更新时排除itemid为TP开头的元器件，不要漏了星号前面的.**
+**EDA_BOMExcludeRefDes 设置为TP.\* ，bom更新时排除引用指示符为TP开头的元器件,不要漏了.**
+
 **EDA_CCAVariantItemTypeDefault ,默认的变量PCBA零组件类型。**
 **EDA_CCAVariantItemTypesAllowed值与上面的一样。**
 **EDA_CheckInOptionDefault默认为true 自动签入**
-<span style='color:#FA0000'>**EDA_CombinedBOMOptionDefault设置为ForceFromSchematic 强制从原理图读取bom**</span>
+**EDA_CombinedBOMOptionDefault设置为ForceFromSchematic 强制从原理图读取bom**
 **EDA_CombinedViewableOptionDefault设置为ForceFromPCB强制保存PCB可查看（PCB转换XFATF）选项**
-<span style='color:red'>**EDA_ControlSavedVariants**设置为true，如果设置为true，EDA到Teamcenter时，可以独立保存某一个或几个变量PCBA，而不是必须所有变量全部保存到系统中，通过选中对应的变量条目，点击创建。默认false，全部保存。</span>
+**EDA_ControlSavedVariants**设置为true，如果设置为true，EDA到Teamcenter时，可以独立保存某一个或几个变量PCBA，而不是必须所有变量全部保存到系统中，通过选中对应的变量条目，点击创建。默认false，全部保存。
 **EDA_DefaultSavedQuery可以设置为TC中用户自己已保存的查询**
 EDA_DefinePWBWith默认schematic，指PCBA另存时，是否将原理图设计或PCB电路板设计复制到新版本。如果设置为none，则新生成的PCBA无原理图和PCB图
 EDA_DesignReviseSync默认False，PCBA另存时是否自动修订PCBA或PCBA基座。
@@ -171,9 +171,9 @@ EDA_PcbLockingDynamic默认True，签出PCB时，同时锁定PCBA版本
 EDA_SaveIntermediateDS默认0，PCB转换XFATF，不保存中间文件。
 EDA_SchematicBOMOptionDefault默认无，原理图设计签入、保存、另存时是否保存BOM。
 EDA_SchematicItemTypeDefault默认EDASchem，原理图零组件的默认零组件类型。--不清楚原理图零组件是什么鬼。
-<span style='color:red'>EDA_SearchList,查询列表清单--必须配置查询名称的英文名称（如果主站点语言是英文）</span>
+EDA_SearchList,查询列表清单--必须配置查询名称的英文名称（如果主站点语言是英文）
 EDA_SharePWB默认false，PCB电路设计版是否可以由多个PCBA借用共享。
-<span style='color:red'>EDA_Workflows设置ABC样流程。在EDA环境下发起流程的流程模板清单。必须先打开tc中的设计才能使用此功能</span>
+EDA_Workflows设置ABC样流程。在EDA环境下发起流程的流程模板清单。必须先打开tc中的设计才能使用此功能
 EDAGenPCBCAD
 **EDA_SaveAsForceVariant：--将系统中非变量设计的PCBA强制转换为变量设计的方法（自动生成一个PCBA基础）**
 1\. 将 EDA_SaveAsForceVariant 首选项的值更新为 true。该值指定使用 EDA 变量对象模型在
@@ -227,7 +227,7 @@ PCB转换如果dispatcher中提示无结果，需修改D:\Apps\Dispatcher\Module
 
 以下两个EDA集成的区别
 ![image13](22d539202d524571ba4885a80217e531.png)
-<span style='color:#FA0000'>1）Altium是专门针对AD的集成开发组件，EDA是各个电器设计软件通用的功能。安装Altium1.0之前必须先按照EDA客户端。</span>
+1）Altium是专门针对AD的集成开发组件，EDA是各个电器设计软件通用的功能。安装Altium1.0之前必须先按照EDA客户端。
 
 **PCBA装配基座**
 --选配PCBA装配版本--变量一

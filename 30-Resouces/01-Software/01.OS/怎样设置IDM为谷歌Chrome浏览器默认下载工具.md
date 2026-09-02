@@ -1,10 +1,10 @@
 ---
 title: 怎样设置IDM为谷歌Chrome浏览器默认下载工具
-updated: 2026-06-12T15:23:24
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 ---
 
-<span style='color:silver'></span>
+
 2018年5月17日
 1:37
 

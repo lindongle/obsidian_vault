@@ -1,14 +1,14 @@
 ---
 title: 使用csv2tcxml命令导入产品配置字典及关联
-updated: 2026-06-13T15:34:15
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:46
 ---
 
-使用<span style='color:#1E1E1E'>csv2tcxml命令导入产品配置字典及关联</span>
+使用csv2tcxml命令导入产品配置字典及关联
 2025年7月10日
 9:16
 
-1.  安装设置<span style='color:#1E1E1E'>csv2tcxml，输入命令</span>
+1.  安装设置csv2tcxml，输入命令
 csv2tcxml install -u=infodba -p=infodba -g=dba C:\Siemens\Teamcenter2412\tc_data -c
 ![image1](649549cf834049fd98fc53d44d452880.png)
 2.  从tc_data复制配置器导入excel模板，并填入信息
@@ -21,7 +21,7 @@ Csv2tcxml 文件
 5.  执行命令，将字典库导入系统
 tcxml_import -u=infodba -p=infodba -file=文件路径 -bulk_load
 
-<span style='color:#FA0000'>先导入字典或配置器关联，再导入族，再导入特征，再导入组，再导入组和族的关系</span>
+先导入字典或配置器关联，再导入族，再导入特征，再导入组，再导入组和族的关系
 ![image5](5039ccb202cf408bb24519c931bca465.png)
 导入报错：Wide character in subroutine entry at C:/Siemens/tc_data/csu2tcxml/lib/Csu2TcxML/TcAdminData.pmline 25
 将文件转为utf-8格式，如果不好使，修改一下文件：

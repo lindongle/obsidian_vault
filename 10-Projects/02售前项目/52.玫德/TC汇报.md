@@ -1,6 +1,6 @@
 ---
 title: TC汇报
-updated: 2026-06-05T23:07:29
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:35
 ---
 
@@ -18,11 +18,11 @@ created: 2026-07-05T17:04:35
     11. AI的应用；
     12. 低代码开发平台单独介绍；-集成主态软件，用低代码平台不需要做太多接口；
     13. 案例：川仪/feishier应用
-2.  <span style='color:black'>其他</span>
-    1.  <span style='color:black'>项目组合管理：根据资源变动，一个项目调整自动调整其他影响的项目；</span>
-    2.  <span style='color:black'>BOM变更的历史版本；</span>
-    3.  <span style='color:black'>CBB专门的库；</span>
-    4.  <span style='color:black'>借用权限的管理；</span>
-    5.  <span style='color:black'>流体，震动仿真；</span>
-    6.  <span style='color:black'>三维模型的查重，形状搜索；</span>
-    7.  <span style='color:black'>电气软件集成；</span>
+2.  其他
+    1.  项目组合管理：根据资源变动，一个项目调整自动调整其他影响的项目；
+    2.  BOM变更的历史版本；
+    3.  CBB专门的库；
+    4.  借用权限的管理；
+    5.  流体，震动仿真；
+    6.  三维模型的查重，形状搜索；
+    7.  电气软件集成；

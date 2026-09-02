@@ -1,6 +1,6 @@
 ---
 title: SOW评审
-updated: 2026-06-05T23:01:27
+updated: 2026-09-02T16:30:08
 created: 2026-07-05T17:05:05
 ---
 
@@ -11,7 +11,7 @@ SOW评审
 1.  符号库：电气原理图的符号，不含封装；
 2.  报表-研发工时去掉；
 3.  品牌导入，单独对象，LOV；
-4.  <span style='background:yellow;mso-highlight:yellow'>低代码平台集成增加？</span>
+4.  低代码平台集成增加？
 5.  试点产品1个转3个；
 6.  删除异地协同，放到合同中；
 7.  三维转stp，二维转pdf/step

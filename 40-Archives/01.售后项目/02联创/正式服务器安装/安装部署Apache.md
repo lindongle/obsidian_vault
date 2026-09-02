@@ -1,6 +1,6 @@
 ---
 title: 安装部署Apache
-updated: 2026-06-13T22:07:03
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:04:57
 tags:
   - 联创
@@ -19,7 +19,7 @@ tags:
 ![image4](9405b90e95734eff8e777fbbd9ee3124.png)
 4）输入httpd -k install，回车，完成Apache服务安装。
 ![image5](1d09e7669ea2479c9563c53bef6d23ea.png)
-<span style='color:#333333'>5）验证Apache服务。</span>
-<span style='color:#333333'>打开IE输入http://172.16.254.41进行验证，不报错，则成功。</span>
+5）验证Apache服务。
+打开IE输入http://172.16.254.41进行验证，不报错，则成功。
 ![image6](ba0613d74f224e29a46e46f27586b06a.png)
-<span style='color:#333333'></span>
+

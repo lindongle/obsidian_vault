@@ -1,6 +1,6 @@
 ---
 title: Impdp/expdp导入导出
-updated: 2026-06-06T00:29:39
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:54
 ---
 
@@ -48,7 +48,7 @@ select \* from dba_directories;
 grant read,write on directory dpdata1 to scott;
 四、导出数据
 1)按用户导
-expdp scott/tiger@orcl <span style='color:red'>schemas</span>=scott dumpfile=expdp.dmp DIRECTORY=dpdata1;
+expdp scott/tiger@orcl schemas=scott dumpfile=expdp.dmp DIRECTORY=dpdata1;
 2)并行进程parallel
 expdp scott/tiger@orcl directory=dpdata1 dumpfile=scott3.dmp parallel=40 job_name=scott3
 3)按表名导
@@ -61,7 +61,7 @@ expdp system/manager DIRECTORY=dpdata1 DUMPFILE=tablespace.dmp TABLESPACES=temp,
 expdp system/manager DIRECTORY=dpdata1 DUMPFILE=full.dmp FULL=y;
 五、还原数据
 1)导到指定用户下
-impdp scott/tiger DIRECTORY=dpdata1 DUMPFILE=expdp.dmp <span style='color:red'>SCHEMAS</span>=scott;
+impdp scott/tiger DIRECTORY=dpdata1 DUMPFILE=expdp.dmp SCHEMAS=scott;
 2)改变表的owner
 impdp system/manager DIRECTORY=dpdata1 DUMPFILE=expdp.dmp TABLES=scott.dept REMAP_SCHEMA=scott:system;
 3)导入表空间

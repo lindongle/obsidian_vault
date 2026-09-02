@@ -1,23 +1,23 @@
 ---
 title: Teamcenter发行时间
-updated: 2026-06-06T10:08:54
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:50
 ---
 
-| <span style='color:black'>**版本**</span> | <span style='color:black'>**补丁版本**</span> | <span style='color:black'>**发行时间**</span> |
+| **版本** | **补丁版本** | **发行时间** |
 |----|----|----|
-| <span style='color:black'>TC10</span> | <span style='color:black'>TC10.1.0</span> | <span style='color:black'>2016.07.01</span> |
-|  | <span style='color:black'>TC10.1.7.1</span> | <span style='color:black'>2016.09.17</span> |
-| <span style='color:black'>TC11</span> | <span style='color:black'>TC11.2.0</span> | <span style='color:black'>2016.07.01</span> |
-|  | <span style='color:black'>TC11.6.0</span> | <span style='color:black'>2018.12.04</span> |
-|  | <span style='color:black'>TC11.6.0.14</span> | <span style='color:black'>2020.07.24</span> |
-| <span style='color:black'>TC12</span> | <span style='color:black'>TC12.0.0</span> | <span style='color:black'>2018.07.01</span> |
-|  | <span style='color:red'>TC12.2.0</span> | <span style='color:red'>2019.07.11</span> |
-|  | <span style='color:red'>TC12.2.0.9</span> | <span style='color:red'>2020.07.17</span> |
-|  | <span style='color:black'>TC12.4.0</span> | <span style='color:black'>2020.06.13</span> |
-|  | <span style='color:black'>TC12.4.0.1</span> | <span style='color:black'>2020.08.13</span> |
-| <span style='color:black'>TC13</span> | <span style='color:black'>TC13.0.0</span> | <span style='color:black'>2020.06.15</span> |
-|  | <span style='color:black'>TC13.0.0.1</span> | <span style='color:black'>2020.09.03</span> |
+| TC10 | TC10.1.0 | 2016.07.01 |
+|  | TC10.1.7.1 | 2016.09.17 |
+| TC11 | TC11.2.0 | 2016.07.01 |
+|  | TC11.6.0 | 2018.12.04 |
+|  | TC11.6.0.14 | 2020.07.24 |
+| TC12 | TC12.0.0 | 2018.07.01 |
+|  | TC12.2.0 | 2019.07.11 |
+|  | TC12.2.0.9 | 2020.07.17 |
+|  | TC12.4.0 | 2020.06.13 |
+|  | TC12.4.0.1 | 2020.08.13 |
+| TC13 | TC13.0.0 | 2020.06.15 |
+|  | TC13.0.0.1 | 2020.09.03 |
 
 **Teamcenter10：**
 第一版TC10.1.0，2016年7月1日发布，最新补丁版本为10.1.7.1，2016年9月17日发布；

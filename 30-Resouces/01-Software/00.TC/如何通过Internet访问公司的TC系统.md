@@ -1,24 +1,24 @@
 ---
 title: 如何通过Internet访问公司的TC系统
-updated: 2026-06-13T22:08:30
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>如何通过Internet访问公司的TC系统 </span>
+## 如何通过Internet访问公司的TC系统 
 现在有越来越多的人选择或被迫在家工作。那么在家里能否访问公司的TC系统呢？如果有VPN，就相当于在公司，无需多说。但是如果没有VPN，其实员工也可以访问公司的TC系统，这就需要管理员帮忙设置了，方法如下：
 
-# <span style='color:#1E4E79'>1准备工作</span>
-## <span style='color:#2E75B5'>1.1公网IP地址</span>
+# 1准备工作
+## 1.1公网IP地址
 公司必须拥有自己的公网IP地址，例如202.65.21.50。如果没有，需要向电信公司申请，公网IP地址是非常宝贵的资源，几乎已经耗尽。如果采用第三方的工具，如“花生壳”，请参照本文自行研究。
 
-## <span style='color:#2E75B5'>1.2TCRS系统</span>
+## 1.2TCRS系统
 公司必须已经成功部署TC系统，建议部署TCRS。如果是TC，请确保能支持四层架构。
 记录下TC服务器的计算机名和内网IP地址。
 例如tcserver 192.168.72.10
 
-## <span style='color:#2E75B5'>1.3固定许可证VENDOR端口</span>
+## 1.3固定许可证VENDOR端口
 此操作在需要用到CAD集成（如NX集成、SW集成）的情况下才需要操作。固定许可证Vendor端口的作用是为了让CAD集成获取到许可证。
 
 修改许可证文件，如c:\\ C:\Program Files\Siemens\PLMLicenseServer\splm11.lic
@@ -27,7 +27,7 @@ VENDOR ugslmd
 修改为
 VENDOR ugslmd PORT=28002
 
-## <span style='color:#2E75B5'>1.4在TC服务器上确认端口已开放</span>
+## 1.4在TC服务器上确认端口已开放
 如果TC服务器设置了防火墙，请确认下面的端口已开放。在局域网内TC客户端能访问的情况下，不需要设置。
 ![image1](92c309d4612e4d6ab4394ea548518daf.png)
 
@@ -40,17 +40,17 @@ VENDOR ugslmd PORT=28002
 | TCLicVendor | 28002      |
 | TCFSC       | 4544       |
 | TCWEB       | 8080       |
-# <span style='color:#1E4E79'> </span>
-# <span style='color:#1E4E79'>2路由器端口映射</span>
+#  
+# 2路由器端口映射
 此操作在公司的内外网连接的路由器上操作
 需要映射上面5个端口
 ![image3](0d9c49d36ff84943b63bbfcadb36eeeb.jpg)
 
-# <span style='color:#1E4E79'>3TC客户端计算机操作</span>
+# 3TC客户端计算机操作
 修改客户机的C:\Windows\System32\drivers\etc\Hosts文件，添加一条记录，例如
 202.65.21.50 tcserver
 
-# <span style='color:#1E4E79'>4测试</span>
+# 4测试
 在客户端计算机上打开TC客户端登录，测试胖客户端和AW客户端。如果能够成功登入，表示设置成功。
 
 关注KigerPLM，学会随时随地访问PLM系统。
@@ -76,7 +76,7 @@ Kiger
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 如何通过Internet访问公司的TC系统
 最多200字，当前共字

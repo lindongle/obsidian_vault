@@ -1,41 +1,41 @@
 ---
 title: (26条消息) Windows Nginx 环境搭建安装配置详细教程 2020(最新)_Bnana博...
-updated: 2026-07-05T17:09:11
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:09:11
 ---
 
 (26条消息) Windows Nginx 环境搭建安装配置详细教程 2020(最新)\_Bnana博客-CSDN博客_nginx 配置详解windows
 已剪辑自: <https://blog.csdn.net/ForeverBana/article/details/106850455>
 
-# <span style='color:#1E4E79'>文章导读 </span>
-## *<span style='color:#5B9BD5'>Nginx 下载</span>*
-## *<span style='color:#5B9BD5'>Nginx 安装</span>*
-## *<span style='color:#5B9BD5'>WIndows Nginx 环境搭建</span>*
-## *<span style='color:#5B9BD5'>Nginx 配置</span>*
-## *<span style='color:#5B9BD5'>Nginx 问题解决</span>*
+# 文章导读 
+## *Nginx 下载*
+## *Nginx 安装*
+## *WIndows Nginx 环境搭建*
+## *Nginx 配置*
+## *Nginx 问题解决*
 
-# <span style='color:#1E4E79'>Nginx 下载</span>
+# Nginx 下载
 
 [nginx-1.19.0](http://nginx.org/download/nginx-1.19.0.zip)  
 
   
 
-# <span style='color:#1E4E79'>Nginx 安装</span>
+# Nginx 安装
 
 **Window Nginx 为 压缩包文件——\>安装——\>解压安装包**  
 
 ** **
 
-# <span style='color:#1E4E79'>Windos Nginx 环境配置</span>
+# Windos Nginx 环境配置
 
 **系统变量——\> 环境配置——\>新建系统变量 NGINX_HOME**
 ![image1](8effe90a46c74d5c833f8ce3ee4c3624.png)
 **PATH 引入NGINX_HOME**  
 
 ![image2](e979cf25b0c74fc2a69c2cfc50cfc5e1.png)
-## <span style='color:#2E75B5'>Nginx 操作命令参数</span>
+## Nginx 操作命令参数
 
-### <span style='color:#5B9BD5'>nginx支持以下命令行参数</span>
+### nginx支持以下命令行参数
 
 **-?\| -h —打印命令行参数帮助。**
 **-c file —使用替代配置file而不是默认文件。**
@@ -68,7 +68,7 @@ nginx
 
 **运行效果：**
 ![image4](b7eecb00b9b14628898645e5eb223d65.png)
-# <span style='color:#1E4E79'>Nginx 配置解析</span>
+# Nginx 配置解析
 
 **配置文件路径 ——\> 解压文件目录/config/nginx.config**
 \########### 每个指令必须有分号结束。#################  
@@ -207,7 +207,7 @@ include fastcgi_params;
 - 66
 - 67
 
-# <span style='color:#1E4E79'>问题解决</span>
+# 问题解决
 
 **问：Window cmd 运行 nginx 进程无法关闭？**  
 

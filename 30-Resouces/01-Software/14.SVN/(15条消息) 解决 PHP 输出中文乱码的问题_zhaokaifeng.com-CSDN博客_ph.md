@@ -1,15 +1,15 @@
 ---
 title: (15条消息) 解决 PHP 输出中文乱码的问题_zhaokaifeng.com-CSDN博客_ph...
-updated: 2026-06-06T10:05:35
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:55
 ---
 
 已剪辑自: <https://blog.csdn.net/wy_bk/article/details/88124285>
 本文由荒原之梦原创，原文链接： <http://zhaokaifeng.com/?p=1340>
-# <span style='color:#1E4E79'>解决 PHP 输出中文乱码的问题</span>
-## <span style='color:#2E75B5'>问题描述</span>
+# 解决 PHP 输出中文乱码的问题
+## 问题描述
 今天给导航狗( <https://daohanggou.cn/)的> PHP 程序和数据库文件迁移了服务器, 但是迁移到新的服务器上之后 PHP 输出的中文和 PHP 输出的从 MySQL 数据库查询出来的数据中的中文都出现了乱码的情况. 下面记录一下我解决该问题的过程.
-## <span style='color:#2E75B5'>解决步骤</span>
+## 解决步骤
 首先解决的是 PHP 程序直接输出 (*输出的不是从数据库中查询的数据*) 的中文乱码的问题. 由于我使用的是一台虚拟主机, 没有管理员权限, 无法修改 PHP 的配置文件, 因此, 对于这个问题我的解决办法是在 PHP 文件的头部加上如下代码:
 \<head\>  
 \<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /\>  

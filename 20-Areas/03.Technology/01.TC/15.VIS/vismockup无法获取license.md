@@ -1,16 +1,16 @@
 ---
 title: vismockup无法获取license
-updated: 2026-06-06T10:08:53
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:49
 ---
 
-<span style='color:silver'></span>
+
 2019年2月21日
 9:21
 
 vismockup无法获取license
-<span style='color:gray'>2019年2月20日</span>
-<span style='color:gray'>11:11</span>
+2019年2月20日
+11:11
 静默安装内嵌式的vismockup后在本地打开vismockup软件，显示无法获取license
 ![image1](2d3e7942e45c4b20b994eaf7491948df.png)
 方法一：在控制面板卸载程序那右键点击修改

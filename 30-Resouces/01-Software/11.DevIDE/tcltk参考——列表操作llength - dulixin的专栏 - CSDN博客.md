@@ -1,6 +1,6 @@
 ---
 title: tcl/tk参考——列表操作llength - dulixin的专栏 - CSDN博客
-updated: 2026-06-12T08:50:10
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:55
 ---
 
@@ -8,16 +8,16 @@ tcl/tk参考——列表操作llength - dulixin的专栏 - CSDN博客
 2019年6月19日
 2:55
 已剪辑自: <https://blog.csdn.net/dulixin/article/details/2158574>
-<span style='color:white'>.</span>
-<span style='color:white'>.</span>
-### <span style='color:#5B9BD5'>[名称](https://blog.csdn.net/dulixin/article/details/2158574)</span>
+.
+.
+### [名称](https://blog.csdn.net/dulixin/article/details/2158574)
 llength - 计算列表的元素个数
-### <span style='color:#5B9BD5'>[语法](https://blog.csdn.net/dulixin/article/details/2158574)</span>
+### [语法](https://blog.csdn.net/dulixin/article/details/2158574)
 **llength** *list  *
 
-### <span style='color:#5B9BD5'>[描述](https://blog.csdn.net/dulixin/article/details/2158574)</span>
+### [描述](https://blog.csdn.net/dulixin/article/details/2158574)
 将*list*当作一个列表来处理并返回一个十进制数的字符串表示列表中元素的个数。
-### <span style='color:#5B9BD5'>[示例](https://blog.csdn.net/dulixin/article/details/2158574)</span>
+### [示例](https://blog.csdn.net/dulixin/article/details/2158574)
 结果是列表元素的个数：
 % **llength** {a b c d e} 5 % **llength** {a b c} 3 % **llength** {} 0
 元素并不一定是严格按照字典来的词，特别是当使用“{}”符号时：

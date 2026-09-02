@@ -1,6 +1,6 @@
 ---
 title: tickets回复模板
-updated: 2026-06-05T22:26:46
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:05:02
 ---
 
@@ -16,7 +16,7 @@ We would like to confirm the current status of ticket 4357.
 Has the issue you raised been solved? You can update the status in the Ticket system, and give the comment.
 Thank you for your cooperation!
 **Do not reply directly to this email.**
-<span style='color:black'>Best Regards.</span>
+Best Regards.
 
 3.  长时间未反馈：
     1.  Hi,I haven't received your feedback for a long time, this ticket is temporarily closed, if there is a problem, please recreate the tickets.

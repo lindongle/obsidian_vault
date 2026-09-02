@@ -1,6 +1,6 @@
 ---
 title: Teamcenter编码为什么会跳号
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -10,7 +10,7 @@ Teamcenter编码为什么会跳号
 2019年12月19日
 0:01
 
-## <span style='color:#2E75B5'>Teamcenter编码为什么会跳号 </span>
+## Teamcenter编码为什么会跳号 
 
 ![image1](f7c63131480045bb9bea505c0f1986a5.jpg)
 Teamcenter可以根据命名规则自动生成编码,通常编码是连续的.但细心的用户会发现,如果TC服务器重启,TC新生成的编码并非是上次生成的下一个流水码。有时会有多达19个跳号。比如上次生成的编码是000086，重启后生成的编码是000105，这是什么原因呢？
@@ -85,15 +85,15 @@ SELECT TO_CHAR(SEQ_16148149953160_ABE8E118.nextval)AS val FROM dual;
 
 另外，官方论坛中，不建议使用NOCACHE。
 
-<span style='color:#404040'>CACHE or NOCACHE, if your requirement is truly to make surethere are no gaps, then a sequence is the wrong solution. You may get fewergaps with NOCACHE</span>
+CACHE or NOCACHE, if your requirement is truly to make surethere are no gaps, then a sequence is the wrong solution. You may get fewergaps with NOCACHE
 
 «span style='color:#404040'»If you use nocache - then every time you call sequence.nextvalyou will cause sys.seq\$ to be updated and committed.  
 If you use cache 20 - then every 20th time you call sequence.nextval you willcause sys.seq\$ to be updated and committed.  
 It is a performance thing, if you don't cache the next couple of sequencevalues in the SGA, you will be doing an update and commit every single time youcall nextval«/span»
 
 即使用户的数据库是Microsoft SQL Server，出于同样的原因，也会跳号。总之，用户不用去纠结跳号，把编码当成是物料唯一性的标识就可以了。
-<span style='color:#404040'></span>
-<span style='color:#404040'></span>
+
+
 
 阅读
 在看
@@ -106,7 +106,7 @@ It is a performance thing, if you don't cache the next couple of sequencevalues 
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
+#### *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

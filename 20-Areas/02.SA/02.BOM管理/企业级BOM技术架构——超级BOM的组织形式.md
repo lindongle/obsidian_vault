@@ -1,6 +1,6 @@
 ---
 title: 企业级BOM技术架构——超级BOM的组织形式
-updated: 2026-08-31T14:03:07
+updated: 2026-09-02T16:30:04
 created: 2026-07-05T17:04:37
 tags:
   - BOM
@@ -11,7 +11,7 @@ tags:
 **（一）数据冗余问题**
 数据冗余带来的问题非常明显：同一份数据在产品上被重复定义，必然带来产品数据不一致性，不一致性带来的问题是变更管理的问题。当同样的数据被定义在两处甚至多处，发生设计变更时，必然要考虑如何同步的问题。另外，数据冗余也会造成不必要的工作量增加，数据维护困难。很多企业至少在研发端的BOM都按照超级BOM模式进行组织，这是否解决了数据冗余问题呢？答案是否定的。超级BOM在一定程度上确实缓解了这一问题，但超级BOM本身也存在一个如何搭建的问题。如果超级BOM本身的架构不合理，则这一问题还是显得非常突出。比如我们接触过的企业，很多都以分组为单位组织BOM数据，有的企业甚至会将全车所有的小开关放在一个分组下，其中任何一个发生变化，都需要重新构建一个分组。而每个小开关的变化实际上是比较独立的，从分组上并无共同的特性，这样就会导致分组不断增加，以满足其中任何一种开关的变化以及这种变化的组合。这种模式下，所谓超级BOM相对于单一产品BOM，其实并无优势可言。
 **（二）不同形态BOM之间的转换问题**
-不同形态BOM之间的转换问题，尤以<span style='color:#FA0000'>工程BOM到制造BOM的转换</span>为典型，是制造业的一个长期存在的难题。大部分传统车企，<span style='color:#FA0000'>工程BOM</span>的搭建<span style='color:#FA0000'>只是从设计</span>的角度出发，导致结构层级<span style='color:#FA0000'>与CAD结构比较接近</span>，而对BOM应用部门的要求考虑得比较少。这样做的后果有两种情形：一种是制造BOM干脆另起炉灶，由下游的制造或者生产物流专门组织人员基于研发、采购和工艺等部门提供的文件<span style='color:#FA0000'>重新搭建一套制造BOM</span>；另一种情形是直接将工程BOM上的<span style='color:#FA0000'>设计虚拟层级带到制造端</span>，使得制造BOM效率极低，<span style='color:#FA0000'>应用受到诸多限制</span>。这两种情形的根本原因是，很难实现由基于设计角度出发而定义的工程BOM向面对生产的制造BOM转换，特别是发生工程变更的情况下，二者之间的同步将变得极为困难。
+不同形态BOM之间的转换问题，尤以工程BOM到制造BOM的转换为典型，是制造业的一个长期存在的难题。大部分传统车企，工程BOM的搭建只是从设计的角度出发，导致结构层级与CAD结构比较接近，而对BOM应用部门的要求考虑得比较少。这样做的后果有两种情形：一种是制造BOM干脆另起炉灶，由下游的制造或者生产物流专门组织人员基于研发、采购和工艺等部门提供的文件重新搭建一套制造BOM；另一种情形是直接将工程BOM上的设计虚拟层级带到制造端，使得制造BOM效率极低，应用受到诸多限制。这两种情形的根本原因是，很难实现由基于设计角度出发而定义的工程BOM向面对生产的制造BOM转换，特别是发生工程变更的情况下，二者之间的同步将变得极为困难。
 **（三）配置信息的传递问题**
 配置信息的传递问题在我国企业中也非常突出。我国很多车企配置化信息实际上没有被充分利用，基本都停留在配置表作为记录产品信息以供下游参考的表单，研发端的BOM虽然以超级BOM方式组织，但真正利用配置信息进行BOM解析的很少，到制造端就更难了。从数据组织方式来看，研发端的BOM往往会基于设计的需要定义一些中间层级，这些中间层级包括上面所说的分组以及一些其他设计虚拟件。配置化信息往往作用在这些层级，而这些层级无论是制造、试制、售后甚至研发端的成本分析、重量管理都可能不需要。这样问题就产生了，当BOM向其他领域传递时，这些配置信息就“丢失”了，需要各个业务领域重新梳理配置关系，这就导致了各个业务领域所需的BOM事实上完全独立，而不能做到贯通。因此，这个问题不解决好，将会直接导致上面讲到的第二个问题。在实践中，很多企业对于配置化管理实际上心存畏惧，总期望走一个“既借鉴国外先进管理经验，又照顾本企业实际情况”的“稳妥”的路子，把配置管理考虑得过于简单、过于“具有可操作性”​（例如在分组层级定义上，对汽车这样的复杂产品，最多也就200至300个分组，配置条件很好定义）​，从而导致实际上没有什么配置化管理。
 以上三个问题要从根本上解决，必须从BOM如何搭建入手，而不是固守已有的搭建方式不变去找解决方案。
@@ -27,29 +27,29 @@ tags:
 
 ![image2](be0f35c85e2c4377ac73f9c38ffb0772.png)
 显而易见，采取超级BOM模式使得变更同步更为容易。当采用单车BOM时，如果一个零件发生变更，则用到该零件的所有
-«span style='font-family:"Microsoft YaHei"'»车型«/span»<span style='font-family:Calibri'>BOM</span>«span style='font-family:"Microsoft YaHei"'»都需要逐个更改。在«/span»«span style='font-family: "Microsoft YaHei";color:#FA0000'»超级«/span»<span style='font-family:Calibri; color:#FA0000'>BOM</span>«span style='font-family:"Microsoft YaHei";color:#FA0000'»模式«/span»«span style='font-family:"Microsoft YaHei"'»下，在一个超级«/span»<span style='font-family: Calibri'>BOM</span>«span style='font-family:"Microsoft YaHei"'»范围内的车型«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»只需要更改一次«/span»«span style='font-family:"Microsoft YaHei"'»。«/span»
+«span style='font-family:"Microsoft YaHei"'»车型«/span»BOM«span style='font-family:"Microsoft YaHei"'»都需要逐个更改。在«/span»«span style='font-family: "Microsoft YaHei";color:#FA0000'»超级«/span»BOM«span style='font-family:"Microsoft YaHei";color:#FA0000'»模式«/span»«span style='font-family:"Microsoft YaHei"'»下，在一个超级«/span»BOM«span style='font-family:"Microsoft YaHei"'»范围内的车型«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»只需要更改一次«/span»«span style='font-family:"Microsoft YaHei"'»。«/span»
 再次，物料需求计划、优化生产排程等需要基于超级BOM模式才能达到最高效率。就面向智能制造及大规模个性化定制而言，当车型配置，特别是可供用户选配的项目增多时，由配置项进行组合而形成的车型数量将急剧增加。这种情况下，传统的整车物料号也将失去产生和管理的价值，那么针对单一配置的车型进行BOM管理更无从谈起。因此，对大规模个性化**定制业务而言，超级BOM几乎是业务的必须。**
 **四、超级BOM的技术架构**
-（一）超级BOM应该在<span style='color:#FA0000'>哪个层级搭建</span>
-在实施企业级BOM时，一般首先讨论<span style='color:#FA0000'>车型型谱</span>。所谓车型型谱，就是指各层级车型（<span style='color:#FA0000'>平台、车系、工程车型</span>等）由哪些参数决定、各层级车型之间的关系。车型型谱的定义对于企业非常重要。车型型谱定义有助于在全企业范围内，从产品规划、产品设计、产品制造到产品销售形成统一的对产品家族的完整认识，确保策划的产品能满足市场需求，设计、生产的产品与规划相匹配，从而与市场一致，确保销售能够正确引导市场的购买行为等。当然，车型型谱并不是为BOM而定义的，不实施BOM项目，也需要规范化的车型型谱定义，以利于车企内部各部门之间基于统一的车型定义形成高效的协作机制，并且有利于基于平台的设计重用。在企业级BOM平台实施中探讨车型型谱定义，是期望企业能够比较全面、长远地建立起超级BOM构建策略，并形成规范。所谓BOM构建策略，是指超级BOM应该搭建在哪一层级的车型上，例如，是基于平台搭建还是基于车型系列搭建，新的改型项目要不要另外搭建一个BOM等；或者说，企业要搭建一个多大的超级BOM。对于这一问题，不同企业答案会有差异。以我们实施项目的经验，总结了以下关键因素。
-1）企业实施平台化程度及对<span style='color:#FA0000'>设计重用度</span>的期望。平台化水平越高，或者对设计重用度要求越高，超级BOM可以考虑在更高层级搭建，即超级BOM<span style='color:#FA0000'>可以搭得越大</span>。
-2）人员专业技能状况及业务规范程度。超级BOM的层级越高，配置管理越复杂，对配置工程师、BOM工程师的能力要求越高，对<span style='color:#FA0000'>业务规范化程度要求</span>也越高。
-3）<span style='color:#FA0000'>历史数据</span>的状况及<span style='color:#FA0000'>复杂程度</span>。历史较长的车企，在从传统模式向配置化超级BOM模式转化过程中，历史数据的梳理、转换与迁移是十分复杂的，工作量巨大。超级BOM构建得<span style='color:#FA0000'>越大</span>，<span style='color:#FA0000'>历史数据</span>梳理<span style='color:#FA0000'>越复杂</span>，<span style='color:#FA0000'>BOM校核的难度</span>与工作量<span style='color:#FA0000'>越大</span>。
-4）生产切换的要求。在超级BOM模式下，一个好的做法是在超级BOM范围内进行<span style='color:#FA0000'>垂直切换</span>。即当零件发生一个<span style='color:#FA0000'>设计变更</span>时，在超级BOM范围内的<span style='color:#FA0000'>所有车型进行同步切换</span>，而不只是部分车型切换，其他车型不切换。这样做的好处是提高生产运营效率，但有可能会<span style='color:#FA0000'>牺牲一定的库存</span>为代价。
+（一）超级BOM应该在哪个层级搭建
+在实施企业级BOM时，一般首先讨论车型型谱。所谓车型型谱，就是指各层级车型（平台、车系、工程车型等）由哪些参数决定、各层级车型之间的关系。车型型谱的定义对于企业非常重要。车型型谱定义有助于在全企业范围内，从产品规划、产品设计、产品制造到产品销售形成统一的对产品家族的完整认识，确保策划的产品能满足市场需求，设计、生产的产品与规划相匹配，从而与市场一致，确保销售能够正确引导市场的购买行为等。当然，车型型谱并不是为BOM而定义的，不实施BOM项目，也需要规范化的车型型谱定义，以利于车企内部各部门之间基于统一的车型定义形成高效的协作机制，并且有利于基于平台的设计重用。在企业级BOM平台实施中探讨车型型谱定义，是期望企业能够比较全面、长远地建立起超级BOM构建策略，并形成规范。所谓BOM构建策略，是指超级BOM应该搭建在哪一层级的车型上，例如，是基于平台搭建还是基于车型系列搭建，新的改型项目要不要另外搭建一个BOM等；或者说，企业要搭建一个多大的超级BOM。对于这一问题，不同企业答案会有差异。以我们实施项目的经验，总结了以下关键因素。
+1）企业实施平台化程度及对设计重用度的期望。平台化水平越高，或者对设计重用度要求越高，超级BOM可以考虑在更高层级搭建，即超级BOM可以搭得越大。
+2）人员专业技能状况及业务规范程度。超级BOM的层级越高，配置管理越复杂，对配置工程师、BOM工程师的能力要求越高，对业务规范化程度要求也越高。
+3）历史数据的状况及复杂程度。历史较长的车企，在从传统模式向配置化超级BOM模式转化过程中，历史数据的梳理、转换与迁移是十分复杂的，工作量巨大。超级BOM构建得越大，历史数据梳理越复杂，BOM校核的难度与工作量越大。
+4）生产切换的要求。在超级BOM模式下，一个好的做法是在超级BOM范围内进行垂直切换。即当零件发生一个设计变更时，在超级BOM范围内的所有车型进行同步切换，而不只是部分车型切换，其他车型不切换。这样做的好处是提高生产运营效率，但有可能会牺牲一定的库存为代价。
 以上四个因素决定了BOM在哪一个层级构建。项目实施时，需要就企业的具体情况进行以上四个因素的分析。
-以上讨论的是BOM架构的第一个问题，即超级BOM应该在哪一层级进行定义的问题。简而言之，定义层级最好对应到车型型谱的一个<span style='color:#FA0000'>固定层级</span>，从设计重用角度来看，这一层级越高越好，但需要考虑历史数据、人员技能、规范化程度、生产切换等具体情况进行具体分析。
+以上讨论的是BOM架构的第一个问题，即超级BOM应该在哪一层级进行定义的问题。简而言之，定义层级最好对应到车型型谱的一个固定层级，从设计重用角度来看，这一层级越高越好，但需要考虑历史数据、人员技能、规范化程度、生产切换等具体情况进行具体分析。
 （二）BOM层级如何划分
-关于零部件的组织模式，可以简单定义图3-8所示模型进行说明。在上述模型中，零部件组织模式可以简化为三层结构，即代表零部件上层组织的<span style='color:#FA0000'>设计虚拟层、BOM核心层以及零件结构层</span>。
+关于零部件的组织模式，可以简单定义图3-8所示模型进行说明。在上述模型中，零部件组织模式可以简化为三层结构，即代表零部件上层组织的设计虚拟层、BOM核心层以及零件结构层。
 ![image3](f5a998a5ee3e45179e0ff61f86afed15.png)
 
-设计虚拟层可以对应到企业中一般的<span style='color:#FA0000'>分组、模块层级</span>或者其他虚拟总成级别。从企业级BOM管理思路来讲，这一层级搭建得<span style='color:#FA0000'>越深</span>，<span style='color:#FA0000'>BOM管理效率越低</span>。企业级BOM管理中一个重要的实践经验是<span style='font-weight:bold;color:#FA0000'>扁平化思路</span>。所谓扁平化思路，就是尽量使得这一层级的层次变少，甚至没有。设计虚拟层最大的用途与价值在于<span style='color:#FA0000'>数模的组织、DMU以及设计分工</span>。作为工程BOM，在业务环节上起到承上启下，协同设计、工艺、制造、物流、售后等相关业务领域的作用，如果采用与设计结构相同或者相近的结构，将会产生如下问题。
-<span style='color:#FA0000'>1. 数据冗余</span>
-当增加一层虚拟层级时，如果虚拟层级给零件号，则下面任何一个<span style='color:#FA0000'>零件发生变更</span>，<span style='color:#FA0000'>虚拟层级将发生变更</span>，在BOM上产生一整套该虚拟层级完整的数据。显然，新产生的这套虚拟层零件及下级结构与原来的结构存在大量的数据冗余。且层级越深，冗余度越高。
-2 . BOM发布<span style='color:#FA0000'>效率低</span>
-«span style='font-family:"Microsoft YaHei"'»当工程BOM结构与设计结构一致时，在PDM/PLM中，往往会以设计虚拟层级作为«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»权限单元«/span»«span style='font-family:"Microsoft YaHei"'»以及发布单元。BOM也会受到这种限制，产生很多问题，如BOM需要通过«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»创建/发布虚拟节点«/span»«span style='font-family:"Microsoft YaHei"'»才能组织/发布BOM；同平台同一子系统的虚拟节点包含该平台所有项目的数据，只有该节点的负责人才能更新«/span»<span style='font-family:Calibri'>BOM</span>«span style='font-family:"Microsoft YaHei"'»，因此同一时间«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»只有一个人有权限更新«/span»<span style='font-family:Calibri;color:#FA0000'>BOM</span>«span style='font-family: "Microsoft YaHei"'»，造成«/span»<span style='font-family:Calibri'>BOM</span>«span style='font-family:"Microsoft YaHei"'»管理«/span»«span style='font-family:"Microsoft YaHei"; color:#FA0000'»协同困难«/span»«span style='font-family:"Microsoft YaHei"'»；虚拟节点处于流程中则无法更新«/span»<span style='font-family:Calibri'>BOM</span>«span style='font-family:"Microsoft YaHei"'»，造成«/span»<span style='font-family:Calibri'>BOM</span>«span style='font-family:"Microsoft YaHei"'»的及时性和准确性难以保证等。«/span»
+设计虚拟层可以对应到企业中一般的分组、模块层级或者其他虚拟总成级别。从企业级BOM管理思路来讲，这一层级搭建得越深，BOM管理效率越低。企业级BOM管理中一个重要的实践经验是扁平化思路。所谓扁平化思路，就是尽量使得这一层级的层次变少，甚至没有。设计虚拟层最大的用途与价值在于数模的组织、DMU以及设计分工。作为工程BOM，在业务环节上起到承上启下，协同设计、工艺、制造、物流、售后等相关业务领域的作用，如果采用与设计结构相同或者相近的结构，将会产生如下问题。
+1. 数据冗余
+当增加一层虚拟层级时，如果虚拟层级给零件号，则下面任何一个零件发生变更，虚拟层级将发生变更，在BOM上产生一整套该虚拟层级完整的数据。显然，新产生的这套虚拟层零件及下级结构与原来的结构存在大量的数据冗余。且层级越深，冗余度越高。
+2 . BOM发布效率低
+«span style='font-family:"Microsoft YaHei"'»当工程BOM结构与设计结构一致时，在PDM/PLM中，往往会以设计虚拟层级作为«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»权限单元«/span»«span style='font-family:"Microsoft YaHei"'»以及发布单元。BOM也会受到这种限制，产生很多问题，如BOM需要通过«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»创建/发布虚拟节点«/span»«span style='font-family:"Microsoft YaHei"'»才能组织/发布BOM；同平台同一子系统的虚拟节点包含该平台所有项目的数据，只有该节点的负责人才能更新«/span»BOM«span style='font-family:"Microsoft YaHei"'»，因此同一时间«/span»«span style='font-family:"Microsoft YaHei";color:#FA0000'»只有一个人有权限更新«/span»BOM«span style='font-family: "Microsoft YaHei"'»，造成«/span»BOM«span style='font-family:"Microsoft YaHei"'»管理«/span»«span style='font-family:"Microsoft YaHei"; color:#FA0000'»协同困难«/span»«span style='font-family:"Microsoft YaHei"'»；虚拟节点处于流程中则无法更新«/span»BOM«span style='font-family:"Microsoft YaHei"'»，造成«/span»BOM«span style='font-family:"Microsoft YaHei"'»的及时性和准确性难以保证等。«/span»
 3\. 变更的“冒泡”问题
 在精确装配的设计结构中，下面一个零件发生变化，上面的零件也要升版或者变号，以此类推，其上级的上级结构也需要发生升版或者变号，因而会引发一系列的变更。而这些中间层级的变更实际不具备工程变更的业务含义，即采购、物流等业务单位并不需要关注这些变更。但由于工程BOM的组织方式，可能将这些本来应该限制在设计内部的变更带入到采购、物流等领域，带来整个业务链效率的下降。图3-8中的第二个层级为BOM核心层。BOM核心层是指无论哪个业务领域都非常关注的层级。那么哪一层级才是各个业务领域都关注的层级呢？毫无疑问，是生产线上所需要的具体的零部件，这些零部件实际由装配供货级别和采购供货级别零部件构成。BOM在规划、工程、制造、生产、售后等各个业务环节流转时，这些信息是不可缺失的。而BOM如果能够保证这些信息准确无误地传送，才能说达到了贯通各个业务领域协同的作用。因此，这一层级才是BOM的本质。当然，如果车企做到了从设计到采购再到制造生产的模块化，那么模块这一层级就是核心层级（与供货级别零部件等同）​。第三层级零件结构层级，是指零件本身的设计结构。这一层级的特点是下面不再有配置变型，即任何一个零部件底下的结构代表了一个固定的结构，确保在不同地方被使用时，这个零件的固定结构是一致的。
-（三）<span style='color:#FA0000'>配置层级</span>的定义
+（三）配置层级的定义
 讨论完以上关于零部件组织方式的问题之后，配置层级的定义就有了水到渠成的答案：所有BOM的核心信息都需要定义在BOM核心层，才能够保证信息在各个业务领域的贯通；配置信息作为超级BOM最为关键的信息，毫无疑问应该定义在该层级。这一理念表达如图3-9所示。不同业务领域实际上是针对这些零部件的不同应用，BOM的构建过程实际上是从产品策划开始，产品设计、产品策划、采购、制造等一起确定零部件的采用以及其制造加工深度的过程；BOM首先是管理这一过程的信息化工具，其次是承载这一过程各阶段的成果。为了说明上述配置层定义以及零部件组织方式导致的问题，以右前门锁举例。右前门锁总成包含前门锁扣、右前门锁体总成、右前门外把手以及其他标准件等，如图3-10所示。
 ![image4](af510cc4bad34cca9c0a548321e9b798.png)
 对于门锁总成，一般外把手与车身造型相关，是有可能变化的零件，而其他零件相对比较固定。如两款同一车系的车型右前门外把手不同，将产生两个变型件。

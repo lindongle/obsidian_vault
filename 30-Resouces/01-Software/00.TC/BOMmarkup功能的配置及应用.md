@@ -1,12 +1,12 @@
 ---
 title: BOMmarkup功能的配置及应用
-updated: 2026-06-13T22:08:29
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
 ---
 
-## <span style='color:#2E75B5'>BOMmarkup功能的配置及应用 </span>
+## BOMmarkup功能的配置及应用 
 ![image1](6b7f289402a1443b8dbe24adec5c5ef3.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：李定伟 审校：李达«/span»
 **适用版本：TC11**
@@ -14,7 +14,7 @@ tags:
 «/span»
 在我们项目实施过程中可能需要在产品结构上标记更改，保存应用批注、添加注释，帮助我们更好的理解和管理整个产品结构
 ”
-<span style='color:#3F3F3F;text-align:center'>**具 体 功 能**</span>
+**具 体 功 能**
 ![image2](296bc50b7f6d4fdb9999c1c0e9a59781.png)
 通过“BMIDE”→“编辑器”→“全局常数编辑器”（图1），打开全局常数编辑器，将Fnd0BOMMarkupAllowed值改为true（图2），然后部署模板。
 ![image3](4383c30ea6514147b8974d6bd6532010.png)
@@ -52,7 +52,7 @@ BOM批注视图（注释）：点击“工具”→“批注”→“显示批�
 ![image13](cfeb99db503c46db94885f50fe861d0c.png)
 **图11  **
 
-<span style='color:#FEFEFE;text-align:center'>**关注我们**</span>
+**关注我们**
 ![image14](cf734552dad44576838c6a05f078812d.png)
 ![image15](f736ddbb78d940a185e047e77f39a31b.jpg)
 阅读
@@ -66,7 +66,7 @@ BOM批注视图（注释）：点击“工具”→“批注”→“显示批�
 [我知道了](javascript:;)
 已发送
 取消
-#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
+#### *发送到看一看 *
 发送
 BOMmarkup功能的配置及应用
 最多200字，当前共字

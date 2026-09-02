@@ -1,6 +1,6 @@
 ---
-title: <span style='color:#2E75B5'>如何实现Teamcenter的单点登录 </span>
-updated: 2026-07-31T10:03:23
+title: 如何实现Teamcenter的单点登录
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:52
 tags:
   - TC
@@ -10,7 +10,7 @@ tags:
 2019年10月26日
 0:11
 
-# <span style='color:#2E75B5'>如何实现Teamcenter的单点登录 </span>
+# 如何实现Teamcenter的单点登录 
 ![image1](0fdbce87d3b340a687c1bc68634b42cf.gif)
 
 作者：leo 校对：Jeff  
@@ -56,12 +56,12 @@ LDAP的配置首先是先建立一个新连接，然后建立图示中的组织�
 只要不关闭图示的浏览器，即使中途退出了Teamcenter，下次启动时，也无需再输入密码了。
 ![image15](f807faf1ff484c7cadf3eb67674a00e3.png)
 同样的，与Teamcenter集成的第三方工具，例如Office、Solidworks，在进行相应的登录认证配置后，也不再需要输入账号密码即可实现登录。当计算机在域环境下，我们还可以通过进一步配置，通过登录计算机而登录应用程序。
-<span style='background:white'>- END -</span>
+- END -
 
-<span style='background:white'> ▼关注我们，发现更多精彩▼</span>
+ ▼关注我们，发现更多精彩▼
 
 «span style='background: \#60ADEF'»关于今宏科技«/span»
-<span style='background: white'>广州今宏信息科技有限公司（Gohope）为致力提升企业竞争力的制造型企业及经理人打造一个综合的技术服务平台。帮助企业建立强大的产品研发体系，促进制造企业技术转型，提高运营效率、降低复杂度，从而帮助制造企业加快产品上市时间。</span>
+广州今宏信息科技有限公司（Gohope）为致力提升企业竞争力的制造型企业及经理人打造一个综合的技术服务平台。帮助企业建立强大的产品研发体系，促进制造企业技术转型，提高运营效率、降低复杂度，从而帮助制造企业加快产品上市时间。
 ![image16](fa59c03c84a94f049c75493e807e2297.jpg)
 
 阅读
@@ -75,7 +75,7 @@ LDAP的配置首先是先建立一个新连接，然后建立图示中的组织�
 [我知道了](javascript:;)
 已发送
 取消
-## *<span style='color:#5B9BD5'>发布到看一看 </span>*
+## *发布到看一看 *
 发送
 最多200字，当前共字
 发送中

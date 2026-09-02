@@ -1,6 +1,6 @@
 ---
 title: CentOS/用SWAT让Samba服务器的管理温和化 - 站长百科
-updated: 2026-06-13T15:48:21
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -13,7 +13,7 @@ CentOS/用SWAT让Samba服务器的管理温和化 - 站长百科
 |    |
 |-----|
 [SWAT](http://www.zzbaike.com/w/index.php?title=SWAT&action=edit&redlink=1)是通过[浏览器](http://www.zzbaike.com/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8)对[Samba](http://www.zzbaike.com/wiki/Samba)进行管理的工具之一。通过SWAT ，可以在Samba允许访问范围内的客户端，用浏览器对服务端的Samba进行控制。在线文档的阅览、smb.conf 的确认和编辑，以及密码的变更、服务的重启等等都可以通过SWAT来完成，它的直观让Samba变得温和化，对那些不喜欢文本界面管理服务器的朋友来说，是一个强大的工具。
-## <span style='color:#2E75B5'>安装SWAT</span>
+## 安装SWAT
 首先，通过 yum 在线安装 SWAT 。
 \[root@sample ~\]# yum -y install samba-swat　 ← 在线安装 SWAT  
 
@@ -58,7 +58,7 @@ Installing: samba-swat \######################### \[1/1\]
 
 Installed: samba-swat.i386 0:3.0.10-1.4E.9  
 Complete!
-## <span style='color:#2E75B5'>配置SWAT</span>
+## 配置SWAT
 然后编辑 /etc/xinetd.d/swat ，对其进行配置。本条目的原则是只允许内网以及本地的客户端对SWAT进行访问。
 \[root@sample ~\]# vi /etc/xinetd.d/swat　 ← 编辑 SWAT 的配置文件  
 
@@ -68,7 +68,7 @@ only_from = 192.168.0.0　 ← 添加此行，只允许内网范围对 SWAT 进�
 disable = yes　 ← 找到此行，将 yes 改为 no  
 
 disable = no　 ← 变为此状态
-## <span style='color:#2E75B5'>启动SWAT</span>
+## 启动SWAT
 在启动SWAT之前，先将[防火墙](http://www.zzbaike.com/wiki/%E9%98%B2%E7%81%AB%E5%A2%99)中SWAT使用的901号端口开放。
 \[root@sample ~\]# vi /etc/sysconfig/iptables　 ← 编辑防火墙规则  
 
@@ -86,16 +86,16 @@ Applying iptables firewall rules:　　　　　 \[ OK \]
 
 Stopping xinetd: 　　　　　　　　　　　\[ OK \]  
 Starting xinetd: 　　　　　　　　　　　\[ OK \]
-## <span style='color:#2E75B5'>测试SWAT</span>
+## 测试SWAT
 在服务端启动SWAT后，我们就可以通过SWAT允许范围（本文以内网192.168.0.0及本地127.0.0.1为例）内的客户机的浏览器中，通过http://服务器的内网IP:901来访问服务端的SWAT了。如下所示：
 1、在浏览器中输入“ [http://]()服务器的内网IP:901”（本文以测试环境的“ [http://192.168.0.9:901”为例。请各自替换为您的服务器内网](http://192.168.0.9:901”为例。请各自替换为您的服务器内网)[IP地址](http://www.zzbaike.com/wiki/IP%E5%9C%B0%E5%9D%80)。），然后输入root用户的用户名及密码进入SWAT的管理首页；
 <img src="035df6d435b34736ba92be3f913001fd.png" alt="image1" />
 2、确认出现如下SWAT管理中心的首页：
 <img src="C:\Users\lindo\AppData\Local\Temp\个人\pandoc/media/image2.png" style="width:8.125in;height:6.11458in" />
 通过SWAT管理Samba与直接修改smb.conf的方式，在本质上并无差异，但通过浏览器访问的方式，可以使Samba的管理更加温和化，更加适用于不擅长使用文本界面、直接修改配置文件的朋友。
-## <span style='color:#2E75B5'>参考来源</span>
+## 参考来源
 <http://www.centospub.com/make/swat.html>
-## <span style='color:#2E75B5'>CentOS使用手册导航</span>
+## CentOS使用手册导航
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -128,6 +128,6 @@ Starting xinetd: 　　　　　　　　　　　\[ OK \]
 </tr>
 </tbody>
 </table>
-## <span style='color:#2E75B5'>留言</span>
+## 留言
 ![image3](8a0b1bb2d4504172ac22e67a1c76f3d8.png)
 ![image4](6d3fdf7bde5f433b822f757a1d1dd29c.png)

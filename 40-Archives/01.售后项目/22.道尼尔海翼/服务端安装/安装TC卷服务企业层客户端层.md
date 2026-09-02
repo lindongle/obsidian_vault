@@ -1,6 +1,6 @@
 ---
 title: 安装TC卷服务/企业层/客户端层
-updated: 2026-06-06T10:09:06
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:05:03
 ---
 
@@ -30,7 +30,7 @@ created: 2026-07-05T17:05:03
 ![image11](1a5e0bbabb924fb897bd313cbdc047ef.png)
 
 ![image12](13d090d3ce2d4a1982f5b87550c2e9e9.png)
-<span style='color:#FA0000'>默认勾选Port（以下图错误）</span>
+默认勾选Port（以下图错误）
 ![image13](79b50cec801645d4845c09ac322f436a.png)
 
 ![image14](e6dc38937dfb4c62ac826231b63451bb.png)

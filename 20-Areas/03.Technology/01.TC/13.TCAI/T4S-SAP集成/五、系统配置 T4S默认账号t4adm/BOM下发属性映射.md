@@ -1,6 +1,6 @@
 ---
 title: BOM下发属性映射
-updated: 2026-07-29T13:49:40
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:48
 ---
 
@@ -36,7 +36,7 @@ T4S_BillOfMaterialHeaderTypeList
 **T4S_BOM4RelationTypeList，配置可以下发SAP的BOM子组件(关系类型时使用，非BOM子件)的Item类型**
 
 设置删除SAP的空BOM。
-<span style='color:red'>set ::SAPDat(Bom:Parameter:allowEmptyBomTransfer) YES</span>
+set ::SAPDat(Bom:Parameter:allowEmptyBomTransfer) YES
 set ::SAPDat(Bom:Parameter:deleteEmptyBom) YES
 set ::SAPDat(Bom:Parameter:skipEmptyBomTransfer) NO ;#default value
 

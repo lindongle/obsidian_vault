@@ -1,6 +1,6 @@
 ---
 title: windows服务访问网络磁盘(NAS)部署 - harrycheng - 博客园
-updated: 2026-06-06T10:05:34
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -13,10 +13,10 @@ created: 2026-07-05T17:04:53
 2、使用组策略添加开机启动挂盘
 3、安装windows服务
 
-## <span style='color:#2E75B5'>1.下载PSTools</span>
+## 1.下载PSTools
 <https://technet.microsoft.com/en-us/sysinternals/pstools.aspx>
 
-## <span style='color:#2E75B5'>2.使用组策略添加开机启动挂盘</span>
+## 2.使用组策略添加开机启动挂盘
   2.1 设置Powershell执行策略
 　　　　Set-ExecutionPolicy UnRestricted
 　　2.2 编写挂盘脚本
@@ -37,6 +37,6 @@ Start-Process -Wait \`
 ![image2](3c761e6278304c3a93eab54d94e227b6.png)
 　　　　　　
 ![image3](d863315e00d04db8bc8517f772a315ad.png)
-## <span style='color:#2E75B5'>3.安装windowse服务</span>
+## 3.安装windowse服务
 　　以localsystem 安装服务
 

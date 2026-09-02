@@ -1,6 +1,6 @@
 ---
 title: /etc/sysctl.conf参数解释 - senlin1202的博客 - CSDN博客
-updated: 2026-06-06T00:27:20
+updated: 2026-09-02T16:30:06
 created: 2026-07-05T17:04:53
 ---
 
@@ -26,7 +26,7 @@ net.core.netdev_max_backlog = 8096
 net.ipv4.tcp_syncookies = 1
 \#三次握手建立阶段SYN请求队列的最大长度，默认是1024。设置大一些可以在繁忙时将来不及处理的请求放入队列，而不至于丢失客户端的请求  
 net.ipv4.tcp_max_syn_backlog = 1024
-# <span style='color:#1E4E79'>如何理解LVS中DR模型的arp请求-arp_announce和arp_ignore</span>
+# 如何理解LVS中DR模型的arp请求-arp_announce和arp_ignore
 lvs在DR模式下需要关闭arp，设置参数的意思可以参考下文  
 arp_announce和arp_ignore  
 用来屏蔽arp请求，比较难理解，先看看linux核心2.6的定义：

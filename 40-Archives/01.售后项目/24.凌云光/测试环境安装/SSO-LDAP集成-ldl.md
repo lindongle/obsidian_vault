@@ -1,6 +1,6 @@
 ---
 title: SSO-LDAP集成-ldl
-updated: 2026-06-06T10:09:05
+updated: 2026-09-02T16:30:07
 created: 2026-07-05T17:05:04
 ---
 
@@ -68,11 +68,11 @@ AWC的单点登录配置：
 修改以下内容
 ![image26](b906cdaded684e699a2d3dabc022fb27.png)
 
-<span style='color:#2D373C'>Application Registry增加TCAW条目 url为AW的连接地址http://hostname:3000</span>
+Application Registry增加TCAW条目 url为AW的连接地址http://hostname:3000
 ![image27](deac8a45770045d58cc79c117aa0dac3.png)
-<span style='color:#2D373C'>在tc_profilevars.bat文件的TC_SSO_APP_ID中增加TCAW</span>
+在tc_profilevars.bat文件的TC_SSO_APP_ID中增加TCAW
 ![image28](39a90d88ae394ba5972b199c266e4054.png)
-<span style='color:#2D373C'>TEM中AW gateway对TcSS的URL配置使用跟TC一样的，而Application ID使用TCAW</span>
+TEM中AW gateway对TcSS的URL配置使用跟TC一样的，而Application ID使用TCAW
 ![image29](542fbd6a44714b74a56edf40cf80b3b2.png)
 
 *来自 \< <https://support.sw.siemens.com/zh-CN/support-case/details/ed8c4100-fa46-11ed-81e0-0969a35a812f>\>*

@@ -1,34 +1,34 @@
 ---
 title: 判断条件中对象类型的子类 或子组u.fnd0ConditionHelper.fnd0isSubTyp...
-updated: 2026-06-05T23:14:21
+updated: 2026-09-02T16:30:05
 created: 2026-07-05T17:04:45
 ---
 
 ( ( o!=null ) AND u.fnd0ConditionHelper.fnd0isSubTypeOf(o,"ItemRevision" ))OR( ( t!= null) AND u.fnd0ConditionHelper.fnd0isSubTypeOf(t,"ItemRevision")) AND u.fnd0ConditionHelper.fnd0isSubGroupOf(u.group, "Engineeering")
 
-<span style='color:#FA0000'>注意：如果组名不存在，则默认没有这个条件，且组名必须是主值；</span>
+注意：如果组名不存在，则默认没有这个条件，且组名必须是主值；
 
-<span style='background:white'>Conditions appear in the</span><span style='font-weight:bold;background:white'>Filter Condition</span><span style='background:white'>list if they meet the following requirements:</span>
-- <span style='background:white'>The condition name meets the naming requirement as configured in the</span><span style='font-weight:bold;background:white'>Fnd0FilterCondition</span>dynamic LOV.  
-  As shipped, the naming requirement is that the condition name contains<span style='font-weight:bold;background:white'>WF</span><span style='background: white'>.</span>
-- <span style='background:white'>The condition contains the following parameters:</span>
-  - <span style='font-weight:bold;background:white'>WorkspaceObject o</span>
-  - <span style='font-weight:bold;background:white'>ImanType t</span>
-  - <span style='font-weight:bold;background:white'>UserSession u</span>
-<span style='background:white'>Workflow template filters affect:</span>
-- <span style='background:white'>The</span><span style='font-weight:bold; background:white'>Process Template</span><span style='background:white'>choices displayed by the</span><span style='font-weight:bold;background:white'>New Process Dialog</span><span style='background:white'>dialog box.</span>
-- <span style='background:white'>The</span><span style='font-weight:bold; background:white'>Process Template List</span><span style='background:white'>choices displayed by the</span><span style='font-weight:bold;background:white'>New Item</span><span style='background:white'>dialog box</span><span style='font-weight:bold; background:white'>Define Workflow Information</span><span style='background: white'>page.</span>
-<span style='background:white'>When a workflow process is being created for a selected object, its</span><span style='font-weight:bold;background:white'>WorkspaceObject</span><span style='background:white'>parameter is used for condition evaluation to get a filtered list of workflow templates. While creating a new Item, as the object is not yet created, filter condition evaluation can use object</span><span style='font-weight:bold;background:white'>ImanType</span><span style='background:white'>parameter to get the list of filtered workflow templates. The</span><span style='font-weight:bold;background:white'>UserSession</span><span style='background:white'>parameter is used to evaluate user session values such as user, group, and role.</span>
-<span style='background:white'>Example: Filter workflow templates while initiating workflow process for existing DocumentRevision objects</span>
+Conditions appear in theFilter Conditionlist if they meet the following requirements:
+- The condition name meets the naming requirement as configured in theFnd0FilterConditiondynamic LOV.  
+  As shipped, the naming requirement is that the condition name containsWF.
+- The condition contains the following parameters:
+  - WorkspaceObject o
+  - ImanType t
+  - UserSession u
+Workflow template filters affect:
+- TheProcess Templatechoices displayed by theNew Process Dialogdialog box.
+- TheProcess Template Listchoices displayed by theNew Itemdialog boxDefine Workflow Informationpage.
+When a workflow process is being created for a selected object, itsWorkspaceObjectparameter is used for condition evaluation to get a filtered list of workflow templates. While creating a new Item, as the object is not yet created, filter condition evaluation can use objectImanTypeparameter to get the list of filtered workflow templates. TheUserSessionparameter is used to evaluate user session values such as user, group, and role.
+Example: Filter workflow templates while initiating workflow process for existing DocumentRevision objects
 1.  «span style='color:#212529'»Use the following condition to filter workflow templates while initiating workflow process for a document revision.  
     Fnd0DocRevSubmitOnlyWF(WorkspaceObjecto,ImanTypet,UserSessionu)«/span»
 2.  «span style='color:#212529'»Define the following expression:  
     (o!=null)AND(o.object_type="DocumentRevision")«/span»
-<span style='color:#212529'>The condition expression validates when the object submitted is not null and the object type is**DocumentRevision**.</span>
-<span style='color:#212529'>Note:</span>
-<span style='color:#212529'>This condition does not work for subtypes of**DocumentRevision**.</span>
-<span style='color:#212529'>Also this condition requires the object to evaluate the condition, so using this condition does not filter the templates from the**New Item**dialog box**Define Workflow Information**page.</span>
-<span style='background:white'>Example: Filter workflow template for DocumentRevision and its subtypes</span>
+The condition expression validates when the object submitted is not null and the object type is**DocumentRevision**.
+Note:
+This condition does not work for subtypes of**DocumentRevision**.
+Also this condition requires the object to evaluate the condition, so using this condition does not filter the templates from the**New Item**dialog box**Define Workflow Information**page.
+Example: Filter workflow template for DocumentRevision and its subtypes
 1.  «span style='color:#212529'»Use the following condition when any user can submit a**DocumentRevision**object or its subtype objects to a specific workflow template.  
     Fnd0DocRevSubTypesWF(WorkspaceObjecto,ImanTypet,UserSessionu)«/span»
 2.  «span style='color:#212529'»Define the following expression:  
@@ -45,7 +45,7 @@ created: 2026-07-05T17:04:45
       (t,"DocumentRevision"))  
 
       The condition expression can validate when the given type is subtype of**DocumentRevision**using the**fnd0isSubTypeOf**function of the**fnd0ConditionHelper**class.«/span»
-<span style='background:white'>Example: Filter workflow templates for document revision and its subtypes when the session user belongs to the Engineering group.</span>
+Example: Filter workflow templates for document revision and its subtypes when the session user belongs to the Engineering group.
 1.  «span style='color:#212529'»Use the following condition when any user from**Engineering**group can submit a**DocumentRevision**or its subtypes to a specific workflow template. This example condition uses a nested condition that allows the reuse of existing conditions to write complex expressions.  
     Fnd0DocRevSubTypes_EngrGroupWF(WorkspaceObjecto,ImanTypet,  
     UserSessionu)«/span»
@@ -60,7 +60,7 @@ created: 2026-07-05T17:04:45
       (u.fnd0ConditionHelper.fnd0isSubGroupOf(u.group,"Engineering"))  
 
       The condition expression can validate when the user is a member of the**Engineering**group or its subgroups. The expression uses the**fnd0isSubGroupOf**function on the**fnd0ConditionHelper**class to validate user membership.«/span»
-<span style='background:white'>Example: Filter workflow templates for any objects belonging to a specific project</span>
+Example: Filter workflow templates for any objects belonging to a specific project
 1.  «span style='color:#212529'»Use the following condition for configuring the workflow template for any business objects from a specific project:  
     Fnd0_F35_ProjectDataWF(WorkspaceObjecto,ImanTypet,UserSessionu)«/span»
 2.  «span style='color:#212529'»Define the following expression:  
