@@ -1,16 +1,12 @@
 [
   "obsidian-importer",
   "bijitongbu",
-  "obsidian-minimal-settings",
-  "copilot",
-  "editing-toolbar",
-  "dataview",
   "code-block-plugin",
   "remotely-save",
-  "obsidian-excalidraw-plugin",
   "obsidian-git",
   "better-search-views",
   "recent-files-obsidian",
   "frontmatter-date-manager",
-  "text-lens"
+  "text-lens",
+  "copilot"
 ]
