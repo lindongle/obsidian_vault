@@ -1,6 +1,6 @@
 ---
 title: Teamcenter中如何管理汽车行业的Usage BOM2025-11-11T23:27:29.9...
-updated: 2026-07-05T17:08:54
+updated: 2026-09-02T13:49:54
 created: 2026-07-05T17:08:54
 tags:
   - TC
