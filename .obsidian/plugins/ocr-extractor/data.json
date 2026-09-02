@@ -5,7 +5,7 @@
   "openAiCompatibleModel": "",
   "openAiCompatibleSecret": "",
   "openAiCompatiblePrompt": "",
-  "customCommand": "",
+  "customCommand": "D:\\run_umi.bat {input}",
   "customCommandConvertPdfs": false,
   "preferEmbeddedText": false,
   "autoExtractAttachments": false
