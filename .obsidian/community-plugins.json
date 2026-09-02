@@ -9,5 +9,6 @@
   "frontmatter-date-manager",
   "text-lens",
   "copilot",
-  "ocr-extractor"
+  "ocr-extractor",
+  "obsidian-pandoc"
 ]
