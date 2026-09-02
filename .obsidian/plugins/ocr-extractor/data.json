@@ -1,11 +1,11 @@
 {
-  "ocrEngine": "customCommand",
+  "ocrEngine": "openAiCompatible",
   "mistralSecret": "",
-  "openAiCompatibleBaseUrl": "",
-  "openAiCompatibleModel": "",
-  "openAiCompatibleSecret": "",
+  "openAiCompatibleBaseUrl": "http://localhost:11434/v1",
+  "openAiCompatibleModel": "qwen2.5:14b",
+  "openAiCompatibleSecret": "glm",
   "openAiCompatiblePrompt": "",
-  "customCommand": "D:\\run_umi.bat {input}",
+  "customCommand": "\"D:\\OneDrive\\SoftWare\\Umi_OCR_Paddle\\Umi-OCR.exe\" --path \"{input}\"",
   "customCommandConvertPdfs": false,
   "preferEmbeddedText": false,
   "autoExtractAttachments": false

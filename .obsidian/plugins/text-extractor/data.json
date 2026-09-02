@@ -3,6 +3,6 @@
     "chi_sim",
     "eng"
   ],
-  "rightClickMenu": false,
+  "rightClickMenu": true,
   "useSystemOCR": false
 }
