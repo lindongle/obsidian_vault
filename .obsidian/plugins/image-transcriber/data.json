@@ -1,6 +1,6 @@
 {
   "ollamaUrl": "http://localhost:11434",
-  "modelName": "qwen2.5:14b",
+  "modelName": "glm-ocr:latest",
   "transcriptionPrompt": "You are an expert document transcriber. Convert this image to well-structured Obsidian-flavored Markdown.\n\nRules:\n- Preserve all text content exactly as shown\n- Use appropriate Markdown formatting (headings, lists, tables, code blocks, links, etc)\n- Maintain the original document structure and hierarchy\n- For handwritten text, transcribe as accurately as possible\n- For diagrams or charts, convert to Mermaid syntax, and if necessary, describe them in detail\n- If text is unclear, use [unclear] as a placeholder\n- Output ONLY the transcribed content as Markdown, absolutely nothing else\n- NEVER add comments, explanations, notes, preamble, or remarks about the transcription process\n- Do NOT wrap the output in a code block or add any framing text like \"Here is the transcription:\"\n- The output must contain exclusively the content extracted from the image",
   "includeSubfolders": false,
   "overwriteExisting": false,
