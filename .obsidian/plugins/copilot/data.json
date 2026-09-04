@@ -634,6 +634,15 @@
       },
       "configuredModelId": "29af2b6b-d930-4cb3-ae3e-74b73e6bba69",
       "configuredAt": 1787960251116
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/muse-spark-1.3-contributor-free",
+        "displayName": "OpenCode Zen/Muse Spark 1.3 Free"
+      },
+      "configuredModelId": "1e45d4b6-bb2a-4c1a-ae38-96c83374e885",
+      "configuredAt": 1788504059815
     }
   ],
   "backends": {
