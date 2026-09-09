@@ -1,6 +1,6 @@
 ---
 title: 异步服务配置With SSO
-updated: 2026-06-06T10:05
+updated: 2026-09-09T21:31:02
 created: 2018-08-14T14:40:29
 tags:
   - TC安装部署
