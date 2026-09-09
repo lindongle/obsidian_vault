@@ -1,7 +1,7 @@
 ---
 title: 批量导出PDF
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:52
+updated: 2026-06-06T10:08
+created: 2019-07-10T00:31:58
 tags:
   - TC
 ---
@@ -10,7 +10,7 @@ tags:
 2019年7月10日
 0:31
 
-## Teamcenter 技术技巧 
+## <span style='color:#2E75B5'>Teamcenter 技术技巧 </span>
 ***1. 如何手动重新安装ServerManager服务***
 问题：
 如何为当前的Server Manager重新创建Windows服务？
@@ -53,17 +53,17 @@ tags:
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *朋友会在“发现-看一看”看到你“在看”的内容 *
+#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
 确定
 ![image10](c5065ee8410b47b59d0d7857aca43fd8.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *朋友将在看一看看到 *
+#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
 确定
 写下你的想法...
 取消
-#### *发布到看一看 *
+#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
 确定
 最多200字，当前共字
 发送中

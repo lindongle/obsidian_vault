@@ -1,7 +1,7 @@
 ---
 title: CATIA集成V12
-updated: 2026-09-02T16:30:05
-created: 2026-07-05T17:04:43
+updated: 2026-06-06T10:08
+created: 2018-06-24T19:37:20
 ---
 
 ![image1](d51b31e8335c4a3b8f92b988409b054c.png)
@@ -23,7 +23,7 @@ created: 2026-07-05T17:04:43
 ![image9](d0c8baf9eaf946dd94f71d62ac3c673f.png)
 
 ![image10](0bfdd75257204378984419140b377c1f.png)
-CAA要选择包含V5R20的目录
+<span style='color:red'>CAA要选择包含V5R20的目录</span>
 ![image11](1361fee9780940dab5bb147f182dc76d.png)
 如果提示没有权限，则先创建目录。
 ![image12](ea062e20ec8b4411b8f1bea6741fb914.png)

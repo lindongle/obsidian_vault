@@ -1,7 +1,7 @@
 ---
 title: 自动转JT
-updated: 2026-09-02T16:30:05
-created: 2026-07-05T17:04:42
+updated: 2026-06-06T10:09
+created: 2019-02-27T12:06:44
 ---
 
 TSTK-CreateTranslationRequest
@@ -9,5 +9,5 @@ TSTK-CreateTranslationRequest
 0, 1, 2, and 3 correspo
 
 nding to OFF, low, medium, and high priority.
-
+<span style='color:red'></span>
 

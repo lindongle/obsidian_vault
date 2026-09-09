@@ -1,7 +1,7 @@
 ---
 title: (26条消息) Sql Server 2019 详细安装教程_万里赴长安的博客-CSDN博客_数据库...
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:54
+updated: 2026-06-06T10:05
+created: 2022-04-26T00:16:38
 ---
 
 (26条消息) Sql Server 2019 详细安装教程_万里赴长安的博客-CSDN博客_数据库2019安装教程
@@ -20,18 +20,18 @@ created: 2026-07-05T17:04:54
 - [检查.NET 35 环境](https://blog.csdn.net/SR02020/article/details/105361807#NET_35__8)
 - [自定 jdk](https://blog.csdn.net/SR02020/article/details/105361807#_jdk_13)
 - [下载](https://blog.csdn.net/SR02020/article/details/105361807#_18)
-# 安装完成后校验
+# <span style='color:#1E4E79'>安装完成后校验</span>
 **该步骤请在以下步骤全部操作完成后再看**
-# 准备
-#### *需要设备*
+# <span style='color:#1E4E79'>准备</span>
+#### *<span style='color:#5B9BD5'>需要设备</span>*
 - WIN 10 电脑一台
-#### *检查.NET 35 环境*
+#### *<span style='color:#5B9BD5'>检查.NET 35 环境</span>*
 **检查.NET35环境是为了降低安装过程中的错误率**
 - 参考链接：[win 10 .NET35 环境安装](https://blog.csdn.net/SR02020/article/details/105357669)
-#### *自定 jdk*
+#### *<span style='color:#5B9BD5'>自定 jdk</span>*
 **配置jdk是为了在安装过程中使用自己的jdk，Sql Server 2019 自带 jdk11 版本很新，如果不学习java编程的小伙伴或者不想麻烦的小伙伴，这步可以跳过**
 - 参考链接：[win 10 配置jdk8 环境 变量](https://blog.csdn.net/SR02020/article/details/105361261)
-# 下载
+# <span style='color:#1E4E79'>下载</span>
 - 进入微软下载官网：[点此进入](https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads)
 - 找到如图位置点击
 ![image1](f108e165f4ec499aa19e8d2efa901544.png)

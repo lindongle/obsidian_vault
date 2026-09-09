@@ -1,7 +1,7 @@
 ---
 title: 安装Office集成、全文搜索、T4S
-updated: 2026-07-29T13:50:47
-created: 2026-07-05T17:05:03
+updated: 2026-06-06T10:09
+created: 2023-04-18T14:15:21
 ---
 
 1.  安装Office集成：

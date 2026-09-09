@@ -1,7 +1,7 @@
 ---
 title: Linux常用命令-网络命令 - 彳亍 - CSDN博客
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:53
+updated: 2026-06-06T00:27
+created: 2018-10-15T04:09:28
 ---
 
 Linux常用命令-网络命令 - 彳亍 - CSDN博客
@@ -9,7 +9,7 @@ Linux常用命令-网络命令 - 彳亍 - CSDN博客
 4:09
 
 已剪辑自: <https://blog.csdn.net/lamp_yang_3533/article/details/53310844#t9>
-### 1. 发送消息 write
+### <span style='color:#5B9BD5'>1. 发送消息 write</span>
 命令名称：write  
 命令所在路径：/usr/bin/write  
 执行权限：所有用户  
@@ -33,7 +33,7 @@ This is a test !
 - 4
 - 5
 - 6
-### 2. 发送广播 wall
+### <span style='color:#5B9BD5'>2. 发送广播 wall</span>
 命令名称：wall  
 英文原意：write all  
 命令所在路径：/usr/bin/wall  
@@ -51,7 +51,7 @@ wall Hello World !
 回车，给所有在线用户（包括自己）发送广播消息 Hello World !
 - 1
 - 2
-### 3. 测试网络连通性 ping
+### <span style='color:#5B9BD5'>3. 测试网络连通性 ping</span>
 命令名称：ping  
 命令所在路径：/bin/ping  
 执行权限：所有用户  
@@ -87,7 +87,7 @@ ping -c 3 [www.baidu.com](http://www.baidu.com)
 - 7
 - 8
 - 9
-### 4. 查看网卡配置信息 ifconfig
+### <span style='color:#5B9BD5'>4. 查看网卡配置信息 ifconfig</span>
 命令名称：ifconfig  
 英文原意：interface configuration  
 命令所在路径：/sbin/ifconfig  
@@ -185,7 +185,7 @@ service network restart
 - 13
 - 14
 关于ifconfig命令，就先说到这里。后面我会详细讲述如何配置Linux服务器的IP地址。
-### 5. 发送邮件 mail
+### <span style='color:#5B9BD5'>5. 发送邮件 mail</span>
 命令名称：mail  
 命令所在路径：/bin/mail  
 执行权限：所有用户  
@@ -275,7 +275,7 @@ N 1 <www-data@localhost.l> Wed Nov 2 13:16 16/704 "\*\*\* SECURITY information f
 输入 d 邮件编号，可删除对应的邮件。
 输入 q ，可退出邮件交互模式，回到正常的界面。
 **注意：** 系统会给root用户发送一些重要的邮件，比如日志信息、报错信息等，root用户应定期用 mail 命令查看自己的邮箱。
-### 6. 列出所有的用户登录信息 last
+### <span style='color:#5B9BD5'>6. 列出所有的用户登录信息 last</span>
 命令名称：last  
 命令所在路径：/usr/bin/last  
 执行权限：所有用户  
@@ -311,7 +311,7 @@ reboot system boot 2.6.32-504.el6.i Sun Nov 13 14:37 - 01:41 (3+11:04)
 - 11
 - 12
 - 13
-### 7. 查看用户最后一次登录信息 lastlog
+### <span style='color:#5B9BD5'>7. 查看用户最后一次登录信息 lastlog</span>
 命令名称：lastlog  
 命令所在路径：/usr/bin/lastlog  
 执行权限：所有用户  
@@ -333,7 +333,7 @@ lastlog -u 0
 - 4
 - 5
 - 6
-### 8. 路由追踪 traceroute
+### <span style='color:#5B9BD5'>8. 路由追踪 traceroute</span>
 命令名称：traceroute  
 命令所在路径：/bin/traceroute  
 执行权限：所有用户  
@@ -350,7 +350,7 @@ traceroute [www.baidu.com](http://www.baidu.com)
 查看到达www.baidu.com的主机所经过的所有路径。
 - 1
 - 2
-### 9. 查看网络相关信息 netstat
+### <span style='color:#5B9BD5'>9. 查看网络相关信息 netstat</span>
 命令名称：netstat  
 命令所在路径：/bin/netstat  
 执行权限：所有用户  
@@ -418,7 +418,7 @@ netstat -rn
 - 17
 - 18
 - 19
-### 10. 配置网络 setup
+### <span style='color:#5B9BD5'>10. 配置网络 setup</span>
 命令名称：setup  
 命令所在路径：/usr/sbin/setup  
 执行权限：root  
@@ -437,7 +437,7 @@ setup 命令是 redhat 系列的linux系统（如CentOS）中专有的命令工�
 service network restart
 - 1
 使用 setup 命令保存的网络配置，会永久生效。
-### 11. 挂载 mount
+### <span style='color:#5B9BD5'>11. 挂载 mount</span>
 命令名称：mount  
 命令所在路径：/bin/mount  
 执行权限：所有用户  

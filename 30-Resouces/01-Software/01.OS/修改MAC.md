@@ -1,7 +1,7 @@
 ---
 title: 修改MAC
-updated: 2026-08-27T08:46:31
-created: 2026-07-05T17:04:53
+updated: 2026-06-06T00:29
+created: 2025-05-14T16:23:09
 ---
 
 sudo ifconfig eth0 down

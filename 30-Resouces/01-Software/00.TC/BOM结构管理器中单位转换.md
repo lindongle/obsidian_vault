@@ -1,7 +1,7 @@
 ---
 title: BOM结构管理器中单位转换
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:52
+updated: 2026-06-06T10:08
+created: 2019-07-10T00:42:00
 tags:
   - TC
 ---
@@ -10,7 +10,7 @@ BOM结构管理器中单位转换
 2019年7月10日
 0:42
 
-## Teamcenter 技术技巧 
+## <span style='color:#2E75B5'>Teamcenter 技术技巧 </span>
 ***1. 如何在结构管理器中使用单位转换***
 你可以在结构管理器中调出数量编辑窗口，根据用户选择的单位设置BOM行数量的值
 方法
@@ -56,17 +56,17 @@ SE_Assembly_Attr0:Dataset
 **已同步到看一看**
 [取消](javascript:;) [发送](javascript:;)
 [我知道了](javascript:;)
-#### *朋友会在“发现-看一看”看到你“在看”的内容 *
+#### *<span style='color:#5B9BD5'>朋友会在“发现-看一看”看到你“在看”的内容 </span>*
 确定
 ![image2](1e1bb7bfdd7d49dcac0517c03e815a2e.png)
 已同步到看一看[写下你的想法](javascript:;)
 最多200字，当前共字 发送
 已发送
-#### *朋友将在看一看看到 *
+#### *<span style='color:#5B9BD5'>朋友将在看一看看到 </span>*
 确定
 写下你的想法...
 取消
-#### *发布到看一看 *
+#### *<span style='color:#5B9BD5'>发布到看一看 </span>*
 确定
 最多200字，当前共字
 发送中

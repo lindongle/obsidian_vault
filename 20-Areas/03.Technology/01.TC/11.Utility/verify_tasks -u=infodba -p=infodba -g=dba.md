@@ -1,22 +1,21 @@
 ---
 title: verify_tasks -u=infodba -p=infodba -g=dba
-updated: 2026-08-20T10:23:52
-created: 2026-07-05T17:04:46
+updated: 2026-06-11T11:12
+created: 2018-03-11T12:09:47
 ---
 
 检查流程对象的使用情况：verify_tasks-u=infodba-p=infodba-g=dba
 删除错误的流程对象：verify_tasks-m=delete-u=infodba-p=infodba-g=dba
 查看现有登录用户：list_users
 清理所有进程：clearlocks-assert_all_dead-u=infodba-p=infodba-g=dba
-清死进程：clearlocks-verbose -assert_dead -u=infodba -p=infodba -g=dba
+清死进程：clearlocks-verbose-assert_dead-u=infodba-p=infodba-g=dba
 重新注册schema文件：install-regen_schema_fileinfodbainfodbadba
 导出fsc信息：Backup_xmlinfo.exeinfodbainfodbadba
 当BMIDE部署时没有勾选生成缓存时，部署后要运行，否则无法登陆：generate_client_meta_cache -u=infodba -p=infodba -g=dba generate all
 解锁数据库BMIDE部署锁定：bmide_deployment_lock-u=infodba-p=infodba-g=dba-release
 
 1、清理账户
-查询并死进程：clearlocks -verbose，会自动把以下Dead的给清理掉
-![[Pasted image 20260820102336.png]]
+清理死进程，执行两遍：clearlocks-verbose
 杀掉所有账户：clearlocks -assert_all_dead 需要重启四层服务
 clearlocks -assert_all_dead -u=infodba -p=infodba -g=dba
 

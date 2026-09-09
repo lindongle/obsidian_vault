@@ -1,7 +1,7 @@
 ---
-title: BGSGS网站
-updated: 2026-08-06T10:48:18
-created: 2026-07-05T17:04:48
+title: BGS/GS网站
+updated: 2026-06-06T10:08
+created: 2020-08-21T10:18:55
 ---
 
 ![image1](a7427574b9ed4216983985bcc3321253.png)

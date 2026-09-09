@@ -1,7 +1,7 @@
 ---
 title: 如何安装TC与Excel实时集成
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:52
+updated: 2026-06-06T10:08
+created: 2020-02-25T00:07:27
 tags:
   - TC
 ---
@@ -10,7 +10,7 @@ tags:
 2020年2月25日
 0:07
 
-## 如何安装TC与Excel实时集成 
+## <span style='color:#2E75B5'>如何安装TC与Excel实时集成 </span>
 ![image1](d1c65efc0e3f4f5bbd0312be955175ba.gif)
 «span style='font-weight:bold;background: \#59C3F9'»作者：陈嘉颖 审校：陈泓希«/span»
 **适用版本：Teamcenter11.3**
@@ -18,7 +18,7 @@ tags:
 在Teamcenter结构管理器里导出BOM结构可以使用静态导出到EXCEL也可以使用实时集成导出的EXCEL，但是使用实时集成需要安装模块后才能使用。
 
 ![image2](de754c4d8bac4f4d8b147d2257a6bbde.png)
-**操 作 步 骤**
+<span style='color:#3F3F3F;text-align:center'>**操 作 步 骤**</span>
 ![image2](de754c4d8bac4f4d8b147d2257a6bbde.png)
 ![image3](ba1975cd434943ca8a86100eb9c84a16.png)
 在此路径下创建名为“TcExt”的文件夹
@@ -58,4 +58,4 @@ tags:
 **图9**
 ![image3](ba1975cd434943ca8a86100eb9c84a16.png)
 打开TC就可以使用实时集成Excel
-**关注我们**
+<span style='color:#FEFEFE;text-align:center'>**关注我们**</span>

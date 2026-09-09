@@ -1,7 +1,7 @@
 ---
 title: 节点管理器启动weblogic服务
-updated: 2026-09-02T16:30:04
-created: 2026-07-05T17:04:39
+updated: 2026-06-06T10:08
+created: 2019-03-25T23:42:12
 tags:
   - TC安装部署
 ---
@@ -10,14 +10,14 @@ tags:
 ![image1](157f5cd611c945eaa94a26982935f96b.png)
 
 ![image2](0d6b10736f45449d97192bad7892a5db.png)
-修改配置文件：
-D:\Oracle\Middleware\Oracle_Home\user_projects\domains\plmweb\nodemanager\nodemanager.properties
+<span style='background:yellow;mso-highlight:yellow'>修改配置文件：</span>
+<span style='background:yellow;mso-highlight:yellow'>D:\Oracle\Middleware\Oracle_Home\user_projects\domains\plmweb\nodemanager\nodemanager.properties</span>
 ![image3](792a2cc61404476d9cce28bea926b02a.png)
 
 确保计算机-监视中状态为可访问。
 ![image4](0a5883e84ece48b8839dd37051048838.png)
 
-启动D:\Oracle\Middleware\Oracle_Home\user_projects\domains\plmweb\bin\startNodeManager.cmd
+<span style='background:yellow;mso-highlight:yellow'>启动D:\Oracle\Middleware\Oracle_Home\user_projects\domains\plmweb\bin\startNodeManager.cmd</span>
 ![image5](41f8012b0f6c4f4aa68ead826564ef44.png)
 
 选择某个节点服务：

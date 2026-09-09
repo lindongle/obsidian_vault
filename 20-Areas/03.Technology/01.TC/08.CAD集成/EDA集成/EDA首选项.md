@@ -1,7 +1,7 @@
 ---
 title: EDA首选项
-updated: 2026-09-02T16:30:05
-created: 2026-07-05T17:04:44
+updated: 2026-06-06T10:08
+created: 2018-03-14T13:41:58
 ---
 
 ---
@@ -61,8 +61,8 @@ EDA_CheckComponentExistence
 • EDA_CombinedViewableOptionDefault
 指定组合ECAD 设计工具中签入、保存和另存为可查看选项的默认状态。
 
-EDA_PreferredLocalTS
-改为true，变为dispatcher转换。
+<span style='color:red'>EDA_PreferredLocalTS</span>
+<span style='color:red'>改为true，变为dispatcher转换。</span>
 
 指定是否必须在本地运行转换。
 

@@ -1,22 +1,22 @@
 ---
 title: AWC修改登录页面logo(同样方式修改背景图片)
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:51
+updated: 2026-06-06T10:08
+created: 2020-03-11T23:05:57
 tags:
   - TC
 ---
 
-## AWC修改登录页面logo(同样方式修改背景图片) 
+## <span style='color:#2E75B5'>AWC修改登录页面logo(同样方式修改背景图片) </span>
 
-1:替换awc.war\assets1581824131757\images\中的logo.jpg图片和logo.jpg.gz压缩包中的图片
+<span style='color:black'>1:替换awc.war\assets1581824131757\images\中的logo.jpg图片和logo.jpg.gz压缩包中的图片</span>
 
 ![image1](4fa65a6df215478ea91486be55090513.png)
 
-2:然后修改awc.war\WEB-INF\下GZFileFilter.manifest文件内logo图片和压缩包的文件大小
-
+<span style='color:black'>2:然后修改awc.war\WEB-INF\下GZFileFilter.manifest文件内logo图片和压缩包的文件大小</span>
+<span style='color:black'></span>
 ![image2](1635e11c836d4078ae232e0d72910f00.png)
 
-3:清除浏览器缓存
+<span style='color:black'>3:清除浏览器缓存</span>
 
 阅读
 在看
@@ -29,7 +29,7 @@ tags:
 [我知道了](javascript:;)
 已发送
 取消
-#### *发送到看一看 *
+#### *<span style='color:#5B9BD5'>发送到看一看 </span>*
 发送
 AWC修改登录页面logo(同样方式修改背景图片)
 最多200字，当前共字

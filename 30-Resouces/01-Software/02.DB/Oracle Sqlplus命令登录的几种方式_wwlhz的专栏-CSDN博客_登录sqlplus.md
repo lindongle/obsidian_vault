@@ -1,11 +1,11 @@
 ---
 title: Oracle Sqlplus命令登录的几种方式_wwlhz的专栏-CSDN博客_登录sqlplus
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:54
+updated: 2026-06-06T00:31
+created: 2021-07-06T21:47:55
 ---
 
 已剪辑自: <https://blog.csdn.net/wwlhz/article/details/73296430>
-## sqlplus 命令语法
+## <span style='color:#2E75B5'>sqlplus 命令语法</span>
 sqlplus \[ \[\<option\>\] \[{logon \| /nolog}\] \[\<start\>\] \]  
 \<option\> 为: \[-C \<version\>\] \[-L\] \[-M "\<options\>"\] \[-R \<level\>\] \[-S\]  
 

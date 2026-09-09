@@ -1,14 +1,14 @@
 ---
 title: Win10文件管理器中清除快速访问记录_百度经验
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:53
+updated: 2026-06-06T10:05
+created: 2018-12-06T20:09:45
 ---
 
 已剪辑自: <https://jingyan.baidu.com/article/cd4c297916c700756e6e603c.html>
 百度经验:jingyan.baidu.com
 Win10的快速访问功能会不断的自以为是的添加一些你需要的文件夹及其他数据，如果清除访问记录，很简单，方法如下：
 百度经验:jingyan.baidu.com百度经验:jingyan.baidu.com
-## 方法/步骤
+## <span style='color:#2E75B5'>方法/步骤</span>
 1.  1
 1、右键“快速访问”在弹出的菜单中选择“选项”
 2.  2

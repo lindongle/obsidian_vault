@@ -1,7 +1,7 @@
 ---
 title: Tomcat实现负载均衡 - 启云 - 博客园
-updated: 2026-09-02T16:30:06
-created: 2026-07-05T17:04:55
+updated: 2026-06-06T10:05
+created: 2022-05-19T22:21:51
 ---
 
 Tomcat实现负载均衡 - 启云 - 博客园
@@ -41,7 +41,7 @@ Tomcat实现负载均衡 - 启云 - 博客园
 \<body\>  
 \<div\>On \<%=request.getServerName() %\>\</div\>  
 \<div\>\<%=request.getLocalAddr() + ":" + request.getLocalPort() %\>\</div\>  
-\<div\>SessionID = \\<%=session.getId() %\>\</span\>\</div\>  
+\<div\>SessionID = \<span style="color:blue"\>\<%=session.getId() %\>\</span\>\</div\>  
 \<%=new Date()%\>  
 \</body\>  
 \</html\>

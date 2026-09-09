@@ -1,7 +1,7 @@
 ---
 title: Treecache/cluster数据库表
-updated: 2026-08-27T15:14:06
-created: 2026-07-05T17:04:38
+updated: 2026-06-06T10:08
+created: 2023-07-28T11:11:18
 tags:
   - TC安装部署
 ---

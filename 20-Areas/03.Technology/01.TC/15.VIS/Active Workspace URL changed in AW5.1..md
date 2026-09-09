@@ -1,7 +1,7 @@
 ---
 title: Active Workspace URL changed in AW5.1.
-updated: 2026-09-02T16:30:05
-created: 2026-07-05T17:04:49
+updated: 2026-06-06T10:09
+created: 2022-05-21T02:06:16
 ---
 
 Active Workspace URL changed in AW5.1.
@@ -9,7 +9,7 @@ Active Workspace URL changed in AW5.1.
 2:06
 
 已剪辑自: <https://support.sw.siemens.com/zh-CN/product/282219420/knowledge-base/PL8566007>
-# TeamcenterActive Workspace URL changed in AW5.1. 
+# <span style='color:#1E4E79'>TeamcenterActive Workspace URL changed in AW5.1. </span>
 更新于 2021年8月18日
 Active Workspace
 Share
@@ -32,7 +32,7 @@ How do I can get the AWC URL like [https://serverhost:**3000**/awc](https://serv
 
   
 
-## Solution
+## <span style='color:#2E75B5'>Solution</span>
 This is a change in the gateway config.json and supported in AW 5.1.  
 
 1. Update the UrlPrefix in config.json .  
@@ -48,7 +48,7 @@ This is a change in the gateway config.json and supported in AW 5.1.
               
 ![image1](5ca5ae86cc334fd3bbd8710d0f9a5632.png)
 
-## Notes and References
+## <span style='color:#2E75B5'>Notes and References</span>
 Additional Information .  
 User can also refere below documentation details and try to achieve your use case.  
 <https://internal.docs.sw.siemens.com/en-US/product/282219420/doc/PL20201019171517939.Configuration/htm7l/xid184922>  
@@ -58,7 +58,7 @@ User can also refere below documentation details and try to achieve your use cas
 urlPrefix  
 If you work with load balancers, you may need to change the URL prefix for your site to a non-root context  
 
-## Hardware/Software Configuration
+## <span style='color:#2E75B5'>Hardware/Software Configuration</span>
 Platform: INTL64  
 OS: windows  
 OS Version: XP64_SP2  

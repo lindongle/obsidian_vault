@@ -9,11 +9,10 @@ tags:
   - awc
   - BOM
 title: 1.1.MBOM工作空间
-aliases:
-  - 1.1.MBOM工作空间
+aliases: [1.1.MBOM工作空间]
 linter-yaml-title-alias: 1.1.MBOM工作空间
-created: 2026-07-05T17:04:41
-updated: 2026-06-23T18:42:53
+created: 2026-06-13T08:22:44+08:00
+updated: 2026-06-23T18:42:53+08:00
 ---
 
 公众号名称：PLM之友

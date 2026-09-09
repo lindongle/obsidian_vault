@@ -1,7 +1,7 @@
 ---
 title: T4S
-updated: 2026-09-02T16:30:07
-created: 2026-07-05T17:05:01
+updated: 2026-06-05T22:19
+created: 2021-12-02T16:47:43
 ---
 
 \#sap connect config
@@ -9,10 +9,10 @@ created: 2026-07-05T17:05:01
 \#sap test \u6211
 jco.client.client=300
 \#sap\u8D26\u53F7
-jco.client.user=plm
+jco.client.user=<span style='color:#FA0000'>plm</span>
 \#sap\u8D26\u53F7\u5BC6\u7801 20170523
 jco.client.passwd=20170701
-\#jco.client.passwd=20170523 DEV
+\#jco.client.passwd=<span style='color:#FA0000'>20170523</span> DEV
 \#jco.client.passwd=20170808 QAS
 \#sap\u670D\u52A1\u5668IP\u5730\u5740\uFF0C\u5982\u679C\u662F\u5916\u7F51\u8BBF\u95EE\uFF0C\u5219\u5728\u5185\u7F51IP\u524D\u52A0/H/\u5916\u7F51IP/H/192.168.0.88
 jco.client.ashost=172.20.1.213

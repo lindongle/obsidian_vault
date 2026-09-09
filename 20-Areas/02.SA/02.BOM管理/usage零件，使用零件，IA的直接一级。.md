@@ -1,7 +1,7 @@
 ---
 title: usage零件，使用零件，IA的直接一级。
-updated: 2026-08-31T18:21:40
-created: 2026-07-05T17:04:37
+updated: 2026-06-05T23:09
+created: 2018-06-26T14:15:39
 tags:
   - BOM
 ---

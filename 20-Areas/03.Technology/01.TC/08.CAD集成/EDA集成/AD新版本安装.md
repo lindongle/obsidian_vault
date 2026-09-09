@@ -1,7 +1,7 @@
 ---
 title: AD新版本安装
-updated: 2026-08-13T11:12:56
-created: 2026-07-05T17:04:44
+updated: 2026-06-06T10:08
+created: 2020-10-10T16:04:36
 ---
 
 独立介质，且必须先安装EDA gateway；
