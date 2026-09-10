@@ -1802,7 +1802,8 @@ var require_posix = __commonJS({
 // src/main.ts
 var main_exports = {};
 __export(main_exports, {
-  default: () => FrontmatterDateManagerPlugin
+  default: () => FrontmatterDateManagerPlugin,
+  ignoreReasonToNotice: () => ignoreReasonToNotice
 });
 module.exports = __toCommonJS(main_exports);
 var import_obsidian12 = require("obsidian");
@@ -5993,7 +5994,15 @@ var STRINGS_EN = {
     timestampsUpdated: "Timestamps updated.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "File is ignored by plugin settings.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Failed to update timestamps: {reason}",
     failedToUpdate: "Failed to update timestamps.",
     autoUpdateEnabled: "Auto-update enabled",
@@ -6016,6 +6025,7 @@ var STRINGS_EN = {
     skippedColumnReason: "Reason",
     skippedTableIntro: "{count} note(s) were skipped and left unchanged:",
     skippedUnsavedChanges: "The note has unsaved changes in an open editor. Save or close it, then run a new preview.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -6089,6 +6099,10 @@ var STRINGS_EN = {
       minSeconds: {
         name: "Minimum seconds between updates",
         desc: "Avoids updating the date too often while you type or switch between notes."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Change detection (content hashing)",
@@ -6172,7 +6186,7 @@ var STRINGS_EN = {
         obsidianDailyFolderDesc: "Daily notes folder",
         obsidianAttachmentsDesc: "Attachments / media folder",
         obsidianCanvasDesc: "All canvas files",
-        obsidianExcalidrawDesc: "All Excalidraw drawings",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Inbox / scratchpad folder",
         obsidianArchiveDesc: "Archived notes",
         sectionAllowlist: "Allowlist mode (track only specific folders)",
@@ -6211,6 +6225,10 @@ var STRINGS_EN = {
       maxCacheEntries: {
         name: "Maximum cache entries",
         desc: "When the cache grows past this limit, the oldest unused entries are removed. 0 = no limit."
+      },
+      skipRenameLinkUpdates: {
+        name: "Experimental: skip date update after renaming a note",
+        desc: 'Experimental. When you rename a note, the notes that link to it keep their existing date instead of getting a new one. Works only with [[wikilink]] style links and when you rename a single note, not a folder. In rare cases an edit of your own that only changes a link may not update the date. Needs "Detect real content changes" to stay on.'
       },
       postUpdateCommand: {
         name: "Command after update",
@@ -6417,7 +6435,15 @@ var STRINGS_RU = {
     timestampsUpdated: "\u0414\u0430\u0442\u044B \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u044B.",
     timestampsAlreadyCurrent: "\u0414\u0430\u0442\u044B \u0443\u0436\u0435 \u0430\u043A\u0442\u0443\u0430\u043B\u044C\u043D\u044B.",
     timestampsUpdateScheduled: "\u0414\u0430\u0442\u044B \u0441\u043A\u043E\u0440\u043E \u043E\u0431\u043D\u043E\u0432\u044F\u0442\u0441\u044F.",
-    fileIgnored: "\u0424\u0430\u0439\u043B \u0438\u0441\u043A\u043B\u044E\u0447\u0451\u043D \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u043C\u0438 \u043F\u043B\u0430\u0433\u0438\u043D\u0430.",
+    ignoredExcalidraw: '\u0420\u0438\u0441\u0443\u043D\u043A\u0438 Excalidraw \u0438\u0441\u043A\u043B\u044E\u0447\u0435\u043D\u044B. \u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 "\u0423\u0447\u0438\u0442\u044B\u0432\u0430\u0442\u044C \u0440\u0438\u0441\u0443\u043D\u043A\u0438 Excalidraw" \u0432 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445 \u043F\u043B\u0430\u0433\u0438\u043D\u0430, \u0447\u0442\u043E\u0431\u044B \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0442\u044C \u0438\u043C \u0434\u0430\u0442\u044B.',
+    ignoredByFilterRule: '\u0424\u0430\u0439\u043B \u0438\u0441\u043A\u043B\u044E\u0447\u0451\u043D \u043F\u0440\u0430\u0432\u0438\u043B\u043E\u043C \u0432 "\u0424\u0430\u0439\u043B\u044B \u0438 \u043F\u0430\u043F\u043A\u0438 \u0434\u043B\u044F \u043F\u0440\u043E\u043F\u0443\u0441\u043A\u0430".',
+    ignoredCanvas: "\u0424\u0430\u0439\u043B\u044B Canvas \u043D\u0435 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044E\u0442\u0441\u044F.",
+    ignoredEmpty: "\u0424\u0430\u0439\u043B \u043F\u0443\u0441\u0442, \u0434\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043D\u0435\u0447\u0435\u0433\u043E.",
+    ignoredUnchanged: "\u0421 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0433\u043E \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\u043E\u0435 \u043D\u0435 \u043C\u0435\u043D\u044F\u043B\u043E\u0441\u044C.",
+    ignoredNoDateKeys: "\u0412 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445 \u043F\u043B\u0430\u0433\u0438\u043D\u0430 \u043D\u0435 \u0437\u0430\u0434\u0430\u043D\u043E \u043D\u0438 \u043E\u0434\u043D\u043E\u0433\u043E \u0438\u043C\u0435\u043D\u0438 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430 \u0434\u0430\u0442\u044B.",
+    ignoredInvalidFileTimes: "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u0440\u043E\u0447\u0438\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u0438\u043B\u0438 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0444\u0430\u0439\u043B\u0430.",
+    ignoredNotMarkdown: "\u0421\u0432\u043E\u0439\u0441\u0442\u0432\u0430 \u0441 \u0434\u0430\u0442\u0430\u043C\u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u044E\u0442 \u0442\u043E\u043B\u044C\u043A\u043E Markdown-\u0437\u0430\u043C\u0435\u0442\u043A\u0438.",
+    excalidrawHasUnsavedChanges: "\u0412 \u0440\u0438\u0441\u0443\u043D\u043A\u0435 \u0435\u0441\u0442\u044C \u043D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F - \u0434\u0430\u0442\u044B \u043E\u0431\u043D\u043E\u0432\u044F\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E, \u043A\u0430\u043A Excalidraw \u0435\u0433\u043E \u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442.",
     failedToUpdateWithReason: "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0434\u0430\u0442\u044B: {reason}",
     failedToUpdate: "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0434\u0430\u0442\u044B.",
     autoUpdateEnabled: "\u0410\u0432\u0442\u043E\u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u043E",
@@ -6440,6 +6466,7 @@ var STRINGS_RU = {
     skippedColumnReason: "\u041F\u0440\u0438\u0447\u0438\u043D\u0430",
     skippedTableIntro: "{count} \u0437\u0430\u043C\u0435\u0442\u043E\u043A \u043F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E \u0438 \u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043E \u0431\u0435\u0437 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0439:",
     skippedUnsavedChanges: "\u0412 \u0437\u0430\u043C\u0435\u0442\u043A\u0435 \u0435\u0441\u0442\u044C \u043D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0432 \u043E\u0442\u043A\u0440\u044B\u0442\u043E\u043C \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u0435. \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435 \u0438\u043B\u0438 \u0437\u0430\u043A\u0440\u043E\u0439\u0442\u0435 \u0435\u0451, \u0437\u0430\u0442\u0435\u043C \u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u043D\u043E\u0432\u044B\u0439 \u043F\u0440\u0435\u0434\u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440.",
+    skippedExcalidrawUnsaved: "\u0412 \u0440\u0438\u0441\u0443\u043D\u043A\u0435 Excalidraw \u0435\u0441\u0442\u044C \u043D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0438\u043B\u0438 \u0438\u0434\u0451\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435. \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435 \u0438\u043B\u0438 \u0437\u0430\u043A\u0440\u043E\u0439\u0442\u0435 \u0435\u0433\u043E, \u0437\u0430\u0442\u0435\u043C \u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u043D\u043E\u0432\u044B\u0439 \u043F\u0440\u0435\u0434\u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -6513,6 +6540,10 @@ var STRINGS_RU = {
       minSeconds: {
         name: "\u041C\u0438\u043D\u0438\u043C\u0443\u043C \u0441\u0435\u043A\u0443\u043D\u0434 \u043C\u0435\u0436\u0434\u0443 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F\u043C\u0438",
         desc: "\u041D\u0435 \u0434\u0430\u0451\u0442 \u043E\u0431\u043D\u043E\u0432\u043B\u044F\u0442\u044C \u0434\u0430\u0442\u0443 \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0447\u0430\u0441\u0442\u043E, \u043F\u043E\u043A\u0430 \u0432\u044B \u043F\u0435\u0447\u0430\u0442\u0430\u0435\u0442\u0435 \u0438\u043B\u0438 \u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0430\u0435\u0442\u0435\u0441\u044C \u043C\u0435\u0436\u0434\u0443 \u0437\u0430\u043C\u0435\u0442\u043A\u0430\u043C\u0438."
+      },
+      trackExcalidraw: {
+        name: "\u0423\u0447\u0438\u0442\u044B\u0432\u0430\u0442\u044C \u0440\u0438\u0441\u0443\u043D\u043A\u0438 Excalidraw",
+        desc: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0442\u044C \u0434\u0430\u0442\u044B \u0440\u0438\u0441\u0443\u043D\u043A\u0430\u043C Excalidraw, \u043A\u0430\u043A \u043E\u0431\u044B\u0447\u043D\u044B\u043C \u0437\u0430\u043C\u0435\u0442\u043A\u0430\u043C. \u0417\u0430\u043F\u0438\u0441\u044C \u0432 \u0440\u0438\u0441\u0443\u043D\u043E\u043A \u0441 \u043D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D\u043D\u044B\u043C\u0438 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F\u043C\u0438 \u043D\u0438\u043A\u043E\u0433\u0434\u0430 \u043D\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F, \u0430 \u0434\u0430\u0442\u0430 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0433\u043E \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u0440\u0438\u0441\u0443\u043D\u043A\u0430\u043C \u043D\u0435 \u0437\u0430\u043F\u0438\u0441\u044B\u0432\u0430\u0435\u0442\u0441\u044F. "\u041F\u0435\u0440\u0435\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u0442\u044C \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u043E" \u0438 "\u041F\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u0434\u0430\u0442\u044B \u043A \u043E\u0434\u043D\u043E\u043C\u0443 \u0444\u043E\u0440\u043C\u0430\u0442\u0443" \u0432\u0441\u0435\u0433\u0434\u0430 \u043E\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0442 \u0432\u0441\u0435 \u0437\u0430\u043C\u0435\u0442\u043A\u0438.'
       },
       changeDetection: {
         name: "\u0420\u0430\u0441\u043F\u043E\u0437\u043D\u0430\u0432\u0430\u043D\u0438\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0439 (\u0445\u0435\u0448\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\u043E\u0433\u043E)",
@@ -6593,7 +6624,7 @@ var STRINGS_RU = {
         obsidianDailyFolderDesc: "\u041F\u0430\u043F\u043A\u0430 \u0435\u0436\u0435\u0434\u043D\u0435\u0432\u043D\u044B\u0445 \u0437\u0430\u043C\u0435\u0442\u043E\u043A",
         obsidianAttachmentsDesc: "\u041F\u0430\u043F\u043A\u0430 \u0432\u043B\u043E\u0436\u0435\u043D\u0438\u0439 / \u043C\u0435\u0434\u0438\u0430",
         obsidianCanvasDesc: "\u0412\u0441\u0435 \u0444\u0430\u0439\u043B\u044B \u0445\u043E\u043B\u0441\u0442\u043E\u0432",
-        obsidianExcalidrawDesc: "\u0412\u0441\u0435 \u0440\u0438\u0441\u0443\u043D\u043A\u0438 Excalidraw",
+        obsidianExcalidrawDesc: '\u0420\u0438\u0441\u0443\u043D\u043A\u0438 Excalidraw \u043F\u043E \u0438\u043C\u0435\u043D\u0438 \u0444\u0430\u0439\u043B\u0430 (\u0441\u043E\u0432\u043F\u0430\u0434\u0430\u0435\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0439 \u0441\u0443\u0444\u0444\u0438\u043A\u0441; \u043D\u0430\u0434\u0451\u0436\u043D\u044B\u0439 \u0441\u043F\u043E\u0441\u043E\u0431 - \u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0430\u0442\u0435\u043B\u044C "\u0423\u0447\u0438\u0442\u044B\u0432\u0430\u0442\u044C \u0440\u0438\u0441\u0443\u043D\u043A\u0438 Excalidraw")',
         obsidianInboxDesc: "\u041F\u0430\u043F\u043A\u0430 \u0432\u0445\u043E\u0434\u044F\u0449\u0438\u0445 / \u0447\u0435\u0440\u043D\u043E\u0432\u0438\u043A\u043E\u0432",
         obsidianArchiveDesc: "\u0410\u0440\u0445\u0438\u0432\u043D\u044B\u0435 \u0437\u0430\u043C\u0435\u0442\u043A\u0438",
         sectionAllowlist: "\u0420\u0435\u0436\u0438\u043C \u0431\u0435\u043B\u043E\u0433\u043E \u0441\u043F\u0438\u0441\u043A\u0430 (\u043E\u0442\u0441\u043B\u0435\u0436\u0438\u0432\u0430\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0451\u043D\u043D\u044B\u0435 \u043F\u0430\u043F\u043A\u0438)",
@@ -6632,6 +6663,10 @@ var STRINGS_RU = {
       maxCacheEntries: {
         name: "\u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C \u0437\u0430\u043F\u0438\u0441\u0435\u0439 \u0432 \u043A\u0435\u0448\u0435",
         desc: "\u041A\u043E\u0433\u0434\u0430 \u043A\u0435\u0448 \u043F\u0440\u0435\u0432\u044B\u0448\u0430\u0435\u0442 \u044D\u0442\u043E\u0442 \u043F\u0440\u0435\u0434\u0435\u043B, \u0441\u0430\u043C\u044B\u0435 \u0441\u0442\u0430\u0440\u044B\u0435 \u043D\u0435\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0435 \u0437\u0430\u043F\u0438\u0441\u0438 \u0443\u0434\u0430\u043B\u044F\u044E\u0442\u0441\u044F. 0 = \u0431\u0435\u0437 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u044F."
+      },
+      skipRenameLinkUpdates: {
+        name: "\u042D\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u043E: \u043D\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u044F\u0442\u044C \u0434\u0430\u0442\u0443 \u043F\u043E\u0441\u043B\u0435 \u043F\u0435\u0440\u0435\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u044F \u0437\u0430\u043C\u0435\u0442\u043A\u0438",
+        desc: "\u042D\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0430\u044F \u0444\u0443\u043D\u043A\u0446\u0438\u044F. \u041F\u0440\u0438 \u043F\u0435\u0440\u0435\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0438 \u0437\u0430\u043C\u0435\u0442\u043A\u0438 \u0432\u0441\u0435 \u0437\u0430\u043C\u0435\u0442\u043A\u0438, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043D\u0430 \u043D\u0435\u0451 \u0441\u0441\u044B\u043B\u0430\u044E\u0442\u0441\u044F, \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u044E\u0442 \u043F\u0440\u0435\u0436\u043D\u044E\u044E \u0434\u0430\u0442\u0443 \u0432\u043C\u0435\u0441\u0442\u043E \u043D\u043E\u0432\u043E\u0439. \u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u043E \u0441\u0441\u044B\u043B\u043A\u0430\u043C\u0438 \u0432\u0438\u0434\u0430 [[wikilink]] \u0438 \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u0440\u0438 \u043F\u0435\u0440\u0435\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0438 \u043E\u0434\u043D\u043E\u0439 \u0437\u0430\u043C\u0435\u0442\u043A\u0438, \u0430 \u043D\u0435 \u043F\u0430\u043F\u043A\u0438. \u0412 \u0440\u0435\u0434\u043A\u0438\u0445 \u0441\u043B\u0443\u0447\u0430\u044F\u0445 \u0432\u0430\u0448\u0430 \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u0432\u043A\u0430, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043C\u0435\u043D\u044F\u0435\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0441\u044B\u043B\u043A\u0443, \u043C\u043E\u0436\u0435\u0442 \u043D\u0435 \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0434\u0430\u0442\u0443. \u0422\u0440\u0435\u0431\u0443\u0435\u0442 \u0432\u043A\u043B\u044E\u0447\u0451\u043D\u043D\u043E\u0439 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \xAB\u041E\u0442\u0441\u043B\u0435\u0436\u0438\u0432\u0430\u0442\u044C \u0440\u0435\u0430\u043B\u044C\u043D\u044B\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u043C\u043E\u0433\u043E\xBB."
       },
       postUpdateCommand: {
         name: "\u041A\u043E\u043C\u0430\u043D\u0434\u0430 \u043F\u043E\u0441\u043B\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F",
@@ -6838,7 +6873,15 @@ var STRINGS_AR = {
     timestampsUpdated: "\u062A\u0645 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0648\u0627\u0631\u064A\u062E.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u062A\u0645 \u062A\u062C\u0627\u0647\u0644 \u0627\u0644\u0645\u0644\u0641 \u0628\u0646\u0627\u0621\u064B \u0639\u0644\u0649 \u0625\u0639\u062F\u0627\u062F\u0627\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u062A\u0639\u0630\u0651\u0631 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0648\u0627\u0631\u064A\u062E: {reason}",
     failedToUpdate: "\u062A\u0639\u0630\u0651\u0631 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0648\u0627\u0631\u064A\u062E.",
     autoUpdateEnabled: "\u062A\u0645 \u062A\u0641\u0639\u064A\u0644 \u0627\u0644\u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0644\u0642\u0627\u0626\u064A",
@@ -6861,6 +6904,7 @@ var STRINGS_AR = {
     skippedColumnReason: "\u0627\u0644\u0633\u0628\u0628",
     skippedTableIntro: "\u062A\u0645 \u062A\u062E\u0637\u064A {count} \u0645\u0644\u0627\u062D\u0638\u0629/\u0645\u0644\u0627\u062D\u0638\u0627\u062A \u0648\u062A\u064F\u0631\u0643\u062A \u062F\u0648\u0646 \u062A\u063A\u064A\u064A\u0631:",
     skippedUnsavedChanges: "\u062A\u062D\u062A\u0648\u064A \u0627\u0644\u0645\u0644\u0627\u062D\u0638\u0629 \u0639\u0644\u0649 \u062A\u063A\u064A\u064A\u0631\u0627\u062A \u063A\u064A\u0631 \u0645\u062D\u0641\u0648\u0638\u0629 \u0641\u064A \u0645\u062D\u0631\u0631 \u0645\u0641\u062A\u0648\u062D. \u0627\u062D\u0641\u0638\u0647\u0627 \u0623\u0648 \u0623\u063A\u0644\u0642\u0647\u0627\u060C \u062B\u0645 \u0634\u063A\u0651\u0644 \u0645\u0639\u0627\u064A\u0646\u0629 \u062C\u062F\u064A\u062F\u0629.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -6934,6 +6978,10 @@ var STRINGS_AR = {
       minSeconds: {
         name: "\u0627\u0644\u062D\u062F \u0627\u0644\u0623\u062F\u0646\u0649 \u0644\u0644\u062B\u0648\u0627\u0646\u064A \u0628\u064A\u0646 \u0627\u0644\u062A\u062D\u062F\u064A\u062B\u0627\u062A",
         desc: "\u064A\u0645\u0646\u0639 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0627\u0631\u064A\u062E \u0628\u0643\u062B\u0631\u0629 \u0623\u062B\u0646\u0627\u0621 \u0627\u0644\u0643\u062A\u0627\u0628\u0629 \u0623\u0648 \u0627\u0644\u062A\u0646\u0642\u0651\u0644 \u0628\u064A\u0646 \u0627\u0644\u0645\u0644\u0627\u062D\u0638\u0627\u062A."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u0627\u0643\u062A\u0634\u0627\u0641 \u0627\u0644\u062A\u063A\u064A\u064A\u0631\u0627\u062A (\u062A\u062C\u0632\u0626\u0629 \u0627\u0644\u0645\u062D\u062A\u0648\u0649)",
@@ -7014,7 +7062,7 @@ var STRINGS_AR = {
         obsidianDailyFolderDesc: "\u0645\u062C\u0644\u062F \u0627\u0644\u0645\u0644\u0627\u062D\u0638\u0627\u062A \u0627\u0644\u064A\u0648\u0645\u064A\u0629",
         obsidianAttachmentsDesc: "\u0645\u062C\u0644\u062F \u0627\u0644\u0645\u0631\u0641\u0642\u0627\u062A / \u0627\u0644\u0648\u0633\u0627\u0626\u0637",
         obsidianCanvasDesc: "\u062C\u0645\u064A\u0639 \u0645\u0644\u0641\u0627\u062A \u0627\u0644\u0643\u0627\u0646\u0641\u0627\u0633",
-        obsidianExcalidrawDesc: "\u062C\u0645\u064A\u0639 \u0631\u0633\u0648\u0645\u0627\u062A Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u0645\u062C\u0644\u062F \u0627\u0644\u0648\u0627\u0631\u062F / \u0627\u0644\u0645\u0633\u0648\u062F\u0627\u062A",
         obsidianArchiveDesc: "\u0627\u0644\u0645\u0644\u0627\u062D\u0638\u0627\u062A \u0627\u0644\u0645\u0624\u0631\u0634\u0641\u0629",
         sectionAllowlist: "\u0648\u0636\u0639 \u0627\u0644\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0645\u0633\u0645\u0648\u062D \u0628\u0647\u0627 (\u062A\u062A\u0628\u0651\u0639 \u0645\u062C\u0644\u062F\u0627\u062A \u0645\u062D\u062F\u062F\u0629 \u0641\u0642\u0637)",
@@ -7053,6 +7101,10 @@ var STRINGS_AR = {
       maxCacheEntries: {
         name: "\u0627\u0644\u062D\u062F \u0627\u0644\u0623\u0642\u0635\u0649 \u0644\u0645\u062F\u062E\u0644\u0627\u062A \u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0627\u0644\u0645\u0624\u0642\u062A\u0629",
         desc: "\u0639\u0646\u062F\u0645\u0627 \u062A\u062A\u062C\u0627\u0648\u0632 \u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0627\u0644\u0645\u0624\u0642\u062A\u0629 \u0647\u0630\u0627 \u0627\u0644\u062D\u062F\u060C \u062A\u064F\u0632\u0627\u0644 \u0623\u0642\u062F\u0645 \u0627\u0644\u0645\u062F\u062E\u0644\u0627\u062A \u063A\u064A\u0631 \u0627\u0644\u0645\u0633\u062A\u062E\u062F\u0645\u0629. 0 = \u0628\u0644\u0627 \u062D\u062F."
+      },
+      skipRenameLinkUpdates: {
+        name: "\u062A\u062C\u0631\u064A\u0628\u064A: \u0639\u062F\u0645 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0627\u0631\u064A\u062E \u0628\u0639\u062F \u0625\u0639\u0627\u062F\u0629 \u062A\u0633\u0645\u064A\u0629 \u0645\u0644\u0627\u062D\u0638\u0629",
+        desc: '\u0645\u064A\u0632\u0629 \u062A\u062C\u0631\u064A\u0628\u064A\u0629. \u0639\u0646\u062F \u0625\u0639\u0627\u062F\u0629 \u062A\u0633\u0645\u064A\u0629 \u0645\u0644\u0627\u062D\u0638\u0629\u060C \u062A\u062D\u062A\u0641\u0638 \u0627\u0644\u0645\u0644\u0627\u062D\u0638\u0627\u062A \u0627\u0644\u062A\u064A \u062A\u0631\u062A\u0628\u0637 \u0628\u0647\u0627 \u0628\u062A\u0627\u0631\u064A\u062E\u0647\u0627 \u0627\u0644\u062D\u0627\u0644\u064A \u0628\u062F\u0644\u0627\u064B \u0645\u0646 \u0627\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u062A\u0627\u0631\u064A\u062E \u062C\u062F\u064A\u062F. \u062A\u0639\u0645\u0644 \u0641\u0642\u0637 \u0645\u0639 \u0627\u0644\u0631\u0648\u0627\u0628\u0637 \u0628\u0646\u0645\u0637 [[wikilink]] \u0648\u0639\u0646\u062F \u0625\u0639\u0627\u062F\u0629 \u062A\u0633\u0645\u064A\u0629 \u0645\u0644\u0627\u062D\u0638\u0629 \u0648\u0627\u062D\u062F\u0629\u060C \u0648\u0644\u064A\u0633 \u0645\u062C\u0644\u062F\u0627\u064B. \u0641\u064A \u062D\u0627\u0644\u0627\u062A \u0646\u0627\u062F\u0631\u0629 \u0642\u062F \u0644\u0627 \u064A\u0624\u062F\u064A \u062A\u0639\u062F\u064A\u0644\u0643 \u0627\u0644\u0630\u064A \u064A\u063A\u064A\u0651\u0631 \u0631\u0627\u0628\u0637\u0627\u064B \u0641\u0642\u0637 \u0625\u0644\u0649 \u062A\u062D\u062F\u064A\u062B \u0627\u0644\u062A\u0627\u0631\u064A\u062E. \u064A\u062A\u0637\u0644\u0628 \u0625\u0628\u0642\u0627\u0621 "\u0627\u0643\u062A\u0634\u0627\u0641 \u062A\u063A\u064A\u064A\u0631\u0627\u062A \u0627\u0644\u0645\u062D\u062A\u0648\u0649 \u0627\u0644\u062D\u0642\u064A\u0642\u064A\u0629" \u0645\u0641\u0639\u0651\u0644\u0627\u064B.'
       },
       postUpdateCommand: {
         name: "\u0623\u0645\u0631 \u0628\u0639\u062F \u0627\u0644\u062A\u062D\u062F\u064A\u062B",
@@ -7259,7 +7311,15 @@ var STRINGS_DE = {
     timestampsUpdated: "Daten aktualisiert.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Datei wird durch die Plugin-Einstellungen ignoriert.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Daten konnten nicht aktualisiert werden: {reason}",
     failedToUpdate: "Daten konnten nicht aktualisiert werden.",
     autoUpdateEnabled: "Automatische Aktualisierung aktiviert",
@@ -7282,6 +7342,7 @@ var STRINGS_DE = {
     skippedColumnReason: "Grund",
     skippedTableIntro: "{count} Notiz(en) wurden \xFCbersprungen und unver\xE4ndert gelassen:",
     skippedUnsavedChanges: "Die Notiz hat ungespeicherte \xC4nderungen in einem offenen Editor. Speichern oder schlie\xDFen Sie sie und f\xFChren Sie dann eine neue Vorschau aus.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -7355,6 +7416,10 @@ var STRINGS_DE = {
       minSeconds: {
         name: "Mindestsekunden zwischen Aktualisierungen",
         desc: "Verhindert ein zu h\xE4ufiges Aktualisieren des Datums, w\xE4hrend Sie tippen oder zwischen Notizen wechseln."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\xC4nderungserkennung (Inhalts-Hashing)",
@@ -7435,7 +7500,7 @@ var STRINGS_DE = {
         obsidianDailyFolderDesc: "Ordner f\xFCr t\xE4gliche Notizen",
         obsidianAttachmentsDesc: "Ordner f\xFCr Anh\xE4nge / Medien",
         obsidianCanvasDesc: "Alle Canvas-Dateien",
-        obsidianExcalidrawDesc: "Alle Excalidraw-Zeichnungen",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Ordner f\xFCr Eingang / Notizzettel",
         obsidianArchiveDesc: "Archivierte Notizen",
         sectionAllowlist: "Erlaubnislisten-Modus (nur bestimmte Ordner verfolgen)",
@@ -7474,6 +7539,10 @@ var STRINGS_DE = {
       maxCacheEntries: {
         name: "Maximale Cache-Eintr\xE4ge",
         desc: "Wenn der Cache dieses Limit \xFCberschreitet, werden die \xE4ltesten ungenutzten Eintr\xE4ge entfernt. 0 = keine Begrenzung."
+      },
+      skipRenameLinkUpdates: {
+        name: "Experimentell: Datum nach dem Umbenennen einer Notiz nicht aktualisieren",
+        desc: 'Experimentell. Wenn Sie eine Notiz umbenennen, behalten die Notizen, die darauf verlinken, ihr bisheriges Datum, statt ein neues zu bekommen. Funktioniert nur mit Links im Stil [[wikilink]] und nur beim Umbenennen einer einzelnen Notiz, nicht eines Ordners. In seltenen F\xE4llen aktualisiert eine eigene \xC4nderung, die nur einen Link betrifft, das Datum nicht. Erfordert, dass "Echte Inhalts\xE4nderungen erkennen" aktiviert bleibt.'
       },
       postUpdateCommand: {
         name: "Befehl nach Aktualisierung",
@@ -7680,7 +7749,15 @@ var STRINGS_ES = {
     timestampsUpdated: "Fechas actualizadas.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "El archivo est\xE1 ignorado por los ajustes del plugin.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "No se pudieron actualizar las fechas: {reason}",
     failedToUpdate: "No se pudieron actualizar las fechas.",
     autoUpdateEnabled: "Actualizaci\xF3n autom\xE1tica activada",
@@ -7703,6 +7780,7 @@ var STRINGS_ES = {
     skippedColumnReason: "Motivo",
     skippedTableIntro: "{count} nota(s) se omitieron y quedaron sin cambios:",
     skippedUnsavedChanges: "La nota tiene cambios sin guardar en un editor abierto. Gu\xE1rdala o ci\xE9rrala y luego ejecuta una nueva vista previa.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -7776,6 +7854,10 @@ var STRINGS_ES = {
       minSeconds: {
         name: "Segundos m\xEDnimos entre actualizaciones",
         desc: "Evita actualizar la fecha con demasiada frecuencia mientras escribes o cambias entre notas."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Detecci\xF3n de cambios (hash de contenido)",
@@ -7856,7 +7938,7 @@ var STRINGS_ES = {
         obsidianDailyFolderDesc: "Carpeta de notas diarias",
         obsidianAttachmentsDesc: "Carpeta de adjuntos / medios",
         obsidianCanvasDesc: "Todos los archivos de lienzo",
-        obsidianExcalidrawDesc: "Todos los dibujos de Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Carpeta de entrada / borradores",
         obsidianArchiveDesc: "Notas archivadas",
         sectionAllowlist: "Modo de lista de permitidos (registrar solo carpetas espec\xEDficas)",
@@ -7895,6 +7977,10 @@ var STRINGS_ES = {
       maxCacheEntries: {
         name: "M\xE1ximo de entradas en la cach\xE9",
         desc: "Cuando la cach\xE9 supera este l\xEDmite, se eliminan las entradas m\xE1s antiguas sin usar. 0 = sin l\xEDmite."
+      },
+      skipRenameLinkUpdates: {
+        name: "Experimental: no actualizar la fecha al renombrar una nota",
+        desc: 'Experimental. Al renombrar una nota, las notas que enlazan con ella conservan su fecha actual en lugar de recibir una nueva. Solo funciona con enlaces del tipo [[wikilink]] y al renombrar una sola nota, no una carpeta. En casos raros, una edici\xF3n tuya que solo cambia un enlace puede no actualizar la fecha. Requiere que "Detectar cambios reales de contenido" siga activado.'
       },
       postUpdateCommand: {
         name: "Comando despu\xE9s de actualizar",
@@ -8101,7 +8187,15 @@ var STRINGS_FA = {
     timestampsUpdated: "\u062A\u0627\u0631\u06CC\u062E\u200C\u0647\u0627 \u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u0634\u062F\u0646\u062F.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u0627\u06CC\u0646 \u067E\u0631\u0648\u0646\u062F\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u062A\u0646\u0638\u06CC\u0645\u0627\u062A \u0627\u0641\u0632\u0648\u0646\u0647 \u0646\u0627\u062F\u06CC\u062F\u0647 \u06AF\u0631\u0641\u062A\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u062A\u0627\u0631\u06CC\u062E\u200C\u0647\u0627 \u0646\u0627\u0645\u0648\u0641\u0642 \u0628\u0648\u062F: {reason}",
     failedToUpdate: "\u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u062A\u0627\u0631\u06CC\u062E\u200C\u0647\u0627 \u0646\u0627\u0645\u0648\u0641\u0642 \u0628\u0648\u062F.",
     autoUpdateEnabled: "\u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u062E\u0648\u062F\u06A9\u0627\u0631 \u0641\u0639\u0627\u0644 \u0634\u062F",
@@ -8124,6 +8218,7 @@ var STRINGS_FA = {
     skippedColumnReason: "\u062F\u0644\u06CC\u0644",
     skippedTableIntro: "{count} \u06CC\u0627\u062F\u062F\u0627\u0634\u062A \u0631\u062F \u0634\u062F \u0648 \u0628\u062F\u0648\u0646 \u062A\u063A\u06CC\u06CC\u0631 \u0628\u0627\u0642\u06CC \u0645\u0627\u0646\u062F:",
     skippedUnsavedChanges: "\u0627\u06CC\u0646 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A \u062A\u063A\u06CC\u06CC\u0631\u0627\u062A \u0630\u062E\u06CC\u0631\u0647\u200C\u0646\u0634\u062F\u0647\u200C\u0627\u06CC \u062F\u0631 \u06CC\u06A9 \u0648\u06CC\u0631\u0627\u06CC\u0634\u06AF\u0631 \u0628\u0627\u0632 \u062F\u0627\u0631\u062F. \u0622\u0646 \u0631\u0627 \u0630\u062E\u06CC\u0631\u0647 \u06CC\u0627 \u0628\u0628\u0646\u062F\u06CC\u062F\u060C \u0633\u067E\u0633 \u067E\u06CC\u0634\u200C\u0646\u0645\u0627\u06CC\u0634 \u062C\u062F\u06CC\u062F\u06CC \u0627\u062C\u0631\u0627 \u06A9\u0646\u06CC\u062F.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -8197,6 +8292,10 @@ var STRINGS_FA = {
       minSeconds: {
         name: "\u062D\u062F\u0627\u0642\u0644 \u062B\u0627\u0646\u06CC\u0647 \u0628\u06CC\u0646 \u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC\u200C\u0647\u0627",
         desc: "\u0627\u0632 \u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u0628\u06CC\u0634 \u0627\u0632 \u062D\u062F \u062A\u0627\u0631\u06CC\u062E \u0647\u0646\u06AF\u0627\u0645 \u062A\u0627\u06CC\u067E \u06CC\u0627 \u062C\u0627\u0628\u0647\u200C\u062C\u0627\u06CC\u06CC \u0645\u06CC\u0627\u0646 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A\u200C\u0647\u0627 \u062C\u0644\u0648\u06AF\u06CC\u0631\u06CC \u0645\u06CC\u200C\u06A9\u0646\u062F."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u062A\u0634\u062E\u06CC\u0635 \u062A\u063A\u06CC\u06CC\u0631 (\u0647\u0634\u200C\u06A9\u0631\u062F\u0646 \u0645\u062D\u062A\u0648\u0627)",
@@ -8277,7 +8376,7 @@ var STRINGS_FA = {
         obsidianDailyFolderDesc: "\u067E\u0648\u0634\u0647 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A\u200C\u0647\u0627\u06CC \u0631\u0648\u0632\u0627\u0646\u0647",
         obsidianAttachmentsDesc: "\u067E\u0648\u0634\u0647 \u067E\u06CC\u0648\u0633\u062A\u200C\u0647\u0627 / \u0631\u0633\u0627\u0646\u0647",
         obsidianCanvasDesc: "\u0647\u0645\u0647 \u067E\u0631\u0648\u0646\u062F\u0647\u200C\u0647\u0627\u06CC \u0628\u0648\u0645",
-        obsidianExcalidrawDesc: "\u0647\u0645\u0647 \u0646\u0642\u0627\u0634\u06CC\u200C\u0647\u0627\u06CC Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u067E\u0648\u0634\u0647 \u0635\u0646\u062F\u0648\u0642 \u0648\u0631\u0648\u062F\u06CC / \u0686\u0631\u06A9\u200C\u0646\u0648\u06CC\u0633",
         obsidianArchiveDesc: "\u06CC\u0627\u062F\u062F\u0627\u0634\u062A\u200C\u0647\u0627\u06CC \u0628\u0627\u06CC\u06AF\u0627\u0646\u06CC\u200C\u0634\u062F\u0647",
         sectionAllowlist: "\u062D\u0627\u0644\u062A \u0641\u0647\u0631\u0633\u062A \u0645\u062C\u0627\u0632 (\u0631\u062F\u06CC\u0627\u0628\u06CC \u0641\u0642\u0637 \u067E\u0648\u0634\u0647\u200C\u0647\u0627\u06CC \u0645\u0634\u062E\u0635)",
@@ -8316,6 +8415,10 @@ var STRINGS_FA = {
       maxCacheEntries: {
         name: "\u062D\u062F\u0627\u06A9\u062B\u0631 \u0645\u062F\u062E\u0644\u200C\u0647\u0627\u06CC \u062D\u0627\u0641\u0638\u0647 \u067E\u0646\u0647\u0627\u0646",
         desc: "\u0648\u0642\u062A\u06CC \u062D\u0627\u0641\u0638\u0647 \u067E\u0646\u0647\u0627\u0646 \u0627\u0632 \u0627\u06CC\u0646 \u062D\u062F \u0641\u0631\u0627\u062A\u0631 \u0631\u0648\u062F\u060C \u0642\u062F\u06CC\u0645\u06CC\u200C\u062A\u0631\u06CC\u0646 \u0645\u062F\u062E\u0644\u200C\u0647\u0627\u06CC \u0628\u0644\u0627\u0627\u0633\u062A\u0641\u0627\u062F\u0647 \u062D\u0630\u0641 \u0645\u06CC\u200C\u0634\u0648\u0646\u062F. 0 = \u0628\u062F\u0648\u0646 \u0645\u062D\u062F\u0648\u062F\u06CC\u062A."
+      },
+      skipRenameLinkUpdates: {
+        name: "\u0622\u0632\u0645\u0627\u06CC\u0634\u06CC: \u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u0646\u06A9\u0631\u062F\u0646 \u062A\u0627\u0631\u06CC\u062E \u067E\u0633 \u0627\u0632 \u062A\u063A\u06CC\u06CC\u0631 \u0646\u0627\u0645 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A",
+        desc: "\u0642\u0627\u0628\u0644\u06CC\u062A \u0622\u0632\u0645\u0627\u06CC\u0634\u06CC. \u0648\u0642\u062A\u06CC \u0646\u0627\u0645 \u06CC\u06A9 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A \u0631\u0627 \u062A\u063A\u06CC\u06CC\u0631 \u0645\u06CC\u200C\u062F\u0647\u06CC\u062F\u060C \u06CC\u0627\u062F\u062F\u0627\u0634\u062A\u200C\u0647\u0627\u06CC\u06CC \u06A9\u0647 \u0628\u0647 \u0622\u0646 \u067E\u06CC\u0648\u0646\u062F \u062F\u0627\u0631\u0646\u062F \u062A\u0627\u0631\u06CC\u062E \u0641\u0639\u0644\u06CC \u062E\u0648\u062F \u0631\u0627 \u0646\u06AF\u0647 \u0645\u06CC\u200C\u062F\u0627\u0631\u0646\u062F \u0648 \u062A\u0627\u0631\u06CC\u062E \u062A\u0627\u0632\u0647\u200C\u0627\u06CC \u0646\u0645\u06CC\u200C\u06AF\u06CC\u0631\u0646\u062F. \u0641\u0642\u0637 \u0628\u0627 \u067E\u06CC\u0648\u0646\u062F\u0647\u0627\u06CC \u0628\u0647 \u0633\u0628\u06A9 [[wikilink]] \u0648 \u0647\u0646\u06AF\u0627\u0645 \u062A\u063A\u06CC\u06CC\u0631 \u0646\u0627\u0645 \u06CC\u06A9 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A (\u0646\u0647 \u06CC\u06A9 \u067E\u0648\u0634\u0647) \u06A9\u0627\u0631 \u0645\u06CC\u200C\u06A9\u0646\u062F. \u062F\u0631 \u0645\u0648\u0627\u0631\u062F \u0646\u0627\u062F\u0631\u060C \u0648\u06CC\u0631\u0627\u06CC\u0634 \u062E\u0648\u062F\u062A\u0627\u0646 \u06A9\u0647 \u0641\u0642\u0637 \u06CC\u06A9 \u067E\u06CC\u0648\u0646\u062F \u0631\u0627 \u062A\u063A\u06CC\u06CC\u0631 \u0645\u06CC\u200C\u062F\u0647\u062F \u0645\u0645\u06A9\u0646 \u0627\u0633\u062A \u062A\u0627\u0631\u06CC\u062E \u0631\u0627 \u0628\u0647\u200C\u0631\u0648\u0632 \u0646\u06A9\u0646\u062F. \u0646\u06CC\u0627\u0632\u0645\u0646\u062F \u0631\u0648\u0634\u0646 \u0645\u0627\u0646\u062F\u0646 \xAB\u062A\u0634\u062E\u06CC\u0635 \u062A\u063A\u06CC\u06CC\u0631\u0627\u062A \u0648\u0627\u0642\u0639\u06CC \u0645\u062D\u062A\u0648\u0627\xBB \u0627\u0633\u062A."
       },
       postUpdateCommand: {
         name: "\u0641\u0631\u0645\u0627\u0646 \u067E\u0633 \u0627\u0632 \u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC",
@@ -8522,7 +8625,15 @@ var STRINGS_FR = {
     timestampsUpdated: "Dates mises \xE0 jour.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Le fichier est ignor\xE9 par les param\xE8tres du module.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\xC9chec de la mise \xE0 jour des dates : {reason}",
     failedToUpdate: "\xC9chec de la mise \xE0 jour des dates.",
     autoUpdateEnabled: "Mise \xE0 jour automatique activ\xE9e",
@@ -8545,6 +8656,7 @@ var STRINGS_FR = {
     skippedColumnReason: "Raison",
     skippedTableIntro: "{count} note(s) ont \xE9t\xE9 ignor\xE9es et laiss\xE9es inchang\xE9es :",
     skippedUnsavedChanges: "La note contient des modifications non enregistr\xE9es dans un \xE9diteur ouvert. Enregistrez-la ou fermez-la, puis lancez un nouvel aper\xE7u.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -8618,6 +8730,10 @@ var STRINGS_FR = {
       minSeconds: {
         name: "Secondes minimum entre les mises \xE0 jour",
         desc: "\xC9vite de mettre \xE0 jour la date trop souvent pendant que vous tapez ou passez d\u2019une note \xE0 l\u2019autre."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "D\xE9tection des changements (hachage du contenu)",
@@ -8698,7 +8814,7 @@ var STRINGS_FR = {
         obsidianDailyFolderDesc: "Dossier des notes quotidiennes",
         obsidianAttachmentsDesc: "Dossier des pi\xE8ces jointes / m\xE9dias",
         obsidianCanvasDesc: "Tous les fichiers canvas",
-        obsidianExcalidrawDesc: "Tous les dessins Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Dossier bo\xEEte de r\xE9ception / brouillons",
         obsidianArchiveDesc: "Notes archiv\xE9es",
         sectionAllowlist: "Mode liste blanche (suivre uniquement certains dossiers)",
@@ -8737,6 +8853,10 @@ var STRINGS_FR = {
       maxCacheEntries: {
         name: "Nombre maximum d\u2019entr\xE9es du cache",
         desc: "Quand le cache d\xE9passe cette limite, les entr\xE9es inutilis\xE9es les plus anciennes sont supprim\xE9es. 0 = pas de limite."
+      },
+      skipRenameLinkUpdates: {
+        name: "Exp\xE9rimental : ne pas mettre \xE0 jour la date apr\xE8s le renommage d'une note",
+        desc: `Exp\xE9rimental. Lorsque vous renommez une note, les notes qui pointent vers elle conservent leur date actuelle au lieu d'en recevoir une nouvelle. Ne fonctionne qu'avec les liens de type [[wikilink]] et lors du renommage d'une seule note, pas d'un dossier. Dans de rares cas, une modification de votre part qui ne change qu'un lien peut ne pas mettre \xE0 jour la date. N\xE9cessite que "D\xE9tecter les vrais changements de contenu" reste activ\xE9.`
       },
       postUpdateCommand: {
         name: "Commande apr\xE8s mise \xE0 jour",
@@ -8943,7 +9063,15 @@ var STRINGS_ID = {
     timestampsUpdated: "Tanggal diperbarui.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Berkas diabaikan oleh pengaturan plugin.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Gagal memperbarui tanggal: {reason}",
     failedToUpdate: "Gagal memperbarui tanggal.",
     autoUpdateEnabled: "Pembaruan otomatis aktif",
@@ -8966,6 +9094,7 @@ var STRINGS_ID = {
     skippedColumnReason: "Alasan",
     skippedTableIntro: "{count} catatan dilewati dan dibiarkan tidak berubah:",
     skippedUnsavedChanges: "Catatan ini memiliki perubahan yang belum disimpan di editor yang terbuka. Simpan atau tutup catatan tersebut, lalu jalankan pratinjau baru.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -9039,6 +9168,10 @@ var STRINGS_ID = {
       minSeconds: {
         name: "Detik minimum antar pembaruan",
         desc: "Menghindari pembaruan tanggal terlalu sering saat Anda mengetik atau berpindah antar catatan."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Deteksi perubahan (hashing isi)",
@@ -9119,7 +9252,7 @@ var STRINGS_ID = {
         obsidianDailyFolderDesc: "Folder catatan harian",
         obsidianAttachmentsDesc: "Folder lampiran / media",
         obsidianCanvasDesc: "Semua berkas kanvas",
-        obsidianExcalidrawDesc: "Semua gambar Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Folder kotak masuk / coretan",
         obsidianArchiveDesc: "Catatan yang diarsipkan",
         sectionAllowlist: "Mode daftar izin (lacak hanya folder tertentu)",
@@ -9158,6 +9291,10 @@ var STRINGS_ID = {
       maxCacheEntries: {
         name: "Entri cache maksimum",
         desc: "Ketika cache melebihi batas ini, entri terlama yang tidak terpakai dihapus. 0 = tanpa batas."
+      },
+      skipRenameLinkUpdates: {
+        name: "Eksperimental: jangan perbarui tanggal setelah mengganti nama catatan",
+        desc: 'Eksperimental. Saat Anda mengganti nama catatan, catatan yang menautkannya tetap memakai tanggal yang ada, bukan tanggal baru. Hanya bekerja dengan tautan bergaya [[wikilink]] dan saat mengganti nama satu catatan, bukan folder. Dalam kasus yang jarang, suntingan Anda sendiri yang hanya mengubah tautan mungkin tidak memperbarui tanggal. Memerlukan "Deteksi perubahan konten nyata" tetap aktif.'
       },
       postUpdateCommand: {
         name: "Perintah setelah pembaruan",
@@ -9364,7 +9501,15 @@ var STRINGS_IT = {
     timestampsUpdated: "Date aggiornate.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Il file viene ignorato dalle impostazioni del plugin.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Impossibile aggiornare le date: {reason}",
     failedToUpdate: "Impossibile aggiornare le date.",
     autoUpdateEnabled: "Aggiornamento automatico attivato",
@@ -9387,6 +9532,7 @@ var STRINGS_IT = {
     skippedColumnReason: "Motivo",
     skippedTableIntro: "{count} nota/e saltate e lasciate invariate:",
     skippedUnsavedChanges: "La nota ha modifiche non salvate in un editor aperto. Salvala o chiudila, poi esegui una nuova anteprima.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -9460,6 +9606,10 @@ var STRINGS_IT = {
       minSeconds: {
         name: "Secondi minimi tra gli aggiornamenti",
         desc: "Evita di aggiornare la data troppo spesso mentre digiti o passi da una nota all\u2019altra."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Rilevamento delle modifiche (hashing del contenuto)",
@@ -9540,7 +9690,7 @@ var STRINGS_IT = {
         obsidianDailyFolderDesc: "Cartella delle note giornaliere",
         obsidianAttachmentsDesc: "Cartella degli allegati / media",
         obsidianCanvasDesc: "Tutti i file canvas",
-        obsidianExcalidrawDesc: "Tutti i disegni Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Cartella in arrivo / blocco appunti",
         obsidianArchiveDesc: "Note archiviate",
         sectionAllowlist: "Modalit\xE0 lista consentiti (traccia solo cartelle specifiche)",
@@ -9579,6 +9729,10 @@ var STRINGS_IT = {
       maxCacheEntries: {
         name: "Numero massimo di voci nella cache",
         desc: "Quando la cache supera questo limite, le voci inutilizzate pi\xF9 vecchie vengono rimosse. 0 = nessun limite."
+      },
+      skipRenameLinkUpdates: {
+        name: "Sperimentale: non aggiornare la data dopo aver rinominato una nota",
+        desc: 'Sperimentale. Quando rinomini una nota, le note che la collegano mantengono la data esistente invece di riceverne una nuova. Funziona solo con i collegamenti in stile [[wikilink]] e quando rinomini una singola nota, non una cartella. In rari casi una tua modifica che cambia solo un collegamento potrebbe non aggiornare la data. Richiede che "Rileva modifiche reali al contenuto" resti attivo.'
       },
       postUpdateCommand: {
         name: "Comando dopo l\u2019aggiornamento",
@@ -9785,7 +9939,15 @@ var STRINGS_JA = {
     timestampsUpdated: "\u65E5\u4ED8\u3092\u66F4\u65B0\u3057\u307E\u3057\u305F\u3002",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u3053\u306E\u30D5\u30A1\u30A4\u30EB\u306F\u30D7\u30E9\u30B0\u30A4\u30F3\u306E\u8A2D\u5B9A\u306B\u3088\u308A\u9664\u5916\u3055\u308C\u3066\u3044\u307E\u3059\u3002",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u65E5\u4ED8\u306E\u66F4\u65B0\u306B\u5931\u6557\u3057\u307E\u3057\u305F: {reason}",
     failedToUpdate: "\u65E5\u4ED8\u306E\u66F4\u65B0\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002",
     autoUpdateEnabled: "\u81EA\u52D5\u66F4\u65B0\u3092\u6709\u52B9\u306B\u3057\u307E\u3057\u305F",
@@ -9808,6 +9970,7 @@ var STRINGS_JA = {
     skippedColumnReason: "\u7406\u7531",
     skippedTableIntro: "{count} \u4EF6\u306E\u30CE\u30FC\u30C8\u306F\u30B9\u30AD\u30C3\u30D7\u3055\u308C\u3001\u5909\u66F4\u3055\u308C\u307E\u305B\u3093\u3067\u3057\u305F:",
     skippedUnsavedChanges: "\u3053\u306E\u30CE\u30FC\u30C8\u306B\u306F\u958B\u3044\u3066\u3044\u308B\u30A8\u30C7\u30A3\u30BF\u306B\u672A\u4FDD\u5B58\u306E\u5909\u66F4\u304C\u3042\u308A\u307E\u3059\u3002\u4FDD\u5B58\u3059\u308B\u304B\u9589\u3058\u3066\u304B\u3089\u3001\u65B0\u3057\u3044\u30D7\u30EC\u30D3\u30E5\u30FC\u3092\u5B9F\u884C\u3057\u3066\u304F\u3060\u3055\u3044\u3002",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -9881,6 +10044,10 @@ var STRINGS_JA = {
       minSeconds: {
         name: "\u66F4\u65B0\u9593\u9694\u306E\u6700\u5C0F\u79D2\u6570",
         desc: "\u5165\u529B\u4E2D\u3084\u30CE\u30FC\u30C8\u3092\u5207\u308A\u66FF\u3048\u3066\u3044\u308B\u9593\u306B\u3001\u65E5\u4ED8\u304C\u983B\u7E41\u306B\u66F4\u65B0\u3055\u308C\u3059\u304E\u308B\u306E\u3092\u9632\u304E\u307E\u3059\u3002"
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u5909\u66F4\u691C\u51FA (\u5185\u5BB9\u306E\u30CF\u30C3\u30B7\u30E5\u5316)",
@@ -9961,7 +10128,7 @@ var STRINGS_JA = {
         obsidianDailyFolderDesc: "\u30C7\u30A4\u30EA\u30FC\u30CE\u30FC\u30C8\u306E\u30D5\u30A9\u30EB\u30C0",
         obsidianAttachmentsDesc: "\u6DFB\u4ED8\u30D5\u30A1\u30A4\u30EB / \u30E1\u30C7\u30A3\u30A2\u306E\u30D5\u30A9\u30EB\u30C0",
         obsidianCanvasDesc: "\u3059\u3079\u3066\u306E\u30AD\u30E3\u30F3\u30D0\u30B9\u30D5\u30A1\u30A4\u30EB",
-        obsidianExcalidrawDesc: "\u3059\u3079\u3066\u306E Excalidraw \u306E\u56F3",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u53D7\u4FE1\u30C8\u30EC\u30A4 / \u4E0B\u66F8\u304D\u306E\u30D5\u30A9\u30EB\u30C0",
         obsidianArchiveDesc: "\u30A2\u30FC\u30AB\u30A4\u30D6\u3055\u308C\u305F\u30CE\u30FC\u30C8",
         sectionAllowlist: "\u8A31\u53EF\u30EA\u30B9\u30C8\u30E2\u30FC\u30C9 (\u7279\u5B9A\u306E\u30D5\u30A9\u30EB\u30C0\u306E\u307F\u8FFD\u8DE1)",
@@ -10000,6 +10167,10 @@ var STRINGS_JA = {
       maxCacheEntries: {
         name: "\u30AD\u30E3\u30C3\u30B7\u30E5\u306E\u6700\u5927\u30A8\u30F3\u30C8\u30EA\u6570",
         desc: "\u30AD\u30E3\u30C3\u30B7\u30E5\u304C\u3053\u306E\u4E0A\u9650\u3092\u8D85\u3048\u308B\u3068\u3001\u6700\u3082\u53E4\u3044\u672A\u4F7F\u7528\u306E\u30A8\u30F3\u30C8\u30EA\u304C\u524A\u9664\u3055\u308C\u307E\u3059\u30020 = \u7121\u5236\u9650\u3002"
+      },
+      skipRenameLinkUpdates: {
+        name: "\u8A66\u9A13\u7684: \u30CE\u30FC\u30C8\u306E\u540D\u524D\u3092\u5909\u66F4\u3057\u305F\u5F8C\u306B\u65E5\u4ED8\u3092\u66F4\u65B0\u3057\u306A\u3044",
+        desc: "\u8A66\u9A13\u7684\u306A\u6A5F\u80FD\u3067\u3059\u3002\u30CE\u30FC\u30C8\u306E\u540D\u524D\u3092\u5909\u66F4\u3059\u308B\u3068\u3001\u305D\u306E\u30CE\u30FC\u30C8\u306B\u30EA\u30F3\u30AF\u3057\u3066\u3044\u308B\u30CE\u30FC\u30C8\u306F\u65B0\u3057\u3044\u65E5\u4ED8\u3067\u306F\u306A\u304F\u65E2\u5B58\u306E\u65E5\u4ED8\u3092\u305D\u306E\u307E\u307E\u4FDD\u3061\u307E\u3059\u3002[[wikilink]] \u5F62\u5F0F\u306E\u30EA\u30F3\u30AF\u3068\u3001\u30D5\u30A9\u30EB\u30C0\u30FC\u3067\u306F\u306A\u304F\u5358\u4E00\u306E\u30CE\u30FC\u30C8\u306E\u540D\u524D\u5909\u66F4\u306B\u306E\u307F\u5BFE\u5FDC\u3057\u307E\u3059\u3002\u307E\u308C\u306B\u3001\u30EA\u30F3\u30AF\u3060\u3051\u3092\u5909\u66F4\u3057\u305F\u81EA\u5206\u306E\u7DE8\u96C6\u3067\u65E5\u4ED8\u304C\u66F4\u65B0\u3055\u308C\u306A\u3044\u3053\u3068\u304C\u3042\u308A\u307E\u3059\u3002\u300C\u5B9F\u969B\u306E\u5185\u5BB9\u5909\u66F4\u3092\u691C\u51FA\u300D\u3092\u6709\u52B9\u306B\u3057\u3066\u304A\u304F\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u3002"
       },
       postUpdateCommand: {
         name: "\u66F4\u65B0\u5F8C\u306E\u30B3\u30DE\u30F3\u30C9",
@@ -10206,7 +10377,15 @@ var STRINGS_KO = {
     timestampsUpdated: "\uB0A0\uC9DC\uAC00 \uC5C5\uB370\uC774\uD2B8\uB418\uC5C8\uC2B5\uB2C8\uB2E4.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\uD50C\uB7EC\uADF8\uC778 \uC124\uC815\uC5D0 \uC758\uD574 \uBB34\uC2DC\uB418\uB294 \uD30C\uC77C\uC785\uB2C8\uB2E4.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\uB0A0\uC9DC\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4: {reason}",
     failedToUpdate: "\uB0A0\uC9DC\uB97C \uC5C5\uB370\uC774\uD2B8\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4.",
     autoUpdateEnabled: "\uC790\uB3D9 \uC5C5\uB370\uC774\uD2B8 \uCF1C\uC9D0",
@@ -10229,6 +10408,7 @@ var STRINGS_KO = {
     skippedColumnReason: "\uC774\uC720",
     skippedTableIntro: "{count}\uAC1C\uC758 \uB178\uD2B8\uB97C \uAC74\uB108\uB6F0\uC5B4 \uBCC0\uACBD\uD558\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4:",
     skippedUnsavedChanges: "\uC774 \uB178\uD2B8\uC5D0\uB294 \uC5F4\uB824 \uC788\uB294 \uD3B8\uC9D1\uAE30\uC5D0 \uC800\uC7A5\uB418\uC9C0 \uC54A\uC740 \uBCC0\uACBD \uC0AC\uD56D\uC774 \uC788\uC2B5\uB2C8\uB2E4. \uC800\uC7A5\uD558\uAC70\uB098 \uB2EB\uC740 \uD6C4 \uC0C8 \uBBF8\uB9AC\uBCF4\uAE30\uB97C \uC2E4\uD589\uD558\uC138\uC694.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -10302,6 +10482,10 @@ var STRINGS_KO = {
       minSeconds: {
         name: "\uC5C5\uB370\uC774\uD2B8 \uC0AC\uC774 \uCD5C\uC18C \uCD08",
         desc: "\uC785\uB825\uD558\uAC70\uB098 \uB178\uD2B8\uB97C \uC804\uD658\uD558\uB294 \uB3D9\uC548 \uB0A0\uC9DC\uAC00 \uB108\uBB34 \uC790\uC8FC \uC5C5\uB370\uC774\uD2B8\uB418\uB294 \uAC83\uC744 \uB9C9\uC2B5\uB2C8\uB2E4."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\uBCC0\uACBD \uAC10\uC9C0 (\uB0B4\uC6A9 \uD574\uC2F1)",
@@ -10382,7 +10566,7 @@ var STRINGS_KO = {
         obsidianDailyFolderDesc: "\uC77C\uC77C \uB178\uD2B8 \uD3F4\uB354",
         obsidianAttachmentsDesc: "\uCCA8\uBD80 \uD30C\uC77C / \uBBF8\uB514\uC5B4 \uD3F4\uB354",
         obsidianCanvasDesc: "\uBAA8\uB4E0 \uCE94\uBC84\uC2A4 \uD30C\uC77C",
-        obsidianExcalidrawDesc: "\uBAA8\uB4E0 Excalidraw \uADF8\uB9BC",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\uBC1B\uC740 \uD3B8\uC9C0\uD568 / \uC784\uC2DC \uBA54\uBAA8 \uD3F4\uB354",
         obsidianArchiveDesc: "\uBCF4\uAD00\uB41C \uB178\uD2B8",
         sectionAllowlist: "\uD5C8\uC6A9 \uBAA9\uB85D \uBAA8\uB4DC (\uD2B9\uC815 \uD3F4\uB354\uB9CC \uCD94\uC801)",
@@ -10421,6 +10605,10 @@ var STRINGS_KO = {
       maxCacheEntries: {
         name: "\uCD5C\uB300 \uCE90\uC2DC \uD56D\uBAA9 \uC218",
         desc: "\uCE90\uC2DC\uAC00 \uC774 \uD55C\uB3C4\uB97C \uB118\uC73C\uBA74 \uC0AC\uC6A9\uD558\uC9C0 \uC54A\uC740 \uAC00\uC7A5 \uC624\uB798\uB41C \uD56D\uBAA9\uC774 \uC81C\uAC70\uB429\uB2C8\uB2E4. 0 = \uC81C\uD55C \uC5C6\uC74C."
+      },
+      skipRenameLinkUpdates: {
+        name: "\uC2E4\uD5D8\uC801: \uB178\uD2B8 \uC774\uB984\uC744 \uBC14\uAFBC \uB4A4 \uB0A0\uC9DC\uB97C \uAC31\uC2E0\uD558\uC9C0 \uC54A\uAE30",
+        desc: '\uC2E4\uD5D8\uC801\uC778 \uAE30\uB2A5\uC785\uB2C8\uB2E4. \uB178\uD2B8 \uC774\uB984\uC744 \uBC14\uAFB8\uBA74 \uADF8 \uB178\uD2B8\uB97C \uB9C1\uD06C\uD558\uB294 \uB178\uD2B8\uB4E4\uC774 \uC0C8 \uB0A0\uC9DC \uB300\uC2E0 \uAE30\uC874 \uB0A0\uC9DC\uB97C \uADF8\uB300\uB85C \uC720\uC9C0\uD569\uB2C8\uB2E4. [[wikilink]] \uD615\uC2DD\uC758 \uB9C1\uD06C\uC5D0\uC11C\uB9CC, \uADF8\uB9AC\uACE0 \uD3F4\uB354\uAC00 \uC544\uB2CC \uB2E8\uC77C \uB178\uD2B8\uC758 \uC774\uB984\uC744 \uBC14\uAFC0 \uB54C\uB9CC \uB3D9\uC791\uD569\uB2C8\uB2E4. \uB4DC\uBB3C\uAC8C \uB9C1\uD06C\uB9CC \uBC14\uAFBC \uBCF8\uC778\uC758 \uD3B8\uC9D1\uC774 \uB0A0\uC9DC\uB97C \uAC31\uC2E0\uD558\uC9C0 \uC54A\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4. "\uC2E4\uC81C \uB0B4\uC6A9 \uBCC0\uACBD \uAC10\uC9C0"\uAC00 \uCF1C\uC838 \uC788\uC5B4\uC57C \uD569\uB2C8\uB2E4.'
       },
       postUpdateCommand: {
         name: "\uC5C5\uB370\uC774\uD2B8 \uD6C4 \uBA85\uB839\uC5B4",
@@ -10627,7 +10815,15 @@ var STRINGS_NL = {
     timestampsUpdated: "Datums bijgewerkt.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Bestand wordt genegeerd door de plug-in-instellingen.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Datums bijwerken mislukt: {reason}",
     failedToUpdate: "Datums bijwerken mislukt.",
     autoUpdateEnabled: "Automatisch bijwerken ingeschakeld",
@@ -10650,6 +10846,7 @@ var STRINGS_NL = {
     skippedColumnReason: "Reden",
     skippedTableIntro: "{count} notitie(s) zijn overgeslagen en ongewijzigd gelaten:",
     skippedUnsavedChanges: "De notitie heeft niet-opgeslagen wijzigingen in een open editor. Sla deze op of sluit deze en voer daarna een nieuwe voorvertoning uit.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -10723,6 +10920,10 @@ var STRINGS_NL = {
       minSeconds: {
         name: "Minimaal aantal seconden tussen updates",
         desc: "Voorkomt dat de datum te vaak wordt bijgewerkt terwijl u typt of tussen notities wisselt."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Wijzigingsdetectie (inhoud-hashing)",
@@ -10803,7 +11004,7 @@ var STRINGS_NL = {
         obsidianDailyFolderDesc: "Map met dagelijkse notities",
         obsidianAttachmentsDesc: "Map met bijlagen / media",
         obsidianCanvasDesc: "Alle canvasbestanden",
-        obsidianExcalidrawDesc: "Alle Excalidraw-tekeningen",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Map voor inbox / kladblok",
         obsidianArchiveDesc: "Gearchiveerde notities",
         sectionAllowlist: "Witte-lijstmodus (alleen specifieke mappen bijhouden)",
@@ -10842,6 +11043,10 @@ var STRINGS_NL = {
       maxCacheEntries: {
         name: "Maximaal aantal cache-items",
         desc: "Wanneer de cache deze limiet overschrijdt, worden de oudste ongebruikte items verwijderd. 0 = geen limiet."
+      },
+      skipRenameLinkUpdates: {
+        name: "Experimenteel: datum niet bijwerken na het hernoemen van een notitie",
+        desc: 'Experimenteel. Wanneer je een notitie hernoemt, behouden de notities die ernaar linken hun bestaande datum in plaats van een nieuwe te krijgen. Werkt alleen met links in [[wikilink]]-stijl en bij het hernoemen van een enkele notitie, niet van een map. In zeldzame gevallen werkt een eigen bewerking die alleen een link wijzigt de datum niet bij. Vereist dat "Echte inhoudswijzigingen detecteren" aan blijft.'
       },
       postUpdateCommand: {
         name: "Opdracht na update",
@@ -11048,7 +11253,15 @@ var STRINGS_PL = {
     timestampsUpdated: "Daty zaktualizowane.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Plik jest pomijany przez ustawienia wtyczki.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Nie uda\u0142o si\u0119 zaktualizowa\u0107 dat: {reason}",
     failedToUpdate: "Nie uda\u0142o si\u0119 zaktualizowa\u0107 dat.",
     autoUpdateEnabled: "Automatyczna aktualizacja w\u0142\u0105czona",
@@ -11071,6 +11284,7 @@ var STRINGS_PL = {
     skippedColumnReason: "Pow\xF3d",
     skippedTableIntro: "{count} notatek pomini\u0119to i pozostawiono bez zmian:",
     skippedUnsavedChanges: "Notatka ma niezapisane zmiany w otwartym edytorze. Zapisz j\u0105 lub zamknij, a nast\u0119pnie uruchom nowy podgl\u0105d.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -11144,6 +11358,10 @@ var STRINGS_PL = {
       minSeconds: {
         name: "Minimalna liczba sekund mi\u0119dzy aktualizacjami",
         desc: "Zapobiega zbyt cz\u0119stej aktualizacji daty podczas pisania lub prze\u0142\u0105czania mi\u0119dzy notatkami."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Wykrywanie zmian (haszowanie tre\u015Bci)",
@@ -11224,7 +11442,7 @@ var STRINGS_PL = {
         obsidianDailyFolderDesc: "Folder notatek dziennych",
         obsidianAttachmentsDesc: "Folder za\u0142\u0105cznik\xF3w / medi\xF3w",
         obsidianCanvasDesc: "Wszystkie pliki kanw",
-        obsidianExcalidrawDesc: "Wszystkie rysunki Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Folder skrzynki / brudnopisu",
         obsidianArchiveDesc: "Zarchiwizowane notatki",
         sectionAllowlist: "Tryb listy dozwolonych (\u015Bled\u017A tylko okre\u015Blone foldery)",
@@ -11263,6 +11481,10 @@ var STRINGS_PL = {
       maxCacheEntries: {
         name: "Maksymalna liczba wpis\xF3w w pami\u0119ci podr\u0119cznej",
         desc: "Gdy pami\u0119\u0107 podr\u0119czna przekroczy ten limit, najstarsze nieu\u017Cywane wpisy s\u0105 usuwane. 0 = bez limitu."
+      },
+      skipRenameLinkUpdates: {
+        name: "Eksperymentalne: nie aktualizuj daty po zmianie nazwy notatki",
+        desc: 'Funkcja eksperymentalna. Po zmianie nazwy notatki notatki, kt\xF3re do niej linkuj\u0105, zachowuj\u0105 dotychczasow\u0105 dat\u0119 zamiast otrzyma\u0107 now\u0105. Dzia\u0142a tylko z linkami w stylu [[wikilink]] i przy zmianie nazwy pojedynczej notatki, a nie folderu. W rzadkich przypadkach w\u0142asna edycja zmieniaj\u0105ca tylko link mo\u017Ce nie zaktualizowa\u0107 daty. Wymaga w\u0142\u0105czonej opcji "Wykrywaj rzeczywiste zmiany tre\u015Bci".'
       },
       postUpdateCommand: {
         name: "Polecenie po aktualizacji",
@@ -11469,7 +11691,15 @@ var STRINGS_PT = {
     timestampsUpdated: "Datas atualizadas.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "O ficheiro \xE9 ignorado pelas defini\xE7\xF5es do plugin.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Falha ao atualizar as datas: {reason}",
     failedToUpdate: "Falha ao atualizar as datas.",
     autoUpdateEnabled: "Atualiza\xE7\xE3o autom\xE1tica ativada",
@@ -11492,6 +11722,7 @@ var STRINGS_PT = {
     skippedColumnReason: "Motivo",
     skippedTableIntro: "{count} nota(s) foram ignoradas e deixadas sem altera\xE7\xF5es:",
     skippedUnsavedChanges: "A nota tem altera\xE7\xF5es n\xE3o guardadas num editor aberto. Guarde-a ou feche-a e execute uma nova pr\xE9-visualiza\xE7\xE3o.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -11565,6 +11796,10 @@ var STRINGS_PT = {
       minSeconds: {
         name: "M\xEDnimo de segundos entre atualiza\xE7\xF5es",
         desc: "Evita atualizar a data com demasiada frequ\xEAncia enquanto escreve ou alterna entre notas."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Dete\xE7\xE3o de altera\xE7\xF5es (hashing de conte\xFAdo)",
@@ -11645,7 +11880,7 @@ var STRINGS_PT = {
         obsidianDailyFolderDesc: "Pasta de notas di\xE1rias",
         obsidianAttachmentsDesc: "Pasta de anexos / multim\xE9dia",
         obsidianCanvasDesc: "Todos os ficheiros de tela",
-        obsidianExcalidrawDesc: "Todos os desenhos do Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Pasta de entrada / rascunhos",
         obsidianArchiveDesc: "Notas arquivadas",
         sectionAllowlist: "Modo de lista de permiss\xF5es (acompanhar s\xF3 pastas espec\xEDficas)",
@@ -11684,6 +11919,10 @@ var STRINGS_PT = {
       maxCacheEntries: {
         name: "M\xE1ximo de entradas na cache",
         desc: "Quando a cache ultrapassa este limite, as entradas mais antigas n\xE3o utilizadas s\xE3o removidas. 0 = sem limite."
+      },
+      skipRenameLinkUpdates: {
+        name: "Experimental: n\xE3o atualizar a data depois de renomear uma nota",
+        desc: 'Experimental. Ao renomear uma nota, as notas que ligam para ela mant\xEAm a data existente em vez de receberem uma nova. S\xF3 funciona com liga\xE7\xF5es do tipo [[wikilink]] e ao renomear uma \xFAnica nota, n\xE3o uma pasta. Em casos raros, uma edi\xE7\xE3o sua que apenas altera uma liga\xE7\xE3o pode n\xE3o atualizar a data. Requer que "Detetar altera\xE7\xF5es reais de conte\xFAdo" continue ativado.'
       },
       postUpdateCommand: {
         name: "Comando ap\xF3s a atualiza\xE7\xE3o",
@@ -11890,7 +12129,15 @@ var STRINGS_PT_BR = {
     timestampsUpdated: "Datas atualizadas.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "O arquivo \xE9 ignorado pelas configura\xE7\xF5es do plugin.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Falha ao atualizar as datas: {reason}",
     failedToUpdate: "Falha ao atualizar as datas.",
     autoUpdateEnabled: "Atualiza\xE7\xE3o autom\xE1tica ativada",
@@ -11913,6 +12160,7 @@ var STRINGS_PT_BR = {
     skippedColumnReason: "Motivo",
     skippedTableIntro: "{count} nota(s) foram puladas e deixadas sem altera\xE7\xF5es:",
     skippedUnsavedChanges: "A nota tem altera\xE7\xF5es n\xE3o salvas em um editor aberto. Salve-a ou feche-a e execute uma nova pr\xE9-visualiza\xE7\xE3o.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -11986,6 +12234,10 @@ var STRINGS_PT_BR = {
       minSeconds: {
         name: "M\xEDnimo de segundos entre atualiza\xE7\xF5es",
         desc: "Evita atualizar a data com muita frequ\xEAncia enquanto voc\xEA digita ou alterna entre notas."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Detec\xE7\xE3o de altera\xE7\xF5es (hash de conte\xFAdo)",
@@ -12066,7 +12318,7 @@ var STRINGS_PT_BR = {
         obsidianDailyFolderDesc: "Pasta de notas di\xE1rias",
         obsidianAttachmentsDesc: "Pasta de anexos / m\xEDdia",
         obsidianCanvasDesc: "Todos os arquivos de canvas",
-        obsidianExcalidrawDesc: "Todos os desenhos do Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Pasta de entrada / rascunhos",
         obsidianArchiveDesc: "Notas arquivadas",
         sectionAllowlist: "Modo de lista de permiss\xF5es (rastrear somente pastas espec\xEDficas)",
@@ -12105,6 +12357,10 @@ var STRINGS_PT_BR = {
       maxCacheEntries: {
         name: "M\xE1ximo de entradas no cache",
         desc: "Quando o cache cresce al\xE9m deste limite, as entradas mais antigas e sem uso s\xE3o removidas. 0 = sem limite."
+      },
+      skipRenameLinkUpdates: {
+        name: "Experimental: n\xE3o atualizar a data depois de renomear uma nota",
+        desc: 'Experimental. Ao renomear uma nota, as notas que apontam para ela mant\xEAm a data existente em vez de receberem uma nova. S\xF3 funciona com links no estilo [[wikilink]] e ao renomear uma \xFAnica nota, n\xE3o uma pasta. Em casos raros, uma edi\xE7\xE3o sua que muda apenas um link pode n\xE3o atualizar a data. Requer que "Detectar mudan\xE7as reais de conte\xFAdo" continue ativado.'
       },
       postUpdateCommand: {
         name: "Comando ap\xF3s a atualiza\xE7\xE3o",
@@ -12311,7 +12567,15 @@ var STRINGS_TH = {
     timestampsUpdated: "\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E41\u0E25\u0E49\u0E27",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u0E44\u0E1F\u0E25\u0E4C\u0E16\u0E39\u0E01\u0E02\u0E49\u0E32\u0E21\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E15\u0E31\u0E49\u0E07\u0E04\u0E48\u0E32\u0E1B\u0E25\u0E31\u0E4A\u0E01\u0E2D\u0E34\u0E19",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E44\u0E21\u0E48\u0E2A\u0E33\u0E40\u0E23\u0E47\u0E08: {reason}",
     failedToUpdate: "\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E44\u0E21\u0E48\u0E2A\u0E33\u0E40\u0E23\u0E47\u0E08",
     autoUpdateEnabled: "\u0E40\u0E1B\u0E34\u0E14\u0E01\u0E32\u0E23\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E2D\u0E31\u0E15\u0E42\u0E19\u0E21\u0E31\u0E15\u0E34\u0E41\u0E25\u0E49\u0E27",
@@ -12334,6 +12598,7 @@ var STRINGS_TH = {
     skippedColumnReason: "\u0E40\u0E2B\u0E15\u0E38\u0E1C\u0E25",
     skippedTableIntro: "\u0E02\u0E49\u0E32\u0E21 {count} \u0E42\u0E19\u0E49\u0E15\u0E41\u0E25\u0E30\u0E1B\u0E25\u0E48\u0E2D\u0E22\u0E44\u0E27\u0E49\u0E42\u0E14\u0E22\u0E44\u0E21\u0E48\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E41\u0E1B\u0E25\u0E07:",
     skippedUnsavedChanges: "\u0E42\u0E19\u0E49\u0E15\u0E19\u0E35\u0E49\u0E21\u0E35\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E41\u0E1B\u0E25\u0E07\u0E17\u0E35\u0E48\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E43\u0E19\u0E15\u0E31\u0E27\u0E41\u0E01\u0E49\u0E44\u0E02\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E34\u0E14\u0E2D\u0E22\u0E39\u0E48 \u0E1A\u0E31\u0E19\u0E17\u0E36\u0E01\u0E2B\u0E23\u0E37\u0E2D\u0E1B\u0E34\u0E14\u0E42\u0E19\u0E49\u0E15 \u0E41\u0E25\u0E49\u0E27\u0E40\u0E23\u0E35\u0E22\u0E01\u0E43\u0E0A\u0E49\u0E15\u0E31\u0E27\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E43\u0E2B\u0E21\u0E48",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -12407,6 +12672,10 @@ var STRINGS_TH = {
       minSeconds: {
         name: "\u0E08\u0E33\u0E19\u0E27\u0E19\u0E27\u0E34\u0E19\u0E32\u0E17\u0E35\u0E02\u0E31\u0E49\u0E19\u0E15\u0E48\u0E33\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07\u0E01\u0E32\u0E23\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15",
         desc: "\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E44\u0E21\u0E48\u0E43\u0E2B\u0E49\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E1A\u0E48\u0E2D\u0E22\u0E40\u0E01\u0E34\u0E19\u0E44\u0E1B\u0E02\u0E13\u0E30\u0E17\u0E35\u0E48\u0E04\u0E38\u0E13\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E2B\u0E23\u0E37\u0E2D\u0E2A\u0E25\u0E31\u0E1A\u0E23\u0E30\u0E2B\u0E27\u0E48\u0E32\u0E07\u0E42\u0E19\u0E49\u0E15"
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u0E01\u0E32\u0E23\u0E15\u0E23\u0E27\u0E08\u0E08\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E41\u0E1B\u0E25\u0E07 (\u0E01\u0E32\u0E23\u0E41\u0E2E\u0E0A\u0E40\u0E19\u0E37\u0E49\u0E2D\u0E2B\u0E32)",
@@ -12487,7 +12756,7 @@ var STRINGS_TH = {
         obsidianDailyFolderDesc: "\u0E42\u0E1F\u0E25\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E42\u0E19\u0E49\u0E15\u0E1B\u0E23\u0E30\u0E08\u0E33\u0E27\u0E31\u0E19",
         obsidianAttachmentsDesc: "\u0E42\u0E1F\u0E25\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E44\u0E1F\u0E25\u0E4C\u0E41\u0E19\u0E1A / \u0E2A\u0E37\u0E48\u0E2D",
         obsidianCanvasDesc: "\u0E44\u0E1F\u0E25\u0E4C canvas \u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14",
-        obsidianExcalidrawDesc: "\u0E20\u0E32\u0E1E\u0E27\u0E32\u0E14 Excalidraw \u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u0E42\u0E1F\u0E25\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E01\u0E25\u0E48\u0E2D\u0E07\u0E40\u0E02\u0E49\u0E32 / \u0E01\u0E23\u0E30\u0E14\u0E32\u0E29\u0E17\u0E14",
         obsidianArchiveDesc: "\u0E42\u0E19\u0E49\u0E15\u0E17\u0E35\u0E48\u0E40\u0E01\u0E47\u0E1A\u0E16\u0E32\u0E27\u0E23",
         sectionAllowlist: "\u0E42\u0E2B\u0E21\u0E14\u0E23\u0E32\u0E22\u0E01\u0E32\u0E23\u0E2D\u0E19\u0E38\u0E0D\u0E32\u0E15 (\u0E15\u0E34\u0E14\u0E15\u0E32\u0E21\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E42\u0E1F\u0E25\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E17\u0E35\u0E48\u0E23\u0E30\u0E1A\u0E38)",
@@ -12526,6 +12795,10 @@ var STRINGS_TH = {
       maxCacheEntries: {
         name: "\u0E08\u0E33\u0E19\u0E27\u0E19\u0E23\u0E32\u0E22\u0E01\u0E32\u0E23\u0E2A\u0E39\u0E07\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E41\u0E04\u0E0A",
         desc: "\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E41\u0E04\u0E0A\u0E40\u0E15\u0E34\u0E1A\u0E42\u0E15\u0E40\u0E01\u0E34\u0E19\u0E02\u0E35\u0E14\u0E08\u0E33\u0E01\u0E31\u0E14\u0E19\u0E35\u0E49 \u0E23\u0E32\u0E22\u0E01\u0E32\u0E23\u0E17\u0E35\u0E48\u0E40\u0E01\u0E48\u0E32\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E41\u0E25\u0E30\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E43\u0E0A\u0E49\u0E08\u0E30\u0E16\u0E39\u0E01\u0E25\u0E1A\u0E2D\u0E2D\u0E01 0 = \u0E44\u0E21\u0E48\u0E08\u0E33\u0E01\u0E31\u0E14"
+      },
+      skipRenameLinkUpdates: {
+        name: "\u0E17\u0E14\u0E25\u0E2D\u0E07: \u0E44\u0E21\u0E48\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E19\u0E49\u0E15",
+        desc: '\u0E1F\u0E35\u0E40\u0E08\u0E2D\u0E23\u0E4C\u0E17\u0E14\u0E25\u0E2D\u0E07 \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E04\u0E38\u0E13\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E19\u0E49\u0E15 \u0E42\u0E19\u0E49\u0E15\u0E17\u0E35\u0E48\u0E25\u0E34\u0E07\u0E01\u0E4C\u0E21\u0E32\u0E2B\u0E32\u0E08\u0E30\u0E04\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E40\u0E14\u0E34\u0E21\u0E44\u0E27\u0E49\u0E41\u0E17\u0E19\u0E17\u0E35\u0E48\u0E08\u0E30\u0E44\u0E14\u0E49\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E21\u0E48 \u0E43\u0E0A\u0E49\u0E44\u0E14\u0E49\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E25\u0E34\u0E07\u0E01\u0E4C\u0E41\u0E1A\u0E1A [[wikilink]] \u0E41\u0E25\u0E30\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E19\u0E49\u0E15\u0E40\u0E14\u0E35\u0E22\u0E27 \u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E42\u0E1F\u0E25\u0E40\u0E14\u0E2D\u0E23\u0E4C \u0E43\u0E19\u0E1A\u0E32\u0E07\u0E01\u0E23\u0E13\u0E35\u0E17\u0E35\u0E48\u0E1E\u0E1A\u0E44\u0E21\u0E48\u0E1A\u0E48\u0E2D\u0E22 \u0E01\u0E32\u0E23\u0E41\u0E01\u0E49\u0E44\u0E02\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13\u0E40\u0E2D\u0E07\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E41\u0E04\u0E48\u0E25\u0E34\u0E07\u0E01\u0E4C\u0E2D\u0E32\u0E08\u0E44\u0E21\u0E48\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48 \u0E15\u0E49\u0E2D\u0E07\u0E40\u0E1B\u0E34\u0E14 "\u0E15\u0E23\u0E27\u0E08\u0E08\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E41\u0E1B\u0E25\u0E07\u0E40\u0E19\u0E37\u0E49\u0E2D\u0E2B\u0E32\u0E08\u0E23\u0E34\u0E07" \u0E44\u0E27\u0E49\u0E14\u0E49\u0E27\u0E22'
       },
       postUpdateCommand: {
         name: "\u0E04\u0E33\u0E2A\u0E31\u0E48\u0E07\u0E2B\u0E25\u0E31\u0E07\u0E01\u0E32\u0E23\u0E2D\u0E31\u0E1B\u0E40\u0E14\u0E15",
@@ -12732,7 +13005,15 @@ var STRINGS_TR = {
     timestampsUpdated: "Tarihler g\xFCncellendi.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "Dosya, eklenti ayarlar\u0131nca yok say\u0131l\u0131yor.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Tarihler g\xFCncellenemedi: {reason}",
     failedToUpdate: "Tarihler g\xFCncellenemedi.",
     autoUpdateEnabled: "Otomatik g\xFCncelleme a\xE7\u0131k",
@@ -12755,6 +13036,7 @@ var STRINGS_TR = {
     skippedColumnReason: "Neden",
     skippedTableIntro: "{count} not atland\u0131 ve de\u011Fi\u015Ftirilmedi:",
     skippedUnsavedChanges: "Notta a\xE7\u0131k bir d\xFCzenleyicide kaydedilmemi\u015F de\u011Fi\u015Fiklikler var. Kaydedin veya kapat\u0131n, ard\u0131ndan yeni bir \xF6nizleme \xE7al\u0131\u015Ft\u0131r\u0131n.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -12828,6 +13110,10 @@ var STRINGS_TR = {
       minSeconds: {
         name: "G\xFCncellemeler aras\u0131ndaki en az saniye",
         desc: "Yazarken veya notlar aras\u0131nda ge\xE7i\u015F yaparken tarihin \xE7ok s\u0131k g\xFCncellenmesini \xF6nler."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "De\u011Fi\u015Fiklik alg\u0131lama (i\xE7erik \xF6zetleme)",
@@ -12908,7 +13194,7 @@ var STRINGS_TR = {
         obsidianDailyFolderDesc: "G\xFCnl\xFCk notlar klas\xF6r\xFC",
         obsidianAttachmentsDesc: "Ekler / medya klas\xF6r\xFC",
         obsidianCanvasDesc: "T\xFCm tuval dosyalar\u0131",
-        obsidianExcalidrawDesc: "T\xFCm Excalidraw \xE7izimleri",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Gelen kutusu / karalama klas\xF6r\xFC",
         obsidianArchiveDesc: "Ar\u015Fivlenmi\u015F notlar",
         sectionAllowlist: "\u0130zin listesi modu (yaln\u0131zca belirli klas\xF6rleri izle)",
@@ -12947,6 +13233,10 @@ var STRINGS_TR = {
       maxCacheEntries: {
         name: "En fazla \xF6nbellek giri\u015Fi",
         desc: "\xD6nbellek bu s\u0131n\u0131r\u0131 a\u015Ft\u0131\u011F\u0131nda, en eski kullan\u0131lmayan giri\u015Fler kald\u0131r\u0131l\u0131r. 0 = s\u0131n\u0131r yok."
+      },
+      skipRenameLinkUpdates: {
+        name: "Deneysel: bir notu yeniden adland\u0131rd\u0131ktan sonra tarihi g\xFCncelleme",
+        desc: 'Deneysel. Bir notu yeniden adland\u0131rd\u0131\u011F\u0131n\u0131zda, ona ba\u011Flant\u0131 veren notlar yeni bir tarih almak yerine mevcut tarihlerini korur. Yaln\u0131zca [[wikilink]] bi\xE7imindeki ba\u011Flant\u0131larla ve tek bir notu yeniden adland\u0131rd\u0131\u011F\u0131n\u0131zda \xE7al\u0131\u015F\u0131r, klas\xF6rlerde \xE7al\u0131\u015Fmaz. Nadir durumlarda yaln\u0131zca bir ba\u011Flant\u0131y\u0131 de\u011Fi\u015Ftiren kendi d\xFCzenlemeniz tarihi g\xFCncellemeyebilir. "Ger\xE7ek i\xE7erik de\u011Fi\u015Fikliklerini alg\u0131la" ayar\u0131n\u0131n a\xE7\u0131k kalmas\u0131n\u0131 gerektirir.'
       },
       postUpdateCommand: {
         name: "G\xFCncellemeden sonraki komut",
@@ -13153,7 +13443,15 @@ var STRINGS_UK = {
     timestampsUpdated: "\u0414\u0430\u0442\u0438 \u043E\u043D\u043E\u0432\u043B\u0435\u043D\u043E.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u0424\u0430\u0439\u043B \u0432\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u043E \u043D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\u043C\u0438 \u043F\u043B\u0430\u0433\u0456\u043D\u0430.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u041D\u0435 \u0432\u0434\u0430\u043B\u043E\u0441\u044F \u043E\u043D\u043E\u0432\u0438\u0442\u0438 \u0434\u0430\u0442\u0438: {reason}",
     failedToUpdate: "\u041D\u0435 \u0432\u0434\u0430\u043B\u043E\u0441\u044F \u043E\u043D\u043E\u0432\u0438\u0442\u0438 \u0434\u0430\u0442\u0438.",
     autoUpdateEnabled: "\u0410\u0432\u0442\u043E\u043E\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u0443\u0432\u0456\u043C\u043A\u043D\u0435\u043D\u043E",
@@ -13176,6 +13474,7 @@ var STRINGS_UK = {
     skippedColumnReason: "\u041F\u0440\u0438\u0447\u0438\u043D\u0430",
     skippedTableIntro: "{count} \u043D\u043E\u0442\u0430\u0442\u043E\u043A \u043F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E \u0442\u0430 \u0437\u0430\u043B\u0438\u0448\u0435\u043D\u043E \u0431\u0435\u0437 \u0437\u043C\u0456\u043D:",
     skippedUnsavedChanges: "\u0423 \u043D\u043E\u0442\u0430\u0442\u0446\u0456 \u0454 \u043D\u0435\u0437\u0431\u0435\u0440\u0435\u0436\u0435\u043D\u0456 \u0437\u043C\u0456\u043D\u0438 \u0443 \u0432\u0456\u0434\u043A\u0440\u0438\u0442\u043E\u043C\u0443 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u0456. \u0417\u0431\u0435\u0440\u0435\u0436\u0456\u0442\u044C \u0430\u0431\u043E \u0437\u0430\u043A\u0440\u0438\u0439\u0442\u0435 \u0457\u0457, \u0430 \u043F\u043E\u0442\u0456\u043C \u0437\u0430\u043F\u0443\u0441\u0442\u0456\u0442\u044C \u043D\u043E\u0432\u0438\u0439 \u043F\u043E\u043F\u0435\u0440\u0435\u0434\u043D\u0456\u0439 \u043F\u0435\u0440\u0435\u0433\u043B\u044F\u0434.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -13249,6 +13548,10 @@ var STRINGS_UK = {
       minSeconds: {
         name: "\u041C\u0456\u043D\u0456\u043C\u0443\u043C \u0441\u0435\u043A\u0443\u043D\u0434 \u043C\u0456\u0436 \u043E\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044F\u043C\u0438",
         desc: "\u041D\u0435 \u0434\u0430\u0454 \u043E\u043D\u043E\u0432\u043B\u044E\u0432\u0430\u0442\u0438 \u0434\u0430\u0442\u0443 \u043D\u0430\u0434\u0442\u043E \u0447\u0430\u0441\u0442\u043E, \u043F\u043E\u043A\u0438 \u0432\u0438 \u0434\u0440\u0443\u043A\u0443\u0454\u0442\u0435 \u0430\u0431\u043E \u043F\u0435\u0440\u0435\u043C\u0438\u043A\u0430\u0454\u0442\u0435\u0441\u044F \u043C\u0456\u0436 \u043D\u043E\u0442\u0430\u0442\u043A\u0430\u043C\u0438."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u0420\u043E\u0437\u043F\u0456\u0437\u043D\u0430\u0432\u0430\u043D\u043D\u044F \u0437\u043C\u0456\u043D (\u0445\u0435\u0448\u0443\u0432\u0430\u043D\u043D\u044F \u0432\u043C\u0456\u0441\u0442\u0443)",
@@ -13329,7 +13632,7 @@ var STRINGS_UK = {
         obsidianDailyFolderDesc: "\u0422\u0435\u043A\u0430 \u0449\u043E\u0434\u0435\u043D\u043D\u0438\u0445 \u043D\u043E\u0442\u0430\u0442\u043E\u043A",
         obsidianAttachmentsDesc: "\u0422\u0435\u043A\u0430 \u0432\u043A\u043B\u0430\u0434\u0435\u043D\u044C / \u043C\u0435\u0434\u0456\u0430",
         obsidianCanvasDesc: "\u0423\u0441\u0456 \u0444\u0430\u0439\u043B\u0438 \u043F\u043E\u043B\u043E\u0442\u0435\u043D",
-        obsidianExcalidrawDesc: "\u0423\u0441\u0456 \u043C\u0430\u043B\u044E\u043D\u043A\u0438 Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u0422\u0435\u043A\u0430 \u0432\u0445\u0456\u0434\u043D\u0438\u0445 / \u0447\u0435\u0440\u043D\u0435\u0442\u043E\u043A",
         obsidianArchiveDesc: "\u0410\u0440\u0445\u0456\u0432\u043D\u0456 \u043D\u043E\u0442\u0430\u0442\u043A\u0438",
         sectionAllowlist: "\u0420\u0435\u0436\u0438\u043C \u0431\u0456\u043B\u043E\u0433\u043E \u0441\u043F\u0438\u0441\u043A\u0443 (\u0432\u0456\u0434\u0441\u0442\u0435\u0436\u0443\u0432\u0430\u0442\u0438 \u043B\u0438\u0448\u0435 \u043F\u0435\u0432\u043D\u0456 \u0442\u0435\u043A\u0438)",
@@ -13368,6 +13671,10 @@ var STRINGS_UK = {
       maxCacheEntries: {
         name: "\u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C \u0437\u0430\u043F\u0438\u0441\u0456\u0432 \u0443 \u043A\u0435\u0448\u0456",
         desc: "\u041A\u043E\u043B\u0438 \u043A\u0435\u0448 \u043F\u0435\u0440\u0435\u0432\u0438\u0449\u0443\u0454 \u0446\u044E \u043C\u0435\u0436\u0443, \u043D\u0430\u0439\u0441\u0442\u0430\u0440\u0456\u0448\u0456 \u043D\u0435\u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0432\u0430\u043D\u0456 \u0437\u0430\u043F\u0438\u0441\u0438 \u0432\u0438\u0434\u0430\u043B\u044F\u044E\u0442\u044C\u0441\u044F. 0 = \u0431\u0435\u0437 \u043E\u0431\u043C\u0435\u0436\u0435\u043D\u043D\u044F."
+      },
+      skipRenameLinkUpdates: {
+        name: "\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u043E: \u043D\u0435 \u043E\u043D\u043E\u0432\u043B\u044E\u0432\u0430\u0442\u0438 \u0434\u0430\u0442\u0443 \u043F\u0456\u0441\u043B\u044F \u043F\u0435\u0440\u0435\u0439\u043C\u0435\u043D\u0443\u0432\u0430\u043D\u043D\u044F \u043D\u043E\u0442\u0430\u0442\u043A\u0438",
+        desc: '\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0430 \u0444\u0443\u043D\u043A\u0446\u0456\u044F. \u041F\u0456\u0441\u043B\u044F \u043F\u0435\u0440\u0435\u0439\u043C\u0435\u043D\u0443\u0432\u0430\u043D\u043D\u044F \u043D\u043E\u0442\u0430\u0442\u043A\u0438 \u0442\u0456 \u043D\u043E\u0442\u0430\u0442\u043A\u0438, \u0449\u043E \u043D\u0430 \u043D\u0435\u0457 \u043F\u043E\u0441\u0438\u043B\u0430\u044E\u0442\u044C\u0441\u044F, \u0437\u0431\u0435\u0440\u0456\u0433\u0430\u044E\u0442\u044C \u043D\u0430\u044F\u0432\u043D\u0443 \u0434\u0430\u0442\u0443 \u0437\u0430\u043C\u0456\u0441\u0442\u044C \u043D\u043E\u0432\u043E\u0457. \u041F\u0440\u0430\u0446\u044E\u0454 \u043B\u0438\u0448\u0435 \u0437 \u043F\u043E\u0441\u0438\u043B\u0430\u043D\u043D\u044F\u043C\u0438 \u0432\u0438\u0434\u0443 [[wikilink]] \u0456 \u043B\u0438\u0448\u0435 \u043F\u0456\u0434 \u0447\u0430\u0441 \u043F\u0435\u0440\u0435\u0439\u043C\u0435\u043D\u0443\u0432\u0430\u043D\u043D\u044F \u043E\u0434\u043D\u0456\u0454\u0457 \u043D\u043E\u0442\u0430\u0442\u043A\u0438, \u0430 \u043D\u0435 \u0442\u0435\u043A\u0438. \u0423 \u0440\u0456\u0434\u043A\u0456\u0441\u043D\u0438\u0445 \u0432\u0438\u043F\u0430\u0434\u043A\u0430\u0445 \u0432\u043B\u0430\u0441\u043D\u0430 \u043F\u0440\u0430\u0432\u043A\u0430, \u0449\u043E \u0437\u043C\u0456\u043D\u044E\u0454 \u043B\u0438\u0448\u0435 \u043F\u043E\u0441\u0438\u043B\u0430\u043D\u043D\u044F, \u043C\u043E\u0436\u0435 \u043D\u0435 \u043E\u043D\u043E\u0432\u0438\u0442\u0438 \u0434\u0430\u0442\u0443. \u041F\u043E\u0442\u0440\u0435\u0431\u0443\u0454 \u0443\u0432\u0456\u043C\u043A\u043D\u0435\u043D\u043E\u0433\u043E \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u0430 "\u0412\u0456\u0434\u0441\u0442\u0435\u0436\u0443\u0432\u0430\u0442\u0438 \u0441\u043F\u0440\u0430\u0432\u0436\u043D\u0456 \u0437\u043C\u0456\u043D\u0438 \u0432\u043C\u0456\u0441\u0442\u0443".'
       },
       postUpdateCommand: {
         name: "\u041A\u043E\u043C\u0430\u043D\u0434\u0430 \u043F\u0456\u0441\u043B\u044F \u043E\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044F",
@@ -13574,7 +13881,15 @@ var STRINGS_VI = {
     timestampsUpdated: "\u0110\xE3 c\u1EADp nh\u1EADt ng\xE0y.",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "T\u1EC7p b\u1ECB b\u1ECF qua b\u1EDFi c\xE0i \u0111\u1EB7t c\u1EE7a plugin.",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "Kh\xF4ng th\u1EC3 c\u1EADp nh\u1EADt ng\xE0y: {reason}",
     failedToUpdate: "Kh\xF4ng th\u1EC3 c\u1EADp nh\u1EADt ng\xE0y.",
     autoUpdateEnabled: "\u0110\xE3 b\u1EADt t\u1EF1 \u0111\u1ED9ng c\u1EADp nh\u1EADt",
@@ -13597,6 +13912,7 @@ var STRINGS_VI = {
     skippedColumnReason: "L\xFD do",
     skippedTableIntro: "\u0110\xE3 b\u1ECF qua {count} ghi ch\xFA v\xE0 gi\u1EEF nguy\xEAn kh\xF4ng thay \u0111\u1ED5i:",
     skippedUnsavedChanges: "Ghi ch\xFA c\xF3 c\xE1c thay \u0111\u1ED5i ch\u01B0a l\u01B0u trong tr\xECnh so\u1EA1n th\u1EA3o \u0111ang m\u1EDF. H\xE3y l\u01B0u ho\u1EB7c \u0111\xF3ng ghi ch\xFA, sau \u0111\xF3 ch\u1EA1y b\u1EA3n xem tr\u01B0\u1EDBc m\u1EDBi.",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -13670,6 +13986,10 @@ var STRINGS_VI = {
       minSeconds: {
         name: "S\u1ED1 gi\xE2y t\u1ED1i thi\u1EC3u gi\u1EEFa c\xE1c l\u1EA7n c\u1EADp nh\u1EADt",
         desc: "Tr\xE1nh c\u1EADp nh\u1EADt ng\xE0y qu\xE1 th\u01B0\u1EDDng xuy\xEAn khi b\u1EA1n \u0111ang g\xF5 ho\u1EB7c chuy\u1EC3n gi\u1EEFa c\xE1c ghi ch\xFA."
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "Ph\xE1t hi\u1EC7n thay \u0111\u1ED5i (b\u0103m n\u1ED9i dung)",
@@ -13750,7 +14070,7 @@ var STRINGS_VI = {
         obsidianDailyFolderDesc: "Th\u01B0 m\u1EE5c ghi ch\xFA h\xE0ng ng\xE0y",
         obsidianAttachmentsDesc: "Th\u01B0 m\u1EE5c t\u1EC7p \u0111\xEDnh k\xE8m / ph\u01B0\u01A1ng ti\u1EC7n",
         obsidianCanvasDesc: "T\u1EA5t c\u1EA3 t\u1EC7p canvas",
-        obsidianExcalidrawDesc: "T\u1EA5t c\u1EA3 b\u1EA3n v\u1EBD Excalidraw",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "Th\u01B0 m\u1EE5c h\u1ED9p th\u01B0 \u0111\u1EBFn / ghi nh\xE1p",
         obsidianArchiveDesc: "Ghi ch\xFA l\u01B0u tr\u1EEF",
         sectionAllowlist: "Ch\u1EBF \u0111\u1ED9 danh s\xE1ch cho ph\xE9p (ch\u1EC9 theo d\xF5i c\xE1c th\u01B0 m\u1EE5c nh\u1EA5t \u0111\u1ECBnh)",
@@ -13789,6 +14109,10 @@ var STRINGS_VI = {
       maxCacheEntries: {
         name: "S\u1ED1 m\u1EE5c b\u1ED9 \u0111\u1EC7m t\u1ED1i \u0111a",
         desc: "Khi b\u1ED9 \u0111\u1EC7m v\u01B0\u1EE3t qu\xE1 gi\u1EDBi h\u1EA1n n\xE0y, c\xE1c m\u1EE5c c\u0169 kh\xF4ng d\xF9ng nh\u1EA5t s\u1EBD b\u1ECB x\xF3a. 0 = kh\xF4ng gi\u1EDBi h\u1EA1n."
+      },
+      skipRenameLinkUpdates: {
+        name: "Th\u1EED nghi\u1EC7m: kh\xF4ng c\u1EADp nh\u1EADt ng\xE0y sau khi \u0111\u1ED5i t\xEAn ghi ch\xFA",
+        desc: 'T\xEDnh n\u0103ng th\u1EED nghi\u1EC7m. Khi b\u1EA1n \u0111\u1ED5i t\xEAn m\u1ED9t ghi ch\xFA, c\xE1c ghi ch\xFA li\xEAn k\u1EBFt t\u1EDBi n\xF3 gi\u1EEF nguy\xEAn ng\xE0y hi\u1EC7n c\xF3 thay v\xEC nh\u1EADn ng\xE0y m\u1EDBi. Ch\u1EC9 ho\u1EA1t \u0111\u1ED9ng v\u1EDBi li\xEAn k\u1EBFt ki\u1EC3u [[wikilink]] v\xE0 khi \u0111\u1ED5i t\xEAn m\u1ED9t ghi ch\xFA duy nh\u1EA5t, kh\xF4ng ph\u1EA3i th\u01B0 m\u1EE5c. Trong m\u1ED9t s\u1ED1 tr\u01B0\u1EDDng h\u1EE3p hi\u1EBFm, ch\xEDnh s\u1EEDa \u0111\u1ED5i c\u1EE7a b\u1EA1n ch\u1EC9 thay \u0111\u1ED5i li\xEAn k\u1EBFt c\xF3 th\u1EC3 kh\xF4ng c\u1EADp nh\u1EADt ng\xE0y. Y\xEAu c\u1EA7u "Ph\xE1t hi\u1EC7n thay \u0111\u1ED5i n\u1ED9i dung th\u1EF1c s\u1EF1" v\u1EABn \u0111\u01B0\u1EE3c b\u1EADt.'
       },
       postUpdateCommand: {
         name: "L\u1EC7nh sau khi c\u1EADp nh\u1EADt",
@@ -13995,7 +14319,15 @@ var STRINGS_ZH_CN = {
     timestampsUpdated: "\u65E5\u671F\u5DF2\u66F4\u65B0\u3002",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u8BE5\u6587\u4EF6\u5DF2\u88AB\u63D2\u4EF6\u8BBE\u7F6E\u5FFD\u7565\u3002",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u66F4\u65B0\u65E5\u671F\u5931\u8D25\uFF1A{reason}",
     failedToUpdate: "\u66F4\u65B0\u65E5\u671F\u5931\u8D25\u3002",
     autoUpdateEnabled: "\u81EA\u52A8\u66F4\u65B0\u5DF2\u5F00\u542F",
@@ -14018,6 +14350,7 @@ var STRINGS_ZH_CN = {
     skippedColumnReason: "\u539F\u56E0",
     skippedTableIntro: "{count} \u4E2A\u7B14\u8BB0\u5DF2\u8DF3\u8FC7\u4E14\u672A\u88AB\u66F4\u6539:",
     skippedUnsavedChanges: "\u8BE5\u7B14\u8BB0\u5728\u6253\u5F00\u7684\u7F16\u8F91\u5668\u4E2D\u6709\u672A\u4FDD\u5B58\u7684\u66F4\u6539\u3002\u8BF7\u4FDD\u5B58\u6216\u5173\u95ED\u5B83\uFF0C\u7136\u540E\u8FD0\u884C\u65B0\u7684\u9884\u89C8\u3002",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -14091,6 +14424,10 @@ var STRINGS_ZH_CN = {
       minSeconds: {
         name: "\u66F4\u65B0\u4E4B\u95F4\u7684\u6700\u5C11\u79D2\u6570",
         desc: "\u907F\u514D\u5728\u4F60\u6253\u5B57\u6216\u5728\u7B14\u8BB0\u4E4B\u95F4\u5207\u6362\u65F6\u8FC7\u4E8E\u9891\u7E41\u5730\u66F4\u65B0\u65E5\u671F\u3002"
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u6539\u52A8\u68C0\u6D4B\uFF08\u5185\u5BB9\u54C8\u5E0C\uFF09",
@@ -14171,7 +14508,7 @@ var STRINGS_ZH_CN = {
         obsidianDailyFolderDesc: "\u65E5\u8BB0\u6587\u4EF6\u5939",
         obsidianAttachmentsDesc: "\u9644\u4EF6 / \u5A92\u4F53\u6587\u4EF6\u5939",
         obsidianCanvasDesc: "\u6240\u6709\u753B\u5E03\u6587\u4EF6",
-        obsidianExcalidrawDesc: "\u6240\u6709 Excalidraw \u7ED8\u56FE",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u6536\u4EF6\u7BB1 / \u8349\u7A3F\u6587\u4EF6\u5939",
         obsidianArchiveDesc: "\u5DF2\u5F52\u6863\u7684\u7B14\u8BB0",
         sectionAllowlist: "\u767D\u540D\u5355\u6A21\u5F0F\uFF08\u53EA\u8DDF\u8E2A\u7279\u5B9A\u6587\u4EF6\u5939\uFF09",
@@ -14210,6 +14547,10 @@ var STRINGS_ZH_CN = {
       maxCacheEntries: {
         name: "\u6700\u5927\u7F13\u5B58\u6761\u76EE\u6570",
         desc: "\u5F53\u7F13\u5B58\u8D85\u8FC7\u6B64\u4E0A\u9650\u65F6\uFF0C\u4F1A\u79FB\u9664\u6700\u4E45\u672A\u4F7F\u7528\u7684\u6761\u76EE\u30020 = \u4E0D\u9650\u5236\u3002"
+      },
+      skipRenameLinkUpdates: {
+        name: "\u5B9E\u9A8C\u6027\uFF1A\u91CD\u547D\u540D\u7B14\u8BB0\u540E\u4E0D\u66F4\u65B0\u65E5\u671F",
+        desc: "\u5B9E\u9A8C\u6027\u529F\u80FD\u3002\u91CD\u547D\u540D\u7B14\u8BB0\u65F6\uFF0C\u94FE\u63A5\u5230\u5B83\u7684\u7B14\u8BB0\u4F1A\u4FDD\u7559\u539F\u6709\u65E5\u671F\uFF0C\u800C\u4E0D\u662F\u83B7\u5F97\u65B0\u65E5\u671F\u3002\u4EC5\u9002\u7528\u4E8E [[wikilink]] \u6837\u5F0F\u7684\u94FE\u63A5\uFF0C\u4E14\u4EC5\u5728\u91CD\u547D\u540D\u5355\u4E2A\u7B14\u8BB0\uFF08\u800C\u975E\u6587\u4EF6\u5939\uFF09\u65F6\u751F\u6548\u3002\u5728\u6781\u5C11\u6570\u60C5\u51B5\u4E0B\uFF0C\u4F60\u81EA\u5DF1\u53EA\u4FEE\u6539\u94FE\u63A5\u7684\u7F16\u8F91\u53EF\u80FD\u4E0D\u4F1A\u66F4\u65B0\u65E5\u671F\u3002\u9700\u8981\u4FDD\u6301\u5F00\u542F\u201C\u68C0\u6D4B\u771F\u5B9E\u5185\u5BB9\u53D8\u66F4\u201D\u3002"
       },
       postUpdateCommand: {
         name: "\u66F4\u65B0\u540E\u8FD0\u884C\u7684\u547D\u4EE4",
@@ -14416,7 +14757,15 @@ var STRINGS_ZH_TW = {
     timestampsUpdated: "\u65E5\u671F\u5DF2\u66F4\u65B0\u3002",
     timestampsAlreadyCurrent: "Timestamps are already up to date.",
     timestampsUpdateScheduled: "Timestamps will update shortly.",
-    fileIgnored: "\u6B64\u6A94\u6848\u5DF2\u88AB\u5916\u639B\u8A2D\u5B9A\u7565\u904E\u3002",
+    ignoredExcalidraw: "Excalidraw drawings are excluded. Turn on 'Include Excalidraw drawings' in the plugin settings to add dates to them.",
+    ignoredByFilterRule: "This file is excluded by a rule in 'Files and folders to skip'.",
+    ignoredCanvas: "Canvas files are not supported.",
+    ignoredEmpty: "This file is empty, so there is nothing to date.",
+    ignoredUnchanged: "No content change detected since the last update.",
+    ignoredNoDateKeys: "No date property names are configured in the plugin settings.",
+    ignoredInvalidFileTimes: "The file's creation or modification time could not be read.",
+    ignoredNotMarkdown: "Only Markdown notes get date properties.",
+    excalidrawHasUnsavedChanges: "The drawing has unsaved changes - dates will update after Excalidraw saves it.",
     failedToUpdateWithReason: "\u66F4\u65B0\u65E5\u671F\u5931\u6557\uFF1A{reason}",
     failedToUpdate: "\u66F4\u65B0\u65E5\u671F\u5931\u6557\u3002",
     autoUpdateEnabled: "\u81EA\u52D5\u66F4\u65B0\u5DF2\u958B\u555F",
@@ -14439,6 +14788,7 @@ var STRINGS_ZH_TW = {
     skippedColumnReason: "\u539F\u56E0",
     skippedTableIntro: "{count} \u500B\u7B46\u8A18\u5DF2\u7565\u904E\u4E14\u672A\u88AB\u8B8A\u66F4:",
     skippedUnsavedChanges: "\u8A72\u7B46\u8A18\u5728\u958B\u555F\u7684\u7DE8\u8F2F\u5668\u4E2D\u6709\u672A\u5132\u5B58\u7684\u8B8A\u66F4\u3002\u8ACB\u5132\u5B58\u6216\u95DC\u9589\u5B83\uFF0C\u7136\u5F8C\u57F7\u884C\u65B0\u7684\u9810\u89BD\u3002",
+    skippedExcalidrawUnsaved: "The Excalidraw drawing has unsaved changes or is busy saving. Save or close it, then run a new preview.",
     progressCounter: "{count}/{max}"
   },
   settings: {
@@ -14512,6 +14862,10 @@ var STRINGS_ZH_TW = {
       minSeconds: {
         name: "\u66F4\u65B0\u4E4B\u9593\u7684\u6700\u5C0F\u79D2\u6578",
         desc: "\u907F\u514D\u5728\u60A8\u6253\u5B57\u6216\u5728\u7B46\u8A18\u4E4B\u9593\u5207\u63DB\u6642\u904E\u65BC\u983B\u7E41\u5730\u66F4\u65B0\u65E5\u671F\u3002"
+      },
+      trackExcalidraw: {
+        name: "Include Excalidraw drawings",
+        desc: "Add dates to Excalidraw drawings like to any note. A drawing is never written to while it has unsaved changes, and the last-opened date is never written to drawings. Rename key and Reformat dates always cover every note."
       },
       changeDetection: {
         name: "\u8B8A\u66F4\u5075\u6E2C\uFF08\u5167\u5BB9\u96DC\u6E4A\uFF09",
@@ -14592,7 +14946,7 @@ var STRINGS_ZH_TW = {
         obsidianDailyFolderDesc: "\u6BCF\u65E5\u7B46\u8A18\u8CC7\u6599\u593E",
         obsidianAttachmentsDesc: "\u9644\u4EF6\uFF0F\u5A92\u9AD4\u8CC7\u6599\u593E",
         obsidianCanvasDesc: "\u6240\u6709\u756B\u5E03\u6A94\u6848",
-        obsidianExcalidrawDesc: "\u6240\u6709 Excalidraw \u5716\u756B",
+        obsidianExcalidrawDesc: "Excalidraw drawings by file name (matches only the default suffix; the 'Include Excalidraw drawings' toggle is the reliable switch)",
         obsidianInboxDesc: "\u6536\u4EF6\u5323\uFF0F\u8349\u7A3F\u8CC7\u6599\u593E",
         obsidianArchiveDesc: "\u5DF2\u5C01\u5B58\u7684\u7B46\u8A18",
         sectionAllowlist: "\u767D\u540D\u55AE\u6A21\u5F0F\uFF08\u53EA\u8FFD\u8E64\u7279\u5B9A\u8CC7\u6599\u593E\uFF09",
@@ -14631,6 +14985,10 @@ var STRINGS_ZH_TW = {
       maxCacheEntries: {
         name: "\u6700\u5927\u5FEB\u53D6\u9805\u76EE\u6578",
         desc: "\u7576\u5FEB\u53D6\u8D85\u904E\u6B64\u4E0A\u9650\u6642\uFF0C\u6703\u79FB\u9664\u6700\u820A\u7684\u672A\u4F7F\u7528\u9805\u76EE\u30020 = \u7121\u9650\u5236\u3002"
+      },
+      skipRenameLinkUpdates: {
+        name: "\u5BE6\u9A57\u6027\uFF1A\u91CD\u65B0\u547D\u540D\u7B46\u8A18\u5F8C\u4E0D\u66F4\u65B0\u65E5\u671F",
+        desc: "\u5BE6\u9A57\u6027\u529F\u80FD\u3002\u91CD\u65B0\u547D\u540D\u7B46\u8A18\u6642\uFF0C\u9023\u7D50\u5230\u5B83\u7684\u7B46\u8A18\u6703\u4FDD\u7559\u539F\u6709\u65E5\u671F\uFF0C\u800C\u4E0D\u662F\u53D6\u5F97\u65B0\u65E5\u671F\u3002\u50C5\u9069\u7528\u65BC [[wikilink]] \u6A23\u5F0F\u7684\u9023\u7D50\uFF0C\u4E14\u50C5\u5728\u91CD\u65B0\u547D\u540D\u55AE\u4E00\u7B46\u8A18\uFF08\u800C\u975E\u8CC7\u6599\u593E\uFF09\u6642\u751F\u6548\u3002\u5728\u6975\u5C11\u6578\u60C5\u6CC1\u4E0B\uFF0C\u4F60\u81EA\u5DF1\u53EA\u4FEE\u6539\u9023\u7D50\u7684\u7DE8\u8F2F\u53EF\u80FD\u4E0D\u6703\u66F4\u65B0\u65E5\u671F\u3002\u9700\u8981\u4FDD\u6301\u958B\u555F\u300C\u5075\u6E2C\u771F\u5BE6\u5167\u5BB9\u8B8A\u66F4\u300D\u3002"
       },
       postUpdateCommand: {
         name: "\u66F4\u65B0\u5F8C\u57F7\u884C\u547D\u4EE4",
@@ -14889,8 +15247,12 @@ var BulkSkipped = class extends Error {
 };
 async function applyFrontmatterWrite(app, plugin, file, mutator) {
   var _a;
-  if (await plugin.hasUnsavedEditorChanges(file)) {
+  const block = await plugin.getWriteBlock(file);
+  if (block === "markdown") {
     throw new BulkSkipped(strings.bulkChrome.skippedUnsavedChanges);
+  }
+  if (block === "excalidraw" || block === "excalidraw-busy") {
+    throw new BulkSkipped(strings.bulkChrome.skippedExcalidrawUnsaved);
   }
   await app.fileManager.processFrontMatter(file, mutator);
   plugin.lastPluginWriteMtime.set(file.path, file.stat.mtime);
@@ -16824,6 +17186,7 @@ var DEFAULT_SETTINGS = {
   postUpdateCommand: "",
   filterRules: "",
   enableModifiedTime: true,
+  trackExcalidraw: true,
   enableLastViewed: false,
   headerLastViewed: "viewed",
   countUpdatesEnabled: false,
@@ -16833,6 +17196,7 @@ var DEFAULT_SETTINGS = {
   frontmatterHashExcludeKeys: [],
   enableAutoPopulateCache: true,
   hashCacheMaxSize: 1e4,
+  experimentalSkipRenameLinkUpdates: false,
   inversionFixStrategy: "disabled",
   inversionToleranceSec: 0
 };
@@ -16935,6 +17299,9 @@ var FrontmatterDateManagerSettingsTab = class extends import_obsidian11.PluginSe
         break;
       case "enableAutoUpdate":
         this.plugin.updateStatusBar();
+        break;
+      case "experimentalSkipRenameLinkUpdates":
+        this.plugin.cancelRenameSuppression();
         break;
       case "hashTrackingMode":
         new import_obsidian11.Notice(
@@ -17170,6 +17537,15 @@ var FrontmatterDateManagerSettingsTab = class extends import_obsidian11.PluginSe
             step: 5
           }
         },
+        {
+          name: b.trackExcalidraw.name,
+          desc: b.trackExcalidraw.desc,
+          control: {
+            type: "toggle",
+            key: "trackExcalidraw",
+            defaultValue: true
+          }
+        },
         this.filterRulesPage(),
         {
           name: b.changeDetection.name,
@@ -17300,6 +17676,23 @@ var FrontmatterDateManagerSettingsTab = class extends import_obsidian11.PluginSe
             step: 1,
             placeholder: "10000",
             defaultValue: 1e4
+          }
+        },
+        {
+          name: a.skipRenameLinkUpdates.name,
+          desc: a.skipRenameLinkUpdates.desc,
+          // Suppression works only by refreshing the content hash, which
+          // shouldFileBeIgnored reads only when change detection is on. Hidden
+          // rather than shown-and-inert - armRenameSuppression bails on the
+          // same condition, so an offered toggle could never act.
+          visible: () => {
+            var _a;
+            return (_a = this.plugin.settings.enableContentHashCheck) != null ? _a : true;
+          },
+          control: {
+            type: "toggle",
+            key: "experimentalSkipRenameLinkUpdates",
+            defaultValue: DEFAULT_SETTINGS.experimentalSkipRenameLinkUpdates
           }
         },
         {
@@ -18192,8 +18585,110 @@ sha224.hmac = createHmacMethod(true);
 // src/constants.ts
 var MODIFY_DEBOUNCE_MS = 2e3;
 var FRESHNESS_SEC = 5;
+var EXCALIDRAW_FRONTMATTER_KEY = "excalidraw-plugin";
+var EXCALIDRAW_VIEW_TYPE = "excalidraw";
+var RENAME_SUPPRESSION_MAX_SOURCES = 50;
+var RENAME_SUPPRESSION_MAX_BYTES = 4 * 1024 * 1024;
+
+// src/renamePrediction.ts
+var WIKILINK_RE = /^(!?\[\[)(.*?)(\|(.*))?(]])$/;
+function parseWikilink(original) {
+  var _a;
+  const m = WIKILINK_RE.exec(original);
+  if (!m) return null;
+  const open = m[1];
+  const linkPart = m[2];
+  const close = m[5];
+  if (open === void 0 || linkPart === void 0 || close === void 0) {
+    return null;
+  }
+  return { open, linkPart, alias: (_a = m[4]) != null ? _a : null, close };
+}
+function linkBasename(path) {
+  const i = path.lastIndexOf("/");
+  return i === -1 ? path : path.slice(i + 1);
+}
+function linktextPath(linktext) {
+  const i = linktext.indexOf("#");
+  return i > 0 ? linktext.slice(0, i) : i === 0 ? "" : linktext;
+}
+function isPredictable(ref, content) {
+  if (ref.original.includes("\\|")) return false;
+  if (parseWikilink(ref.original) === null) return false;
+  return content.slice(ref.start, ref.end) === ref.original;
+}
+function rewriteWikilink(original, newLinktext) {
+  const parsed = parseWikilink(original);
+  if (parsed === null) return null;
+  const { open, linkPart, alias, close } = parsed;
+  if (alias === null) return open + newLinktext + close;
+  const pipe = original.includes("\\|") ? "\\|" : "|";
+  const autoAlias = linkPart.includes("/") && linkBasename(linkPart) === alias.trim();
+  const outAlias = autoAlias ? linkBasename(linktextPath(newLinktext)) : alias;
+  return open + newLinktext + pipe + outAlias + close;
+}
+function linkpathTargetsPath(linkpath, oldPath) {
+  const norm = (s) => {
+    let out = s.trim().replace(/^\.\//, "");
+    if (out.toLowerCase().endsWith(".md")) out = out.slice(0, -3);
+    return out.toLowerCase();
+  };
+  const link = norm(linkpath);
+  if (link === "" || link.includes("..")) return false;
+  const target = norm(oldPath);
+  if (link === target) return true;
+  if (link === linkBasename(target)) return true;
+  return target.endsWith(`/${link}`);
+}
+function predictContent(content, replacements) {
+  const sorted = [...replacements].sort((a, b) => a.start - b.start);
+  let prevEnd = -1;
+  for (const r of sorted) {
+    if (!Number.isInteger(r.start) || !Number.isInteger(r.end) || r.start < 0 || r.end > content.length || r.start > r.end || r.start < prevEnd) {
+      return null;
+    }
+    prevEnd = r.end;
+  }
+  let out = content;
+  for (let i = sorted.length - 1; i >= 0; i--) {
+    const r = sorted[i];
+    out = out.slice(0, r.start) + r.text + out.slice(r.end);
+  }
+  return out;
+}
+function hasOverlappingRefs(refs) {
+  const sorted = [...refs].sort((a, b) => a.start - b.start);
+  let prevEnd = -1;
+  for (const r of sorted) {
+    if (r.start < prevEnd) return true;
+    prevEnd = r.end;
+  }
+  return false;
+}
 
 // src/main.ts
+function ignoreReasonToNotice(reason) {
+  switch (reason) {
+    case "excalidraw":
+      return strings.notices.ignoredExcalidraw;
+    case "filter-rule":
+      return strings.notices.ignoredByFilterRule;
+    case "canvas":
+      return strings.notices.ignoredCanvas;
+    case "empty":
+      return strings.notices.ignoredEmpty;
+    case "unchanged":
+      return strings.notices.ignoredUnchanged;
+    case "no-date-keys":
+      return strings.notices.ignoredNoDateKeys;
+    case "invalid-file-times":
+      return strings.notices.ignoredInvalidFileTimes;
+    case "no-path":
+    case "not-markdown":
+    case "not-a-file":
+      return strings.notices.ignoredNotMarkdown;
+  }
+}
 var HASH_CACHE_FILE = "hash-cache.json";
 var HASH_CACHE_DEFAULT_MAX_SIZE = 1e4;
 var HASH_CACHE_DEBOUNCE_MS = 3e4;
@@ -18220,6 +18715,11 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     // file reads and to break the infinite write loop when content hash checking
     // is disabled.
     this.lastPluginWriteMtime = /* @__PURE__ */ new Map();
+    // Experimental "skip the date after a rename" state. At most one rename is
+    // ever armed: a second rename event (i.e. a folder move, which fires one
+    // event per moved child) cancels instead of queueing.
+    this.renameSuppression = null;
+    this.renameGeneration = 0;
     this._hashCacheDirty = false;
     this._hashCacheSaveTimer = null;
     this._hashCacheFirstDirtyAt = null;
@@ -18356,10 +18856,10 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
             this.processFileWithLock(file).then((result) => {
               if (result.status === "ok") {
                 new import_obsidian12.Notice(
-                  result.wrote ? strings.notices.timestampsUpdated : result.deferred ? strings.notices.timestampsUpdateScheduled : strings.notices.timestampsAlreadyCurrent
+                  result.wrote ? strings.notices.timestampsUpdated : result.deferred ? strings.notices.timestampsUpdateScheduled : result.blocked === "excalidraw" ? strings.notices.excalidrawHasUnsavedChanges : strings.notices.timestampsAlreadyCurrent
                 );
               } else if (result.status === "ignored") {
-                new import_obsidian12.Notice(strings.notices.fileIgnored);
+                new import_obsidian12.Notice(ignoreReasonToNotice(result.reason));
               } else {
                 const err = result.error;
                 if (!(err instanceof Error && err.name === "YAMLParseError")) {
@@ -18500,24 +19000,30 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     return result.join("\n");
   }
   async shouldFileBeIgnored(file, options) {
+    var _a;
     if (!file.path) {
-      return { ignored: true };
+      return { ignored: true, reason: "no-path" };
     }
     if (file.extension !== "md") {
-      return { ignored: true };
+      return { ignored: true, reason: "not-markdown" };
     }
     if (file.name.toLowerCase() === "canvas.md") {
-      return { ignored: true };
+      return { ignored: true, reason: "canvas" };
     }
-    if (this.isExcalidrawFile(file)) {
-      return { ignored: true };
+    const trackExcalidraw = (_a = this.settings.trackExcalidraw) != null ? _a : true;
+    const excalidrawClass = this.classifyExcalidraw(file);
+    if (!trackExcalidraw && excalidrawClass === "drawing") {
+      return { ignored: true, reason: "excalidraw" };
     }
     if (this._compiledRules.length > 0 && isFileExcluded(file.path, this._compiledRules)) {
-      return { ignored: true };
+      return { ignored: true, reason: "filter-rule" };
     }
     const fileContent = (await this.app.vault.read(file)).trim();
     if (fileContent.length === 0) {
-      return { ignored: true };
+      return { ignored: true, reason: "empty" };
+    }
+    if (!trackExcalidraw && excalidrawClass === "unknown" && this.isExcalidrawContent(fileContent)) {
+      return { ignored: true, reason: "excalidraw" };
     }
     if (this.settings.enableContentHashCheck && !(options == null ? void 0 : options.skipHashCheck)) {
       const entry = this.hashCache[file.path];
@@ -18527,7 +19033,7 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
         const sha = this.hashString(contentToHash);
         if (sha === entry.hash) {
           this.log("Ignoring file - SHA is the same");
-          return { ignored: true };
+          return { ignored: true, reason: "unchanged" };
         }
       }
     }
@@ -18539,13 +19045,53 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     });
     return isAfter(currentMtime, nextUpdate);
   }
-  isExcalidrawFile(file) {
-    const mainWindow = window;
-    const ea = mainWindow["ExcalidrawAutomate"];
-    if (ea != null && typeof ea === "object" && "isExcalidrawFile" in ea && typeof ea["isExcalidrawFile"] === "function") {
-      return ea.isExcalidrawFile(file);
+  // A drawing is a note whose frontmatter carries a truthy `excalidraw-plugin`
+  // marker - the exact check Excalidraw's own FileManager.isExcalidrawFile
+  // performs (its `.excalidraw`-extension branch is unreachable here: the
+  // extension gate above admits only .md files). Read from metadataCache
+  // directly instead of the ExcalidrawAutomate global so classification is
+  // sync, unit-testable, and independent of whether/when the Excalidraw plugin
+  // loads.
+  //
+  // Three-valued on purpose. A metadataCache MISS ('unknown') is NOT "not a
+  // drawing": right after startup, or for a file Obsidian has not indexed yet,
+  // the marker is invisible - and treating that as "ordinary note" would let
+  // the `viewed` stamp (the one write aimed at an idle drawing) or a
+  // toggle-off write through. Callers resolve 'unknown' explicitly: from the
+  // file text when they have it (isExcalidrawContent), or by failing closed.
+  classifyExcalidraw(file) {
+    const cache = this.app.metadataCache.getFileCache(file);
+    if (!cache) return "unknown";
+    const frontmatter = cache.frontmatter;
+    return (frontmatter == null ? void 0 : frontmatter[EXCALIDRAW_FRONTMATTER_KEY]) ? "drawing" : "not-drawing";
+  }
+  // Resolve an 'unknown' classification from the raw file text: the same
+  // truthy-marker rule, applied to the frontmatter block. Deliberately
+  // conservative - a key with an empty value is not a drawing, exactly like
+  // the cached check.
+  isExcalidrawContent(fileContent) {
+    var _a;
+    const fm = fileContent.match(/^---\r?\n([\s\S]*?\r?\n)?---/);
+    if (!(fm == null ? void 0 : fm[1])) return false;
+    for (const line of fm[1].split(/\r?\n/)) {
+      const match2 = line.match(
+        new RegExp(`^${EXCALIDRAW_FRONTMATTER_KEY}\\s*:\\s*(.*)$`)
+      );
+      if (match2) {
+        const value = ((_a = match2[1]) != null ? _a : "").trim().replace(/^["']|["']$/g, "");
+        return value.length > 0 && value !== "false" && value !== "null";
+      }
     }
     return false;
+  }
+  // True when this file is known to be an Excalidraw drawing. `fileContent`
+  // resolves a metadataCache miss precisely; without it an unindexed file is
+  // treated as a drawing (fail closed) - the caller is about to skip a write,
+  // and a skipped write is always recoverable.
+  isExcalidrawFile(file, fileContent) {
+    const classified = this.classifyExcalidraw(file);
+    if (classified !== "unknown") return classified === "drawing";
+    return fileContent === void 0 ? true : this.isExcalidrawContent(fileContent);
   }
   async getAllFilesPossiblyAffected(options) {
     const allFiles = this.app.vault.getMarkdownFiles();
@@ -18615,7 +19161,7 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
   // fails CLOSED: when `dirty` is not a boolean (API drift), fall back to
   // comparing the buffer with the file on disk, and treat an unreadable buffer
   // as unsafe. A delayed stamp is recoverable; a merge into the user's live
-  // buffer is not. Public because bulk writes (src/bulk/write.ts) share it.
+  // buffer is not.
   async hasUnsavedEditorChanges(file) {
     for (const view of this.markdownViewsFor(file)) {
       const flag = view.dirty;
@@ -18633,13 +19179,70 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     }
     return false;
   }
+  // Excalidraw-side write block. An open drawing view of this file blocks the
+  // write unless it is provably mounted, idle, and clean. The danger this
+  // guards is NOT the Markdown merge popup: when a drawing had no save for
+  // > 5 minutes, Excalidraw reacts to an external vault write with a full
+  // reload(true) + clearDirty() (FileManager.modifyEventHandler in
+  // obsidian-excalidraw-plugin) - discarding the user's unsaved strokes. A
+  // drawing CAN stay dirty that long: Excalidraw skips autosave while a text
+  // element / new element / freedraw is active, and autosave can be disabled.
+  // A CLEAN open drawing is safe to write to: Obsidian core refreshes the
+  // view's buffer (TextFileView.onModify -> loadFileInternal -> setData,
+  // verified in obsidian-1.13.7.asar) and Excalidraw only syncs scene
+  // elements.
+  //
+  // isDirty()/semaphores are public members of ExcalidrawView (2.26.4) but not
+  // a stable cross-plugin API, so every read goes through `unknown` casts and
+  // fails CLOSED on any drift: semaphores missing/malformed, isDirty missing /
+  // throwing / returning a non-boolean, or the view not mounted yet
+  // (excalidrawAPI null) all count as blocked.
+  excalidrawWriteBlock(file) {
+    var _a;
+    for (const leaf of this.app.workspace.getLeavesOfType(
+      EXCALIDRAW_VIEW_TYPE
+    )) {
+      const view = leaf.view;
+      const path = (_a = view.file) == null ? void 0 : _a.path;
+      if (typeof path !== "string") return "dirty";
+      if (path !== file.path) continue;
+      const sem = view.semaphores;
+      if (sem === null || typeof sem !== "object") return "dirty";
+      const { saving, autosaving } = sem;
+      if (saving === true || autosaving === true) return "busy";
+      if (saving !== false || autosaving !== false) return "dirty";
+      const api = view.excalidrawAPI;
+      if (api === null || typeof api !== "object") return "dirty";
+      if (typeof view.isDirty !== "function") return "dirty";
+      try {
+        const dirty = view.isDirty.call(leaf.view);
+        if (dirty !== false) return "dirty";
+      } catch (e) {
+        return "dirty";
+      }
+    }
+    return null;
+  }
+  // The single write-safety gate every write path consults. 'markdown' means a
+  // Markdown editor buffer of the file holds unsaved changes (defer via the
+  // 2 s retry - Obsidian's own autosave clears it shortly after typing stops).
+  // 'excalidraw' means an open drawing view is dirty/busy/unknown; callers
+  // must DROP the pass without a retry timer: Excalidraw can stay dirty for
+  // hours, and its own next save fires `modify`, which re-triggers the
+  // pipeline (the hash is not refreshed on a blocked pass, so the pending
+  // change stays detectable). Public because bulk writes (src/bulk/write.ts)
+  // share it.
+  async getWriteBlock(file) {
+    if (await this.hasUnsavedEditorChanges(file)) return "markdown";
+    const excalidraw = this.excalidrawWriteBlock(file);
+    if (excalidraw === "busy") return "excalidraw-busy";
+    if (excalidraw === "dirty") return "excalidraw";
+    return null;
+  }
   computeFrontmatterUpdates(file) {
     var _a, _b, _c, _d, _e, _f;
     const updatedKey = this.settings.headerUpdated.trim();
     const createdKey = this.settings.headerCreated.trim();
-    if (!updatedKey && !createdKey) {
-      return null;
-    }
     const mTime = this.parseDate(file.stat.mtime);
     const cTime = this.parseDate(file.stat.ctime);
     if (!mTime || !cTime) {
@@ -18705,7 +19308,7 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
   }
   async handleFileChange(file) {
     if (!isTFile(file)) {
-      return { status: "ignored" };
+      return { status: "ignored", reason: "not-a-file" };
     }
     const lastMtime = this.lastPluginWriteMtime.get(file.path);
     if (lastMtime !== void 0) {
@@ -18716,10 +19319,13 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     }
     const checkResult = await this.shouldFileBeIgnored(file);
     if (checkResult.ignored) {
-      return { status: "ignored" };
+      return { status: "ignored", reason: checkResult.reason };
     }
-    if (await this.hasUnsavedEditorChanges(file)) {
-      this.log("Editor buffer has unsaved changes - deferring");
+    const block = await this.getWriteBlock(file);
+    if (block === "markdown" || block === "excalidraw-busy") {
+      this.log(
+        block === "markdown" ? "Editor buffer has unsaved changes - deferring" : "Excalidraw view is mid-save - deferring"
+      );
       if (!this.modifyTimers.has(file.path)) {
         const timer = window.setTimeout(() => {
           this.modifyTimers.delete(file.path);
@@ -18729,9 +19335,16 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
       }
       return { status: "ok", wrote: false, deferred: true };
     }
+    if (block === "excalidraw") {
+      this.log("Open Excalidraw view is dirty or busy - dropping this pass");
+      return { status: "ok", wrote: false, blocked: "excalidraw" };
+    }
+    if (!this.settings.headerUpdated.trim() && !this.settings.headerCreated.trim()) {
+      return { status: "ignored", reason: "no-date-keys" };
+    }
     const updates = this.computeFrontmatterUpdates(file);
     if (updates === null) {
-      return { status: "ignored" };
+      return { status: "ignored", reason: "invalid-file-times" };
     }
     if (updates.retryAfterMs != null && updates.retryAfterMs > 0) {
       this.log("Update rate-limited - deferring to retry");
@@ -18858,10 +19471,12 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     var _a, _b;
     const viewedKey = ((_a = this.settings.headerLastViewed) != null ? _a : "viewed").trim();
     if (!viewedKey) return;
-    if ((await this.shouldFileBeIgnored(file, { skipHashCheck: true })).ignored) {
+    const check = await this.shouldFileBeIgnored(file, { skipHashCheck: true });
+    if (check.ignored) {
       return;
     }
-    if (await this.hasUnsavedEditorChanges(file)) return;
+    if (this.isExcalidrawFile(file, check.fileContent)) return;
+    if (await this.getWriteBlock(file) !== null) return;
     const cached = (_b = this.app.metadataCache.getFileCache(file)) == null ? void 0 : _b.frontmatter;
     const existingViewed = cached == null ? void 0 : cached[viewedKey];
     if (existingViewed) {
@@ -18909,6 +19524,253 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
       this.processingFiles.delete(file.path);
     }
   }
+  // ---------------------------------------------------------------------------
+  // Experimental: skip the date update caused by a rename's link rewrites
+  //
+  // When a note is renamed, Obsidian rewrites the [[wikilinks]] that pointed at
+  // it inside every other note. Those notes genuinely change on disk, so the
+  // normal pipeline stamps `updated` on notes the user never opened (issue #18).
+  //
+  // The rewrite is applied with a plain `vault.process` - no flag, no dedicated
+  // event - so it cannot be DETECTED. It can, however, be PREDICTED: snapshot
+  // each linking note before the rewrite, compute the exact bytes Obsidian is
+  // about to write, and compare the result byte for byte. Only an exact match
+  // refreshes the content hash (which makes the already-scheduled pass find
+  // "unchanged" and stamp nothing).
+  //
+  // The governing rule is that this must fail toward stamping: an extra
+  // `updated` is cosmetic and visible, a missing one is silent and gone. Every
+  // branch below therefore does nothing on the slightest doubt - a wrong
+  // prediction costs coverage, never data.
+  // ---------------------------------------------------------------------------
+  // Drop any armed rename and invalidate the in-flight async steps. Called on
+  // unload, on a second rename event, and whenever the setting changes.
+  cancelRenameSuppression() {
+    this.renameGeneration++;
+    this.renameSuppression = null;
+  }
+  // The `updateQueue.promise` to wait on, or null when this rename will not
+  // rewrite any link.
+  //
+  // Both reads are undocumented internals, so both go through an `unknown` cast
+  // inside try/catch and fail toward "do nothing":
+  // - `fileManager.inProgressUpdates` is null at rest and an ARRAY for the span
+  //   of a link-updating rename, so it distinguishes `FileManager.renameFile`
+  //   (rewrites links) from a plugin calling `Vault.rename` (never does).
+  //   Verified on a live Obsidian 1.13.4, not just read from the bundle.
+  // - `updateQueue.promise` is a MUTABLE field reassigned by every queue() call,
+  //   so it must be read exactly once, here, at arming time. The whole rename
+  //   operation - including an indefinite wait on the "update links?" modal - is
+  //   queued onto it, so the value read now settles after the rewrites land.
+  //   It can reject; callers must await it inside try/catch.
+  renameLinkUpdatePromise() {
+    var _a;
+    try {
+      const fileManager = this.app.fileManager;
+      if (!Array.isArray(fileManager.inProgressUpdates)) return null;
+      const promise = (_a = fileManager.updateQueue) == null ? void 0 : _a.promise;
+      return promise instanceof Promise ? promise : null;
+    } catch (e) {
+      return null;
+    }
+  }
+  // Notes that linked to `oldPath`, read from the still-pre-rename
+  // resolvedLinks index. null means "too many - arm nothing".
+  renameCandidateSources(oldPath) {
+    try {
+      return this.scanRenameCandidates(oldPath);
+    } catch (e) {
+      return null;
+    }
+  }
+  scanRenameCandidates(oldPath) {
+    var _a, _b;
+    const out = [];
+    const resolved = this.app.metadataCache.resolvedLinks;
+    for (const sourcePath of Object.keys(resolved)) {
+      if (sourcePath === oldPath) continue;
+      if (((_b = (_a = resolved[sourcePath]) == null ? void 0 : _a[oldPath]) != null ? _b : 0) <= 0) continue;
+      const file = this.app.vault.getAbstractFileByPath(sourcePath);
+      if (file === null || !isTFile(file) || file.extension !== "md") continue;
+      out.push(file);
+      if (out.length > RENAME_SUPPRESSION_MAX_SOURCES) return null;
+    }
+    return out;
+  }
+  // Link + embed references with their source offsets, read synchronously so
+  // the snapshot cannot drift while the rewrite runs. null when the file has no
+  // cache entry or any reference lacks offsets.
+  snapshotRefs(file) {
+    var _a, _b;
+    try {
+      const cache = this.app.metadataCache.getFileCache(file);
+      if (!cache) return null;
+      const out = [];
+      for (const ref of [...(_a = cache.links) != null ? _a : [], ...(_b = cache.embeds) != null ? _b : []]) {
+        const start = ref.position.start.offset;
+        const end = ref.position.end.offset;
+        if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
+        out.push({ original: ref.original, link: ref.link, start, end });
+      }
+      return out;
+    } catch (e) {
+      return null;
+    }
+  }
+  // Phase A. Runs synchronously inside the vault `rename` listener, which fires
+  // BEFORE any link has been rewritten - that is the only window in which the
+  // pre-rewrite state can be captured. Everything that must not race the
+  // rewrite (the internals read, the candidate scan, the reference snapshots,
+  // and issuing the file reads) happens before the first await.
+  armRenameSuppression(file, oldPath) {
+    if (this.settings.experimentalSkipRenameLinkUpdates !== true) return;
+    if (!this.settings.enableAutoUpdate) return;
+    if (!this.settings.enableContentHashCheck) return;
+    if (this.bulkRunning) return;
+    if (this._pausedUntil > 0 && Date.now() < this._pausedUntil) return;
+    const current = this.renameSuppression;
+    if (current !== null) {
+      current.blocked = true;
+      return;
+    }
+    const queuePromise = this.renameLinkUpdatePromise();
+    if (queuePromise === null) return;
+    if (!isTFile(file) || file.extension !== "md") {
+      this.blockRenameBatch(queuePromise);
+      return;
+    }
+    const candidates = this.renameCandidateSources(oldPath);
+    if (candidates === null || candidates.length === 0) {
+      this.blockRenameBatch(queuePromise);
+      return;
+    }
+    let budget = RENAME_SUPPRESSION_MAX_BYTES;
+    const pending = candidates.flatMap((source) => {
+      const size = source.stat.size;
+      if (!Number.isFinite(size) || size > budget) return [];
+      const refs = this.snapshotRefs(source);
+      if (refs === null) return [];
+      budget -= size;
+      return [
+        {
+          file: source,
+          refs,
+          content: this.app.vault.read(source).catch(() => null)
+        }
+      ];
+    });
+    if (pending.length === 0) {
+      this.blockRenameBatch(queuePromise);
+      return;
+    }
+    const armed = {
+      generation: this.renameGeneration,
+      oldPath,
+      newPath: file.path,
+      sources: [],
+      blocked: false
+    };
+    this.renameSuppression = armed;
+    void this.runRenameSuppression(armed, pending, queuePromise);
+  }
+  // Occupy the rename slot with a batch that suppresses nothing, releasing it
+  // when the rename's own queue settles. This is what makes the folder-move
+  // exclusion a latch instead of a toggle.
+  blockRenameBatch(queuePromise) {
+    const blocked = {
+      generation: this.renameGeneration,
+      oldPath: "",
+      newPath: "",
+      sources: [],
+      blocked: true
+    };
+    this.renameSuppression = blocked;
+    void this.releaseRenameBatch(blocked, queuePromise);
+  }
+  async releaseRenameBatch(batch, queuePromise) {
+    try {
+      await queuePromise;
+    } catch (e) {
+    } finally {
+      if (this.renameSuppression === batch) this.renameSuppression = null;
+    }
+  }
+  // Phases A (tail) + B + C.
+  async runRenameSuppression(armed, pending, queuePromise) {
+    try {
+      for (const entry of pending) {
+        const content = await entry.content;
+        if (content === null) continue;
+        if (this.processingFiles.has(entry.file.path)) continue;
+        if (await this.getWriteBlock(entry.file) !== null) continue;
+        const cached = this.hashCache[entry.file.path];
+        if (!cached) continue;
+        const hash = this.hashString(this.getContentForHashing(content.trim()));
+        if (hash !== cached.hash) continue;
+        armed.sources.push({
+          path: entry.file.path,
+          content,
+          refs: entry.refs
+        });
+      }
+      if (!this.isRenameStillArmed(armed) || armed.sources.length === 0) return;
+      if (armed.blocked) return;
+      await queuePromise;
+      if (!this.isRenameStillArmed(armed)) return;
+      const renamed = this.app.vault.getAbstractFileByPath(armed.newPath);
+      if (renamed === null || !isTFile(renamed)) return;
+      for (const source of armed.sources) {
+        if (!this.isRenameStillArmed(armed)) return;
+        await this.verifyRenameSuppression(armed, source, renamed);
+      }
+    } catch (e) {
+      this.logError("Rename suppression aborted", e);
+    } finally {
+      if (this.renameSuppression === armed) this.renameSuppression = null;
+    }
+  }
+  isRenameStillArmed(armed) {
+    return this.renameSuppression === armed && this.renameGeneration === armed.generation;
+  }
+  // Phase C, one linking note. Rebuilds the exact bytes Obsidian should have
+  // written and only refreshes the hash on an exact match.
+  async verifyRenameSuppression(armed, source, renamed) {
+    try {
+      const file = this.app.vault.getAbstractFileByPath(source.path);
+      if (file === null || !isTFile(file)) return;
+      if (this.processingFiles.has(file.path)) return;
+      if (await this.getWriteBlock(file) !== null) return;
+      if (hasOverlappingRefs(source.refs)) return;
+      for (const ref of source.refs) {
+        if (source.content.slice(ref.start, ref.end) !== ref.original) return;
+      }
+      const replacements = [];
+      for (const ref of source.refs) {
+        const parsed = (0, import_obsidian12.parseLinktext)(ref.link);
+        const targetsRenamed = linkpathTargetsPath(parsed.path, armed.oldPath);
+        if (!isPredictable(ref, source.content)) {
+          if (targetsRenamed) return;
+          continue;
+        }
+        if (!targetsRenamed) continue;
+        const newLinktext = this.app.metadataCache.fileToLinktext(renamed, file.path, true) + parsed.subpath;
+        if (ref.link === newLinktext) continue;
+        const text = rewriteWikilink(ref.original, newLinktext);
+        if (text === null) return;
+        replacements.push({ start: ref.start, end: ref.end, text });
+      }
+      if (replacements.length === 0) return;
+      const predicted = predictContent(source.content, replacements);
+      if (predicted === null) return;
+      const actual = await this.app.vault.read(file);
+      if (actual !== predicted) return;
+      if (!this.isRenameStillArmed(armed) || armed.blocked) return;
+      await this.populateCacheForFile(file, actual.trim());
+      this.log("Rename link rewrite matched prediction, date kept", file.path);
+    } catch (e) {
+      this.logError("Rename suppression check failed", source.path, e);
+    }
+  }
   setupOnEditHandler() {
     this.log("Setup handler");
     this.registerEvent(
@@ -18953,6 +19815,7 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     );
     this.registerEvent(
       this.app.vault.on("rename", (file, oldPath) => {
+        this.armRenameSuppression(file, oldPath);
         const oldTimer = this.modifyTimers.get(oldPath);
         if (oldTimer) {
           window.clearTimeout(oldTimer);
@@ -19006,6 +19869,7 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     this.recentlyCreated.clear();
     this.processingFiles.clear();
     this.lastPluginWriteMtime.clear();
+    this.cancelRenameSuppression();
     if (this._pauseResumeTimer) {
       window.clearTimeout(this._pauseResumeTimer);
       this._pauseResumeTimer = null;
@@ -19025,6 +19889,7 @@ var FrontmatterDateManagerPlugin = class extends import_obsidian12.Plugin {
     var _a;
     await this.loadSettings();
     this.updateStatusBar();
+    this.cancelRenameSuppression();
     (_a = this.settingsTab) == null ? void 0 : _a.update();
   }
   log(...data) {
