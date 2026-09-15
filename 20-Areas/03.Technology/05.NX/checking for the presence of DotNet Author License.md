@@ -1,6 +1,6 @@
 ---
 title: checking for the presence of DotNet Author License
-updated: 2026-06-06T10:08
+updated: 2026-09-15T16:15:58
 created: 2024-08-09T15:00:45
 ---
 
