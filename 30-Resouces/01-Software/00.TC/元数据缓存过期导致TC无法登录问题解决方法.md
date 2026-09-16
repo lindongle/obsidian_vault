@@ -1,6 +1,6 @@
 ---
 title: 元数据缓存过期导致TC无法登录问题解决方法
-updated: 2026-06-06T10:08
+updated: 2026-09-16T09:08:32
 created: 2019-09-02T20:27:37
 tags:
   - TC
@@ -8,8 +8,8 @@ tags:
 
 ## <span style='color:#2E75B5'>元数据缓存过期导致TC无法登录问题解决方法 </span>
 
-![image1](97adc12d6303427d9cc850748ae4e931.gif)
-«span style='font-weight:bold;background: \#59C3F9'»作者：陈瑞航 审校：陈泓希«/span»
+
+作者：陈瑞航 审校：陈泓希
 **适用版本：Teamcenter11**
 
 项目实施过程中，常遇到TC客户端无法登录的情况，其中一种是元数据缓存过期导致。见下图报错信息：
