@@ -1,6 +1,6 @@
 ---
 title: 分类AI服务报错
-updated: 2026-06-05T23:55
+updated: 2026-09-17T16:34:48
 created: 2024-09-23T16:27:01
 tags:
   - TC安装部署
