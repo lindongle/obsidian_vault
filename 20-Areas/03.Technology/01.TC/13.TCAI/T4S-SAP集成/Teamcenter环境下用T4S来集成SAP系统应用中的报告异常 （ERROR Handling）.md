@@ -1,6 +1,6 @@
 ---
 title: Teamcenter环境下用T4S来集成SAP系统应用中的报告异常 （ERROR Handling）...
-updated: 2026-06-05T23:30
+updated: 2026-09-17T16:20:48
 created: 2019-06-21T17:09:00
 ---
 
