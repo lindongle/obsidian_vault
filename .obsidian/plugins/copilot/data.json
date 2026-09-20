@@ -534,11 +534,11 @@
     {
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
-        "id": "opencode/union-alpha",
-        "displayName": "OpenCode Zen/Union Alpha Free"
+        "id": "opencode/jev-1.13-free",
+        "displayName": "OpenCode Zen/Jev 1.13 Free"
       },
-      "configuredModelId": "a60b10d5-e033-44f5-927b-67844f36dfe1",
-      "configuredAt": 1789606178144
+      "configuredModelId": "9629cb7c-764b-4436-b014-cc803510e291",
+      "configuredAt": 1789865457949
     }
   ],
   "backends": {
