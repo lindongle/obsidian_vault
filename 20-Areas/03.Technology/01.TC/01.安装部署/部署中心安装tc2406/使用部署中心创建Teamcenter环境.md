@@ -1,6 +1,6 @@
 ---
 title: 使用部署中心创建Teamcenter环境
-updated: 2026-06-06T10:09
+updated: 2026-09-21T20:28:00
 created: 2024-09-13T14:22:05
 tags:
   - TC安装部署
