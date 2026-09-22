@@ -530,15 +530,6 @@
       },
       "configuredModelId": "1e45d4b6-bb2a-4c1a-ae38-96c83374e885",
       "configuredAt": 1788504059815
-    },
-    {
-      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
-      "info": {
-        "id": "opencode/jev-1.13-free",
-        "displayName": "OpenCode Zen/Jev 1.13 Free"
-      },
-      "configuredModelId": "9629cb7c-764b-4436-b014-cc803510e291",
-      "configuredAt": 1789865457949
     }
   ],
   "backends": {
