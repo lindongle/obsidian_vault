@@ -4,7 +4,8 @@ source: 微信公众号
 url: https://mp.weixin.qq.com/s?__biz=Mzg3NDg2NDUzOQ==&mid=2247484376&idx=1&sn=a60cc975cee39fe734dab34ab59423a3&chksm=cf71be82bf0cf4ff2ae2301ae5d694d4bbad2058ade3a9e2ab44658535a3eb08c886e54c5223&mpshare=1&scene=1&srcid=0923g55lCAFlixnJT5XCtQci&sharer_shareinfo=231721a0843cb067a8d3d4a46eb8fab2&sharer_shareinfo_first=231721a0843cb067a8d3d4a46eb8fab2#rd
 Created: 2026-09-23 12:24:05
 tags:
-  - 笔记同步助手
+  - awc
+  - 系统配置
 id: 6eec5c7e-7e43-44f0-b813-405fd32581a0
 created: 2026-09-24T08:37:17
 updated: 2026-09-24T08:37:21
