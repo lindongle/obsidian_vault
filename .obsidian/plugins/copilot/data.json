@@ -480,15 +480,6 @@
     {
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
-        "id": "opencode/mimo-v2.5-free",
-        "displayName": "OpenCode Zen/MiMo V2.5 Free"
-      },
-      "configuredModelId": "f67fe3c7-a297-4180-8d41-bb35481b4b76",
-      "configuredAt": 1787793997137
-    },
-    {
-      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
-      "info": {
         "id": "opencode/nemotron-3-ultra-free",
         "displayName": "OpenCode Zen/Nemotron 3 Ultra Free"
       },
@@ -530,6 +521,24 @@
       },
       "configuredModelId": "1e45d4b6-bb2a-4c1a-ae38-96c83374e885",
       "configuredAt": 1788504059815
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/mimo-v2.6-flash-free",
+        "displayName": "OpenCode Zen/MiMo-V2.6-Flash Free"
+      },
+      "configuredModelId": "465c9f0f-f911-4acc-adea-9facf0c47273",
+      "configuredAt": 1790210238184
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/space-bunny-free",
+        "displayName": "OpenCode Zen/Space Bunny Free"
+      },
+      "configuredModelId": "21c79bab-ea09-4453-9ad2-e5fc709834af",
+      "configuredAt": 1790210238187
     }
   ],
   "backends": {

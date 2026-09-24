@@ -3,7 +3,7 @@
   "dateSavedFormat": "yyyy-MM-dd HH:mm:ss",
   "apiKey": "o56E76-OgOw2ghdmjHPNu3YSzd0w",
   "filter": "ALL",
-  "syncAt": "2026-09-22T09:38:24.226+08:00",
+  "syncAt": "2026-09-23T12:24:05.823+08:00",
   "customQuery": "in:all",
   "customQueryNormalized": true,
   "template": "{{{content}}}",
@@ -14,7 +14,7 @@
   "filename": "{{{title}}}",
   "filenameDateFormat": "yyyy",
   "attachmentFolder": "99-Assets",
-  "version": "3.2.2",
+  "version": "3.2.12",
   "mergeMode": "messages",
   "messageSortOrder": "desc",
   "messageFolder": "00-Inbox",
@@ -37,6 +37,7 @@
   "sectionSeparator": "%%{{{dateSaved}}}_start%%",
   "sectionSeparatorEnd": "%%{{{dateSaved}}}_end%%",
   "wechatMessageTemplate": "---\n#### {{{heading}}}\n## 📅 {{{dateSaved}}}\n{{{content}}}",
+  "chatRecordTimestampTemplate": "<small style=\"color: #999;\">{{{timestamp}}}</small>",
   "imageMode": "local",
   "enablePngToJpeg": false,
   "jpegQuality": 85,
@@ -53,9 +54,10 @@
   "diaryLinkType": "all",
   "autoCreateDiaryNote": false,
   "diaryLinkPrefix": "- ",
+  "diaryLinkTemplate": "- {{{link}}}",
   "diaryLinkMaxLength": 0,
   "deviceSyncCursors": {
-    "desktop-mq27fc11-dhco": "2026-09-22T09:38:24.226+08:00"
+    "desktop-mq27fc11-dhco": "2026-09-23T12:24:05.823+08:00"
   },
   "initialSyncCompleted": true,
   "firstSyncAutoOpened": true,
@@ -76,5 +78,6 @@
   "pendingBurnDeletes": [],
   "disableMessageMarkers": false,
   "omitFrontmatterId": false,
-  "disableDiaryLinkMarkers": false
+  "disableDiaryLinkMarkers": false,
+  "renewalReminderLastShown": ""
 }
