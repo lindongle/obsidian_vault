@@ -1,0 +1,36 @@
+{
+  "secrets": {},
+  "outputLocations": {},
+  "outputSettings": {
+    "onenote-file": {
+      "folder": "OneNote",
+      "attachments": {
+        "mode": "folder",
+        "path": "99-Assets"
+      },
+      "duplicates": "update",
+      "saveSourceId": true,
+      "idProperty": "onenote-id",
+      "template": "",
+      "titleTemplate": "{{title}}"
+    },
+    "html": {
+      "folder": "HTML",
+      "attachments": {
+        "mode": "folder",
+        "path": "99-Assets"
+      },
+      "duplicates": "update",
+      "saveSourceId": false,
+      "idProperty": "html-source",
+      "template": "",
+      "titleTemplate": "{{title}}"
+    }
+  },
+  "onenoteAttachments": {},
+  "sourceFolders": {
+    "onenote-file": "D:\\下载",
+    "html": "D:\\下载"
+  },
+  "lastSourceFolder": "D:\\下载"
+}
