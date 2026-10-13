@@ -472,7 +472,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/big-pickle",
-        "displayName": "OpenCode Zen/Big Pickle"
+        "displayName": "OpenCode/Big Pickle"
       },
       "configuredModelId": "c7b664a8-5c17-455e-a13e-68c3bcddb670",
       "configuredAt": 1787793997102
@@ -481,7 +481,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/nemotron-3-ultra-free",
-        "displayName": "OpenCode Zen/Nemotron 3 Ultra Free"
+        "displayName": "OpenCode/Nemotron 3 Ultra Free"
       },
       "configuredModelId": "57288dc8-77c4-461e-85be-91b84065c7d9",
       "configuredAt": 1787793997139
@@ -490,7 +490,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/nemotron-3.5-lightning-free",
-        "displayName": "OpenCode Zen/Nemotron 3.5 Lightning Free"
+        "displayName": "OpenCode/Nemotron 3.5 Lightning Free"
       },
       "configuredModelId": "86bef3f9-6fce-440c-94ae-2a997f65707a",
       "configuredAt": 1787794004127
@@ -499,7 +499,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/ling-3.0-flash-fin-free",
-        "displayName": "OpenCode Zen/Ling 3.0 Flash Fin Free"
+        "displayName": "OpenCode/Ling 3.0 Flash Fin Free"
       },
       "configuredModelId": "29af2b6b-d930-4cb3-ae3e-74b73e6bba69",
       "configuredAt": 1787960251116
@@ -508,7 +508,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/muse-spark-1.3-contributor-free",
-        "displayName": "OpenCode Zen/Muse Spark 1.3 Free"
+        "displayName": "OpenCode/Muse Spark 1.3 Free"
       },
       "configuredModelId": "1e45d4b6-bb2a-4c1a-ae38-96c83374e885",
       "configuredAt": 1788504059815
@@ -517,7 +517,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/mimo-v2.6-flash-free",
-        "displayName": "OpenCode Zen/MiMo-V2.6-Flash Free"
+        "displayName": "OpenCode/MiMo-V2.6-Flash Free"
       },
       "configuredModelId": "465c9f0f-f911-4acc-adea-9facf0c47273",
       "configuredAt": 1790210238184
@@ -526,7 +526,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/space-bunny-free",
-        "displayName": "OpenCode Zen/Space Bunny Free"
+        "displayName": "OpenCode/Space Bunny Free"
       },
       "configuredModelId": "21c79bab-ea09-4453-9ad2-e5fc709834af",
       "configuredAt": 1790210238187
@@ -535,7 +535,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/exo-free",
-        "displayName": "OpenCode Zen/Exo Free"
+        "displayName": "OpenCode/Exo Free"
       },
       "configuredModelId": "bda6d2b3-a014-4c95-858c-d63e663d336d",
       "configuredAt": 1791335864721
@@ -544,7 +544,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/ling-3.1-flash-free",
-        "displayName": "OpenCode Zen/Ling 3.1 Flash Free"
+        "displayName": "OpenCode/Ling 3.1 Flash Free"
       },
       "configuredModelId": "8e5cb7f4-26c5-49c2-91fe-1c4ee64ea172",
       "configuredAt": 1791335864724
@@ -553,7 +553,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/longcat-2.5-preview-free",
-        "displayName": "OpenCode Zen/LongCat 2.5 Preview Free"
+        "displayName": "OpenCode/LongCat 2.5 Preview Free"
       },
       "configuredModelId": "f003ec17-a13b-46d7-9a90-5d2c1e0dcb5f",
       "configuredAt": 1791335864724
@@ -562,7 +562,7 @@
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
         "id": "opencode/step-5-preview-free",
-        "displayName": "OpenCode Zen/Step 5 Preview Free"
+        "displayName": "OpenCode/Step 5 Preview Free"
       },
       "configuredModelId": "53146412-64cf-4b3c-9917-fe21525d7b64",
       "configuredAt": 1791595104800
