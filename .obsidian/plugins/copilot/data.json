@@ -566,6 +566,15 @@
       },
       "configuredModelId": "53146412-64cf-4b3c-9917-fe21525d7b64",
       "configuredAt": 1791595104800
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/cat-jam-free",
+        "displayName": "OpenCode/Cat Jam Free"
+      },
+      "configuredModelId": "f6bbdff1-1340-4561-b9ad-a58e7d56eba0",
+      "configuredAt": 1791905777950
     }
   ],
   "backends": {
