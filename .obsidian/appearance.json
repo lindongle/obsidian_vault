@@ -4,5 +4,6 @@
   ],
   "showRibbon": true,
   "cssTheme": "Minimal",
-  "theme": "system"
+  "theme": "system",
+  "accentColor": ""
 }
