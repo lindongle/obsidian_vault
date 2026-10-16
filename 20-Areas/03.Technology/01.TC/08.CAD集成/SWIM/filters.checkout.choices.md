@@ -1,6 +1,6 @@
 ---
 title: filters.checkout.choices
-updated: 2026-06-05T23:46
+updated: 2026-10-16T13:52:47
 created: 2023-12-01T13:57:16
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: BMIDE
-updated: 2026-06-05T22:23
+updated: 2026-10-16T13:43:09
 created: 2022-11-15T16:28:06
 ---
 
