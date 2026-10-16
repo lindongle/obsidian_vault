@@ -557,6 +557,24 @@
       },
       "configuredModelId": "62036948-17dd-4ed9-b495-c794b37c5d22",
       "configuredAt": 1792112399290
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/glm-5.3-flash-free",
+        "displayName": "OpenCode/GLM-5.3-Flash Free"
+      },
+      "configuredModelId": "a8fb0fee-e83e-46d3-97ea-fa3ad27bf4c1",
+      "configuredAt": 1792133177297
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/ll-alpha-free",
+        "displayName": "OpenCode/LL Alpha Free"
+      },
+      "configuredModelId": "d354d8b4-1408-4d6f-88cc-24a44e2f5f97",
+      "configuredAt": 1792133177298
     }
   ],
   "backends": {
