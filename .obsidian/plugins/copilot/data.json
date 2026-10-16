@@ -534,20 +534,29 @@
     {
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
-        "id": "opencode/step-5-preview-free",
-        "displayName": "OpenCode/Step 5 Preview Free"
-      },
-      "configuredModelId": "53146412-64cf-4b3c-9917-fe21525d7b64",
-      "configuredAt": 1791595104800
-    },
-    {
-      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
-      "info": {
         "id": "opencode/cat-jam-free",
         "displayName": "OpenCode/Cat Jam Free"
       },
       "configuredModelId": "f6bbdff1-1340-4561-b9ad-a58e7d56eba0",
       "configuredAt": 1791905777950
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/deepseek-v4.1-flash-free",
+        "displayName": "OpenCode/DeepSeek V4.1 Flash Free"
+      },
+      "configuredModelId": "ccb3e03d-de00-46d4-99e7-b374f76915b9",
+      "configuredAt": 1792112399288
+    },
+    {
+      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
+      "info": {
+        "id": "opencode/nemotron-3.5-super-vl-free",
+        "displayName": "OpenCode/Nemotron 3.5 Super VL Free"
+      },
+      "configuredModelId": "62036948-17dd-4ed9-b495-c794b37c5d22",
+      "configuredAt": 1792112399290
     }
   ],
   "backends": {
