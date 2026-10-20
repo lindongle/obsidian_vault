@@ -1,0 +1,570 @@
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// main.ts
+var main_exports = {};
+__export(main_exports, {
+  default: () => StsIndentationPlugin
+});
+module.exports = __toCommonJS(main_exports);
+var import_state = require("@codemirror/state");
+var import_view = require("@codemirror/view");
+var import_obsidian = require("obsidian");
+var DEPTH_ATTRIBUTE = "data-sts-outline-depth";
+var DEPTH_STYLE = "--sts-outline-depth";
+var WIDGET_ATTRIBUTE = "data-sts-outline-widget";
+var MOBILE_HEADING_ATTRIBUTE = "data-sts-mobile-heading-level";
+var MOBILE_COLLAPSED_ATTRIBUTE = "data-sts-mobile-collapsed";
+var EXTEND_STYLE = "--sts-outline-extend-after";
+var EXTEND_BEFORE_STYLE = "--sts-outline-extend-before";
+var X_OFFSET_STYLE = "--sts-outline-x-offset";
+var LINE_WIDTH_STYLE = "--sts-outline-line-width";
+var ENABLED_CLASS = "sts-indentation-enabled";
+var GUIDE_CLASS = "sts-indentation-guides-enabled";
+var COLORED_GUIDE_CLASS = "sts-indentation-colored-guides";
+var FOLD_ARROW_CLASS = "sts-indentation-fold-arrows-enabled";
+var MAX_GUIDES = 6;
+var DEFAULT_SETTINGS = {
+  enableIndentation: true,
+  showGuides: true,
+  colorGuidesByHeading: true,
+  showFoldArrows: true,
+  guideLineWidth: 1
+};
+function loadSettings(data) {
+  if (typeof data !== "object" || data === null) {
+    return { ...DEFAULT_SETTINGS };
+  }
+  const saved = data;
+  return {
+    enableIndentation: typeof saved.enableIndentation === "boolean" ? saved.enableIndentation : DEFAULT_SETTINGS.enableIndentation,
+    showGuides: typeof saved.showGuides === "boolean" ? saved.showGuides : DEFAULT_SETTINGS.showGuides,
+    colorGuidesByHeading: typeof saved.colorGuidesByHeading === "boolean" ? saved.colorGuidesByHeading : DEFAULT_SETTINGS.colorGuidesByHeading,
+    showFoldArrows: typeof saved.showFoldArrows === "boolean" ? saved.showFoldArrows : DEFAULT_SETTINGS.showFoldArrows,
+    guideLineWidth: typeof saved.guideLineWidth === "number" ? Math.min(2, Math.max(0.1, saved.guideLineWidth)) : DEFAULT_SETTINGS.guideLineWidth
+  };
+}
+function isHtmlElement(value) {
+  const maybeElement = value;
+  return value instanceof HTMLElement || typeof value === "object" && value !== null && "instanceOf" in value && typeof (maybeElement == null ? void 0 : maybeElement.instanceOf) === "function" && maybeElement.instanceOf(HTMLElement);
+}
+function headingLevel(text) {
+  const match = text.match(/^\s{0,3}(#{1,6})(?:\s+|$)/);
+  return match ? match[1].length : null;
+}
+function headingColor(level) {
+  return `var(--h${level}-color, var(--text-muted, #6b8a9e))`;
+}
+function outlineAttributes(ancestors) {
+  const attributes = {
+    [DEPTH_ATTRIBUTE]: String(ancestors.length)
+  };
+  const styles = [`${DEPTH_STYLE}:${ancestors.length}`];
+  for (let index = 0; index < MAX_GUIDES; index += 1) {
+    const ancestor = ancestors[index];
+    styles.push(
+      `--sts-heading-guide-${index + 1}:${ancestor ? headingColor(ancestor.level) : "transparent"}`
+    );
+  }
+  attributes.style = styles.join(";");
+  return attributes;
+}
+function buildEditorDecorations(view) {
+  const builder = new import_state.RangeSetBuilder();
+  const ancestors = [];
+  let fenceMarker = null;
+  let frontmatter = false;
+  for (let lineNumber = 1; lineNumber <= view.state.doc.lines; lineNumber += 1) {
+    const line = view.state.doc.line(lineNumber);
+    const trimmed = line.text.trimStart();
+    let level = null;
+    if (lineNumber === 1 && trimmed === "---") {
+      frontmatter = true;
+    } else if (frontmatter) {
+      if (trimmed === "---" || trimmed === "...") {
+        frontmatter = false;
+      }
+    } else {
+      const fence = trimmed.match(/^(`{3,}|~{3,})/);
+      if (fence) {
+        const marker = fence[1][0];
+        fenceMarker = fenceMarker === marker ? null : fenceMarker != null ? fenceMarker : marker;
+      } else if (fenceMarker === null) {
+        level = headingLevel(line.text);
+      }
+    }
+    if (level !== null) {
+      while (ancestors.length > 0 && ancestors[ancestors.length - 1].level >= level) {
+        ancestors.pop();
+      }
+      builder.add(
+        line.from,
+        line.from,
+        import_view.Decoration.line({ attributes: outlineAttributes(ancestors) })
+      );
+      ancestors.push({ level });
+    } else {
+      builder.add(
+        line.from,
+        line.from,
+        import_view.Decoration.line({ attributes: outlineAttributes(ancestors) })
+      );
+    }
+  }
+  return builder.finish();
+}
+var headingOutlineEditorExtension = import_view.ViewPlugin.fromClass(
+  class {
+    constructor(view) {
+      this.decorations = buildEditorDecorations(view);
+    }
+    update(update) {
+      if (update.docChanged || update.viewportChanged) {
+        this.decorations = buildEditorDecorations(update.view);
+      }
+    }
+  },
+  {
+    decorations: (value) => value.decorations
+  }
+);
+var StsIndentationPlugin = class extends import_obsidian.Plugin {
+  constructor() {
+    super(...arguments);
+    this.settings = DEFAULT_SETTINGS;
+    this.readingObserver = null;
+    this.readingFrame = null;
+    this.editorObserver = null;
+    this.editorFrame = null;
+  }
+  async onload() {
+    this.settings = loadSettings(await this.loadData());
+    this.applySettingClasses();
+    this.addSettingTab(new StsIndentationSettingTab(this.app, this));
+    this.registerEditorExtension(headingOutlineEditorExtension);
+    this.registerMarkdownPostProcessor(() => {
+      this.scheduleReadingViewUpdate();
+    });
+    this.registerEvent(
+      this.app.workspace.on("layout-change", () => {
+        this.scheduleReadingViewUpdate();
+        this.scheduleEditorWidgetUpdate();
+      })
+    );
+    this.registerEvent(
+      this.app.workspace.on("file-open", () => {
+        this.scheduleReadingViewUpdate();
+        this.scheduleEditorWidgetUpdate();
+      })
+    );
+    this.registerEvent(
+      this.app.workspace.on("editor-change", () => {
+        this.scheduleEditorWidgetUpdate();
+      })
+    );
+    this.readingObserver = new MutationObserver(() => {
+      this.scheduleReadingViewUpdate();
+    });
+    this.readingObserver.observe(this.app.workspace.containerEl, {
+      childList: true,
+      subtree: true
+    });
+    this.register(() => {
+      var _a;
+      return (_a = this.readingObserver) == null ? void 0 : _a.disconnect();
+    });
+    this.editorObserver = new MutationObserver(() => {
+      this.scheduleEditorWidgetUpdate();
+    });
+    this.editorObserver.observe(this.app.workspace.containerEl, {
+      childList: true,
+      subtree: true
+    });
+    this.register(() => {
+      var _a;
+      return (_a = this.editorObserver) == null ? void 0 : _a.disconnect();
+    });
+    this.scheduleReadingViewUpdate();
+    this.scheduleEditorWidgetUpdate();
+  }
+  onunload() {
+    if (this.readingFrame !== null) {
+      window.cancelAnimationFrame(this.readingFrame);
+    }
+    if (this.editorFrame !== null) {
+      window.cancelAnimationFrame(this.editorFrame);
+    }
+    activeDocument.body.classList.remove(
+      ENABLED_CLASS,
+      GUIDE_CLASS,
+      COLORED_GUIDE_CLASS,
+      FOLD_ARROW_CLASS
+    );
+    activeDocument.body.style.removeProperty(LINE_WIDTH_STYLE);
+    activeDocument.querySelectorAll(`[${DEPTH_ATTRIBUTE}]`).forEach((element) => {
+      this.clearOutlineAttributes(element);
+    });
+  }
+  async updateSettings(settings) {
+    this.settings = Object.assign({}, this.settings, settings);
+    await this.saveData(this.settings);
+    this.applySettingClasses();
+    this.scheduleReadingViewUpdate();
+  }
+  applySettingClasses() {
+    activeDocument.body.classList.toggle(
+      ENABLED_CLASS,
+      this.settings.enableIndentation
+    );
+    activeDocument.body.classList.toggle(
+      GUIDE_CLASS,
+      this.settings.enableIndentation && this.settings.showGuides
+    );
+    activeDocument.body.classList.toggle(
+      COLORED_GUIDE_CLASS,
+      this.settings.colorGuidesByHeading
+    );
+    activeDocument.body.classList.toggle(
+      FOLD_ARROW_CLASS,
+      this.settings.enableIndentation && this.settings.showFoldArrows
+    );
+    activeDocument.body.style.setProperty(
+      LINE_WIDTH_STYLE,
+      `${Math.min(2, Math.max(0.1, this.settings.guideLineWidth))}px`
+    );
+  }
+  scheduleReadingViewUpdate() {
+    if (this.readingFrame !== null) {
+      return;
+    }
+    this.readingFrame = window.requestAnimationFrame(() => {
+      this.readingFrame = null;
+      this.updateReadingViews();
+    });
+  }
+  scheduleEditorWidgetUpdate() {
+    if (this.editorFrame !== null) {
+      return;
+    }
+    this.editorFrame = window.requestAnimationFrame(() => {
+      this.editorFrame = null;
+      this.updateEditorWidgets();
+    });
+  }
+  updateEditorWidgets() {
+    activeDocument.querySelectorAll(`.cm-line[${DEPTH_ATTRIBUTE}]`).forEach((line) => line.style.removeProperty(EXTEND_STYLE));
+    activeDocument.querySelectorAll(".markdown-source-view.mod-cm6 .cm-content").forEach((container) => {
+      container.querySelectorAll(
+        ".cm-embed-block, .image-embed, .internal-embed.image-embed"
+      ).forEach((widget) => {
+        var _a;
+        const block = (_a = widget.closest(".cm-embed-block")) != null ? _a : widget;
+        if (block.matches(`.cm-line[${DEPTH_ATTRIBUTE}]`)) {
+          return;
+        }
+        const line = this.findWidgetSourceLine(block);
+        if (line === null) {
+          return;
+        }
+        this.copyOutlineAttributes(line, block);
+        block.setAttribute(WIDGET_ATTRIBUTE, "true");
+        const lineRect = line.getBoundingClientRect();
+        const blockRect = block.getBoundingClientRect();
+        const extension = Math.max(0, blockRect.bottom - lineRect.bottom);
+        const currentExtension = Number.parseFloat(line.style.getPropertyValue(EXTEND_STYLE)) || 0;
+        line.style.setProperty(
+          EXTEND_STYLE,
+          `${Math.max(currentExtension, extension)}px`
+        );
+      });
+    });
+  }
+  findWidgetSourceLine(widget) {
+    const parentLine = widget.closest(`.cm-line[${DEPTH_ATTRIBUTE}]`);
+    if (parentLine !== null) {
+      return parentLine;
+    }
+    let sibling = widget.previousElementSibling;
+    while (sibling !== null) {
+      if (sibling.instanceOf(HTMLElement) && sibling.matches(`.cm-line[${DEPTH_ATTRIBUTE}]`)) {
+        return sibling;
+      }
+      sibling = sibling.previousElementSibling;
+    }
+    return null;
+  }
+  copyOutlineAttributes(source, target) {
+    const depth = source.getAttribute(DEPTH_ATTRIBUTE);
+    if (depth === null) {
+      return;
+    }
+    target.setAttribute(DEPTH_ATTRIBUTE, depth);
+    target.style.setProperty(DEPTH_STYLE, depth);
+    for (let index = 1; index <= MAX_GUIDES; index += 1) {
+      target.style.setProperty(
+        `--sts-heading-guide-${index}`,
+        source.style.getPropertyValue(`--sts-heading-guide-${index}`) || "transparent"
+      );
+    }
+  }
+  updateReadingViews() {
+    this.updateReadingRendererSections();
+    activeDocument.querySelectorAll(".markdown-preview-view .markdown-preview-sizer").forEach((container) => this.updateReadingContainer(container));
+  }
+  updateReadingRendererSections() {
+    this.app.workspace.getLeavesOfType("markdown").forEach((leaf) => {
+      var _a, _b, _c, _d;
+      const renderer = (_b = (_a = leaf.view.modes) == null ? void 0 : _a.preview) == null ? void 0 : _b.renderer;
+      const sectionElements = (_d = (_c = renderer == null ? void 0 : renderer.sections) == null ? void 0 : _c.map((section) => section.el).filter(isHtmlElement)) != null ? _d : [];
+      if (sectionElements.length > 0) {
+        this.updateReadingBlocks(this.getReadingBlocksFromSections(sectionElements));
+      }
+    });
+  }
+  updateReadingContainer(container) {
+    this.updateReadingBlocks(this.getReadingBlocks(container), container);
+  }
+  updateReadingBlocks(blocks, container = null) {
+    const ancestors = [];
+    const baseLeft = this.readingGuideBaseLeft(blocks, container);
+    blocks.forEach((element, index) => {
+      const level = this.readingHeadingLevel(element);
+      if (level !== null) {
+        while (ancestors.length > 0 && ancestors[ancestors.length - 1].level >= level) {
+          ancestors.pop();
+        }
+        this.setOutlineAttributes(element, ancestors);
+        ancestors.push({ level });
+      } else {
+        this.setOutlineAttributes(element, ancestors);
+      }
+      this.setReadingGuideOffset(element, baseLeft);
+      this.bridgeReadingBlockGap(blocks, index);
+      if (container !== null) {
+        this.updateMobileFoldArrow(container, element, level);
+      }
+    });
+    if (container !== null) {
+      this.applyMobileCollapsedSections(blocks);
+    }
+  }
+  bridgeReadingBlockGap(blocks, index) {
+    const element = blocks[index];
+    element.style.removeProperty(EXTEND_BEFORE_STYLE);
+    element.style.removeProperty(EXTEND_STYLE);
+    const previous = this.previousReadingGuideBlock(blocks, index);
+    if (previous !== null) {
+      const gapBefore = Math.max(
+        0,
+        element.getBoundingClientRect().top - previous.getBoundingClientRect().bottom
+      );
+      if (gapBefore > 0) {
+        element.style.setProperty(EXTEND_BEFORE_STYLE, `${gapBefore}px`);
+      }
+    }
+  }
+  previousReadingGuideBlock(blocks, index) {
+    for (let previousIndex = index - 1; previousIndex >= 0; previousIndex -= 1) {
+      const previous = blocks[previousIndex];
+      if (!previous.matches("hr")) {
+        return previous;
+      }
+    }
+    return null;
+  }
+  readingGuideBaseLeft(blocks, container) {
+    var _a, _b;
+    if (container !== null) {
+      return container.getBoundingClientRect().left;
+    }
+    const firstConnectedBlock = blocks.find((block) => block.isConnected);
+    const baseElement = (_a = firstConnectedBlock == null ? void 0 : firstConnectedBlock.closest(".markdown-preview-sizer")) != null ? _a : firstConnectedBlock == null ? void 0 : firstConnectedBlock.parentElement;
+    return (_b = baseElement == null ? void 0 : baseElement.getBoundingClientRect().left) != null ? _b : null;
+  }
+  setReadingGuideOffset(element, baseLeft) {
+    if (baseLeft === null || !element.isConnected) {
+      element.style.removeProperty(X_OFFSET_STYLE);
+      return;
+    }
+    const offset = element.getBoundingClientRect().left - baseLeft;
+    element.style.setProperty(X_OFFSET_STYLE, `${offset}px`);
+  }
+  updateMobileFoldArrow(container, element, level) {
+    if (!import_obsidian.Platform.isMobile || level === null) {
+      return;
+    }
+    element.setAttribute(MOBILE_HEADING_ATTRIBUTE, String(level));
+    if (element.querySelector(".heading-collapse-indicator") !== null) {
+      return;
+    }
+    let arrow = element.querySelector(
+      ":scope > .sts-mobile-fold-indicator"
+    );
+    if (arrow !== null) {
+      return;
+    }
+    arrow = element.ownerDocument.createElement("button");
+    arrow.type = "button";
+    arrow.className = "sts-mobile-fold-indicator";
+    arrow.setAttribute("aria-label", "\u6298\u53E0\u6807\u9898");
+    (0, import_obsidian.setIcon)(arrow, "chevron-down");
+    arrow.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const collapsed = element.getAttribute(MOBILE_COLLAPSED_ATTRIBUTE) === "true";
+      element.setAttribute(MOBILE_COLLAPSED_ATTRIBUTE, String(!collapsed));
+      arrow == null ? void 0 : arrow.setAttribute(
+        "aria-label",
+        collapsed ? "\u6298\u53E0\u6807\u9898" : "\u5C55\u5F00\u6807\u9898"
+      );
+      this.applyMobileCollapsedSections(this.getReadingBlocks(container));
+    });
+    element.prepend(arrow);
+  }
+  applyMobileCollapsedSections(blocks) {
+    if (!import_obsidian.Platform.isMobile) {
+      return;
+    }
+    if (!this.settings.enableIndentation || !this.settings.showFoldArrows) {
+      blocks.forEach((element) => {
+        element.classList.remove("sts-mobile-section-hidden");
+      });
+      return;
+    }
+    const collapsedLevels = [];
+    blocks.forEach((element) => {
+      const levelValue = element.getAttribute(MOBILE_HEADING_ATTRIBUTE);
+      const level = levelValue === null ? null : Number.parseInt(levelValue, 10);
+      if (level !== null) {
+        while (collapsedLevels.length > 0 && collapsedLevels[collapsedLevels.length - 1] >= level) {
+          collapsedLevels.pop();
+        }
+      }
+      element.classList.toggle(
+        "sts-mobile-section-hidden",
+        collapsedLevels.length > 0
+      );
+      if (level !== null && element.getAttribute(MOBILE_COLLAPSED_ATTRIBUTE) === "true") {
+        collapsedLevels.push(level);
+      }
+    });
+  }
+  getReadingBlocks(container) {
+    const sections = Array.from(
+      container.querySelectorAll(".markdown-preview-section")
+    );
+    if (sections.length > 0) {
+      return this.getReadingBlocksFromSections(sections);
+    }
+    return Array.from(container.children).filter(
+      (child) => this.isReadingBlock(child)
+    );
+  }
+  getReadingBlocksFromSections(sections) {
+    const blocks = [];
+    sections.forEach((section) => {
+      if (section.closest(".markdown-embed") !== null) {
+        return;
+      }
+      const roots = section.classList.contains("markdown-preview-section") ? [section] : Array.from(section.querySelectorAll(".markdown-preview-section"));
+      if (roots.length === 0) {
+        if (this.isReadingBlock(section)) {
+          blocks.push(section);
+        }
+        return;
+      }
+      roots.forEach((root) => {
+        Array.from(root.children).forEach((child) => {
+          if (this.isReadingBlock(child)) {
+            blocks.push(child);
+          }
+        });
+      });
+    });
+    return blocks;
+  }
+  isReadingBlock(element) {
+    return isHtmlElement(element) && !element.classList.contains("mod-header");
+  }
+  readingHeadingLevel(element) {
+    const heading = element.matches("h1,h2,h3,h4,h5,h6") ? element : element.querySelector(":scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5, :scope > h6");
+    const match = heading == null ? void 0 : heading.tagName.match(/^H([1-6])$/);
+    return match ? Number.parseInt(match[1], 10) : null;
+  }
+  setOutlineAttributes(element, ancestors) {
+    element.setAttribute(DEPTH_ATTRIBUTE, String(ancestors.length));
+    element.style.setProperty(DEPTH_STYLE, String(ancestors.length));
+    for (let index = 0; index < MAX_GUIDES; index += 1) {
+      const ancestor = ancestors[index];
+      element.style.setProperty(
+        `--sts-heading-guide-${index + 1}`,
+        ancestor ? headingColor(ancestor.level) : "transparent"
+      );
+    }
+  }
+  clearOutlineAttributes(element) {
+    element.removeAttribute(DEPTH_ATTRIBUTE);
+    element.removeAttribute(WIDGET_ATTRIBUTE);
+    element.removeAttribute(MOBILE_HEADING_ATTRIBUTE);
+    element.removeAttribute(MOBILE_COLLAPSED_ATTRIBUTE);
+    element.style.removeProperty(DEPTH_STYLE);
+    element.style.removeProperty(EXTEND_STYLE);
+    element.style.removeProperty(EXTEND_BEFORE_STYLE);
+    element.style.removeProperty(X_OFFSET_STYLE);
+    for (let index = 1; index <= MAX_GUIDES; index += 1) {
+      element.style.removeProperty(`--sts-heading-guide-${index}`);
+    }
+  }
+};
+var StsIndentationSettingTab = class extends import_obsidian.PluginSettingTab {
+  constructor(app, plugin) {
+    super(app, plugin);
+    this.plugin = plugin;
+  }
+  display() {
+    const { containerEl } = this;
+    containerEl.empty();
+    new import_obsidian.Setting(containerEl).setName("\u542F\u7528\u7F29\u8FDB").setDesc("\u63A7\u5236 STS-indentation \u7684\u7F29\u8FDB\u3001\u5C42\u7EA7\u7EBF\u548C\u66FF\u4EE3\u6298\u53E0\u7BAD\u5934\u3002").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.enableIndentation).onChange(async (value) => {
+        await this.plugin.updateSettings({ enableIndentation: value });
+      });
+    });
+    new import_obsidian.Setting(containerEl).setName("\u663E\u793A\u5C42\u7EA7\u7EBF").setDesc("\u5728\u6807\u9898\u7236\u5B50\u5C42\u7EA7\u4E4B\u95F4\u663E\u793A\u5782\u76F4\u5F15\u5BFC\u7EBF\u3002").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.showGuides).onChange(async (value) => {
+        await this.plugin.updateSettings({ showGuides: value });
+      });
+    });
+    new import_obsidian.Setting(containerEl).setName("\u663E\u793A\u6298\u53E0\u7BAD\u5934").setDesc("\u5728\u5C42\u7EA7\u7EBF\u4E0A\u59CB\u7EC8\u663E\u793A\u6298\u53E0\u7BAD\u5934\uFF0C\u5E76\u66FF\u4EE3 Obsidian \u9ED8\u8BA4\u7684\u60AC\u505C\u7BAD\u5934\u3002").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.showFoldArrows).onChange(async (value) => {
+        await this.plugin.updateSettings({ showFoldArrows: value });
+      });
+    });
+    new import_obsidian.Setting(containerEl).setName("\u5C42\u7EA7\u7EBF\u989C\u8272\u8DDF\u968F\u6807\u9898").setDesc("\u6BCF\u6761\u5C42\u7EA7\u7EBF\u4F7F\u7528\u5BF9\u5E94\u7236\u6807\u9898\u7684\u4E3B\u9898\u989C\u8272\u3002\u5173\u95ED\u540E\u7EDF\u4E00\u4F7F\u7528\u4E3B\u9898\u7684\u7F29\u8FDB\u7EBF\u989C\u8272\u3002").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.colorGuidesByHeading).onChange(async (value) => {
+        await this.plugin.updateSettings({ colorGuidesByHeading: value });
+      });
+    });
+    new import_obsidian.Setting(containerEl).setName("\u5C42\u7EA7\u7EBF\u7C97\u7EC6").setDesc("\u8C03\u6574\u5C42\u7EA7\u7EBF\u5BBD\u5EA6\uFF0C\u8303\u56F4\u4E3A 0.1\u20132.0 px\u3002").addSlider((slider) => {
+      slider.setLimits(0.1, 2, 0.1).setValue(this.plugin.settings.guideLineWidth).onChange(async (value) => {
+        await this.plugin.updateSettings({ guideLineWidth: value });
+      });
+    });
+  }
+};
+
+/* nosourcemap */

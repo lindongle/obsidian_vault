@@ -1,0 +1,353 @@
+:root {
+  --sts-outline-indent: var(--font-text-size, 16px);
+  --sts-outline-line-width: 1px;
+  --sts-outline-line-color: var(--indentation-guide-color, #253545);
+  --sts-outline-guide-z-index: 5;
+}
+
+body.sts-indentation-enabled
+  .markdown-source-view.mod-cm6
+  :is(.cm-line, .cm-embed-block, .image-embed)[data-sts-outline-depth] {
+  box-sizing: border-box;
+  position: relative;
+  translate: calc(
+    var(--sts-outline-depth, 0) * var(--sts-outline-indent, 16px)
+  ) 0;
+}
+
+body.sts-indentation-enabled
+  .markdown-preview-view [data-sts-outline-depth] {
+  box-sizing: border-box;
+  position: relative;
+  padding-inline-start: calc(
+    var(--sts-outline-depth, 0) * var(--sts-outline-indent, 16px)
+  );
+}
+
+body.sts-indentation-enabled
+  .markdown-preview-view
+  .markdown-preview-section {
+  overflow: visible;
+}
+
+body.sts-indentation-enabled
+  .markdown-source-view.mod-cm6
+  :is(.cm-line, .cm-embed-block, .image-embed)[data-sts-outline-depth]::before,
+body.sts-indentation-enabled
+  .markdown-preview-view [data-sts-outline-depth]::before {
+  content: "";
+  display: none;
+  position: absolute;
+  z-index: var(--sts-outline-guide-z-index, 5);
+  inset-block-start: calc(-1 * var(--sts-outline-extend-before, 0px));
+  inset-block-end: calc(-1 * var(--sts-outline-extend-after, 0px));
+  width: calc(
+    var(--sts-outline-depth, 0) * var(--sts-outline-indent, 16px)
+  );
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--sts-render-guide-1, transparent), var(--sts-render-guide-1, transparent)),
+    linear-gradient(var(--sts-render-guide-2, transparent), var(--sts-render-guide-2, transparent)),
+    linear-gradient(var(--sts-render-guide-3, transparent), var(--sts-render-guide-3, transparent)),
+    linear-gradient(var(--sts-render-guide-4, transparent), var(--sts-render-guide-4, transparent)),
+    linear-gradient(var(--sts-render-guide-5, transparent), var(--sts-render-guide-5, transparent)),
+    linear-gradient(var(--sts-render-guide-6, transparent), var(--sts-render-guide-6, transparent));
+  background-position:
+    0 0,
+    calc(1 * var(--sts-outline-indent, 16px)) 0,
+    calc(2 * var(--sts-outline-indent, 16px)) 0,
+    calc(3 * var(--sts-outline-indent, 16px)) 0,
+    calc(4 * var(--sts-outline-indent, 16px)) 0,
+    calc(5 * var(--sts-outline-indent, 16px)) 0;
+  background-repeat: no-repeat;
+  background-size: var(--sts-outline-line-width, 1px) 100%;
+}
+
+body.sts-indentation-enabled
+  .markdown-source-view.mod-cm6
+  :is(.cm-line, .cm-embed-block, .image-embed)[data-sts-outline-depth]::before {
+  inset-inline-start: calc(
+    -1 * (var(--sts-outline-depth, 0) + 1) * var(--sts-outline-indent, 16px)
+  );
+}
+
+body.sts-indentation-enabled
+  .markdown-preview-view [data-sts-outline-depth]::before {
+  inset-inline-start: calc(
+    -1 * var(--sts-outline-indent, 16px) -
+      var(--sts-outline-x-offset, 0px)
+  );
+}
+
+body.sts-indentation-enabled
+  .markdown-preview-view hr[data-sts-outline-depth] {
+  overflow: visible;
+}
+
+body.sts-indentation-guides-enabled
+  .markdown-preview-view
+  hr[data-sts-outline-depth]::before {
+  display: none;
+}
+
+body.sts-indentation-guides-enabled
+  .markdown-source-view.mod-cm6
+  :is(.cm-line, .cm-embed-block, .image-embed)[data-sts-outline-depth]::before,
+body.sts-indentation-guides-enabled
+  .markdown-preview-view
+  [data-sts-outline-depth]::before {
+  display: block;
+}
+
+body.sts-indentation-guides-enabled
+  [data-sts-outline-widget]::before {
+  display: none;
+}
+
+body:not(.sts-indentation-colored-guides)
+  [data-sts-outline-depth] {
+  --sts-render-guide-1: var(--sts-outline-line-color);
+  --sts-render-guide-2: var(--sts-outline-line-color);
+  --sts-render-guide-3: var(--sts-outline-line-color);
+  --sts-render-guide-4: var(--sts-outline-line-color);
+  --sts-render-guide-5: var(--sts-outline-line-color);
+  --sts-render-guide-6: var(--sts-outline-line-color);
+}
+
+body.sts-indentation-colored-guides
+  [data-sts-outline-depth] {
+  --sts-render-guide-1: var(--sts-heading-guide-1, transparent);
+  --sts-render-guide-2: var(--sts-heading-guide-2, transparent);
+  --sts-render-guide-3: var(--sts-heading-guide-3, transparent);
+  --sts-render-guide-4: var(--sts-heading-guide-4, transparent);
+  --sts-render-guide-5: var(--sts-heading-guide-5, transparent);
+  --sts-render-guide-6: var(--sts-heading-guide-6, transparent);
+}
+
+body.sts-indentation-enabled
+  .markdown-source-view.mod-cm6
+  :is(.cm-line, .cm-embed-block, .image-embed)[data-sts-outline-depth] > *,
+body.sts-indentation-enabled
+  .markdown-preview-view [data-sts-outline-depth] > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.sts-indentation-fold-arrows-enabled
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-header[data-sts-outline-depth]
+  :is(.cm-fold-indicator, .collapse-indicator) {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--sts-outline-line-color, #253545) !important;
+}
+
+body.sts-indentation-fold-arrows-enabled
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-header[data-sts-outline-depth]
+  .cm-fold-indicator {
+  position: absolute;
+  z-index: 3;
+  inset-inline-start: calc(-1 * var(--sts-outline-indent, 16px) + 3px);
+  inset-block-start: 0;
+  width: var(--sts-outline-indent, 16px);
+  height: 1lh;
+  transform: translate(-50%, -40%);
+}
+
+body.sts-indentation-fold-arrows-enabled
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-header[data-sts-outline-depth]
+  .cm-fold-indicator
+  .collapse-indicator {
+  position: static !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+body.sts-indentation-fold-arrows-enabled
+  .markdown-source-view.mod-cm6
+  .cm-line.HyperMD-header[data-sts-outline-depth]
+  .cm-fold-indicator
+  .svg-icon {
+  width: 0.75em;
+  height: 0.75em;
+  stroke: currentColor;
+}
+
+body.sts-indentation-fold-arrows-enabled
+  .markdown-preview-view
+  :is(h1, h2, h3, h4, h5, h6)[data-sts-outline-depth]
+  .heading-collapse-indicator {
+  position: absolute;
+  z-index: 3;
+  opacity: 1 !important;
+  visibility: visible !important;
+  inset-inline-start: calc(-1 * var(--sts-outline-indent, 16px) + 3px);
+  inset-block-start: 0;
+  width: var(--sts-outline-indent, 16px);
+  height: 1lh;
+  transform: translate(-50%, -40%);
+  color: var(--sts-outline-line-color, #253545) !important;
+}
+
+body.sts-indentation-fold-arrows-enabled
+  .markdown-preview-view
+  :is(h1, h2, h3, h4, h5, h6)[data-sts-outline-depth]
+  .heading-collapse-indicator
+  .svg-icon {
+  width: 0.75em;
+  height: 0.75em;
+  stroke: currentColor;
+}
+
+body.sts-indentation-enabled:not(.sts-indentation-fold-arrows-enabled)
+  :is(
+    .markdown-source-view.mod-cm6 .cm-fold-indicator,
+    .markdown-preview-view .heading-collapse-indicator
+  ) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body.is-mobile.sts-indentation-fold-arrows-enabled
+  :is(
+    .markdown-source-view.mod-cm6 .cm-fold-indicator,
+    .markdown-preview-view .heading-collapse-indicator
+  ) {
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  touch-action: manipulation;
+}
+
+body.is-mobile.sts-indentation-fold-arrows-enabled
+  :is(
+    .markdown-source-view.mod-cm6 .cm-fold-indicator,
+    .markdown-preview-view .heading-collapse-indicator
+  )
+  .svg-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+body.is-mobile.sts-indentation-fold-arrows-enabled
+  .markdown-preview-view
+  [data-sts-mobile-heading-level] {
+  position: relative;
+}
+
+body.is-mobile
+  .markdown-preview-view
+  .sts-mobile-fold-indicator {
+  display: none;
+}
+
+body.is-mobile.sts-indentation-fold-arrows-enabled
+  .markdown-preview-view
+  .sts-mobile-fold-indicator {
+  appearance: none;
+  position: absolute;
+  z-index: 4;
+  inset-inline-start: calc(-1 * var(--sts-outline-indent, 16px) + 3px);
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--sts-outline-line-color, #253545);
+  transform: translate(-50%, -25%);
+  touch-action: manipulation;
+}
+
+body.is-mobile.sts-indentation-fold-arrows-enabled
+  .markdown-preview-view
+  .sts-mobile-fold-indicator
+  .svg-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: transform 120ms ease;
+}
+
+body.is-mobile.sts-indentation-fold-arrows-enabled
+  .markdown-preview-view
+  [data-sts-mobile-collapsed="true"]
+  > .sts-mobile-fold-indicator
+  .svg-icon {
+  transform: rotate(-90deg);
+}
+
+body.is-mobile
+  .markdown-preview-view
+  .sts-mobile-section-hidden {
+  display: none;
+}
+
+body.is-mobile.sts-indentation-enabled
+  .markdown-source-view.mod-cm6
+  :is(.cm-line, .cm-embed-block, .image-embed)[data-sts-outline-depth] {
+  --sts-mobile-offset: calc(
+    var(--sts-outline-depth, 0) * var(--sts-outline-indent, 16px)
+  );
+  inline-size: calc(100% - var(--sts-mobile-offset));
+  max-inline-size: calc(100% - var(--sts-mobile-offset));
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+body.is-mobile.sts-indentation-enabled
+  :is(
+    .markdown-source-view.mod-cm6,
+    .markdown-preview-view
+  )
+  :is(
+    .cm-embed-block,
+    .image-embed,
+    .internal-embed,
+    .markdown-embed,
+    .callout,
+    blockquote,
+    pre,
+    table
+  ) {
+  box-sizing: border-box;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+}
+
+body.is-mobile.sts-indentation-enabled
+  :is(
+    .markdown-source-view.mod-cm6,
+    .markdown-preview-view
+  )
+  :is(img, video, canvas, iframe) {
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+body.is-mobile.sts-indentation-enabled
+  :is(
+    .markdown-source-view.mod-cm6,
+    .markdown-preview-view
+  )
+  :is(pre, table) {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+body.is-mobile.sts-indentation-enabled
+  :is(
+    .markdown-source-view.mod-cm6,
+    .markdown-preview-view
+  )
+  :is(p, li, blockquote, td, th, code) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

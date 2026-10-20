@@ -1,1 +1,11 @@
-{}
+{
+  "anuppuccin-theme-settings@@anuppuccin-light-theme-accents": "none",
+  "anuppuccin-theme-settings@@anuppuccin-theme-dark": "ctp-frappe",
+  "anuppuccin-theme-settings@@anuppuccin-theme-light": "ctp-latte",
+  "minimal-advanced@@cursor": "default",
+  "minimal-style@@maximize-tables-off": "maximize-tables-auto",
+  "minimal-style@@table-lines": true,
+  "minimal-style@@row-hover": true,
+  "minimal-style@@row-alt": true,
+  "minimal-style@@table-center": true
+}
