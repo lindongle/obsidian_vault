@@ -1,0 +1,32 @@
+/* ===================== 阅读视图（稳定优先） ===================== */
+.markdown-rendered h1 { margin-left: 0 !important; }
+.markdown-rendered h2 { margin-left: 1.5rem !important; }
+.markdown-rendered h3 { margin-left: 3rem !important; }
+.markdown-rendered h4 { margin-left: 4.5rem !important; }
+
+/* 标题下属正文、列表、引用跟着缩进 */
+.markdown-rendered h2 + div,
+.markdown-rendered h2 ~ .el-p,
+.markdown-rendered h2 ~ .el-ul,
+.markdown-rendered h2 ~ .el-ol {
+    margin-left: 1.5rem !important;
+}
+.markdown-rendered h3 + div,
+.markdown-rendered h3 ~ .el-p,
+.markdown-rendered h3 ~ .el-ul,
+.markdown-rendered h3 ~ .el-ol {
+    margin-left: 3rem !important;
+}
+.markdown-rendered h4 + div,
+.markdown-rendered h4 ~ .el-p,
+.markdown-rendered h4 ~ .el-ul,
+.markdown-rendered h4 ~ .el-ol {
+    margin-left: 4.5rem !important;
+}
+
+
+/* ===================== LivePreview / CM6 新版编辑器 重点！HyperMD ===================== */
+.is-live-preview .HyperMD-header-1 { margin-left: 0 !important; }
+.is-live-preview .HyperMD-header-2 { margin-left: 1.5rem !important; }
+.is-live-preview .HyperMD-header-3 { margin-left: 3rem !important; }
+.is-live-preview .HyperMD-header-4 { margin-left: 4.5rem !important; }
