@@ -1,6 +1,6 @@
 ---
 title: MBOM
-updated: 2026-06-06T10:08
+updated: 2026-10-21T15:05:21
 created: 2024-07-29T10:40:31
 ---
 
