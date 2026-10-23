@@ -3,7 +3,7 @@
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
   "attachmentFolderPath": "99-Assets",
-  "showLineNumber": false,
+  "showLineNumber": true,
   "defaultViewMode": "preview",
   "propertiesInDocument": "visible",
   "pdfExportSettings": {
