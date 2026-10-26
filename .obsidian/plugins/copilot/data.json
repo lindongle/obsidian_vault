@@ -507,15 +507,6 @@
     {
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
-        "id": "opencode/longcat-2.5-preview-free",
-        "displayName": "OpenCode/LongCat 2.5 Preview Free"
-      },
-      "configuredModelId": "f003ec17-a13b-46d7-9a90-5d2c1e0dcb5f",
-      "configuredAt": 1791335864724
-    },
-    {
-      "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
-      "info": {
         "id": "opencode/deepseek-v4.1-flash-free",
         "displayName": "OpenCode/DeepSeek V4.1 Flash Free"
       },
@@ -552,11 +543,11 @@
     {
       "providerId": "98749923-2b61-4bc1-abc5-31dc275382cd",
       "info": {
-        "id": "opencode/minimax-m3.1-flash-free",
-        "displayName": "OpenCode/MiniMax M3.1 Flash Free"
+        "id": "opencode/flint-40b-free",
+        "displayName": "OpenCode/Flint 40B Free"
       },
-      "configuredModelId": "4374b130-84a6-4291-9dbc-fc9048b7356f",
-      "configuredAt": 1792488026912
+      "configuredModelId": "dcd6ad94-29d9-4670-9875-582f5e426df9",
+      "configuredAt": 1792726583737
     }
   ],
   "backends": {
