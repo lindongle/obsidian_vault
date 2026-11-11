@@ -1,7 +1,7 @@
 ---
 title: AI api key
 created: 2026-07-05T17:04:36
-updated: 2026-08-12T15:04:00
+updated: 2026-11-11T14:01:57
 ---
 - DeepSeek 
 	- BaseUrl:
@@ -35,3 +35,8 @@ updated: 2026-08-12T15:04:00
 	- apikey:ark-332dad12-315e-4514-aeb7-3557e9d822d9-617fb
 	- 火山引擎APIhub-apikey:ark-0dcb0c23-e524-4417-befe-408354547430-8778f
 	- 模型id:doubao-seed-2-1-turbo-260628/doubao-seed-2-1-pro-260628
+- 百度翻译：
+	- APP ID：20261111002716091
+	- 密钥：lh43oMndo04uIKuJkHol
+	- url:https://fanyi-api.baidu.com/api/trans/vip/translate
+	- 
